@@ -105,20 +105,50 @@
       core: {
         data: [
           {
-            text: '父节点 1'
-          },
-          {
-            text: '父节点 2',
+            text: '电科集团',
             state: {
               opened: true,
-              selected: true
+              selected: false
             },
             children: [
               {
-                text: '子节点 1'
+                text: '京东方'
               },
               {
-                text: '子节点 2'
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
+              },
+              {
+                text: '京二分公司'
               }
             ]
           }

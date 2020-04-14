@@ -56,7 +56,7 @@
 .color_ff0{ color:#ff0000;}
 .color_ff9{ color:#ff9d00;}
 .color_dad{ color:#dad61c;}
-
+.color_228{ color:#228b22;}
 
 /*风险排名四色*/
 .color-se1{color:#35ade9;}
@@ -97,7 +97,9 @@
 .xian{ border:1px solid #e5eaea;}
 .xian_c{ border:1px solid #cccccc;}
 .xian_2_e{ border:2px solid #e4eaec; height:40px; line-height:40px; outline:0;}
+.xian_1_e{ border:1px solid #e4eaec;}
 .xian_r_c{ border-right:1px solid #cccccc;}
+.xian_b_0{ border-bottom:0;}
 .xian_b{ border-bottom:1px solid #efeeec;}
 
 .cursor{ cursor:pointer;}
@@ -119,10 +121,10 @@
 
 /*风险源四色*/
 .risk_right{ width:85%; position:relative; margin-left:236px; border: 1px solid #e4eaec;}
-.example ul{ list-style:none; width:100%; padding:0;}
-.example li{float:left; width:54px; height:60px; text-align:center; font-size:12px; padding-top:2px; border:1px solid transparent; cursor:pointer;}
-.example li:hover{ border:1px solid #ccc;}
-.example li span{display: block; text-overflow:ellipsis; text-align:center; white-space:nowrap; overflow:hidden;}
+.rr-drag-left ul{ list-style:none; width:100%; padding:0;}
+.rr-drag-left li{float:left; width:54px; height:60px; text-align:center; font-size:12px; padding-top:2px; border:1px solid transparent; cursor:pointer;}
+.rr-drag-left li:hover{ border:1px solid #ccc;}
+.rr-drag-left li span{display: block; text-overflow:ellipsis; text-align:center; white-space:nowrap; overflow:hidden;}
 .rr-drag-icon-org{ width:30px; height:30px; cursor:pointer; display:inline-block;}
 .drag-riskLevel1{background-color:#35ade9;}
 .drag-riskLevel2{background-color:#f3e500;}
@@ -161,7 +163,7 @@
 .lists li{padding:2px 0px 4px 8px;cursor:pointer;font-size:14px;height:24px;line-height:20px;color:#5e5e5e;font-size:14px;}
 .lists li.cgray{background:#1e90ff;color:#fff;}
 
-.hover .listBtn{display:block;}
+.hover .lists{display:block;}
 .hover .cartes{
 	border:1px solid #e4eaec;
 	

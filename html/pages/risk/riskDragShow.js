@@ -100,7 +100,7 @@ $(function () {
     // })
 
     $.getJSON('./data.json', null, function (data) {
-       var txt = data['underlying'];
+        var txt = data['underlying'];
         txt = txt.replace(/\\/g,"/");
         if (txt != 'false') {
             // $("#img").attr("src",fileServer+"/"+ txt);
@@ -447,7 +447,8 @@ function movePointers(elem) {
             movePoint($(elem), beforeTop, beforeLeft,version);
             $(elem).trigger('mouseenter');
         },
-        pos:false
+        pos:false,
+        disable: true
     });
 }
 
@@ -593,30 +594,27 @@ function modiFormData(data, target) {
 
 //点击复位
 $("#btnDel").click(function(){
-    // 临时效果
-    $(target).remove();
     var  modifyPosition = {"id":$(target).attr('data-id')};
-    debugger
-    // $.ajax({
-    //     type:'post',
-    //     url:ctxFront+'/risk/riskReport/resetRiskSource',
-    //     data:{"id":$(target).attr('data-id')},
-    //     success:function(data){
-    //         if(data == "success") {
-    //             window.location.reload();
-    //         }else {
-    //             mini.alert("重置失败！");
-    //             $(".mini-messagebox .mini-messagebox-content td").css({
-    //                 'font-size': '14px',
-    //                 'font-family': '"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif',
-    //                 'padding': '8px 0',
-    //                 'color': '#666666'
-    //             });
-    //             $(".mini-messagebox .mini-messagebox-table").css({'margin-top': '72px'});
-    //             $(".mini-messagebox .mini-messagebox-table td:first").hide()
-    //         }
-    //     }
-    // })
+    $.ajax({
+        type:'post',
+        url:ctxFront+'/risk/riskReport/resetRiskSource',
+        data:{"id":$(target).attr('data-id')},
+        success:function(data){
+            if(data == "success") {
+                window.location.reload();
+            }else {
+                mini.alert("重置失败！");
+                $(".mini-messagebox .mini-messagebox-content td").css({
+                    'font-size': '14px',
+                    'font-family': '"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif',
+                    'padding': '8px 0',
+                    'color': '#666666'
+                });
+                $(".mini-messagebox .mini-messagebox-table").css({'margin-top': '72px'});
+                $(".mini-messagebox .mini-messagebox-table td:first").hide()
+            }
+        }
+    })
 
 
 

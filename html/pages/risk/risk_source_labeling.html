@@ -56,7 +56,7 @@
             <p style="display: inline-block;margin-right:8px; margin-top:-6px; float:left;">图上已保存的风险源有5条，标注风险源后请及时保存！<br>
               单个风险源复位时，请注意保存,未保存的风险源将全部复位！</p>
             </span>
-                <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
+                <button type="button" onclick="reset()" class="btn btn-danger px-20 list-inline-item mr-20">
                     全部复位
                 </button>
                 <button type="button" class="btn btn-primary px-20 list-inline-item">
@@ -75,55 +75,24 @@
             </div>
             <div id="canvasShow" class="rr-drag-canvas" style="margin-left: 15%;">
                 <div id="AgentDiv" style="background: transparent; width: 1401px; height: 700px;"><img src="../../../public/images/timg.jpg" id="img" style="border: 1px solid #e4eaec; width: 1401px; height: 700px;"></div>
-                <div id="propMain" class="rr-drag-prop" style="left: 316px; right: 29px; top: 322.5px;">
+                <div id="propMain" class="rr-drag-prop" style="left: 316px; right: 29px; top: 322.5px;display: none">
                     <span class="drag-prop-triangle drag-prop-triangle-left"></span>
                     <div class="drag-prop-tool" id="mainTool" style="width: auto; right: auto; left: 0px; top: 0px;">
                         <a id="btnView" class="prop-tool-btnIcon drag-prop-iconView" title="查看"></a>
                         <a id="btnDel" class="prop-tool-btnIcon  del" title="复位" style="display: block;float: right;"><i class="back-icon fa fa-mail-reply"></i></a>
                     </div>
-                    <div class="mini-form drag-prop-form" id="propForm" style="margin-top: 0px;" autoescape="true">
-                        <div class="float-right mt--15 mb-10 cole"><img src="../../../public/images/x.png" alt="" /></div>
+                    <div class="mini-form drag-prop-form" id="propForm" style="margin-top: 0px; display: none" autoescape="true">
+                        <div id="closeBtn" class="float-right mt--15 mb-10 cole"><img src="../../../public/images/x.png" alt="" /></div>
                         <form class="drag-form-baseinf mini-form" id="baseForm">
                             <table class="form-baseinf-options">
                                 <tbody>
-                                <tr>
-                                    <td>风险源名称</td>
-                                    <td>腐蚀性危险化学品<span></span></td>
-                                </tr>
-                                <tr>
-                                    <td>部门</td>
-                                    <td>化工部</td>
-                                </tr>
-                                <tr>
-                                    <td>事故类型</td>
-                                    <td>火灾爆炸</td>
-                                </tr>
-                                <tr>
-                                    <td>可能发生性</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <td>后果严重性</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td>风险值</td>
-                                    <td>12</td>
-                                </tr>
-                                <tr>
-                                    <td>管控等级</td>
-                                    <td>二级</td>
-                                </tr>
-                                <tr>
-                                    <td>管控频次</td>
-                                    <td>周</td>
-                                </tr>
+
                                 </tbody>
                             </table>
                         </form>
                     </div>
                 </div>
-                <div class="drag-mark rr-drag-icon drag-riskLevel3" style="left: 259.467px; top: 322.933px; width: 37px; height: 37px; background-image: url(&quot;/comp/assets/img/drag/dragIcon/Lifting.png&quot;); position: absolute; margin: 0px;"></div>
+                <!--<div class="drag-mark rr-drag-icon drag-riskLevel3" style="left: 259.467px; top: 322.933px; width: 37px; height: 37px; background-image: url(&quot;/comp/assets/img/drag/dragIcon/Lifting.png&quot;); position: absolute; margin: 0px;"></div>-->
             </div>
         </div>
     </div>

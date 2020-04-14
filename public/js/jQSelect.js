@@ -11,6 +11,7 @@
 		var items = $lists.find("ul > li");
 		
 		$div.children("div").children("div").click(function(){
+			console.log("11111111111")
 			$div.children("div").next().show();
 		});
 				
