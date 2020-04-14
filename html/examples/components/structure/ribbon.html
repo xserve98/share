@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>彩带 - UI示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/components/structure/ribbon.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">彩带</h1>
+        <div class="page-header-actions">
+            <form>
+                <div class="input-search input-search-dark">
+                    <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                    <input type="text" class="form-control" name="" placeholder="搜索...">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="panel">
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">基本</h4>
+                            <p>彩带通常用于标记，可以为元素添加
+                                <code>.ribbons</code> 类来使用彩带，使用
+                                <code>.vertical</code> 类来改变方向，也可以使用其他类（如
+                                <code>.ribbon-danger</code> 或
+                                <code>.ribbon-warning</code>）来改变彩带的显示。 </p>
+                            <div class="row">
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example">
+                                        <div class="ribbon">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-primary">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-danger">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-vertical ribbon-warning">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-vertical ribbon-success">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-vertical ribbon-info">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">右侧显示</h4>
+                            <p> 另外，您可以使用
+                                <code>.ribbon-reverse</code> 类来使彩带在右侧显示。</p>
+                            <div class="row">
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-reverse">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-reverse ribbon-primary">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-reverse ribbon-danger">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-vertical ribbon-reverse ribbon-warning">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-vertical ribbon-reverse ribbon-success">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 col-md-4">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-vertical ribbon-reverse ribbon-info">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">书签</h4>
+                            <p>使用
+                                <code>.ribbon-bookmark</code> 类来快速实现书签效果。</p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-bookmark">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-bookmark ribbon-reverse ribbon-primary">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-vertical ribbon-bookmark ribbon-danger">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-vertical ribbon-bookmark ribbon-reverse ribbon-warning">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">立体效果</h4>
+                            <p>使用
+                                <code>.ribbon-clip</code> 类来实现立体效果，同时可以添加
+                                <code>.ribbon-bottom</code> 等类来改变方向。 </p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-clip">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-clip ribbon-reverse ribbon-primary">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="example example-bottom">
+                                        <div class="ribbon ribbon-clip ribbon-bottom ribbon-danger">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="example example-bottom-reverse">
+                                        <div class="ribbon ribbon-clip ribbon-reverse ribbon-bottom ribbon-warning">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">徽章</h4>
+                            <p>使用
+                                <code>.ribbon-badge</code> 类来实现徽章效果，同时可以添加
+                                <code>.ribbon-bottom</code> 等类来改变方向。</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-badge ribbon-primary">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-badge ribbon-primary ribbon-reverse">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="example example-bottom">
+                                        <div class="ribbon ribbon-badge ribbon-primary ribbon-bottom">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="example example-bottom-reverse">
+                                        <div class="ribbon ribbon-badge ribbon-primary ribbon-reverse ribbon-bottom">
+                                            <span class="ribbon-inner">彩带</span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">角标</h4>
+                            <p>使用
+                                <code>.ribbon-corner</code> 类来实现角标效果，同时可以添加
+                                <code>.ribbon-bottom</code> 等类来改变方向。 </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="example">
+                                        <div class="ribbon ribbon-corner ribbon-primary">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="example example-reverse">
+                                        <div class="ribbon ribbon-corner ribbon-primary ribbon-reverse">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="example example-bottom">
+                                        <div class="ribbon ribbon-corner ribbon-primary ribbon-bottom">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="example example-bottom-reverse">
+                                        <div class="ribbon ribbon-corner ribbon-primary ribbon-reverse ribbon-bottom">
+                                            <span class="ribbon-inner">
+                                                <i class="icon wb-heart" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <p>正式开放商用：亚马逊 AWS 云服务在中国（北京）区域终于“合法” </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+
+</body>
+</html>

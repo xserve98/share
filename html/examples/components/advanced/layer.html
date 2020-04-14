@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Layer web弹层组件 - UI示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/components/advanced/layer.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">layer弹层组件</h1>
+        <div class="page-header-actions">
+            <a class="btn btn-inverse btn-round" href="http://layer.layui.com/" target="_blank">
+                <i class="icon wb-link" aria-hidden="true"></i> <span class="hidden-xs">官网</span></a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">通过 Javascript 调用</h3>
+            </div>
+            <div class="alert alert-danger alert-dismissible layer-notice" role="alert">
+                <style>
+                    .layui-layer-content .layer-notice{
+                        margin: 0;
+                    }
+                </style>
+                <button type="button" class="close" data-dismiss="alert" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <p>layer是一款优秀的web弹层组件，为了获得更好的体验，我们对layer做了一些优化，主要表现在支持视网膜屏和可以通过 Data API 方式调用。</p>
+
+            </div>
+            <div class="panel-body container-fluid">
+                <p>在iframe中，您可以通过 <code>layer.config({extend: '../retina.css'})</code> 来使用使其支持视网膜屏幕。</p>
+                <div class="row">
+                    <div class="col-md-4 getting-started">
+                        <h4 class="mb-20">先睹为快</h4>
+                        <button class="btn btn-default btn-outline">初体验</button>
+                        <button class="btn btn-default btn-outline">第三方扩展皮肤</button>
+                        <button class="btn btn-default btn-outline">询问层</button>
+                        <button class="btn btn-default btn-outline">提示层</button>
+                        <button class="btn btn-default btn-outline">墨绿深蓝风</button>
+                        <button class="btn btn-default btn-outline">捕获页</button>
+                        <button class="btn btn-default btn-outline">页面层</button>
+                        <button class="btn btn-default btn-outline">自定页</button>
+                        <button class="btn btn-default btn-outline">tips层</button>
+                        <button class="btn btn-default btn-outline">iframe层</button>
+                        <button class="btn btn-default btn-outline">iframe窗</button>
+                        <button class="btn btn-default btn-outline">加载层</button>
+                        <button class="btn btn-default btn-outline">loading层</button>
+                        <button class="btn btn-default btn-outline">小tips</button>
+                        <button class="btn btn-default btn-outline">prompt层</button>
+                        <button class="btn btn-default btn-outline">tab层</button>
+                        <button class="btn btn-default btn-outline">相册层</button>
+                    </div>
+                    <div class="col-sm-8 advanced">
+                        <h4 class="mb-20">再试牛刀</h4>
+                        <div class="row advanced">
+                            <div class="col-sm-2">
+                                <h5>信息框</h5>
+                                <button class="btn btn-default btn-block btn-outline">例1</button>
+                                <button class="btn btn-default btn-block btn-outline">例2</button>
+                                <button class="btn btn-default btn-block btn-outline">例3</button>
+                                <button class="btn btn-default btn-block btn-outline">例4</button>
+                                <button class="btn btn-default btn-block btn-outline">例5</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <h5>页面层/iframe层</h5>
+                                <button class="btn btn-default btn-block btn-outline">页面层-自定义</button>
+                                <button class="btn btn-default btn-block btn-outline">页面层-城市</button>
+                                <button class="btn btn-default btn-block btn-outline" id="parentIframe">iframe-子父操作
+                                </button>
+                                <button class="btn btn-default btn-block btn-outline">iframe-多媒体</button>
+                                <button class="btn btn-default btn-block btn-outline">iframe-禁滚动条</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <h5>加载层</h5>
+                                <button class="btn btn-default btn-block btn-outline">默认</button>
+                                <button class="btn btn-default btn-block btn-outline">风格2</button>
+                                <button class="btn btn-default btn-block btn-outline">风格3</button>
+                                <button class="btn btn-default btn-block btn-outline">风格4</button>
+                                <button class="btn btn-default btn-block btn-outline">打酱油</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <h5>tips层</h5>
+                                <button class="btn btn-default btn-block btn-outline">上</button>
+                                <button class="btn btn-default btn-block btn-outline">右</button>
+                                <button class="btn btn-default btn-block btn-outline">下</button>
+                                <button class="btn btn-default btn-block btn-outline">左</button>
+                                <button class="btn btn-default btn-block btn-outline">允许多个</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <h5>其它演示</h5>
+                                <button class="btn btn-default btn-block btn-outline">默认prompt</button>
+                                <button class="btn btn-default btn-block btn-outline">屏蔽浏览器滚动条</button>
+                                <button class="btn btn-default btn-block btn-outline">弹出即全屏</button>
+                                <button class="btn btn-default btn-block btn-outline">正上方</button>
+                            </div>
+                        </div>
+                        <div id="city" class="city">
+                            <style>
+                                .layui-layer-wrap.city img{
+                                    margin: -20px;
+                                }
+                            </style>
+                            <img width="600" src="../../../../public/images/photos/city-1.jpg"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 more">
+                        <h4 class="mb-20">更多示例</h4>
+                        <button method="multiple" class="btn btn-success btn-outline">多窗口模式，层叠置顶</button>
+                        <button method="confirmTm" class="btn btn-success btn-outline">配置一个透明的询问框</button>
+                        <button method="notice" class="btn btn-success btn-outline">示范一个公告层</button>
+                        <button method="offset" data-type="t" class="btn btn-primary btn-outline">上弹出</button>
+                        <button method="offset" data-type="r" class="btn btn-primary btn-outline">右弹出</button>
+                        <button method="offset" data-type="b" class="btn btn-primary btn-outline">下弹出</button>
+                        <button method="offset" data-type="l" class="btn btn-primary btn-outline">左弹出</button>
+                        <button method="offset" data-type="lt" class="btn btn-primary btn-outline">左上弹出</button>
+                        <button method="offset" data-type="lb" class="btn btn-primary btn-outline">左下弹出</button>
+                        <button method="offset" data-type="rt" class="btn btn-primary btn-outline">右上弹出</button>
+                        <button method="offset" data-type="rb" class="btn btn-primary btn-outline">右下弹出</button>
+                        <button method="offset" data-type="auto" class="btn btn-primary btn-outline">居中弹出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">通过 Data API 调用</h3>
+            </div>
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <p>对于常用的简单layer弹层场景，您可以通过 <code>data-plugin="layer"</code> 来直接调用，示例如下：</p>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button data-plugin="layer" data-type="alert" data-message="admui是一个优秀的产品"
+                                class="btn btn-primary btn-outline">alert
+                        </button>
+                        <button data-plugin="layer" data-type="msg" data-message="admui是一个优秀的产品"
+                                class="btn btn-primary btn-outline">message
+                        </button>
+                        <button data-plugin="layer" data-type="confirm" data-title="您想了解admui信息吗?"
+                                data-success-message="您可以在这里（http://docs.admui.com）查看详细信息" data-cancel-message="真遗憾"
+                                class="btn btn-primary btn-outline">confirm
+                        </button>
+                        <button data-plugin="layer" data-type="prompt" data-title="请输入您想咨询的问题"
+                                data-message="您访问 http://www.admui.com 了解详细信息"
+                                class="btn btn-primary btn-outline">prompt
+                        </button>
+                        <button data-plugin="layer" data-type="tips" data-message="感谢您的支持" data-target="self"
+                                class="btn btn-primary btn-outline">tips
+                        </button>
+                        <button data-plugin="layer" data-type="load" data-style="1" data-time="1000"
+                                class="btn btn-primary btn-outline">load
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/layer/layer.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/components/advanced/layer.js"></script>
+</body>
+</html>

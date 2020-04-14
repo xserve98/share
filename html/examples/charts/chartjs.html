@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Chartjs - 统计图表 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../public/fonts/font-awesome/font-awesome.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../public/css/examples/charts/chartjs.css">
+    
+    <!-- 插件 -->
+    <script src="../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">Chart.js 图表</h1>
+        <div class="page-header-actions">
+            <a class="btn btn-default btn-outline btn-round" href="http://www.chartjs.org" target="_blank">
+                <i class="icon fa-home" aria-hidden="true"></i> 官网</a>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="panel">
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-lg-6 col-xl-4">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">曲线图</h4>
+                            <div class="example text-center">
+                                <canvas id="exampleChartjsLine" height="300" width="450"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">柱状图</h4>
+                            <div class="example text-center">
+                                <canvas id="exampleChartjsBar" height="300" width="450"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">雷达图</h4>
+                            <div class="example text-center max-width">
+                                <canvas id="exampleChartjsRadar" height="250"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-xl-4">
+
+                        <div class="example-wrap m-lg-0">
+                            <h4 class="example-title">极地区域图</h4>
+                            <div class="example text-center max-width">
+                                <canvas id="exampleChartjsPloarArea" height="250"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../public/vendor/chart-js/Chart.js"></script>
+
+    <script src="../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../public/js/examples/charts/chartjs.js"></script>
+</body>
+</html>

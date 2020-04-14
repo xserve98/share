@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义工具条 - Bootstrap-Table - 表格示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/bootstrap-table/bootstrap-table.css">
+    
+    <!-- Page CSS -->
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page animation-fade page-bs-table">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="mCustomScrollbar">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">选项</h5>
+                <div class="list-group">
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/boolean-options.html">
+                        <i class="icon fa-circle-o"></i> 布尔配置项
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/from-html.html">
+                        <i class="icon fa-circle-o"></i> Html 表格
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/from-data.html">
+                        <i class="icon fa-circle-o"></i> 数据表格
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/modal-table.html">
+                        <i class="icon fa-circle-o"></i> 包含在模态框中
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/table-style.html">
+                        <i class="icon fa-circle-o"></i> 表格样式
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/no-bordered.html">
+                        <i class="icon fa-circle-o"></i> 无边框表格
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/aligning-columns.html">
+                        <i class="icon fa-circle-o"></i> 单元格对齐
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/basic-sort.html">
+                        <i class="icon fa-circle-o"></i> 基础排序
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/custom-sort.html">
+                        <i class="icon fa-circle-o"></i> 自定义排序
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/format.html">
+                        <i class="icon fa-circle-o"></i> 格式化
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/basic-columns.html">
+                        <i class="icon fa-circle-o"></i> 基础列
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/large-columns.html">
+                        <i class="icon fa-circle-o"></i> 列较多的情况
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/group-columns.html">
+                        <i class="icon fa-circle-o"></i> 列分组
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/disabled-checkbox.html">
+                        <i class="icon fa-circle-o"></i> 禁用复选框
+                    </a>
+                    <a class="list-group-item active" href="/html/examples/tables/bootstrap-table/options/custom-toolbar.html">
+                        <i class="icon fa-circle-o"></i> 自定义工具条
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/detail-view.html">
+                        <i class="icon fa-circle-o"></i> 展开行
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/sub-table.html">
+                        <i class="icon fa-circle-o"></i> 嵌套子表格
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/multiple-table.html">
+                        <i class="icon fa-circle-o"></i> 多个表格
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/client-side-pagination.html">
+                        <i class="icon fa-circle-o"></i> 客户端分页
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/server-side-pagination.html">
+                        <i class="icon fa-circle-o"></i> 服务器端分页
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/pagination-custom-text.html">
+                        <i class="icon fa-circle-o"></i> 自定义分页文本
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/options/custom-ajax.html">
+                        <i class="icon fa-circle-o"></i> 自定义 Ajax
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div class="page-main">
+        <div class="page-header">
+            <h1 class="page-title">自定义工具条</h1>
+            <div class="page-header-actions">
+                <a class="btn btn-inverse btn-round" href="http://bootstrap-table.wenzhixin.net.cn/zh-cn/"
+                   target="_blank">
+                    <i class="icon fa-language" aria-hidden="true"></i> 中文官网</a>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="panel-desc">使用 <code>toolbar</code> 选项自定义工具条</span>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div id="toolbar">
+                        <div class="form-inline" role="form">
+                            <div class="form-group">
+                                <span>偏移：</span>
+                                <input name="offset" class="form-control w70" type="number" value="0">
+                            </div>
+                            <div class="form-group">
+                                <span>限制：</span>
+                                <input name="limit" class="form-control w70" type="number" value="5">
+                            </div>
+                            <div class="form-group">
+                                <input name="search" class="form-control" type="text" placeholder="查找">
+                            </div>
+                            <button id="ok" type="submit" class="btn btn-primary">确定</button>
+                        </div>
+                    </div>
+                    <!-- TODO: 此处需要后端接口 -->
+                    <!-- FIXME: toggle 按钮不显示图标 -->
+                    <table id="table" data-toggle="table" data-height="460" data-toolbar="#toolbar"
+                           data-show-refresh="true"
+                           data-show-toggle="true" data-show-columns="true" data-query-params="queryParams"
+                           data-response-handler="responseHandler"
+                           data-url="/public/data/examples/tables/bootstrap-table/data2.json">
+                        <thead>
+                        <tr>
+                            <th data-field="id">ID</th>
+                            <th data-field="name">条目名称</th>
+                            <th data-field="price">条目价格</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <script src="../../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script>
+     window.App.run();
+ </script>
+<script src="../../../../../public/js/examples/tables/bootstrap-table/options/custom-toolbar.js"></script>
+</body>
+</html>

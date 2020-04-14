@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器模式 - DataTables - 表格示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/datatables-bootstrap/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/datatables-responsive/dataTables.responsive.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/highlight/github-gist.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../../public/css/examples/tables/datatable.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page animation-fade page-data-tables">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="mCustomScrollbar">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">服务器模式</h5>
+                <div class="list-group">
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/simple.html">
+                        <i class="icon fa-circle-o"></i> 服务器处理
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/custom-vars.html">
+                        <i class="icon fa-circle-o"></i> 自定义http变量
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/post.html">
+                        <i class="icon fa-circle-o"></i> 以post方式传输数据
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/ids.html">
+                        <i class="icon fa-circle-o"></i> 自动给行添加id属性
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/object-data.html">
+                        <i class="icon fa-circle-o"></i> 对象数据源
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/row-details.html">
+                        <i class="icon fa-circle-o"></i> 行详情
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/select-rows.html">
+                        <i class="icon fa-circle-o"></i> 行选中
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/jsonp.html">
+                        <i class="icon fa-circle-o"></i> 跨域JSONP数据源
+                    </a>
+                    <a class="list-group-item active" href="/html/examples/tables/data-tables/server-side/defer-loading.html">
+                        <i class="icon fa-circle-o"></i> 延迟加载数据
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/data-tables/server-side/pipeline.html">
+                        <i class="icon fa-circle-o"></i> 分页加载数据，减少ajax请求
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div class="page-main">
+        <div class="page-header">
+            <h1 class="page-title">DataTables 服务器模式</h1>
+            <div class="page-header-actions">
+                <a class="btn btn-inverse btn-round" href="https://datatables.net/" target="_blank">
+                    <i class="icon wb-link" aria-hidden="true"></i> 官网</a>
+                <a class="btn btn-inverse btn-round" href="http://datatables.club/" target="_blank">
+                    <i class="icon fa-language" aria-hidden="true"></i> 中文网</a>
+            </div>
+        </div>
+        <div class="page-content" id="DTConent">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">延迟加载数据</h3>
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    <p>当使用带有服务器端处理的 DataTables 时，默认为 DataTables 自动进行 Ajax 调用并加载数据，删除表中可能已经存在的任何内容。然而当表的第一页已经在 HTML
+                        中预加载时（这可能是为了确保可访问性或性能原因），会产生一些问题
+                    </p>
+                    <p>可以使用
+                        <code>deferLoading</code> 初始化属性覆盖Ajax调用获取第一页数据。它用于两个目的，首先声明需要延迟加载，但还要告诉 DataTables
+                        在完整表中有多少条记录以便正确显示信息和分页等 </p>
+                    <p>在本示例中，HTML页面已经有前10行数据可用，所以我们使用
+                        <code>deferLoading</code> 来告诉 DataTables 这个数据是可用的，它应该等待排序，分页等完成之后，然后再创建 Ajax 请求。
+                    </p>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>职位</th>
+                                <th>工作地点</th>
+                                <th>年龄</th>
+                                <th>入职时间</th>
+                                <th>年薪</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>李钊</td>
+                                <td>销售代表</td>
+                                <td>天津</td>
+                                <td>28</td>
+                                <td>2014/05/25</td>
+                                <td>¥320800</td>
+                            </tr>
+                            <tr>
+                                <td>李钊</td>
+                                <td>销售代表</td>
+                                <td>天津</td>
+                                <td>28</td>
+                                <td>2014/05/25</td>
+                                <td>¥320800</td>
+                            </tr>
+                            <tr>
+                                <td>汪非</td>
+                                <td>销售经理</td>
+                                <td>武汉</td>
+                                <td>29</td>
+                                <td>2013/05/25</td>
+                                <td>¥520800</td>
+                            </tr>
+                            <tr>
+                                <td>李大嘴</td>
+                                <td>客服</td>
+                                <td>北京</td>
+                                <td>22</td>
+                                <td>2016/05/25</td>
+                                <td>¥220800</td>
+                            </tr>
+                            <tr>
+                                <td>王小虎</td>
+                                <td>销售代表</td>
+                                <td>北京</td>
+                                <td>22</td>
+                                <td>2016/05/25</td>
+                                <td>¥220800</td>
+                            </tr>
+                            <tr>
+                                <td>宗晴</td>
+                                <td>产品经理</td>
+                                <td>上海</td>
+                                <td>28</td>
+                                <td>2013/05/25</td>
+                                <td>¥520800</td>
+                            </tr>
+                            <tr>
+                                <td>白晴</td>
+                                <td>美工</td>
+                                <td>北京</td>
+                                <td>22</td>
+                                <td>2016/05/25</td>
+                                <td>¥220800</td>
+                            </tr>
+                            <tr>
+                                <td>罗伊</td>
+                                <td>销售代表</td>
+                                <td>深圳</td>
+                                <td>22</td>
+                                <td>2016/05/25</td>
+                                <td>¥220800</td>
+                            </tr>
+                            <tr>
+                                <td>王晓峰</td>
+                                <td>部门经理</td>
+                                <td>北京</td>
+                                <td>29</td>
+                                <td>2012/05/25</td>
+                                <td>¥620800</td>
+                            </tr>
+                            <tr>
+                                <td>王艺</td>
+                                <td>销售代表</td>
+                                <td>北京</td>
+                                <td>22</td>
+                                <td>2016/05/25</td>
+                                <td>¥220800</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>姓名</th>
+                                <th>职位</th>
+                                <th>工作地点</th>
+                                <th>年龄</th>
+                                <th>入职时间</th>
+                                <th>年薪</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="panel nav-tabs-horizontal">
+                <div class="panel-body" data-approve="nav-tabs">
+                    <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#DTJS" aria-controls="DTJS" role="tab"
+                                aria-expanded="false">JavaScript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#DTHtml" aria-controls="DTHtml" role="tab"
+                                aria-expanded="false">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#DTJava" aria-controls="DTJava" role="tab"
+                                aria-expanded="true">JAVA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#DTData" aria-controls="DTData" role="tab"
+                                aria-expanded="true">DATA</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-15">
+                        <div class="tab-pane active" id="DTJS" role="tabpanel">
+                            <pre data-plugin="highlight"><code class="js">$('#dataTableExample').DataTable($.concatCpt('dataTable', {
+	"processing": true,
+	"serverSide": true,
+	"ajax": "/employee/all",
+	"deferLoading": 57
+}));</code></pre>
+                        </div>
+                        <div class="tab-pane" id="DTHtml" role="tabpanel">
+                            <pre data-plugin="highlight"><code class="html">&lt;table class="table table-bordered table-hover dataTable table-striped w-full"&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;姓名&lt;/th&gt;
+        &lt;th&gt;职位&lt;/th&gt;
+        &lt;th&gt;工作地点&lt;/th&gt;
+        &lt;th&gt;年龄&lt;/th&gt;
+        &lt;th&gt;入职时间&lt;/th&gt;
+        &lt;th&gt;年薪&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;th&gt;姓名&lt;/th&gt;
+        &lt;th&gt;职位&lt;/th&gt;
+        &lt;th&gt;工作地点&lt;/th&gt;
+        &lt;th&gt;年龄&lt;/th&gt;
+        &lt;th&gt;入职时间&lt;/th&gt;
+        &lt;th&gt;年薪&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        <div class="tab-pane" id="DTJava" role="tabpanel">
+                            <pre data-plugin="highlight"><code class="java">java代码</code></pre>
+                        </div>
+                        <div class="tab-pane" id="DTData" role="tabpanel">
+                            <pre data-plugin="highlight"><code class="json">{
+    recordsFiltered: 57,
+    data: [
+        [
+            "李霞",
+            "系统架构师",
+            "北京",
+            "61",
+            "2011/04/25",
+            "&yen;320800"
+        ],
+        [
+            "杜重治",
+            "会计",
+            "上海",
+            "63",
+            "2011/07/25",
+            "&yen;170750"
+        ],
+        [
+            "陈锋",
+            "初级开发者",
+            "深圳",
+            "66",
+            "2009/01/12",
+            "&yen;86000"
+        ],
+        [
+            "郑伯宁",
+            "高级JavaScript开发者",
+            "北京",
+            "22",
+            "2012/03/29",
+            "&yen;433060"
+        ]
+    ]
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../../public/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../../../public/vendor/datatables-bootstrap/dataTables.bootstrap4.js"></script>
+<script src="../../../../../public/vendor/datatables-responsive/dataTables.responsive.min.js"></script>
+<script src="../../../../../public/vendor/highlight/highlight.min.js"></script>
+
+    <script src="../../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script>
+     window.App.run();
+ </script>
+<script src="../../../../../public/js/examples/tables/data-tables/server-side/defer-loading.js"></script>
+</body>
+</html>

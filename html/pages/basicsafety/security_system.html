@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>安全体系建设 - 电控安全云</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../public/themes/global/css/bootstrap.css">
+
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../public/themes/base/css/site.css" id="admui-siteStyle">
+
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../public/themes/base/css/style.css">
+
+    <!-- 插件 CSS -->
+
+
+    <!-- Page CSS -->
+
+
+    <!-- 插件 -->
+    <script src="../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+var obj = $('#sticky');
+var offset = obj.offset();
+var topOffset = offset.top;
+var leftOffset = offset.left;
+var marginTop = obj.css("marginTop");
+var top = obj.css("top");
+
+$(window).scroll(function() {
+var scrollTop = $(window).scrollTop();
+
+	if (scrollTop >= topOffset){
+
+		obj.css({
+			marginTop: 0,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 40px)',
+			position: 'fixed',
+		});
+	}
+
+	if (scrollTop < topOffset){
+
+		obj.css({
+			marginTop: marginTop,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 0px)',
+			position: 'relative',
+		});
+	}
+});
+});
+
+</script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel pt-20">
+					<div id="sticky">
+						<div id="carbonads-container">
+							<div class="px-25 py-5 back_f">
+											<button type="button" class="btn social-facebook px-20 list-inline-item">
+												提交
+											</button>
+											<div class="btn-group float-right">
+												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+											</div>
+										</div>
+							</div>
+						</div>
+						<div class="panel-body">
+		                    <div class="place pt-20">
+								<div class="panel_li">
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 text-right font-weight-600">安全生产标准化</h2></label>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>等级</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<select class="form-control w-150">
+													<option value="请选择">请选择</option>
+												</select>
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>达标分数</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>资质单位</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>评审单位</label>
+										<div class="w-250">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>评审组织单位</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>公示发牌单位</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审日期</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审状态:</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<span class="color-d3 pt-5">已过期</span>
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>证书（牌匾）</label>
+										<div>
+											<div class="bootstrap-select">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+												<span class="pl-10 h_f">上传（jpg、png格式）</span>
+											</div>
+											<div class="sw-650 mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>附件大小(k)</th>
+															<th>上传时间</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td>375.11</td>
+															<td>2020-01-02 11:35:38</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															查看
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															实施
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+										</div>
+            						</div>
+								</div>
+								<div class="panel_li">
+									<div class="row pb-20 pt-20">
+                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 text-right font-weight-600">安全文化建设</h2></label>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>是否达标</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<select class="form-control w-150">
+													<option value="请选择">请选择</option>
+												</select>
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>审报达标日期</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>评审通过日期</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>公示发牌日期</label>
+										<div class="w-250">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审日期</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审状态:</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<span class="color-d3 pt-5">已过期</span>
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>证书（牌匾）</label>
+										<div>
+											<div class="bootstrap-select">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+												<span class="pl-10 h_f">上传（jpg、png格式）</span>
+											</div>
+											<div class="sw-650 mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>附件大小(k)</th>
+															<th>上传时间</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td>375.11</td>
+															<td>2020-01-02 11:35:38</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															查看
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															实施
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+										</div>
+            						</div>
+								</div>
+								<div class="panel_li">
+									<div class="row pb-20 pt-20">
+                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 text-right font-weight-600">职业健康管理体系认证</h2></label>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>是否达标</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<select class="form-control w-150">
+													<option value="请选择">请选择</option>
+												</select>
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审日期</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+											</div>
+										</div>
+										<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审状态:</label>
+										<div class="w-150">
+											<div class="btn-group bootstrap-select">
+												<span class="color-d3 pt-5">已过期</span>
+											</div>
+										</div>
+            						</div>
+									<div class="row pb-20">
+                						<label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>证书（牌匾）</label>
+										<div>
+											<div class="bootstrap-select">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+												<span class="pl-10 h_f">上传（jpg、png格式）</span>
+											</div>
+											<div class="sw-650 mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>附件大小(k)</th>
+															<th>上传时间</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td>375.11</td>
+															<td>2020-01-02 11:35:38</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															查看
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															实施
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+										</div>
+            						</div>
+								</div>
+							</div>
+		                </div>
+		            </div>
+		        </div>
+</div>
+<!-- 插件 -->
+<script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+
+    <script src="../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../public/js/examples/forms/advanced/select.js"></script>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nSxiPohfziUaCuONe4ViUP2N"></script>
+<!--位置搜索 并获取到坐标-->
+<script type="text/javascript">
+    // 百度地图API功能
+	var map = new BMap.Map('allmap'); // 创建地图
+	// var point = new BMap.Point(116.404, 39.915);
+	// map.centerAndZoom(point, 14); // 中心位置
+	map.enableScrollWheelZoom(true); // 滚轴缩放
+	map.enableInertialDragging(); // 启用惯性拖动
+	map.enableContinuousZoom(); // 启用连续缩放
+
+	// 获得城市的工具
+	var myCity = new BMap.LocalCity();
+
+	// 城市控件的添加
+	var size = new BMap.Size(80, 20);
+	map.addControl(new BMap.CityListControl({
+		anchor: BMAP_ANCHOR_TOP_LEFT,
+		offset: size,
+		// 切换城市之前事件
+		onChangeBefore: function () {
+		},
+		// 切换城市之后事件
+		onChangeAfter: function () {
+		},
+		// 切换城市成功响应事件
+		onChangeSuccess: function (result) {
+			resfrshAutoComplate(result.city);
+		}
+	}));
+
+	// 向地图中添加缩放控件
+	map.addControl(new BMap.NavigationControl({
+		anchor: BMAP_ANCHOR_TOP_LEFT,
+		type: BMAP_NAVIGATION_CONTROL_LARGE
+	}));
+
+	//建立一个自动完成的对象
+	var autocomplete;
+	var myValue;
+
+	// 设置默认中心点
+
+
+	myCity.get(function (result) {
+		map.centerAndZoom(result.name, 12);
+		resfrshAutoComplate(result.name);
+
+	})
+
+	// ======== 智能搜索功能 start =============
+
+	function setPlace() {
+		map.clearOverlays();    //清除地图上所有覆盖物
+		function myFun() {
+			//获取第一个智能搜索的结果
+			var poi = local.getResults().getPoi(0);
+			map.centerAndZoom(poi.point, 18);
+			// 添加标注
+			var marker = new BMap.Marker(poi.point);
+
+			// 添加标签
+			$('#txtposition').val(poi.address);
+			var label = new BMap.Label(poi.address, {
+				position : poi.point,    // 指定文本标注所在的地理位置
+				offset   : new BMap.Size(-10, -50)    //设置文本偏移量
+			});  // 创建文本标注对象
+			label.setStyle({
+				color : "red",
+				fontSize : "12px",
+				height : "20px",
+				lineHeight : "20px",
+				fontFamily:"微软雅黑",
+			});
+			map.addOverlay(label);
+
+
+			map.addOverlay(marker);
+			// 开启拖拽
+			// marker.enableDragging();
+
+			// marker.addEventListener('dragend', function (a,b,c) {
+			// 	console.log(a,b,c);
+			// 	// alert('dragend');
+			// });
+		}
+
+		// 智能搜索
+		var local = new BMap.LocalSearch(map, {
+			onSearchComplete: myFun
+		});
+		local.search(myValue);
+	}
+
+	function resfrshAutoComplate(cityName) {
+		autocomplete = new BMap.Autocomplete(
+			{
+				'input': 'suggestId'
+				, 'location': cityName
+			});
+
+		//鼠标放在下拉列表上的事件
+		autocomplete.addEventListener('onhighlight', function (e) {
+			var str = '';
+			var _value = e.fromitem.value;
+			var value = '';
+			if (e.fromitem.index > -1) {
+				value = _value.province + _value.city + _value.district + _value.street + _value.business;
+			}
+			str = 'FromItem<br />index = ' + e.fromitem.index + '<br />value = ' + value;
+
+			value = '';
+			if (e.toitem.index > -1) {
+				_value = e.toitem.value;
+				value = _value.province + _value.city + _value.district + _value.street + _value.business;
+			}
+			str += '<br />ToItem<br />index = ' + e.toitem.index + '<br />value = ' + value;
+			$('#searchResultPanel').html(str);
+		});
+
+		//鼠标点击下拉列表后的事件
+		autocomplete.addEventListener('onconfirm', function (e) {
+			var _value = e.item.value;
+			myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+			$('#searchResultPanel').html('onconfirm<br />index = ' + e.item.index + '<br />myValue = ' + myValue);
+
+			setPlace();
+		});
+	}
+
+	// ======== 智能搜索功能 end =============
+
+	// 根绝城市名称定位
+	function theLocation(that){
+		var city = $(that).val();
+		if(!!city){
+			map.centerAndZoom(city,12);      // 用城市名设置地图中心点
+			resfrshAutoComplate(city);
+		}
+	}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>文本编辑器 - 表单示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../public/vendor/summernote/summernote-bs4.css">
+    
+    <!-- Page CSS -->
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">文本编辑器</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a>首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item active">文本编辑器</li>
+        </ol>
+        <div class="page-header-actions">
+            <a class="btn btn-default btn-outline btn-round" href="http://summernote.org" target="_blank">
+                <i class="icon wb-link" aria-hidden="true"></i> 官网</a>
+        </div>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">标准模式</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="summernote" data-plugin="summernote" data-lang="zh-CN">
+                            <h4>基于Bootstrap的强大HTML文本编辑器Summernote</h4>
+                            <p>Summernote是一个轻量级、灵活基于Bootstrap和jQuery的HTML文本编辑器，拥有强大的API配置功能，多国语言支持支持Bootstrap2.x和3.0，支持视频和图片上传以及代码的高亮显示，多种后台语言版本示例以及多主体支持，在浏览器兼容方面，支持IE9+以及现代的浏览器Chrome,
+                                Firefox,Safari等，在移动端应该有不错的表现，还是很不错的，值得使用。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">漂浮模式</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>添加 <code>data-air-mode="true"</code></p>
+                        <div data-plugin="summernote" data-air-mode="true" data-lang="zh-CN">
+                            <h4>基于Bootstrap的强大HTML文本编辑器Summernote</h4>
+                            <p>Summernote是一个轻量级、灵活基于Bootstrap和jQuery的HTML文本编辑器，拥有强大的API配置功能，多国语言支持支持Bootstrap2.x和3.0，支持视频和图片上传以及代码的高亮显示，多种后台语言版本示例以及多主体支持，在浏览器兼容方面，支持IE9+以及现代的浏览器Chrome,
+                                Firefox,Safari等，在移动端应该有不错的表现，还是很不错的，值得使用。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">自定义工具栏</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div data-plugin="summernote" data-plugin-options='{"toolbar":[["style", ["bold", "italic", "underline", "clear"]],["color", ["color"]],["para", ["ul", "ol", "paragraph"]]]}'
+                             data-lang="zh-CN">
+                            <h4>基于Bootstrap的强大HTML文本编辑器Summernote</h4>
+                            <p>Summernote是一个轻量级、灵活基于Bootstrap和jQuery的HTML文本编辑器，拥有强大的API配置功能，多国语言支持支持Bootstrap2.x和3.0，支持视频和图片上传以及代码的高亮显示，多种后台语言版本示例以及多主体支持，在浏览器兼容方面，支持IE9+以及现代的浏览器Chrome,
+                                Firefox,Safari等，在移动端应该有不错的表现，还是很不错的，值得使用。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">单击编辑</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <button type="button" class="btn btn-outline btn-primary" id="edit" onclick="edit()">编辑
+                            </button>
+                            <button type="button" class="btn btn-outline btn-primary" id="save" onclick="save()">保存
+                            </button>
+                        </p>
+                        <div class="click2edit">
+                            单击 <b>编辑按钮</b> 试试试试 ~~
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/summernote/summernote-bs4.min.js"></script>
+<script src="../../../../public/vendor/summernote/summernote-zh-CN.js"></script>
+
+<script src="../../../../public/themes/global/js/plugins/action-btn.js"></script>
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/editor-summernote.js"></script>
+</body>
+</html>

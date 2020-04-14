@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Sparkline - 统计图表 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../public/fonts/font-awesome/font-awesome.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../public/vendor/sparkline/sparkline.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../public/css/examples/charts/sparkline.css">
+    
+    <!-- 插件 -->
+    <script src="../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class=" page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">Sparkline 图表</h1>
+        <div class="page-header-actions">
+            <a class="btn btn-default btn-outline btn-round" href="http://omnipotent.net/jquery.sparkline/" target="_blank">
+                <i class="icon fa-home" aria-hidden="true"></i> 官网</a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="panel">
+            <header class="panel-heading">
+                <h3 class="panel-title">基本</h3>
+            </header>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6 col-xl-3">
+                        <div class="example-wrap m-lg-0">
+                            <h4 class="example-title">饼状图</h4>
+                            <div class="example text-center">
+                                <div class="sparkline-pie-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="example-wrap m-lg-0">
+                            <h4 class="example-title">折线图</h4>
+                            <div class="example text-center">
+                                <div class="sparkline-line-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">柱状图</h4>
+                            <div class="example text-center">
+                                <div class="sparkline-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="example-wrap">
+                            <h4 class="example-title">组合图</h4>
+                            <div class="example text-center">
+                                <div class="sparkline-compositebar-chart">4,6,7,5,4,3,2,4,8,5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <header class="panel-heading">
+                <h3 class="panel-title">类型</h3>
+            </header>
+            <table class="table table-striped">
+                <tr>
+                    <td>内联</td>
+                    <td>
+                        <span class="sparkline-line">10,8,9,3,5,8,5</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>折线图</td>
+                    <td>
+                        <span class="sparkline-line">8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>柱状图</td>
+                    <td>
+                        <span class="sparkline-bar">10,8,9,3,5,8,5</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>负值</td>
+                    <td>
+                        <span class="sparkline-bar">-3,1,2,0,3,-1</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>堆叠</td>
+                    <td>
+                        <span class="sparkline-bar">0:2,2:4,4:2,4:1</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>折线组合图</td>
+                    <td>
+                        <span class="sparkline-compositeline">8,4,0,3,0,3,1,4,4,10,4,10,0,1,4,6,5,9,10</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>范围折线图</td>
+                    <td>
+                        <span class="sparkline-normalline">8,4,0,2,8,3,1,9,4,10,5,10,8,0,3,2,4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>组合柱状图</td>
+                    <td>
+                        <span class="sparkline-compositebar">4,6,7,7,4,3,2,1,4</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>离散图</td>
+                    <td>
+                        <span class="sparkline-discrete1">4,6,7,7,4,3,2,1,4,4,5,6,7,6,6,2,4,5,4,6,7,7,4,3,2,1,4,4,5,6,7,6,6,2,4,5</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>分界离散图</td>
+                    <td>
+                        <span class="sparkline-discrete2">4,6,7,7,4,3,2,1,4,6,7,7,4,3,2,1,4,2,1,4,6,7,7,4,3,4,6,7,7,4,3,2,1,4,2,1,4,6,7,7,4,3</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>子弹图</td>
+                    <td>
+                        <span class="sparkline-bullet">10,12,12,9,7</span>
+                        <br>
+                        <span class="sparkline-bullet">10,12,14,9,7</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>自定义</td>
+                    <td>
+                        <span class="sparkline-linecustom">10,8,9,3,5,8,5,7</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>三态图</td>
+                    <td>
+                        <span class="sparkline-tristate">1,1,0,1,-1,-1,1,-1,0,0,1,1</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>彩色三态图</td>
+                    <td>
+                        <span class="sparkline-tristatecols">1,2,0,2,-1,-4,1,-2,0,0,1,1</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>箱图</td>
+                    <td>
+                        <span class="sparkline-boxplot">4,27,34,52,54,59,61,68,78,82,85,87,91,93,100</span>&nbsp;
+                        <span class="sparkline-boxplotraw">加载中...</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>饼状图</td>
+                    <td>
+                        <span class="sparkline-pie-1">5,3</span>&nbsp;&nbsp;
+                        <span class="sparkline-pie">1,1,2</span>&nbsp;&nbsp;
+                        <span class="sparkline-pie">20,50,80</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../public/vendor/sparkline/jquery.sparkline.min.js"></script>
+
+    <script src="../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../public/js/examples/charts/sparkline.js"></script>
+</body>
+</html>

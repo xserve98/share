@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>refresh - Bootstrap-Table - 表格示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/bootstrap-table/bootstrap-table.css">
+    
+    <!-- Page CSS -->
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page animation-fade page-bs-table">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="mCustomScrollbar">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">方法</h5>
+                <div class="list-group">
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/getOptions.html">
+                        <i class="icon fa-circle-o"></i> getOptions
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/getSelections.html">
+                        <i class="icon fa-circle-o"></i> getSelections
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/getAllSelections.html">
+                        <i class="icon fa-circle-o"></i> getAllSelections
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/getData.html">
+                        <i class="icon fa-circle-o"></i> getData
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/getRowByUniqueId.html">
+                        <i class="icon fa-circle-o"></i> getRowByUniqueId
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/load.html">
+                        <i class="icon fa-circle-o"></i> load
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/append.html">
+                        <i class="icon fa-circle-o"></i> append
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/prepend.html">
+                        <i class="icon fa-circle-o"></i> prepend
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/remove.html">
+                        <i class="icon fa-circle-o"></i> remove
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/removeAll.html">
+                        <i class="icon fa-circle-o"></i> removeAll
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/removeByUniqueId.html">
+                        <i class="icon fa-circle-o"></i> removeByUniqueId
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/insertRow.html">
+                        <i class="icon fa-circle-o"></i> insertRow
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/updateRow.html">
+                        <i class="icon fa-circle-o"></i> updateRow
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/updateByUniqueId.html">
+                        <i class="icon fa-circle-o"></i> updateByUniqueId
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/showRow-hideRow.html">
+                        <i class="icon fa-circle-o"></i> showRow/hideRow
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/mergeCells.html">
+                        <i class="icon fa-circle-o"></i> mergeCells
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/checkAll-uncheckAll.html">
+                        <i class="icon fa-circle-o"></i> checkAll/uncheckAll
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/check-uncheck.html">
+                        <i class="icon fa-circle-o"></i> check/uncheck
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/checkBy-uncheckBy.html">
+                        <i class="icon fa-circle-o"></i> checkBy/uncheckBy
+                    </a>
+                    <a class="list-group-item active" href="/html/examples/tables/bootstrap-table/methods/refresh.html">
+                        <i class="icon fa-circle-o"></i> refresh
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/resetView.html">
+                        <i class="icon fa-circle-o"></i> resetView
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/destroy.html">
+                        <i class="icon fa-circle-o"></i> destroy
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/showLoading-hideLoading.html">
+                        <i class="icon fa-circle-o"></i> showLoading/hideLoading
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/showColumn-hideCoulumn.html">
+                        <i class="icon fa-circle-o"></i> showColumn/hideCoulumn
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/scrollTo.html">
+                        <i class="icon fa-circle-o"></i> scrollTo
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/selectPage-prevPage-nextPage.html">
+                        <i class="icon fa-circle-o"></i> selectPage/prevPage/nextPage
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/togglePagination.html">
+                        <i class="icon fa-circle-o"></i> togglePagination
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/toggleView.html">
+                        <i class="icon fa-circle-o"></i> toggleView
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/refreshOptions.html">
+                        <i class="icon fa-circle-o"></i> refreshOptions
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/resetSearch.html">
+                        <i class="icon fa-circle-o"></i> resetSearch
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/expandRow-collapseRow.html">
+                        <i class="icon fa-circle-o"></i> expandRow/collapseRow
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/methods/filterBy.html">
+                        <i class="icon fa-circle-o"></i> filterBy
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div class="page-main">
+        <div class="page-header">
+            <h1 class="page-title">refresh</h1>
+            <div class="page-header-actions">
+                <a class="btn btn-inverse btn-round" href="http://bootstrap-table.wenzhixin.net.cn/zh-cn/"
+                   target="_blank">
+                    <i class="icon fa-language" aria-hidden="true"></i> 中文官网</a>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="panel-desc">刷新远程服务器数据，可以设置 <code>{silent: true}</code> 以静默方式刷新数据，并设置 <code>{url: newUrl}</code>
+                            更改URL。 要提供特定于此请求的查询参数，请设置 <code>{query: {foo: 'bar'}}</code>。</span>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div id="toolbar" class="mb-15">
+                        <button id="button" class="btn btn-primary">refresh</button>
+                    </div>
+                    <table id="table" data-toggle="table" data-toolbar="#toolbar" data-height="460"
+                           data-url="/public/data/examples/tables/bootstrap-table/data1.json">
+                        <thead>
+                        <tr>
+                            <th data-field="id">ID</th>
+                            <th data-field="name">条目名称</th>
+                            <th data-field="price">条目价格</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <script src="../../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script>
+     window.App.run();
+ </script>
+<script src="../../../../../public/js/examples/tables/bootstrap-table/methods/refresh.js"></script>
+</body>
+</html>

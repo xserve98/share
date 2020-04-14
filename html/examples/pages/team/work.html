@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>项目列表 02 - 页面示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../public/vendor/chartist/chartist.css">
+    <link rel="stylesheet" href="../../../../public/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="../../../../public/vendor/jquery-selective/jquery-selective.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/pages/team/work.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade page-work">
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">项目列表</h3>
+                <form class="panel-search-form" role="search">
+                    <div class="input-search">
+                        <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                        <input type="text" class="form-control" id="inputSearch" name="search" placeholder="查找项目">
+                        <i class="icon wb-loop"></i>
+                    </div>
+                </form>
+                <ul class="panel-info">
+                    <li>
+                        <div class="num blue-600">23</div>
+                        <p>招聘</p>
+                    </li>
+                    <li>
+                        <div class="num orange-600">8</div>
+                        <p>进行</p>
+                    </li>
+                    <li>
+                        <div class="num green-600">5</div>
+                        <p>完成</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>状态</th>
+                            <th>子项目</th>
+                            <th>进度</th>
+                            <th>成员</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">分岔理论及其在非线性时滞系统研究中的应用</p>
+                                    <span class="blue-grey-400">11/08/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 90%"
+                                        role="progressbar">
+                                        <span class="sr-only">90%</span>
+                                    </div>
+                                </div>
+                                <span>90%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">液晶单体构筑高迁移率新型金属共轭聚合物太阳能材料的合成与性能研究</p>
+                                    <span class="blue-grey-400">10/12/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 77%"
+                                        role="progressbar">
+                                        <span class="sr-only">77%</span>
+                                    </div>
+                                </div>
+                                <span>77%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-success">完成</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">无人驾驶车辆协同感知机制及关键技术研究</p>
+                                    <span class="blue-grey-400">15/10/2016</span>
+                                    <span class="badge badge-sm label-success">完成</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-success progress-bar-indicating" style="width: 100%"
+                                        role="progressbar">
+                                        <span class="sr-only">100%</span>
+                                    </div>
+                                </div>
+                                <span>100%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success finish">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-warning">已盈利</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">复杂工程系统全寿命健康管理模型与软件研究</p>
+                                    <span class="blue-grey-400">20/11/2016</span>
+                                    <span class="badge badge-sm label-warning">已盈利</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 48%"
+                                        role="progressbar">
+                                        <span class="sr-only">48%</span>
+                                    </div>
+                                </div>
+                                <span>48%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">翻译质量模糊评估模式研究</p>
+                                    <span class="blue-grey-400">16/08/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 97%"
+                                        role="progressbar">
+                                        <span class="sr-only">97%</span>
+                                    </div>
+                                </div>
+                                <span>97%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">金融制度竞争优势的空间依赖性与异质性研究</p>
+                                    <span class="blue-grey-400">24/09/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 80%"
+                                        role="progressbar">
+                                        <span class="sr-only">80%</span>
+                                    </div>
+                                </div>
+                                <span>80%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">脉冲时滞反应扩散系统的鲁棒控制及在宽厚钢板热加工中的应用</p>
+                                    <span class="blue-grey-400">12/11/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 65%"
+                                        role="progressbar">
+                                        <span class="sr-only">65%</span>
+                                    </div>
+                                </div>
+                                <span>65%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">β 辐射伏特电池材料基础研究</p>
+                                    <span class="blue-grey-400">21/10/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 70%"
+                                        role="progressbar">
+                                        <span class="sr-only">70%</span>
+                                    </div>
+                                </div>
+                                <span>70%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">高热电优值硅纳米线的表面调控</p>
+                                    <span class="blue-grey-400">23/10/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 62%"
+                                        role="progressbar">
+                                        <span class="sr-only">62%</span>
+                                    </div>
+                                </div>
+                                <span>62%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="work-status">
+                                <span class="badge badge-primary">招聘中</span>
+                            </td>
+                            <td class="subject">
+                                <div class="table-content">
+                                    <p class="blue-grey-500">新型纳米多孔钯系双金属(Pd-M)电催化剂的制备与应用</p>
+                                    <span class="blue-grey-400">11/11/2016</span>
+                                    <span class="badge badge-sm label-primary">招聘中</span>
+                                </div>
+                            </td>
+                            <td class="work-progress">
+                                <div class="progress progress-xs table-content">
+                                    <div class="progress-bar bg-primary progress-bar-indicating" style="width: 83%"
+                                        role="progressbar">
+                                        <span class="sr-only">83%</span>
+                                    </div>
+                                </div>
+                                <span>83%</span>
+                            </td>
+                            <td class="members">
+                                <div class="table-content">
+                                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                                </div>
+                            </td>
+                            <td class="actions">
+                                <button data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                    移除
+                                </button>
+                                <div class="table-content">
+                                    <i class="icon wb-menu" data-url="/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <nav>
+                    <ul class="pagination pagination-no-border">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="javascript:;" aria-label="上一页">
+                                <span aria-hidden="true">上一页</span>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="javascript:;">1
+                                <span class="sr-only">(当前)</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;" aria-label="下一页">
+                                <span aria-hidden="true">下一页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/chartist/chartist.js"></script>
+<script src="../../../../public/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
+<script src="../../../../public/vendor/jquery-selective/jquery-selective.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/pages/team/work.js"></script>
+</body>
+</html>

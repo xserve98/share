@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>代码编辑器 - 页面示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-treeview/bootstrap-treeview.css">
+    <link rel="stylesheet" href="../../../../public/vendor/codemirror/codemirror.css">
+    <link rel="stylesheet" href="../../../../public/vendor/codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="../../../../public/vendor/codemirror/addon/scroll/simplescrollbars.css">
+    <link rel="stylesheet" href="../../../../public/vendor/jquery-contextmenu/jquery.contextMenu.min.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/pages/general/code-editor.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page animation-fade page-code-editor">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="mCustomScrollbar">
+            <section class="page-aside-section">
+                <h4 class="page-aside-title">代码编辑器</h4>
+                <div id="filesTree"></div>
+
+                <div id="filesContextMenu">
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a tabindex="-1">
+                                <i class="icon wb-pencil" aria-hidden="true"></i> 重命名...</a>
+                        </li>
+                        <li>
+                            <a tabindex="-1">
+                                <i class="icon wb-search" aria-hidden="true"></i> 查找...</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a tabindex="-1">
+                                <i class="icon wb-file" aria-hidden="true"></i> 新建</a>
+                        </li>
+                        <li>
+                            <a tabindex="-1">
+                                <i class="icon wb-folder" aria-hidden="true"></i> 新建文件夹...</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a tabindex="-1">
+                                <i class="icon wb-close" aria-hidden="true"></i> 删除...</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page-main">
+        <div class="page-content">
+            <textarea id="code">
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.js"></script>
+</head>
+
+<body>
+
+    <p>Hi，这是一个演示页面。</p>
+
+    <p>Hello world!</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/jquery.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-.js"><\/script>')
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+            </textarea>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/vendor/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+<script src="../../../../public/vendor/codemirror/codemirror.js"></script>
+<script src="../../../../public/vendor/codemirror/addon/scroll/simplescrollbars.js"></script>
+<script src="../../../../public/vendor/codemirror/mode/xml/xml.js"></script>
+<script src="../../../../public/vendor/codemirror/mode/css/css.js"></script>
+<script src="../../../../public/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../../../../public/vendor/jquery-contextmenu/jquery.contextMenu.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/pages/general/code-editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>JsTree - UI示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../../public/vendor/jstree/jstree.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../../public/css/examples/components/advanced/animation.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">JsTree</h1>
+        <div class="page-header-actions">
+            <a class="btn btn-inverse btn-round" href="http://jstree.com/" target="_blank">
+                <i class="icon wb-link" aria-hidden="true"></i> 官网</a>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">基础示例</h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">HTML</h4>
+                            <div class="example">
+                                <div data-plugin="jstree">
+                                    <ul>
+                                        <li data-jstree='{ "opened" : true }'>父节点
+                                            <ul>
+                                                <li data-jstree='{ "selected" : true }'>子节点 1</li>
+                                                <li>子节点 2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">内嵌数据</h4>
+                            <div class="example">
+                                <div id="data"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">数据格式化</h4>
+                            <div class="example">
+                                <div id="frmt"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">Ajax</h4>
+                            <div class="example">
+                                <div id="ajax"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">懒加载</h4>
+                            <div class="example">
+                                <div id="lazy"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">从回调函数中获取数据</h4>
+                            <div class="example">
+                                <div id="clbk"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">交互和事件</h4>
+                            <div class="example">
+                                <div id="evts"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-heading">
+                    <h3 class="panel-title">使用插件</h3>
+                </div>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-warp">
+                            <h4 class="example-title">
+                                复选框
+                            </h4>
+                            <p>
+                                <code>"plugins":["checkbox"]</code>
+                            </p>
+                            <div class="example">
+                                <div id="checkbox"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-warp">
+                            <h4 class="example-title">
+                                右键菜单
+                            </h4>
+                            <p>
+                                <code>"plugins":["contextmenu"]</code>
+                            </p>
+                            <div class="example">
+                                <div id="contextmenu"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">
+                                搜索
+                            </h4>
+                            <p>
+                                <code>"plugins":["search"]</code>
+                            </p>
+                            <div class="example">
+                                <form class="form-group" role="search">
+                                    <div class="input-search">
+                                        <input type="search" class="form-control form-control-sm" id="jstreeSearch" placeholder="查找 ...">
+                                        <button type="submit" class="input-search-btn">
+                                            <i class="icon wb-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div id="search"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">
+                                拖动
+                            </h4>
+                            <p>
+                                <code>"plugins":["dnd"]</code>
+                            </p>
+                            <div class="example">
+                                <div id="dnd"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../../public/vendor/jstree/jstree.min.js"></script>
+
+    <script src="../../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../../public/js/examples/components/advanced/jstree.js"></script>
+</body>
+</html>

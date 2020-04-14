@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>一般设备管理 - 电控安全云</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+	
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel">
+		                <div class="alert" role="alert">
+						<div class="mt-5 list-inline-item">设备名称</div>
+								<input type="text" class="form-control list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+		                    <div class="mt-5 list-inline-item">设备编号</div>
+								<input type="text" class="form-control list-inline-item mr-15 w-120" id="inputPlaceholder" placeholder="">
+									<div class="mt-5 list-inline-item">设备状态</div>
+									    <select class="form-control col-lg-1 list-inline-item mr-15">
+									        <option>请选择</option>
+										    <option>调试</option>
+										    <option>使用</option>
+											<option>检修</option>
+											<option>转让停用</option>
+											<option>报废</option>
+									    </select>
+											<button type="button" class="btn btn-warning list-inline-item mt--5">
+											    搜索
+											</button>
+		                </div>
+						<div class="px-25 mt-5">
+							<button type="button" class="btn btn-primary px-20 list-inline-item">
+							    添加
+							</button>
+							<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
+							    删除
+							</button>
+							<button type="button" class="btn social-wechat px-20 list-inline-item">
+							    导出
+							</button>
+							<button type="button" class="btn btn-success px-20 list-inline-item mr-20">
+							    导入
+							</button>
+							<button type="button" class="btn social-github px-20 list-inline-item mr-20">
+							    下载模板
+							</button>
+							<button type="button" class="btn social-facebook px-20 list-inline-item mr-20">
+							    提交
+							</button>
+							<button type="button" class="btn px-20 back_hda color-fff list-inline-item mr-20" data-target="#examplePositionCenter" data-toggle="modal">
+								隐患排查上报
+							</button>
+							<div class="btn-group float-right">
+												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+											</div>
+						</div>
+		                <div class="panel-body">
+							<div class="mb-10">
+		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+		                        <thead>
+		                            <tr>
+		                                <th><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></th>
+		                                <th>设备名称</th>
+		                                <th>设备编号</th>
+		                                <th>规格型号</th>
+		                                <th>制造/销售单位</th>
+		                                <th>生产日期</th>
+										<th>数量/单位</th>
+										<th>单位联系人</th>
+										<th>联系电话</th>
+										<th width="100">设备设施状态</th>
+										<th>使用场所</th>
+										<th>责任人</th>
+										<th>检修计划</th>
+										<th>操作规章</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>xx电梯</td>
+		                                <td>
+											xxxxx
+										</td>
+		                                <td>xxxxxxxx</td>
+		                                <td>xxx电梯厂</td>
+		                                <td>2020年3月29日</td>
+										<td>2部</td>
+										<td>张三</td>
+										<td>13439868400</td>
+										<td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="调试">调试</option>
+												<option value="使用">使用</option>
+												<option value="检修">检修</option>
+												<option value="转让停用">转让停用</option>
+												<option value="报废">报废</option>
+											</select></td>
+										<td>未添加</td>
+										<td>xxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+										<td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+		                            </tr>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>xx电梯</td>
+		                                <td>
+											xxxxx
+										</td>
+		                                <td>xxxxxxxx</td>
+		                                <td>xxx电梯厂</td>
+		                                <td>2020年3月29日</td>
+										<td>2台</td>
+										<td>张三</td>
+										<td>13439868400</td>
+										<td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="调试">调试</option>
+												<option value="使用">使用</option>
+												<option value="检修">检修</option>
+												<option value="转让停用">转让停用</option>
+												<option value="报废">报废</option>
+											</select></td>
+										<td>未添加</td>
+										<td>xxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+										<td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>xx电梯</td>
+		                                <td>
+											xxxxx
+										</td>
+		                                <td>xxxxxxxx</td>
+		                                <td>xxx电梯厂</td>
+		                                <td>2020年3月29日</td>
+										<td>2部</td>
+										<td>张三</td>
+										<td>13439868400</td>
+										<td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="调试">调试</option>
+												<option value="使用">使用</option>
+												<option value="检修">检修</option>
+												<option value="转让停用">转让停用</option>
+												<option value="报废">报废</option>
+											</select></td>
+										<td>未添加</td>
+										<td>xxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+										<td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>xx电梯</td>
+		                                <td>
+											xxxxx
+										</td>
+		                                <td>xxxxxxxx</td>
+		                                <td>xxx电梯厂</td>
+		                                <td>2020年3月29日</td>
+										<td>2台</td>
+										<td>张三</td>
+										<td>13439868400</td>
+										<td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="调试">调试</option>
+												<option value="使用">使用</option>
+												<option value="检修">检修</option>
+												<option value="转让停用">转让停用</option>
+												<option value="报废">报废</option>
+											</select></td>
+										<td>未添加</td>
+										<td>xxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+										<td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>xx电梯</td>
+		                                <td>
+											xxxxx
+										</td>
+		                                <td>xxxxxxxx</td>
+		                                <td>xxx电梯厂</td>
+		                                <td>2020年3月29日</td>
+										<td>2部</td>
+										<td>张三</td>
+										<td>13439868400</td>
+										<td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="调试">调试</option>
+												<option value="使用">使用</option>
+												<option value="检修">检修</option>
+												<option value="转让停用">转让停用</option>
+												<option value="报废">报废</option>
+											</select></td>
+										<td>未添加</td>
+										<td>xxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+										<td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>xx电梯</td>
+		                                <td>
+											xxxxx
+										</td>
+		                                <td>xxxxxxxx</td>
+		                                <td>xxx电梯厂</td>
+		                                <td>2020年3月29日</td>
+										<td>2台</td>
+										<td>张三</td>
+										<td>13439868400</td>
+										<td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="调试">调试</option>
+												<option value="使用">使用</option>
+												<option value="检修">检修</option>
+												<option value="转让停用">转让停用</option>
+												<option value="报废">报废</option>
+											</select></td>
+										<td>未添加</td>
+										<td>xxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+										<td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+							</div>
+							<div class="float-left font-size-16 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+							<div class="float-right mt-5">
+							    <nav>
+							        <ul class="pagination">
+							            <li class="page-item disabled">
+							                <a class="page-link" href="javascript:;" aria-label="上一页">
+							                    <span aria-hidden="true">上一页</span>
+							                </a>
+							            </li>
+							            <li class="page-item active">
+							                <a class="page-link" href="javascript:;">1
+							                    <span class="sr-only">当前</span>
+							                </a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">2</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">3</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">4</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">5</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;" aria-label="下一页">
+							                    <span aria-hidden="true">下一页</span>
+							                </a>
+							            </li>
+							        </ul>
+							    </nav>
+							</div>
+		                </div>
+		            </div>
+		        </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">隐患排查上报</h4>
+            </div>
+            <div class="modal-body">
+                <div class="bootstrap-select">
+											<div>
+											<button type="button" class="btn btn-primary px-20 list-inline-item">
+												添加
+											</button>
+											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
+												删除
+											</button>
+											<button type="button" class="btn social-wechat px-20 list-inline-item mr-20">
+												导出
+											</button>
+											<button type="button" class="btn social-facebook px-20 list-inline-item">
+												提交
+											</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+													<thead>
+														<tr>
+															<th width="60"><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></th>
+															<th>排查日期</th>
+															<th>排查项目数量</th>
+															<th>发现隐患数量</th>
+															<th>整改隐患数量</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th width="60"><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></th>
+															<td>2020-3-17 15:46:27</td>
+															<td>12</td>
+															<td>1</td>
+															<td>3</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">请上传检修计划</h4>
+            </div>
+            <div class="modal-body">
+                <div class="bootstrap-select">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="h_f pt-10">PDF扫描件</div>
+											<div class="mt-5">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>附件大小(k)</th>
+															<th>上传时间</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td>375.11</td>
+															<td>2020-01-02 11:35:38</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															查看
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															实施
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">请上传操作规章</h4>
+            </div>
+            <div class="modal-body">
+                <div class="bootstrap-select">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="h_f pt-10">PDF扫描件</div>
+											<div class="mt-5">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>附件大小(k)</th>
+															<th>上传时间</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td>375.11</td>
+															<td>2020-01-02 11:35:38</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															查看
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															实施
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+</body>
+</html>

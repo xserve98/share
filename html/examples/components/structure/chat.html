@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天窗口 - UI示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/components/structure/chat.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+
+<div class="page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">聊天窗口</h1>
+        <div class="page-header-actions">
+            <form>
+                <div class="input-search input-search-dark">
+                    <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                    <input type="text" class="form-control" name="" placeholder="搜索...">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="panel">
+            <div class="panel-body">
+                <div class="chat-box">
+                    <div class="chats">
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right"
+                                   title="June Lane">
+                                    <img src="../../../../public/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>
+                                        骚年，可以交个朋友吗？ </p>
+                                    <time class="chat-time" datetime="2016-06-01T08:30">上午 8:30</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title="Edward Fletcher">
+                                    <img src="../../../../public/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>
+                                        我有女朋友了 </p>
+                                    <time class="chat-time" datetime="2016-06-01T08:35">上午 8:35</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right"
+                                   title="June Lane">
+                                    <img src="../../../../public/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>
+                                        那你介意再多交一个女朋友吗？ </p>
+                                    <time class="chat-time" datetime="2016-06-01T08:40">上午 8:40</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title="Edward Fletcher">
+                                    <img src="../../../../public/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>介意</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right"
+                                   title="June Lane">
+                                    <img src="../../../../public/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>那你介意我喜欢你吗？</p>
+                                    <time class="chat-time" datetime="2016-06-01T09:00">上午 9:00</time>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title="Edward Fletcher">
+                                    <img src="../../../../public/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>介意</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right"
+                                   title="June Lane">
+                                    <img src="../../../../public/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>那你介意介意你介意我吗？</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title="Edward Fletcher">
+                                    <img src="../../../../public/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>介意</p>
+                                    <p>不介……</p>
+                                    <p>额</p>
+                                    <p>艹</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <form class="mb-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="说点什么吧…">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">发送</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>笔记 - UI示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+	
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+    
+    <!-- 插件 CSS -->
+    
+    
+    <!-- Page CSS -->
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel">
+		                <div class="panel-heading">
+		                    <h3 class="panel-title">您有<span class="h_f">3</span>个培训项目未完成，<span class="h_f">1</span>个培训项目已过期</h3>
+		                </div>
+		                <div class="alert" role="alert">
+		                    <div class="mt-5 list-inline-item">名称</div>
+								<input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="请输入培训名称">
+							<div class="mt-5 list-inline-item">公司名称</div>
+                                <select class="form-control col-lg-1 list-inline-item mr-15">
+                                    <option>京东方</option>
+                                    <option>京东方1</option>
+                                    <option>京东方2</option>
+                                    <option>京东方3</option>
+                                    <option>京东方4</option>
+                                </select>
+								<div class="mt-5 list-inline-item">计划制定机构</div>
+								    <select class="form-control col-lg-1 list-inline-item mr-15">
+								        <option>京东方</option>
+								        <option>京东方1</option>
+								        <option>京东方2</option>
+								        <option>京东方3</option>
+								        <option>京东方4</option>
+								    </select>
+									<div class="mt-5 list-inline-item">培训对象机构</div>
+									    <select class="form-control col-lg-1 list-inline-item mr-15">
+									        <option>京东方 - 工程部</option>
+									        <option>京东方1</option>
+									        <option>京东方2</option>
+									        <option>京东方3</option>
+									        <option>京东方4</option>
+									    </select>
+										<div class="mt-5 list-inline-item">状态</div>
+										    <select class="form-control col-lg-1 list-inline-item mr-15">
+										        <option>未开始</option>
+										        <option>未完成</option>
+										        <option>已过期</option>
+										        <option>已完成</option>
+										    </select>
+											<button type="button" class="btn btn-warning list-inline-item mt--5">
+											    查询
+											</button>
+		                </div>
+						<div class="px-25 mt-5">
+							<button type="button" class="btn btn-primary px-20 list-inline-item">
+							    添加
+							</button>
+							<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
+							    删除
+							</button>
+							<button type="button" class="btn social-wechat px-20 list-inline-item">
+							    导出
+							</button>
+							<button type="button" class="btn btn-success px-20 list-inline-item mr-20">
+							    导入
+							</button>
+							<button type="button" class="btn social-github px-20 list-inline-item mr-20">
+							    下载模板
+							</button>
+							<button type="button" class="btn social-youtube px-20 list-inline-item">
+							    保存
+							</button>
+							<button type="button" class="btn social-facebook px-20 list-inline-item">
+							    提交
+							</button>
+						</div>
+		                <div class="panel-body">
+		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+		                        <thead>
+		                            <tr>
+		                                <th><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></th>
+		                                <th>培训编号</th>
+		                                <th>公司</th>
+		                                <th>计划制定机构</th>
+		                                <th>培训对象机构</th>
+		                                <th>培训主题</th>
+										<th>学分</th>
+										<th>开始时间</th>
+										<th>结束时间</th>
+										<th>状态</th>
+										<th>操作</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>1223320211</td>
+		                                <td>京东方</td>
+		                                <td>京东方</td>
+		                                <td>京东方-工程部</td>
+		                                <td>安全知识</td>
+										<td>2</td>
+										<td>2019-12-27 16:00:00</td>
+										<td>2019-12-29 16:00:00</td>
+										<td><span class="color-3c">未开始</span></td>
+										<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+                                        查看
+                                    </button>
+                                    <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+                                        实施
+                                    </button>
+                                    <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+                                        删除
+                                    </button></td>
+		                            </tr>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+		                                            <input class="selectable-all" type="checkbox">
+		                                            <label></label>
+		                                        </span></td>
+		                                <td>1223320211</td>
+		                                <td>京东方</td>
+		                                <td>京东方</td>
+		                                <td>京东方-工程部</td>
+		                                <td>安全知识</td>
+		                            	<td>2</td>
+		                            	<td>2019-12-27 16:00:00</td>
+		                            	<td>2019-12-29 16:00:00</td>
+		                            	<td><span class="h_f">未完成</span></td>
+		                            	<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+		                                查看
+		                            </button>
+		                            <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+		                                实施
+		                            </button>
+		                            <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+		                                删除
+		                            </button></td>
+		                            </tr>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+		                                            <input class="selectable-all" type="checkbox">
+		                                            <label></label>
+		                                        </span></td>
+		                                <td>1223320211</td>
+		                                <td>京东方</td>
+		                                <td>京东方</td>
+		                                <td>京东方-工程部</td>
+		                                <td>安全知识</td>
+		                            	<td>2</td>
+		                            	<td>2019-12-27 16:00:00</td>
+		                            	<td>2019-12-29 16:00:00</td>
+		                            	<td><span class="color-d3">已过期</span></td>
+		                            	<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+		                                查看
+		                            </button>
+		                            <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+		                                实施
+		                            </button>
+		                            <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+		                                删除
+		                            </button></td>
+		                            </tr>
+									<tr>
+									    <td><span class="checkbox-custom checkbox-primary">
+									                <input class="selectable-all" type="checkbox">
+									                <label></label>
+									            </span></td>
+									    <td>1223320211</td>
+									    <td>京东方</td>
+									    <td>京东方</td>
+									    <td>京东方-工程部</td>
+									    <td>安全知识</td>
+										<td>2</td>
+										<td>2019-12-27 16:00:00</td>
+										<td>2019-12-29 16:00:00</td>
+										<td><span class="color-08">已完成</span></td>
+										<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+									    查看
+									</button>
+									<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+									    实施
+									</button>
+									<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+									    删除
+									</button></td>
+									</tr>
+		                        </tbody>
+		                    </table>
+							<div class="float-left font-size-16 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+							<div class="float-right mt-5">
+							    <nav>
+							        <ul class="pagination">
+							            <li class="page-item disabled">
+							                <a class="page-link" href="javascript:;" aria-label="上一页">
+							                    <span aria-hidden="true">上一页</span>
+							                </a>
+							            </li>
+							            <li class="page-item active">
+							                <a class="page-link" href="javascript:;">1
+							                    <span class="sr-only">当前</span>
+							                </a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">2</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">3</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">4</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">5</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;" aria-label="下一页">
+							                    <span aria-hidden="true">下一页</span>
+							                </a>
+							            </li>
+							        </ul>
+							    </nav>
+							</div>
+		                </div>
+		            </div>
+		        </div>
+</div>
+<!-- 插件 -->
+    <script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+
+    <script src="../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+</body>
+</html>

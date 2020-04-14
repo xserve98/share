@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>角色管理 - 系统设置 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../public/vendor/jstree/jstree.css">
+    <link rel="stylesheet" href="../../public/vendor/datatables-bootstrap/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="../../public/vendor/datatables-responsive/dataTables.responsive.css">
+    <link rel="stylesheet" href="../../public/vendor/select2/select2.css">
+    
+    <!-- Page CSS -->
+    
+    <link rel="stylesheet" href="../../public/css/system/role.css">
+    
+    <!-- 插件 -->
+    <script src="../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page page-full animation-fade page-role">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full">
+            <section class="page-aside-section">
+                <div class="page-aside-top">
+                    <div class="input-search">
+                        <button type="submit" class="input-search-btn btn-icon">
+                            <i class="icon wb-search" aria-hidden="true"></i>
+                        </button>
+                        <input type="text" class="form-control" id="roleTreeSearch" name="" placeholder="搜素角色或成员">
+                    </div>
+                    <div class="dropdown" id="operateDropdown">
+                        <button type="button" class="btn btn-outline btn-icon btn-default btn-sm" data-toggle="dropdown"
+                                aria-expanded="false">
+                            <i class="icon fa-ellipsis-h"></i>
+                        </button>
+                        <div class="dropdown-menu mt-3 mr-15" role="menu">
+                            <a class="dropdown-item add-group" href="javascript:;" data-target="#roleGroupModal"
+                               data-toggle="modal"
+                               role="menuitem">
+                                添加分组
+                            </a>
+                            <a class="dropdown-item alter-group" href="javascript:;">
+                                编辑分组
+                            </a>
+                            <a class="dropdown-item delete-group delete-group" href="javascript:;">
+                                删除分组
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item add-role" href="javascript:;" data-target="#roleModal"
+                               data-toggle="modal" role="menuitem">
+                                添加角色
+                            </a>
+                            <a class="dropdown-item alter-role" href="javascript:;">
+                                编辑角色
+                            </a>
+                            <a class="dropdown-item delete-role" href="javascript:;" role="menuitem">
+                                删除角色
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page-aside-section role-tree">
+                <div class="h-full" data-plugin="mCustomScrollbar">
+                    <div id="roleTree"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page-main">
+        <div class="page-header page-header-bordered mb-0">
+            <div class="page-title" id="depMsg">
+                <span></span>
+            </div>
+            <div class="page-header-actions">
+                <button class="btn pr-10 btn-md btn-default btn-outline add-member">
+                    <i class="icon fa-plus"></i>添加成员
+                </button>
+                <button class="btn pr-10 btn-md btn-default btn-outline delete-member">
+                    <i class="icon fa-minus"></i>移除成员
+                </button>
+            </div>
+        </div>
+        <div class="page-content p-0 bg-white">
+            <table class="table table-hover dataTable w-full border-top border-bottom text-nowrap" id="roleMemberTable"
+                   data-column-defs='[{ "orderable": false, "targets": 0},{ "orderable": false, "targets": 6}]'
+                   data-order='[[1, "desc"]]'>
+                <thead>
+                <tr>
+                    <th width="20">
+                        <div class="checkbox-custom checkbox-primary user-select-all">
+                            <input type="checkbox" class="user-checkbox selectable-all">
+                            <label></label>
+                        </div>
+                    </th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>部门</th>
+                    <th>手机</th>
+                    <th>登录账号</th>
+                    <th>邮箱</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th width="20">
+                        <div class="checkbox-custom checkbox-primary user-select-all">
+                            <input type="checkbox" class="user-checkbox selectable-all">
+                            <label></label>
+                        </div>
+                    </th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>部门</th>
+                    <th>手机</th>
+                    <th>登录账号</th>
+                    <th>邮箱</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="roleGroupModal" aria-hidden="true" aria-labelledby="roleGroupModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog">
+        <form class="modal-content form-horizontal" id="groupForm">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">添加角色分组</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row mt-25">
+                    <input type="hidden" name="id">
+                    <label class="col-md-3 col-form-label text-right">分组名称：</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="groupName" maxlength="16">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="roleModal" aria-hidden="true" aria-labelledby="roleModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <form class="modal-content" id="roleForm">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">添加角色</h4>
+            </div>
+            <div class="modal-body">
+                <div class="p-10">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">角色名称：</label>
+                            <input type="hidden" name="id" id="id">
+                            <input type="text" class="form-control mt-5" name="roleName" id="roleName" maxlength="16">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">所属分组：</label>
+                            <div class="mt-5"><select class="form-control" name="roleGroupId" id="roleGroup"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">功能权限：</label>
+                        <div class="mt-5" id="permissionLists"></div>
+                        <script id="permissionItemTpl" type="text/html">
+                            <% for(var i = 0; i < permissionLists.length; i++){ %>
+                            <% var permission = permissionLists[i]; %>
+                            <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                <% if (permission.selected) { %>
+                                <input type="checkbox" id="<%= permission.id %>" name="permissionIds" checked="checked"
+                                       value="<%= permission.id %>">
+                                <% } else { %>
+                                <input type="checkbox" id="<%= permission.id %>" name="permissionIds"
+                                       value="<%= permission.id %>">
+                                <% } %>
+                                <label for="<%= permission.id %>"><%= permission.text %></label>
+                            </div>
+                            <% } %>
+                        </script>
+                    </div>
+                    <div class="form-group margin-top-10">
+                        <label class="control-label">数据权限：</label>
+                        <div class="permission-tree" data-plugin="mCustomScrollbar">
+                            <div class="tree-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="inviteModal" aria-hidden="false" aria-labelledby="inviteModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">选择成员</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group btn-group-sm mb-10" id="userTreeType">
+                                    <button class="btn btn-default btn-outline active" data-type="pos">按部门</button>
+                                    <button class="btn btn-default btn-outline" data-type="role">按角色</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-search">
+                                    <button type="submit" class="input-search-btn btn-sm">
+                                        <i class="icon wb-search" aria-hidden="true"></i>
+                                    </button>
+                                    <input type="text" class="form-control form-control-sm" id="userTreeSearch" name=""
+                                           placeholder="查找成员">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="treeTypeView">
+                            <div class="party-tree mt-10 h-250" data-target="pos" data-plugin="mCustomScrollbar">
+                                <div class="type-tree" id="posTreeView"></div>
+                            </div>
+                            <div class="party-tree mt-10 h-250" hidden="hidden" data-target="role" data-plugin="mCustomScrollbar">
+                                <div class="type-tree" id="roleTreeView"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="party-selected">
+                            <p class="pl-10 mt-3">已选择的成员：</p>
+                            <div class="h-250 mt-20" data-plugin="mCustomScrollbar">
+                                <div class="list-group list-group-full" id="selectedMember"></div>
+                            </div>
+                            <script id="selectedMemberTpl" type="text/html">
+                                <% for(var i = 0; i < personLists.length; i++){ %>
+                                <% var person = personLists[i]; %>
+                                <a class="list-group-item" href="javascript:;" id="<%= person.id %>">
+                                    <i class="icon wb-user"></i><%= person.name %>
+                                    <i class="icon wb-close float-right del-selected"></i>
+                                </a>
+                                <% } %>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="saveMember">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 插件 -->
+    <script src="../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../public/vendor/artTemplate/template-web.js"></script>
+<script src="../../public/vendor/jstree/jstree.min.js"></script>
+<script src="../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../public/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../../public/vendor/datatables-bootstrap/dataTables.bootstrap4.js"></script>
+<script src="../../public/vendor/datatables-responsive/dataTables.responsive.min.js"></script>
+<script src="../../public/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../public/vendor/jquery-validation/localization/messages_zh.js"></script>
+
+<script src="../../public/themes/global/js/plugins/selectable.js"></script>
+    <script src="../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../public/js/system/role.js"></script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>安全生产管理制度 - 电控安全云</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+	
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+var obj = $('#sticky');
+var offset = obj.offset();
+var topOffset = offset.top;
+var leftOffset = offset.left;
+var marginTop = obj.css("marginTop");
+var top = obj.css("top");
+
+$(window).scroll(function() {
+var scrollTop = $(window).scrollTop();
+
+	if (scrollTop >= topOffset){
+
+		obj.css({
+			marginTop: 0,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 40px)',
+			position: 'fixed',
+		});
+	}
+
+	if (scrollTop < topOffset){
+
+		obj.css({
+			marginTop: marginTop,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 0px)',
+			position: 'relative',
+		});
+	}
+});
+});
+
+</script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel pt-20">
+							<div class="px-25 pt-5 back_f">
+											<button type="button" class="btn btn-primary px-20 list-inline-item">
+												添加
+											</button>
+											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
+												删除
+											</button>
+											<button type="button" class="btn social-facebook px-20 list-inline-item">
+												提交
+											</button>
+											<div class="btn-group float-right">
+												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+											</div>
+										</div>
+						<div class="panel-body">
+		                    <div class="place">
+								<div class="pb-5 clearfix">
+		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+		                        <thead>
+		                            <tr>
+		                                <th width="60"><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></th>
+		                                <th>文件名称</th>
+		                                <th>发布日期</th>
+		                                <th>下次修订日期</th>
+		                                <th>修订人员</th>
+										<th width="300">关联项目</th>
+		                                <th width="150">内容</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>安全生产管理制度</td>
+		                                <td>2019-1-2</td>
+		                                <td>2020-1-19</td>
+		                                <td>李xx</td>
+										<td>
+											<div class="w-300">
+											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+												<option value="安全管理机构和人员">安全管理机构和人员</option>
+												<option value="消防信息管理">消防信息管理</option>
+												<option value="一般设备管理">一般设备管理</option>
+												<option value="特种设备管理">特种设备管理</option>
+												<option value="特种作业人员管理">特种作业人员管理</option>
+												<option value="职业卫生管理">职业卫生管理</option>
+												<option value="安全投入管理">安全投入管理</option>
+												<option value="危险化学品管理">危险化学品管理</option>
+												<option value="相关方管理">相关方管理</option>
+											</select>
+											</div>
+										</td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />未上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>安全生产事故隐患排查治理制度</td>
+		                                <td>2019-1-2</td>
+		                                <td>2020-1-19</td>
+		                                <td>李xx</td>
+										<td>
+											<div class="w-300">
+											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+												<option value="安全管理机构和人员">安全管理机构和人员</option>
+												<option value="消防信息管理">消防信息管理</option>
+												<option value="一般设备管理">一般设备管理</option>
+												<option value="特种设备管理">特种设备管理</option>
+												<option value="特种作业人员管理">特种作业人员管理</option>
+												<option value="职业卫生管理">职业卫生管理</option>
+												<option value="安全投入管理">安全投入管理</option>
+												<option value="危险化学品管理">危险化学品管理</option>
+												<option value="相关方管理">相关方管理</option>
+											</select>
+											</div>
+										</td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>安全生产教育和培训制度</td>
+		                                <td>2019-1-2</td>
+		                                <td>2020-1-19</td>
+		                                <td>李xx</td>
+										<td>
+											<div class="w-300">
+											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+												<option value="安全管理机构和人员">安全管理机构和人员</option>
+												<option value="消防信息管理">消防信息管理</option>
+												<option value="一般设备管理">一般设备管理</option>
+												<option value="特种设备管理">特种设备管理</option>
+												<option value="特种作业人员管理">特种作业人员管理</option>
+												<option value="职业卫生管理">职业卫生管理</option>
+												<option value="安全投入管理">安全投入管理</option>
+												<option value="危险化学品管理">危险化学品管理</option>
+												<option value="相关方管理">相关方管理</option>
+											</select>
+											</div>
+										</td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>安全生产会议制度</td>
+		                                <td>2019-1-2</td>
+		                                <td>2020-1-19</td>
+		                                <td>李xx</td>
+										<td>
+											<div class="w-300">
+											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+												<option value="安全管理机构和人员">安全管理机构和人员</option>
+												<option value="消防信息管理">消防信息管理</option>
+												<option value="一般设备管理">一般设备管理</option>
+												<option value="特种设备管理">特种设备管理</option>
+												<option value="特种作业人员管理">特种作业人员管理</option>
+												<option value="职业卫生管理">职业卫生管理</option>
+												<option value="安全投入管理">安全投入管理</option>
+												<option value="危险化学品管理">危险化学品管理</option>
+												<option value="相关方管理">相关方管理</option>
+											</select>
+											</div>
+										</td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter3" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+		                                <td>安全投入管理制度</td>
+		                                <td>2019-1-2</td>
+		                                <td>2020-1-19</td>
+		                                <td>李xx</td>
+										<td>
+											<div class="w-300">
+											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+												<option value="安全管理机构和人员">安全管理机构和人员</option>
+												<option value="消防信息管理">消防信息管理</option>
+												<option value="一般设备管理">一般设备管理</option>
+												<option value="特种设备管理">特种设备管理</option>
+												<option value="特种作业人员管理">特种作业人员管理</option>
+												<option value="职业卫生管理">职业卫生管理</option>
+												<option value="安全投入管理">安全投入管理</option>
+												<option value="危险化学品管理">危险化学品管理</option>
+												<option value="相关方管理">相关方管理</option>
+											</select>
+											</div>
+										</td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter4" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+							<div class="float-right mt-5">
+							    <nav>
+							        <ul class="pagination">
+							            <li class="page-item disabled">
+							                <a class="page-link" href="javascript:;" aria-label="上一页">
+							                    <span aria-hidden="true">上一页</span>
+							                </a>
+							            </li>
+							            <li class="page-item active">
+							                <a class="page-link" href="javascript:;">1
+							                    <span class="sr-only">当前</span>
+							                </a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">2</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">3</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">4</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">5</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;" aria-label="下一页">
+							                    <span aria-hidden="true">下一页</span>
+							                </a>
+							            </li>
+							        </ul>
+							    </nav>
+							</div>
+		                </div>
+								
+							</div>
+		                </div>
+		            </div>
+		        </div>
+</div>
+
+
+
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">安全生产管理制度</h4>
+            </div>
+                <div class="bootstrap-select">
+				<div id="sticky">
+						<div id="carbonads-container">
+											<div class="text-center xian_b py-20 back_f">
+											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
+												保存草稿
+											</button>
+											<button type="button" class="btn social-facebook px-20 list-inline-item">
+												提交
+											</button>
+											</div>
+											</div>
+											</div>
+											<div class="modal-body h-450">
+												<h3 class="font-size-16 font-weight-600 my-0">1、目的</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">2、适用范围</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">3、编制依据</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">4、主要负责人职责</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">5、安全管理机构或人员职责</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">6、各部门职责</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">7、各岗位职责</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">8、安全生产责任考核及奖惩</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+											</div>
+											</div>
+            </div>
+    </div>
+</div>
+
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">安全生产事故隐患排查治理制度录入</h4>
+            </div>
+                <div class="bootstrap-select">
+				<div id="sticky">
+						<div id="carbonads-container">
+											<div class="text-center xian_b py-20 back_f">
+											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
+												保存草稿
+											</button>
+											<button type="button" class="btn social-facebook px-20 list-inline-item">
+												提交
+											</button>
+											</div>
+											</div>
+											</div>
+											<div class="modal-body pt-20 h-450">
+												<h3 class="font-size-16 font-weight-600 my-0">1、目的</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">2、适用范围</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">3、引用文件</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">4、责任部门及职责分工</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">5、管理程序</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="需要包含，排查范围、内容、方法和周期，事故隐患的排查、登记、报告、监控、治理、验收各环节过程管理各个环节" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">6、记录档案管理要求</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+											</div>
+											</div>
+            </div>
+    </div>
+</div>
+
+<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">安全生产教育和培训制度录入</h4>
+            </div>
+                <div class="bootstrap-select">
+				<div id="sticky">
+						<div id="carbonads-container">
+											<div class="text-center xian_b py-20 back_f">
+											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
+												保存草稿
+											</button>
+											<button type="button" class="btn social-facebook px-20 list-inline-item">
+												提交
+											</button>
+											</div>
+											</div>
+											</div>
+											<div class="modal-body pt-20 h-450">
+												<h3 class="font-size-16 font-weight-600 my-0">1、培训目的</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">2、适用范围</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">3、引用文件</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">4、责任部门及职责分工</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">5、管理程序</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="需要对培训计划、形式、内容、学时做出要求" rows="3"></textarea>
+												<h3 class="font-size-16 font-weight-600 my-0 mt-10">6、记录档案管理要求</h3>
+												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+											</div>
+											</div>
+            </div>
+    </div>
+</div>
+
+
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+</body>
+</html>

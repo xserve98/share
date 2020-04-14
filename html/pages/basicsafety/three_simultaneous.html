@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>建设项目三同时 - 电控安全云</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+
+    <!-- 插件 CSS -->
+
+    <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+
+
+    <!-- 插件 CSS -->
+
+    <link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script>
+$(function() {
+    var step = 0;
+    var $stepItem = $('.step-progress .step-slider .step-slider-item');
+	var $stepForm = $('.step-content-body');
+    var $nextBtn = $('.step-content .step-content-foot button[name="next"]');
+    var $previousBtn = $('.step-content .step-content-foot button[name="prev"]');
+    var $finishBtn = $('.step-content .step-content-foot button[name="finish"]');
+
+	checkFromForm(step, step);
+
+    // Step Next
+	$nextBtn.on('click', function() {
+		var toStep = step;
+        if (($stepItem.length - 1) < step) {
+			toStep = $stepItem.length - 1;
+        } else {
+			toStep++;
+		}
+		checkFromForm(step, toStep);
+    });
+
+    // Step Last
+	$finishBtn.on('click', function() {
+    });
+
+    // Step Previous
+	$previousBtn.on('click', function() {
+		var toStep = step;
+        if (toStep <= 0) {
+			toStep = 0;
+		} else {
+			toStep--;
+		}
+		checkFromForm(step, toStep);
+    });
+
+	// Step click index
+	$stepItem.on('click', function() {
+		checkFromForm(step, $stepItem.index($(this)));
+	});
+
+
+	// 需要验证的数组
+	var vailidateArr = [];
+
+	function checkFromForm(from, to) {
+
+		setStep(to);
+		// if (from !== to) {
+		// 	// 校验表单，并设置提示保存
+		// 	// from
+		// 	var tempStep = $stepForm[from];
+		// 	var tempData = getFormDataObject(tempStep);
+		// 	var tempComplete = false;
+		// 	$.each(tempData, function (key, value) {
+		// 		if($('[name='+key+']').attr('required') && !!value) {
+		// 			tempComplete = true;
+		// 		}
+		// 	});
+		// 	if (!tempComplete) {
+		// 		layer.open({
+		// 			content: '表单没有填写完整'
+		// 			,btn: ['', '按钮二', '按钮三']
+		// 			,yes: function(index, layero){
+		// 				//按钮【按钮一】的回调
+		// 			}
+		// 			,btn2: function(index, layero){
+		// 				//按钮【按钮二】的回调
+		//
+		// 				//return false 开启该代码可禁止点击该按钮关闭
+		// 			}
+		// 			,btn3: function(index, layero){
+		// 				//按钮【按钮三】的回调
+		//
+		// 				//return false 开启该代码可禁止点击该按钮关闭
+		// 			}
+		// 			,cancel: function(){
+		// 				//右上角关闭回调
+		//
+		// 				//return false 开启该代码可禁止点击该按钮关闭
+		// 			}
+		// 		});
+		// 	} else {
+		// 		setStep(to);
+		// 	}
+		// } else {
+		// 	setStep(to);
+		// }
+
+
+	}
+
+	function checkFormComplete() {
+
+	}
+
+	function setStep(val) {
+		saveFromData();
+		step = val;
+		// 按钮的控制
+		$nextBtn.hide();
+		$previousBtn.hide();
+		$finishBtn.hide();
+		if (step <= 0) {
+			$nextBtn.show();
+		} else if (step >= ($stepItem.length - 1)) {
+			$previousBtn.show();
+			$finishBtn.show();
+		} else {
+			$nextBtn.show();
+			$previousBtn.show();
+		}
+
+		// 进度条
+		$($stepItem).removeClass('active');
+		$($stepItem[step]).addClass('active');
+
+		// 表单内容
+		$('.step-content-body').addClass('out');
+		$('#' + $stepItem[step].dataset.id).removeClass('out');
+
+		// 验证表单完整性
+		formCheck();
+	}
+
+	$('#examplePositionCenter1').on('hidden.bs.modal', function () {
+		debugger
+		if (!formCheck()) {
+			layer.msg('信息没有填写完整')
+		}
+	});
+
+	function saveFromData() {
+		console.log('保存成功');
+	}
+
+	function formCheckIsUpdate() {
+		for(var i = 0; i < $stepForm.length; i++) {
+			var tempStep = $stepForm[i];
+			var tempData = getFormDataObject(tempStep);
+			var tempComplete = true;
+			$.each(tempData, function (key, value) {
+				if ($('[name=' + key + ']').attr('required') && !value) {
+					tempComplete = false;
+					resultComplete = false;
+				}
+			});
+			if (tempComplete) {
+				$($stepItem[i]).addClass('complete');
+			} else {
+				$($stepItem[i]).removeClass('complete');
+
+			}
+		}
+	}
+
+	// 验证表单，并设置灰色
+	function formCheck() {
+		var resultComplete = true;
+		for(var i = 0; i < $stepForm.length; i++) {
+			var tempStep = $stepForm[i];
+			var tempData = getFormDataObject(tempStep);
+			var tempComplete = true;
+			$.each(tempData, function (key, value) {
+				if($('[name='+key+']').attr('required') && !value) {
+					tempComplete = false;
+					resultComplete = false;
+				}
+			});
+			if(tempComplete) {
+				$($stepItem[i]).addClass('complete');
+			} else {
+				$($stepItem[i]).removeClass('complete');
+			}
+		}
+		return resultComplete;
+	}
+
+	function getFormDataObject(formId) {
+		var formContent = $(formId).serializeArray();
+		var data = {};
+		if (!!formContent) {
+			$.each(formContent, function() {
+				data[this.name] = this.value;
+			});
+		}
+		return data;
+	}
+});
+</script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel">
+						<div class="px-25 pt-25">
+							<button type="button" class="btn btn-primary px-20 list-inline-item">
+							    添加
+							</button>
+							<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
+							    删除
+							</button>
+							<button type="button" class="btn social-facebook px-20 list-inline-item mr-20">
+							    提交
+							</button>
+							<div class="btn-group float-right">
+												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+											</div>
+						</div>
+		                <div class="panel-body">
+							<div class="mb-10">
+		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+		                        <thead>
+		                            <tr>
+		                                <th><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></th>
+		                                <th>建设项目名称</th>
+		                                <th>建设项目地址</th>
+		                                <th>建设项目性质</th>
+		                                <th>初步设计单位</th>
+		                                <th>管理公司</th>
+										<th>监理公司</th>
+										<th>施工单位</th>
+										<th>资质文件</th>
+										<th>相关文件</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />待补充</span></td>
+		                            </tr>
+		                            <tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />待补充</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />待补充</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />待补充</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+		                            </tr>
+									<tr>
+		                                <td><span class="checkbox-custom checkbox-primary">
+                                                    <input class="selectable-all" type="checkbox">
+                                                    <label></label>
+                                                </span></td>
+										<td>xxxxxxxxxxx</td>
+		                                <td>xxxxx</td>
+		                                <td><select class="form-control list-inline-item w-100 sh-19">
+												<option value="请选择">请选择</option>
+												<option value="自行作业">自行作业</option>
+												<option value="外包作业">外包作业</option>
+												<option value="无作业">无作业</option>
+											</select></td>
+		                                <td>xxxxxxx</td>
+		                                <td>xxxxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td>xxxxxxxx</td>
+										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />待补充</span></td>
+		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />待补充</span></td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+							</div>
+							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+							<div class="float-right mt-5">
+							    <nav>
+							        <ul class="pagination">
+							            <li class="page-item disabled">
+							                <a class="page-link" href="javascript:;" aria-label="上一页">
+							                    <span aria-hidden="true">上一页</span>
+							                </a>
+							            </li>
+							            <li class="page-item active">
+							                <a class="page-link" href="javascript:;">1
+							                    <span class="sr-only">当前</span>
+							                </a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">2</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">3</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">4</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;">5</a>
+							            </li>
+							            <li class="page-item">
+							                <a class="page-link" href="javascript:;" aria-label="下一页">
+							                    <span aria-hidden="true">下一页</span>
+							                </a>
+							            </li>
+							        </ul>
+							    </nav>
+							</div>
+		                </div>
+		            </div>
+		        </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center max-width-990">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">相关文件</h4>
+            </div>
+            <div class="card step-progress">
+    <div class="step-slider">
+        <div data-id="step1" class="step-slider-item">立项阶段</div>
+		<div class="text-center py-15"><img src="../../../public/images/xjt.png" alt="" /></div>
+        <div data-id="step2" class="step-slider-item">初步设计阶段</div>
+		<div class="text-center py-15"><img src="../../../public/images/xjt.png" alt="" /></div>
+        <div data-id="step3" class="step-slider-item">施工阶段</div>
+		<div class="text-center py-15"><img src="../../../public/images/xjt.png" alt="" /></div>
+		<div data-id="step4" class="step-slider-item">试运行阶段</div>
+		<div class="text-center py-15"><img src="../../../public/images/xjt.png" alt="" /></div>
+		<div data-id="step5" class="step-slider-item">竣工验收阶段</div>
+    </div>
+    <div class="step-content">
+	<div class="step-content-foot my-20 pb-20 xian_b text-center">
+            <button type="button" class="active" name="prev">返回，上一步</button>
+            <button type="button" class="active" name="next">提交，下一步</button>
+            <button type="button" class="active out" name="finish">完成</button>
+        </div>
+        <form id="step1" class="step-content-body out" style="height:392px;">
+			<div class="example" data-plugin="mCustomScrollbar" style=" height:392px; border:0; padding:0;">
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700">可行性研究报告</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" name="test" required="true" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<h3 class="mt-0 mb-20 font-size-14 font-weight-700">报告上传</h3>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>立项批复文件</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700">地震安全性评价</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" name="test" required="true" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>地质灾害危险性评估</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" name="test" required="true" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>职业病危害评价报告</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" name="test" required="true" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">评价资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>环境影响评价报告</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" name="test" required="true" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">评价资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>安全预评价/安全生产条件和设施综合分析报告（二选一）</h2>
+			<div class="pb-20">
+				<div class="mt-5 list-inline-item width-52 text-right">项目</div>
+				<select class="form-control col-lg-1 list-inline-item mr-15 max-width-297">
+									        <option>请选择</option>
+										    <option>安全预评价</option>
+										    <option>安全生产条件和设施进行综合分析报告</option>
+									    </select>
+			</div>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" name="test" required="true" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">评价资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			</div>
+		</form>
+        <div id="step2" class="step-content-body out" style="height:392px;">
+			<div class="example" data-plugin="mCustomScrollbar" style=" height:392px; border:0; padding:0;">
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>总平面布置图</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">设计单位资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">总平面布置图</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>安全设施专篇</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>消防设计专篇</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>职业卫生防护设施专篇</h2>
+			<div class="wb-100 float-left pb-20">
+				<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			</div>
+		</div>
+        <div id="step3" class="step-content-body out">
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>安全技术措施和施工现场临时用电方案</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700">危险性较大分部分项工程专项施工方案</h2>
+			<div class="wb-100 float-left pb-20 mb-20">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+		</div>
+		<div id="step4" class="step-content-body out">
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700">试运行方案</h2>
+			<div class="wb-100 float-left pb-20">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+		</div>
+		<div id="step5" class="step-content-body out" style="height:392px;">
+			<div class="example" data-plugin="mCustomScrollbar" style=" height:392px; border:0; padding:0;">
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>防雷接地检测</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">检测资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>电气防火检测</h2>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">检测资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>消防设施检测</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>安全验收评价或安全设施验收报告（二选一）</h2>
+			<div class="pb-20">
+				<div class="mt-5 list-inline-item width-52 text-right">项目</div>
+				<select class="form-control col-lg-1 list-inline-item mr-15 max-width-297">
+									        <option>请选择</option>
+										    <option>安全预评价</option>
+										    <option>安全生产条件和设施进行综合分析报告</option>
+									    </select>
+			</div>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">评价资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>职业病危害控制效果</h2>
+			<div class="pb-20">
+				<div class="mt-5 list-inline-item width-52 text-right">项目</div>
+				<select class="form-control col-lg-1 list-inline-item mr-15 max-width-297">
+									        <option>请选择</option>
+										    <option>安全预评价</option>
+										    <option>安全生产条件和设施进行综合分析报告</option>
+									    </select>
+			</div>
+			<div class="pb-20"><div class="mt-5 list-inline-item">编制单位</div><input type="text" class="form-control list-inline-item mr-15 width-297" id="inputPlaceholder" placeholder=""></div>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700">评价资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告封面</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360 mr-20">
+				<h3 class="mt-0 mb-20 font-size-14 font-weight-700 mt-20">报告结论页</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>环保验收批复文件</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700"><span class="h_f">*</span>消防验收意见书</h2>
+			<div class="wb-100 float-left pb-20">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			</div>
+		</div>
+        <div id="stepLast" class="step-content-body out">Completed</div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-center max-width-780">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">请上传资质文件</h4>
+            </div>
+			<div class="example" data-plugin="mCustomScrollbar" style=" height:392px; border:0; padding:0;">
+            <div class="modal-body pt-0 pb-0">
+                <h2 class="mt-0 mb-20 font-size-16 font-weight-700">管理公司</h2>
+			<h3 class="mt-0 mb-20 font-size-14 font-weight-700">管理公司营业执照</h3>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700">施工单位</h2>
+			<div class="wb-100 float-left pb-20 mb-20 xian_b">
+				<div class="float-left width-360 mr-20">
+			<h3 class="mt-0 mb-20 font-size-14 font-weight-700">施工单位营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360">
+			<h3 class="mt-0 mb-20 font-size-14 font-weight-700">施工单位资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+			<h2 class="mt-0 mb-20 font-size-16 font-weight-700">监理单位</h2>
+			<div class="wb-100 float-left">
+				<div class="float-left width-360 mr-20">
+			<h3 class="mt-0 mb-20 font-size-14 font-weight-700">监理单位营业执照</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+											<div class="float-left width-360">
+			<h3 class="mt-0 mb-20 font-size-14 font-weight-700">监理单位资质</h3>
+											<div>
+												<button type="button" class="btn btn-dark">
+													<i class="icon wb-upload" aria-hidden="true"></i> 上传
+												</button>
+											</div>
+											<div class="mt-20">
+												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+													<thead>
+														<tr>
+															<th>附件名称</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>xxxxxxxxxxxxxxx.jpg</td>
+															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
+															下载
+														</button>
+														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
+															查看
+														</button>
+														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
+															删除
+														</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+			</div>
+            </div>
+			</div>
+        </div>
+    </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+<script src="../../../public/js/examples/components/advanced/layer.js"></script>
+
+<script src="../../../public/vendor/layer/layer.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Select2 过滤器 - Bootstrap-Table - 表格示例 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="../../../../../public/vendor/select2/select2.css">
+    
+    <!-- Page CSS -->
+    
+    
+    <!-- 插件 -->
+    <script src="../../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page animation-fade page-bs-table">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="mCustomScrollbar">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">扩展</h5>
+                <div class="list-group">
+                    <!-- <a class="list-group-item" href="./editable.html">
+                                <i class="icon fa-circle-o"></i> 可编辑表格
+                            </a> -->
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/export.html">
+                        <i class="icon fa-circle-o"></i> 数据导出
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/flat-json.html">
+                        <i class="icon fa-circle-o"></i> 扁平化 Json
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/cookie.html">
+                        <i class="icon fa-circle-o"></i> Cookie
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/group-by-v2.html">
+                        <i class="icon fa-circle-o"></i> 分组v2
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/resizable.html">
+                        <i class="icon fa-circle-o"></i> 可调整大小
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/key-events.html">
+                        <i class="icon fa-circle-o"></i> 键盘事件
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/mobile.html">
+                        <i class="icon fa-circle-o"></i> 手机
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/filter-control.html">
+                        <i class="icon fa-circle-o"></i> 过滤控制
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/toolbar.html">
+                        <i class="icon fa-circle-o"></i> 工具栏增强
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/reorder-columns.html">
+                        <i class="icon fa-circle-o"></i> 列重新排序
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/reorder-rows.html">
+                        <i class="icon fa-circle-o"></i> 行拖动排序
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/multiple-sort.html">
+                        <i class="icon fa-circle-o"></i> 多重排序
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/fixed-columns.html">
+                        <i class="icon fa-circle-o"></i> 固定列
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/select2-filter.html">
+                        <i class="icon fa-circle-o"></i> Select2 过滤器
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/i18n-enhance.html">
+                        <i class="icon fa-circle-o"></i> 多语言
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/tree-column.html">
+                        <i class="icon fa-circle-o"></i> 树形列
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/treegrid.html">
+                        <i class="icon fa-circle-o"></i> 树形表格
+                    </a>
+                    <a class="list-group-item" href="/html/examples/tables/bootstrap-table/extensions/sticky-header.html">
+                        <i class="icon fa-circle-o"></i> 固定表头
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div class="page-main">
+        <div class="page-header">
+            <h1 class="page-title">Select2 过滤器</h1>
+            <div class="page-header-actions">
+                <a class="btn btn-inverse btn-round" href="http://bootstrap-table.wenzhixin.net.cn/zh-cn/"
+                   target="_blank">
+                    <i class="icon fa-language" aria-hidden="true"></i> 中文官网</a>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="panel">
+                <div class="panel-body">
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 插件 -->
+    <script src="../../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../../public/vendor/bootstrap-table/extensions/select2-filter/bootstrap-table-select2-filter.js"></script>
+
+    <script src="../../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script>
+     window.App.run();
+ </script>
+<script src="../../../../../public/js/examples/tables/bootstrap-table/extensions/select2-filter.js"></script>
+</body>
+</html>

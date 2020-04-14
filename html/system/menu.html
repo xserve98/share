@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单管理 - 系统设置 - Admui</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../public/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    
+    <link rel="stylesheet" href="../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../public/vendor/nestable/nestable.css">
+    <link rel="stylesheet" href="../../public/vendor/bootstrap-treeview/bootstrap-treeview.css">
+    <link rel="stylesheet" href="../../public/vendor/html5sortable/sortable.css">
+    <link rel="stylesheet" href="../../public/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../../public/vendor/fontawesome-iconpicker/fontawesome-iconpicker.css">
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../public/css/system/menu.css">
+    
+    <!-- 插件 -->
+    <script src="../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body class="layout-full page-aside-fixed page-aside-left" data-theme="base">
+
+<div class="page page-full bg-white animation-fade page-menu">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="mCustomScrollbar">
+            <div class="page-aside-section">
+                <h5 class="page-aside-title">顶部菜单</h5>
+                <div class="list-group has-actions top-menu">
+                    <script id="navMenu" type="text/html">
+                        <% for(var i = 0; i < navMenus.length; i++){ %>
+                        <% var menu = navMenus[i]; %>
+                        <% if (i == 0) { %>
+                        <div class="list-group-item active" data-id="<%= menu.id %>" data-text="<%= menu.name %>" data-layer="<%= menu.layer %>" data-icon="<%= menu.icon %>" data-children="<%= $imports.json_str(menu.children) %>">
+                            <% } else { %>
+                            <div class="list-group-item" data-id="<%= menu.id %>" data-text="<%= menu.text %>" data-icon="<%= menu.icon %>" data-layer="<%= menu.layer %>" data-children="<%= $imports.json_str(menu.children) %>">
+                                <% } %>
+                                <div class="list-content">
+                                    <i class="icon topmenu-icon <%= menu.icon %>"></i>
+                                    <span class="top_menuname" data-children="<%= menu.children %>"><%= menu.name %></span>
+                                    <div class="item-actions">
+                                        <% if ($imports.operate_permission('400003')) { %>
+                                        <span class="btn btn-pure btn-icon" data-tag="list-editable" data-toggle="modal" data-target="#addMenu"><i class="icon wb-edit" aria-hidden="true"></i></span>
+                                        <% } %>
+                                        <% if ($imports.operate_permission('400005')) { %>
+                                        <span class="btn btn-pure btn-icon" data-tag="list-delete"><i class="icon wb-close" aria-hidden="true"></i></span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                    </script>
+                </div>
+            </div>
+            <div class="page-aside-section d-none d-sm-block">
+                <a class="list-group-item" href="javascript:;" data-toggle="modal" data-target="#addMenu" id="addMenuToggle">
+                    <i class="icon wb-plus" aria-hidden="true"></i> 添加新菜单
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="page-main has-submenu nav-submenu h-full">
+        <div class="no-submenu vertical-align-middle text-center" hidden="hidden">
+            <div class="page-content vertical-align-middle">
+                <p>【
+                    <i class="icon topmenu-icon"></i>
+                    <span class="nav-menu-name"></span> 】菜单下还没有子菜单</p>
+                <p>
+                    <button type="button" class="btn btn-round btn-success btn-outline btn-default add-submenu">
+                        添加菜单
+                    </button>
+                </p>
+            </div>
+        </div>
+
+        <div class="page-content h-full">
+            <div class="row h-full">
+                <div class="col-lg-7 h-full">
+                    <nav class="h-full" id="menuTree" data-plugin="mCustomScrollbar">
+                        <div class="dd menu-tree" data-max-depth="4">
+                            <script id="childMenu" type="text/html">
+                                <ol class="dd-list animation-fade">
+                                    <% for(var i = 0; i < menus.length; i++){ %>
+                                    <% var menu = menus[i]; %>
+                                    <li class="dd-item dd-item-alt" data-id="<%= menu.id %>" data-rank="2" data-type="<%= menu.type %>" data-name="<%= menu.name %>" data-url="<%= menu.url %>" data-icon="<%= menu.icon %>">
+                                        <div class="dd-handle"></div>
+                                        <% if (i === 0) { %>
+                                        <div class="dd-content active">
+                                            <% } else { %>
+                                            <div class="dd-content">
+                                                <% } %>
+                                                <span class="menu-name"><% if (menu.icon) { %><i class="menu-icon <%= menu.icon %>"></i><% } %> <%= menu.name %></span>
+                                                <span class="float-right fa-angle-right"></span>
+                                            </div>
+                                            <% if (menu.children) { %>
+                                            <ol class="dd-list">
+                                                <% for(var j = 0; j < menu.children.length; j++){ %>
+                                                <% var jMenu = menu.children[j]; %>
+                                                <li class="dd-item dd-item-alt" data-id="<%= jMenu.id %>" data-rank="3" data-type="" data-name="<%= jMenu.name %>" data-url="<%= jMenu.url %>" data-icon="<%= jMenu.icon %>">
+                                                    <div class="dd-handle"></div>
+                                                    <div class="dd-content">
+                                                        <span class="menu-name"><% if (jMenu.icon) { %><i class="menu-icon <%= jMenu.icon %>"></i><% } %> <%= jMenu.name %></span>
+                                                        <span class="float-right fa-angle-right"></span>
+                                                    </div>
+                                                    <% if (jMenu.children) { %>
+                                                    <ol class="dd-list">
+                                                        <% for(var d = 0; d < jMenu.children.length; d++){ %>
+                                                        <% var dMenu = jMenu.children[d]; %>
+                                                        <li class="dd-item dd-item-alt" data-id="<%= dMenu.id %>" data-type="" data-rank="4" data-name="<%= dMenu.name %>" data-url="<%= dMenu.url %>" data-icon="<%= dMenu.icon %>">
+                                                            <div class="dd-handle"></div>
+                                                            <div class="dd-content">
+                                                                <span class="menu-name"><% if (dMenu.icon) { %><i class="menu-icon <%= dMenu.icon %>"></i><% } %> <%= dMenu.name %></span>
+                                                                <span class="float-right fa-angle-right"></span>
+                                                            </div>
+                                                            <% if (dMenu.children) { %>
+                                                            <ol class="dd-list">
+                                                                <% for(var k = 0; k < dMenu.children.length; k++){ %>
+                                                                <% var kMenu = dMenu.children[k]; %>
+                                                                <li class="dd-item dd-item-alt" data-id="<%= kMenu.id %>" data-rank="5" data-name="<%= kMenu.name %>" data-type="" data-url="<%= kMenu.url %>" data-icon="<%= kMenu.icon %>">
+                                                                    <div class="dd-handle"></div>
+                                                                    <div class="dd-content">
+                                                                        <span class="menu-name"><% if (kMenu.icon) { %><i class="menu-icon <%= kMenu.icon %>"></i><% } %> <%= kMenu.name %></span>
+                                                                        <span class="float-right fa-angle-right"></span>
+                                                                    </div>
+                                                                </li>
+                                                                <% } %>
+                                                            </ol>
+                                                            <% } %>
+                                                        </li>
+                                                        <% } %>
+                                                    </ol>
+                                                    <% } %>
+                                                </li>
+                                                <% } %>
+                                            </ol>
+                                            <% } %>
+                                        </div>
+                                    </li>
+                                    <% } %>
+                                </ol>
+                            </script>
+                        </div>
+                    </nav>
+                    <script id="ddContent" type="text/html">
+                        <span class="menu-name"><% if (<%= icon %>) { %><i class="menu-icon <%= icon %>"></i><% } %> <%= name %></span>
+                        <span class="float-right fa-angle-right"></span>
+                    </script>
+                </div>
+                <div class="col-lg-5 d-none d-sm-block d-md-block h-full">
+                    <nav class="h-full">
+                        <div class="menu-info">
+                            <script id="menuInfo" type="text/html">
+                                <div class="menu-box animation-fade">
+                                    <h4><%= name %>
+                                        <% if ($imports.operate_permission('400005')) { %>
+                                        <button type="button" class="btn btn-pure btn-default btn-sm icon fa-trash-o float-right delete-submenu"></button>
+                                        <% } %>
+                                    </h4>
+                                    <hr>
+                                    <div class="form fv-form fv-form-bootstrap">
+                                        <form id="compiler_submenu">
+                                            <div class="form-group">
+                                                <% if (icon) { %>
+                                                <label class="col-form-label">图标&amp;名称：</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-addon btn btn-outline btn-default"><i class="fa <%= icon %>" id="menu-icon" data-icon="<%= icon %>"></i></span>
+                                                        <button data-placement="bottomLeft" data-selected="graduation-cap" data-title="请选择菜单图标" type="button" class="icp icp-dd1" hidden="hidden"></button>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="submenu_name" placeholder="菜单名称" value="<%= name %>">
+                                                </div>
+                                                <% } else { %>
+                                                <label class="col-form-label">名称：</label>
+                                                <input type="text" class="form-control" name="submenu_name" placeholder="菜单名称" value="<%= name %>">
+                                                <% } %>
+                                            </div>
+                                            <% if (url !== '') { %>
+                                            <div class="form-group">
+                                                <label class="col-form-label">菜单链接：</label>
+                                                <input type="text" class="form-control" name="submenu_url" placeholder="菜单链接" value="<%= url %>">
+                                            </div>
+                                            <% } %>
+                                        </form>
+                                    </div>
+                                </div>
+                            </script>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="btn-actions text-right">
+                <div class="btn-group dropup" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" id="addChlidMenu" data-toggle="dropdown"
+                        aria-expanded="false">
+                        新增菜单
+                    </button>
+                    <div class="dropdown-menu animate" aria-labelledby="addChlidMenu" role="menu">
+                        <a class="dropdown-item add-submenu after" href="javascript:;" role="menuitem">当前菜单之后</a>
+                        <a class="dropdown-item add-submenu append" href="javascript:;" role="menuitem">当前菜单的里面</a>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" id="saveChlidMenu">
+                    全部保存
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addMenu" aria-hidden="true" aria-labelledby="addMenu" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-center modal-sm">
+        <div class="modal-content">
+            <script id="selectOption" type="text/html">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+                    <h4 class="modal-title"><% if (type === 'edit') { %>编辑 <% } else { %>添加新<% }%>菜单</h4>
+                </div>
+                <form id="controlMenu" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-form-label">图标&amp;名称：</label>
+                            <div class="input-group mt-5">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-addon btn btn-outline btn-default">
+                                        <i class="fa <%= icon %>" data-icon="<%= icon %>"></i>
+                                    </span>
+                                    <button data-placement="bottomLeft" data-selected="graduation-cap" data-title="请选择菜单图标" type="button" class="icp icp-dd" hidden="hidden"></button>
+                                </div>
+                                <input type="text" class="form-control menu-name" name="menu_name" value="<%= name %>" placeholder="菜单名称">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-primary add-top-menu" type="submit">保存</button>
+                        <a class="btn btn-default" data-dismiss="modal" href="#">取消</a>
+                    </div>
+                </form>
+            </script>
+        </div>
+    </div>
+</div>
+
+<!-- 插件 -->
+    <script src="../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../public/vendor/artTemplate/template-web.js"></script>
+<script src="../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../public/vendor/nestable/jquery.nestable.min.js"></script>
+<script src="../../public/vendor/fontawesome-iconpicker/fontawesome-iconpicker.min.js"></script>
+<script src="../../public/vendor/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+<script src="../../public/vendor/html5sortable/html.sortable.min.js"></script>
+<script src="../../public/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../public/vendor/jquery-validation/localization/messages_zh.js"></script>
+<script src="../../public/vendor/ladda/ladda.min.js"></script>
+<script src="../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+
+    <script src="../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../public/js/system/menu.js"></script>
+</body>
+</html>
