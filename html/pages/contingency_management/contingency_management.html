@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>应急管理 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+var obj = $('#sticky');
+var offset = obj.offset();
+var topOffset = offset.top;
+var leftOffset = offset.left;
+var marginTop = obj.css("marginTop");
+var top = obj.css("top");
+
+$(window).scroll(function() {
+var scrollTop = $(window).scrollTop();
+
+	if (scrollTop >= topOffset){
+
+		obj.css({
+			marginTop: 0,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 40px)',
+			position: 'fixed',
+		});
+	}
+
+	if (scrollTop < topOffset){
+
+		obj.css({
+			marginTop: marginTop,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 0px)',
+			position: 'relative',
+		});
+	}
+});
+});
+
+</script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+  <div class="page-content" id="DTConent">
+    <div class="panel pt-20">
+      <div id="sticky">
+        <div id="carbonads-container">
+          <div class="px-25 py-5 back_f">
+            <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            <div class="btn-group float-right">
+              <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+              <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="place">
+          <div class="pb-5">
+            <label class="col-form-label text-right inline-block">应急预案是否备案：</label>
+            <div class="w-150 inline-block">
+              <div class="btn-group bootstrap-select">
+                <div class="radio-custom radio-primary my-0 w-100 inline-block">
+                  <input type="radio" id="inputRadiosUnchecked4" name="inputRadios4">
+                  <label for="inputRadiosUnchecked4">是</label>
+                </div>
+                <div class="radio-custom radio-primary my-0 inline-block">
+                  <input type="radio" id="inputRadiosChecked4" name="inputRadios4" checked="">
+                  <label for="inputRadiosChecked4">否</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pb-20">
+            <label class="col-form-label text-right inline-block">选择是时：评审日期，备案评审日期，上传备案回执</label>
+          </div>
+          <div class="pb-30">
+            <div>
+              <div class="bootstrap-select">
+                <div class="mb-15">
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <span class="h_f">要求：PDF扫描件</span>
+                <div class="sw-650 mt-5">
+                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                    <thead>
+                      <tr>
+                        <th>附件名称</th>
+                        <th>附件大小(k)</th>
+                        <th>上传时间</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>xxxxxxxxxxxxxxx.jpg</td>
+                        <td>375.11</td>
+                        <td>2020-01-02 11:35:38</td>
+                        <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                          <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                          <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pb-30">
+            <h2 class="font-size-16 font-weight-600 mb-0">综合应急预案</h2>
+              <div class="pt-20 clearfix">
+                <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                  <thead>
+                    <tr>
+                      <th>公司</th>
+                      <th>预案名称</th>
+                      <th>预案类型</th>
+                      <th>发布日期</th>
+                      <th>更新日期</th>
+                      <th>更新状态</th>
+                      <th width="150">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxx公司综合应急预案"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="综合预案"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2021-6-16"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2021-6-16"></td>
+                      <td><span class="color_228">正常</span></td>
+                      <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="29" class="pr-10 smt--2" alt="" />未填写</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+          <div class="pb-30">
+            <h2 class="font-size-16 font-weight-600 mb-0">专项应急预案</h2>
+            <div class="pt-20">
+              <div class="back_f">
+                <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+                <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+              </div>
+              <div class="pt-20 clearfix">
+                <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-15" id="dataTableExample">
+                  <thead>
+                    <tr>
+                      <th width="60"><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></th>
+                      <th>公司</th>
+                      <th width="318">涉及部门（多选）</th>
+                      <th>预案名称</th>
+                      <th>预案类型</th>
+                      <th>更新时间</th>
+                      <th width="150">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                      <td><div class="w-300">
+                          <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                            <option value="化工部">化工部</option>
+                            <option value="安全部">安全部</option>
+                          </select>
+                        </div></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxx专项预案"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="专项预案"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2021-6-16"></td>
+                      <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="29" class="pr-10 smt--2" alt="" />未填写</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+				<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+				<div class="float-right mt-5">
+				  <nav>
+					<ul class="pagination mb-0">
+					  <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+					  <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+					</ul>
+				  </nav>
+				</div>
+              </div>
+            </div>
+          </div>
+          <div class="pb-0">
+            <h2 class="font-size-16 font-weight-600 mb-0">现场处置方案</h2>
+            <div class="pt-20">
+              <div class="back_f">
+                <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+                <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+              </div>
+              <div class="pt-20 clearfix">
+                <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-15" id="dataTableExample">
+                  <thead>
+                    <tr>
+                      <th width="60"><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></th>
+                      <th>公司</th>
+                      <th width="318">涉及部门（多选）</th>
+                      <th>预案名称</th>
+                      <th>预案类型</th>
+                      <th>更新时间</th>
+                      <th width="150">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                      <td>
+                          <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                            <option value="化工部">化工部</option>
+                            <option value="安全部">安全部</option>
+                          </select>
+                      </td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxx专项预案"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="专项预案"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-6-16"></td>
+                      <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="29" class="pr-10 smt--2" alt="" />未填写</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+				<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+				<div class="float-right mt-5">
+				  <nav>
+					<ul class="pagination mb-0">
+					  <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+					  <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+					  <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+					</ul>
+				  </nav>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">填写综合预案</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div class="example h-450 p-0 xian_0 mb-0" data-plugin="mCustomScrollbar">
+          <div class="px-20">
+            <h3 class="font-size-16 font-weight-600 my-0">1. 总则</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="简述应急预案编制的目的。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">1.2 编制依据</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="简述应急预案编制所依据的法律、法规、规章、标准和规范性文件以及相关应急预案等。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">1.3 适用范围</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="说明应急预案适用的工作范围和事故类型、级别。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">1.4 应急预案体系</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="说明生产经营单位应急预案体系的构成情况，可用框图形式表述。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">1.5 应急工作原则</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="说明生产经营单位应急工作的原则，内容应简明扼要、明确具体。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">2 事故风险描述</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="简述生产经营单位存在或可能发生的事故风险种类、发生的可能性以及严重程度及影响范围等。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">3 应急组织机构及职责</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确生产经营单位的应急组织形式及组成单位或人员，可用结构图的形式表示，明确构成部门的职责。应急组织机构根据事故类型和应急工作需要，可设置相应的应急工作小组，并明确各小组的工作任务及职责。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">4 预警及信息报告</h3>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">4.1 预警</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="根据生产经营单位监测监控系统数据变化状况、事故险情紧急程度和发展势态或有关部门提供的预警信息进行预警，明确预警的条件、方式、方法和信息发布的程序。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">4.2 信息报告</h3>
+            <textarea class="form-control wb-100 h-200 mt-10" style="resize:none;" id="textareaDefault" placeholder="  信息报告程序主要包括：
+    a）信息接收与通报
+    明确24小时应急值守电话、事故信息接收、通报程序和责任人。
+    b）信息上报
+明确事故发生后向上级主管部门、上级单位报告事故信息的流程、内容、时限和责任人。
+    c）信息传递
+明确事故发生后向本单位以外的有关部门或单位通报事故信息的方法、程序和责任人。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">5 应急响应</h3>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">5.1 响应分级</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="针对事故危害程度、影响范围和生产经营单位控制事态的能力，对事故应急响应进行分级，明确分级响应的基本原则。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">5.2 响应程序</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="根据事故级别和发展态势，描述应急指挥机构启动、应急资源调配、应急救援、扩大应急等响应程序。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">5.3 处置程序</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="针对可能发生的事故风险、事故危害程度和影响范围，制定相应的应急处置措施，明确处置原则和具体要求。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">5.4 应急结束</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确现场应急响应结束的基本条件和要求" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">6 信息公开</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确向有关新闻媒体、社会公众通报事故信息的部门、负责人和程序以及通报原则。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">7 后期处置</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="主要明确污染物处理、生产秩序恢复、医疗救治、人员安置、善后赔偿、应急救援评估等内容。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">8 保障措施</h3>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">8.1 通信与信息保障</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确可为生产经营单位提供应急保障的相关单位及人员通信联系方式和方法，并提供备用方案。同时，建立信息通信系统及维护方案，确保应急期间信息畅通。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">8.2 应急队伍保障</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确应急响应的人力资源，包括应急专家、专业应急队伍、兼职应急队伍等。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">8.3 物资装备保障</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确生产经营单位的应急物资和装备的类型、数量、性能、存放位置、运输及使用条件、管理责任人及其联系方式等内容。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">8.4 其他保障</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="根据应急工作需求而确定的其他相关保障措施（如：经费保障、交通运输保障、治安保障、医疗保障、后勤保障等）。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">9 应急预案管理</h3>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">9.1 应急预案培训</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确对生产经营单位人员开展的应急预案培训计划、方式和要求，使有关人员了解相关应急预案内容，熟悉应急职责、应急程序和现场处置方案。如果应急预案涉" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">9.2 应急预案演练</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确生产经营单位不同类型应急预案演练的形式、范围、频次、内容以及演练评估、总结等要求。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">9.3 应急预案修订</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确应急预案修订的基本要求，并定期进行评审，实现可持续改进。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">9.4 应急预案备案</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确应急预案的报备部门，并进行备案。" rows="3"></textarea>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-10">9.5  应急预案实施</h3>
+            <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="明确应急预案实施的具体时间、负责制定与解释的部门。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-15">附件</h3>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-15">附件1:有关应急部门、机构或人员的联系方式</h3>
+            <div class="wb-100 float-left pb-20 mb-20 mt-10 xian_b">
+              <div class="float-left width-360 mr-20 mt-5">
+                <div>
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <div class="mt-20">
+                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                    <thead>
+                      <tr>
+                        <th>附件名称</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>xxxxxxxxxxxxxxx.jpg</td>
+                        <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                          <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                          <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-15">附件2应急物资装备的名录或清单</h3>
+            <div class="wb-100 float-left pb-20 mb-20 mt-10 xian_b">
+              <div class="float-left width-360 mr-20 mt-5">
+                <div>
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <div class="mt-20">
+                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                    <thead>
+                      <tr>
+                        <th>附件名称</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>xxxxxxxxxxxxxxx.jpg</td>
+                        <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                          <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                          <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-15">附件3规范化格式文本</h3>
+            <div class="wb-100 float-left pb-20 mb-20 mt-10 xian_b">
+              <div class="float-left width-360 mr-20 mt-5">
+                <div>
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <div class="mt-20">
+                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                    <thead>
+                      <tr>
+                        <th>附件名称</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>xxxxxxxxxxxxxxx.jpg</td>
+                        <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                          <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                          <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-15">附件4关键的路线、标识和图纸</h3>
+            <div class="wb-100 float-left pb-20 mb-20 mt-10 xian_b">
+              <div class="float-left width-360 mr-20 mt-5">
+                <div>
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <div class="mt-20">
+                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                    <thead>
+                      <tr>
+                        <th>附件名称</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>xxxxxxxxxxxxxxx.jpg</td>
+                        <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                          <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                          <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <h3 class="font-size-14 font-weight-600 my-0 mt-15">附件5有关协议或备忘录</h3>
+            <div class="wb-100 float-left mt-10">
+              <div class="float-left width-360 mr-20 mt-5">
+                <div>
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <div class="mt-20">
+                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                    <thead>
+                      <tr>
+                        <th>附件名称</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>xxxxxxxxxxxxxxx.jpg</td>
+                        <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                          <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                          <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div id="sticky">
+          <div id="carbonads-container">
+            <div class="text-center xian_b py-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">填写专项预案</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div class="example h-450 p-0 xian_0 mb-0" data-plugin="mCustomScrollbar">
+          <div class="px-20">
+            <h3 class="font-size-16 font-weight-600 mt-10">1 事故风险分析</h3>
+            <textarea class="form-control wb-100 h-100 mt-0" style="resize:none;" id="textareaDefault" placeholder="针对可能发生的事故风险，分析事故发生的可能性以及严重程度、影响范围等。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 mt-10">2 应急指挥机构及职责</h3>
+            <textarea class="form-control wb-100 h-100 mt-0" style="resize:none;" id="textareaDefault" placeholder="根据事故类型，明确应急指挥机构总指挥、副总指挥以及各成员单位或人员的具体职责。应急指挥机构可以设置相应的应急救援工作小组，明确各小组的工作任务及主要负责人职责。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 mt-10">3 处置程序</h3>
+            <textarea class="form-control wb-100 h-100 mt-0" style="resize:none;" id="textareaDefault" placeholder="明确事故及事故险情信息报告程序和内容、报告方式和责任人等内容。根据事故响应级别，具体描述事故接警报告和记录、应急指挥机构启动、应急指挥、资源调配、应急救援、扩大应急等应急响应程序。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 mt-10">4 处置措施</h3>
+            <textarea class="form-control wb-100 h-100 mt-0" style="resize:none;" id="textareaDefault" placeholder="针对可能发生的事故风险、事故危害程度和影响范围，制定相应的应急处置措施，明确处置原则和具体要求。" rows="3"></textarea>
+          </div>
+        </div>
+		<div id="sticky">
+          <div id="carbonads-container">
+            <div class="text-center xian_b py-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">填写现场处置方案</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div class="example h-450 p-0 xian_0 mb-0" data-plugin="mCustomScrollbar">
+          <div class="px-20">
+            <h3 class="font-size-16 font-weight-600 mt-10">1 事故风险分析</h3>
+            <textarea class="form-control wb-100 h-150 mt-0" style="resize:none;" id="textareaDefault" placeholder="主要包括：
+  a)事故类型；
+  b)事故发生的区域、地点或装置的名称；
+  c)事故发生的可能时间、事故的危害严重程度及其影响范围；
+  d)事故前可能出现的征兆；
+  e)事故可能引发的次生、衍生事故。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 mt-10">2 应急工作职责</h3>
+            <textarea class="form-control wb-100 h-100 mt-0" style="resize:none;" id="textareaDefault" placeholder="根据现场工作岗位、组织形式及人员构成，明确各岗位人员的应急工作分工和职责。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 mt-10">3 应急处置</h3>
+            <textarea class="form-control wb-100 h-200 mt-0" style="resize:none;" id="textareaDefault" placeholder="主要包括以下内容：
+  a)事故应急处置程序。根据可能发生的事故及现场情况，明确事故报警、各项应急措施启动、应急救护人员的引导、事故扩大及同生产经营单位应急预案的衔接的程序。
+  b)现场应急处置措施。针对可能发生的火灾、爆炸、危险化学品泄漏、坍塌、水患、机动车辆伤害等，从人员救护、工艺操作、事故控制、消防、现场恢复等方面制定明确的应急处置措施。
+  c)明确报警负责人以及报警电话及上级管理部门、相关应急救援单位联络方式和联系人员，事故报告基本要求和内容。" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 mt-10">4 注意事项</h3>
+            <textarea class="form-control wb-100 h-200 mt-0" style="resize:none;" id="textareaDefault" placeholder="主要包括：
+  a) 佩戴个人防护器具方面的注意事项；
+  b) 使用抢险救援器材方面的注意事项；
+  c) 采取救援对策或措施方面的注意事项；
+  d) 现场自救和互救注意事项；
+  e) 现场应急处置能力确认和人员安全防护等事项；
+  f) 应急救援结束后的注意事项；
+  g) 其他需要特别警示的事项。" rows="3"></textarea>
+          </div>
+        </div>
+		<div id="sticky">
+          <div id="carbonads-container">
+            <div class="text-center xian_b py-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+</body>
+</html>

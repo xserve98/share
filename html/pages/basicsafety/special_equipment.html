@@ -1,1609 +1,1488 @@
-
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>特种设备管理 - 电控安全云</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备 viewport -->
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <meta name="author" content="admui.com">
-    <!-- 360浏览器默认使用Webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止搜索引擎抓取 -->
-    <meta name="robots" content="nofollow">
-    <!-- 禁止百度SiteAPP转码 -->
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
-    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Safari浏览器添加到主屏幕（IOS） -->
-    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Admui">
-    <!-- Win8标题栏及ICON图标 -->
-    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
-    
-    <!--[if lte IE 9]>
+<meta charset="UTF-8">
+<title>特种设备管理 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
     <![endif]-->
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
-    
-    <!-- 字体图标 CSS -->
-    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
-	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
-    
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-	
-	<!-- 自定义 CSS -->
-	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-    
-    <!-- 插件 CSS -->
-    
-    <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
-    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
-    <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
-    <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
-    
-    <!-- Page CSS -->
-    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
-    
-    
-    <!-- 插件 -->
-    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
-		<div class="page-content" id="DTConent">
-		            <div class="panel">
-		                <div class="alert" role="alert">
-							<div class="mt-5 list-inline-item">设备类型</div>
-                                <select class="form-control col-lg-1 list-inline-item mr-15">
-                                    <option>请选择</option>
-                                </select>
-		                    <div class="mt-5 list-inline-item">设备编号</div>
-								<input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
-								<div class="mt-5 list-inline-item">检验状态</div>
-								    <select class="form-control col-lg-1 list-inline-item mr-15">
-								        <option>请选择</option>
-										<option>正常</option>
-										<option>过期</option>
-								    </select>
-									<div class="mt-5 list-inline-item">设备状态</div>
-									    <select class="form-control col-lg-1 list-inline-item mr-15">
-									        <option>请选择</option>
-										    <option>调试</option>
-										    <option>使用</option>
-											<option>检修</option>
-											<option>转让停用</option>
-											<option>报废</option>
-									    </select>
-											<button type="button" class="btn btn-warning list-inline-item mt--5">
-											    搜索
-											</button>
-		                </div>
-						<div class="px-25 mt-5">
-							<button type="button" class="btn btn-primary px-20 list-inline-item">
-							    添加
-							</button>
-							<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-							    删除
-							</button>
-							<button type="button" class="btn social-wechat px-20 list-inline-item">
-							    导出
-							</button>
-							<button type="button" class="btn btn-success px-20 list-inline-item mr-20">
-							    导入
-							</button>
-							<button type="button" class="btn social-github px-20 list-inline-item mr-20">
-							    下载模板
-							</button>
-							<button type="button" class="btn social-facebook px-20 list-inline-item mr-20">
-							    提交
-							</button>
-							<button type="button" class="btn px-20 back_hda color-fff list-inline-item mr-20" data-target="#examplePositionCenter7" data-toggle="modal">
-								隐患排查上报
-							</button>
-							<div class="btn-group float-right">
-												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
-											</div>
-						</div>
-		                <div class="panel-body">
-							<div class="ov-s mb-10">
-		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-		                        <thead>
-		                            <tr>
-		                                <th><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-		                                <th>设备名称</th>
-		                                <th>设备类别</th>
-		                                <th>设备编号</th>
-		                                <th>设备信息</th>
-		                                <th>数量/单位</th>
-										<th>使用场所</th>
-										<th>检验状态</th>
-										<th>维保状态</th>
-										<th width="100">设备设施状态</th>
-										<th>负责人</th>
-										<th>操作规章</th>
-										<th>故障/事故记录</th>
-										<th>安全附件</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>xxxxxxxxxxxxxxx</td>
-		                                <td>
-											<select class="form-control list-inline-item w-160 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="锅炉">锅炉</option>
-												<option value="压力容器">压力容器</option>
-												<option value="压力管道">压力管道</option>
-												<option value="电梯">电梯</option>
-												<option value="起重机械">起重机械</option>
-												<option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
-											</select>
-										</td>
-		                                <td>12233202</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
-		                                <td>2台</td>
-										<td>xxxxxxx</td>
-										<td><span class="color-08">正常（下次检验日期:2020-3-22）</span></td>
-										<td><span class="color-08">正常（下次维保日期:2020-3-22）</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="调试">调试</option>
-												<option value="使用">使用</option>
-												<option value="检修">检修</option>
-												<option value="转让停用">转让停用</option>
-												<option value="报废">报废</option>
-											</select></td>
-										<td>李xx</td>
-										<td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
-		                            </tr>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>xxxxxxxxxxxxxxx</td>
-		                                <td>
-											<select class="form-control list-inline-item w-160 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="锅炉">锅炉</option>
-												<option value="压力容器">压力容器</option>
-												<option value="压力管道">压力管道</option>
-												<option value="电梯">电梯</option>
-												<option value="起重机械">起重机械</option>
-												<option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
-											</select>
-										</td>
-		                                <td>12233202</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                                <td>1部</td>
-										<td>xxxxxxx</td>
-										<td><span class="color-08">正常（下次检验日期:2020-3-22）</span></td>
-										<td><span class="color-08">正常（下次维保日期:2020-3-22）</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="调试">调试</option>
-												<option value="使用">使用</option>
-												<option value="检修">检修</option>
-												<option value="转让停用">转让停用</option>
-												<option value="报废">报废</option>
-											</select></td>
-										<td>李xx</td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>xxxxxxxxxxxxxxx</td>
-		                                <td>
-											<select class="form-control list-inline-item w-160 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="锅炉">锅炉</option>
-												<option value="压力容器">压力容器</option>
-												<option value="压力管道">压力管道</option>
-												<option value="电梯">电梯</option>
-												<option value="起重机械">起重机械</option>
-												<option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
-											</select>
-										</td>
-		                                <td>12233202</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                                <td>2台</td>
-										<td>xxxxxxx</td>
-										<td><span class="color-08">正常（下次检验日期:2020-3-22）</span></td>
-										<td><span class="color-08">正常（下次维保日期:2020-3-22）</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="调试">调试</option>
-												<option value="使用">使用</option>
-												<option value="检修">检修</option>
-												<option value="转让停用">转让停用</option>
-												<option value="报废">报废</option>
-											</select></td>
-										<td>李xx</td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>xxxxxxxxxxxxxxx</td>
-		                                <td>
-											<select class="form-control list-inline-item w-160 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="锅炉">锅炉</option>
-												<option value="压力容器">压力容器</option>
-												<option value="压力管道">压力管道</option>
-												<option value="电梯">电梯</option>
-												<option value="起重机械">起重机械</option>
-												<option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
-											</select>
-										</td>
-		                                <td>12233202</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter3" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                                <td>1部</td>
-										<td>xxxxxxx</td>
-										<td><span class="color-08">正常（下次检验日期:2020-3-22）</span></td>
-										<td><span class="color-08">正常（下次维保日期:2020-3-22）</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="调试">调试</option>
-												<option value="使用">使用</option>
-												<option value="检修">检修</option>
-												<option value="转让停用">转让停用</option>
-												<option value="报废">报废</option>
-											</select></td>
-										<td>李xx</td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>xxxxxxxxxxxxxxx</td>
-		                                <td>
-											<select class="form-control list-inline-item w-160 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="锅炉">锅炉</option>
-												<option value="压力容器">压力容器</option>
-												<option value="压力管道">压力管道</option>
-												<option value="电梯">电梯</option>
-												<option value="起重机械">起重机械</option>
-												<option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
-											</select>
-										</td>
-		                                <td>12233202</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter4" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                                <td>2台</td>
-										<td>xxxxxxx</td>
-										<td><span class="color-08">正常（下次检验日期:2020-3-22）</span></td>
-										<td><span class="color-08">正常（下次维保日期:2020-3-22）</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="调试">调试</option>
-												<option value="使用">使用</option>
-												<option value="检修">检修</option>
-												<option value="转让停用">转让停用</option>
-												<option value="报废">报废</option>
-											</select></td>
-										<td>李xx</td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>xxxxxxxxxxxxxxx</td>
-		                                <td>
-											<select class="form-control list-inline-item w-160 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="锅炉">锅炉</option>
-												<option value="压力容器">压力容器</option>
-												<option value="压力管道">压力管道</option>
-												<option value="电梯">电梯</option>
-												<option value="起重机械">起重机械</option>
-												<option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
-											</select>
-										</td>
-		                                <td>12233202</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter5" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                                <td>1部</td>
-										<td>xxxxxxx</td>
-										<td><span class="color-08">正常（下次检验日期:2020-3-22）</span></td>
-										<td><span class="color-08">正常（下次维保日期:2020-3-22）</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="调试">调试</option>
-												<option value="使用">使用</option>
-												<option value="检修">检修</option>
-												<option value="转让停用">转让停用</option>
-												<option value="报废">报废</option>
-											</select></td>
-										<td>李xx</td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-							</div>
-							<div class="float-left font-size-16 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-							<div class="float-right mt-5">
-							    <nav>
-							        <ul class="pagination">
-							            <li class="page-item disabled">
-							                <a class="page-link" href="javascript:;" aria-label="上一页">
-							                    <span aria-hidden="true">上一页</span>
-							                </a>
-							            </li>
-							            <li class="page-item active">
-							                <a class="page-link" href="javascript:;">1
-							                    <span class="sr-only">当前</span>
-							                </a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">2</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">3</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">4</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">5</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;" aria-label="下一页">
-							                    <span aria-hidden="true">下一页</span>
-							                </a>
-							            </li>
-							        </ul>
-							    </nav>
-							</div>
-		                </div>
-		            </div>
-		        </div>
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="alert" role="alert">
+        <div class="mt-5 list-inline-item">设备类型</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+        </select>
+        <div class="mt-5 list-inline-item">设备编号</div>
+        <input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+        <div class="mt-5 list-inline-item">检验状态</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+          <option>正常</option>
+          <option>过期</option>
+        </select>
+        <div class="mt-5 list-inline-item">设备状态</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+          <option>调试</option>
+          <option>使用</option>
+          <option>检修</option>
+          <option>转让停用</option>
+          <option>报废</option>
+        </select>
+        <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+      </div>
+      <div class="px-25 mt-5">
+        <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+        <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
+        <button type="button" class="btn btn-success px-20 list-inline-item mr-20">导入</button>
+        <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
+        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="ov-s mb-10">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+            <thead>
+              <tr>
+                <th><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></th>
+                <th>设备名称</th>
+                <th width="110">设备类别</th>
+                <th>设备编号</th>
+                <th>设备信息</th>
+                <th width="50">数量</th>
+                <th>部门</th>
+                <th width="100">设备设施状态</th>
+                <th width="228">检验状态</th>
+                <th width="228">维保状态</th>
+                <th>负责人</th>
+                <th>操作规程</th>
+                <th>故障/事故记录</th>
+                <th>安全附件</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="锅炉">锅炉</option>
+                    <option value="压力容器">压力容器</option>
+                    <option value="压力管道">压力管道</option>
+                    <option value="电梯">电梯</option>
+                    <option value="起重机械">起重机械</option>
+                    <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td>
+					<select class="form-control list-inline-item w-100">
+					  <option>请选择</option>
+					  <option>安全部</option>
+					</select>
+				</td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="调试">调试</option>
+                    <option value="使用">使用</option>
+                    <option value="检修">检修</option>
+                    <option value="转让停用">转让停用</option>
+                    <option value="报废">报废</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor color_ff0" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/txh.png" width="26" class="pr-5 mt--1" alt="" />待更新</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="锅炉">锅炉</option>
+                    <option value="压力容器">压力容器</option>
+                    <option value="压力管道">压力管道</option>
+                    <option value="电梯">电梯</option>
+                    <option value="起重机械">起重机械</option>
+                    <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td>
+					<select class="form-control list-inline-item w-100">
+					  <option>请选择</option>
+					  <option>安全部</option>
+					</select>
+				</td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="调试">调试</option>
+                    <option value="使用">使用</option>
+                    <option value="检修">检修</option>
+                    <option value="转让停用">转让停用</option>
+                    <option value="报废">报废</option>
+                  </select></td>
+				<td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color_ff0" id="inputPlaceholder" value="过期（过期日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color_ff0" id="inputPlaceholder" value="过期（过期日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="锅炉">锅炉</option>
+                    <option value="压力容器">压力容器</option>
+                    <option value="压力管道">压力管道</option>
+                    <option value="电梯">电梯</option>
+                    <option value="起重机械">起重机械</option>
+                    <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td>
+					<select class="form-control list-inline-item w-100">
+					  <option>请选择</option>
+					  <option>安全部</option>
+					</select>
+				</td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="调试">调试</option>
+                    <option value="使用">使用</option>
+                    <option value="检修">检修</option>
+                    <option value="转让停用">转让停用</option>
+                    <option value="报废">报废</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="锅炉">锅炉</option>
+                    <option value="压力容器">压力容器</option>
+                    <option value="压力管道">压力管道</option>
+                    <option value="电梯">电梯</option>
+                    <option value="起重机械">起重机械</option>
+                    <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter3" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td>
+					<select class="form-control list-inline-item w-100">
+					  <option>请选择</option>
+					  <option>安全部</option>
+					</select>
+				</td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="调试">调试</option>
+                    <option value="使用">使用</option>
+                    <option value="检修">检修</option>
+                    <option value="转让停用">转让停用</option>
+                    <option value="报废">报废</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="锅炉">锅炉</option>
+                    <option value="压力容器">压力容器</option>
+                    <option value="压力管道">压力管道</option>
+                    <option value="电梯">电梯</option>
+                    <option value="起重机械">起重机械</option>
+                    <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter4" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td>
+					<select class="form-control list-inline-item w-100">
+					  <option>请选择</option>
+					  <option>安全部</option>
+					</select>
+				</td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="调试">调试</option>
+                    <option value="使用">使用</option>
+                    <option value="检修">检修</option>
+                    <option value="转让停用">转让停用</option>
+                    <option value="报废">报废</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="转让停用"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="转让停用"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="锅炉">锅炉</option>
+                    <option value="压力容器">压力容器</option>
+                    <option value="压力管道">压力管道</option>
+                    <option value="电梯">电梯</option>
+                    <option value="起重机械">起重机械</option>
+                    <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter5" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td>
+					<select class="form-control list-inline-item w-100">
+					  <option>请选择</option>
+					  <option>安全部</option>
+					</select>
+				</td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option value="请选择">请选择</option>
+                    <option value="调试">调试</option>
+                    <option value="使用">使用</option>
+                    <option value="检修">检修</option>
+                    <option value="转让停用">转让停用</option>
+                    <option value="报废">报废</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="报废"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="报废"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-860">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">设备信息</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">设备信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备生产信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备生产信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">出场编号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">生产日期</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备基本信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">类型</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="承压蒸汽锅炉">承压蒸汽锅炉</option>
-													<option value="承压热水锅炉">承压热水锅炉</option>
-													<option value="有机热载体气相炉">有机热载体气相炉</option>
-													<option value="有机热载体液相炉">有机热载体液相炉</option>
-												</select>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">额定蒸发量（热功率）</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">t/h（MW）</span>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">额定工作压力</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">MPa</span>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">额定工作温度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">锅炉本体水（油）容积</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">燃烧方式</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="层燃">层燃</option>
-													<option value="室燃">室燃</option>
-													<option value="流化床">流化床</option>
-													<option value="其他">其他</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">燃料（或者热源）种类</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="油">油</option>
-													<option value="气">气</option>
-													<option value="煤">煤</option>
-													<option value="水煤浆">水煤浆</option>
-													<option value="木材">木材</option>
-													<option value="生物质">生物质</option>
-													<option value="电">电</option>
-													<option value="余热">余热</option>
-													<option value="其他">其他</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="text-center py-5 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存
-											</button>
-											</div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">出场编号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">生产日期</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备基本信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">类型</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="承压蒸汽锅炉">承压蒸汽锅炉</option>
+                  <option value="承压热水锅炉">承压热水锅炉</option>
+                  <option value="有机热载体气相炉">有机热载体气相炉</option>
+                  <option value="有机热载体液相炉">有机热载体液相炉</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">额定蒸发量（热功率）</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">t/h（MW）</span>
+			  </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">额定工作压力</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">MPa</span>
+			  </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">额定工作温度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">锅炉本体水（油）容积</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">燃烧方式</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="层燃">层燃</option>
+                  <option value="室燃">室燃</option>
+                  <option value="流化床">流化床</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">燃料（或者热源）种类</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="油">油</option>
+                  <option value="气">气</option>
+                  <option value="煤">煤</option>
+                  <option value="水煤浆">水煤浆</option>
+                  <option value="木材">木材</option>
+                  <option value="生物质">生物质</option>
+                  <option value="电">电</option>
+                  <option value="余热">余热</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-5 back_f">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-860">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">设备信息</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">设备信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备生产信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备生产信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">出场编号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">生产日期</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备基本信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">种类</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="固定式压力容器">固定式压力容器</option>
-													<option value="移动式压力容器">移动式压力容器</option>
-													<option value="气瓶">气瓶</option>
-													<option value="氧舱">氧舱</option>
-												</select>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">具体类别</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="第三类压力容器（包括超高压容器）">第三类压力容器（包括超高压容器）</option>
-													<option value="第二类压力容器">第二类压力容器</option>
-													<option value="第一类压力容器">第一类压力容器</option>
-													<option value="铁路罐车">铁路罐车</option>
-													<option value="汽车罐车">汽车罐车</option>
-													<option value="长管拖车">长管拖车</option>
-													<option value="罐式集装箱">罐式集装箱</option>
-													<option value="管束式集装箱">管束式集装箱</option>
-													<option value="无缝气瓶">无缝气瓶</option>
-													<option value="焊接气瓶">焊接气瓶</option>
-													<option value="特种气瓶（内装填料气瓶、纤维缠绕气瓶、低温绝热气瓶）">特种气瓶（内装填料气瓶、纤维缠绕气瓶、低温绝热气瓶）</option>
-													<option value="医用空气加压氧舱（工作压力不大于0.3MPa表压）">医用空气加压氧舱（工作压力不大于0.3MPa表压）</option>
-													<option value="医用氧气加压氧舱（工作压力不大于0.2 MPa表压）">医用氧气加压氧舱（工作压力不大于0.2 MPa表压）</option>
-													<option value="高气压舱">高气压舱</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">压力等级</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="（1）低压，0.1MPa≤p＜1.6 MPa">（1）低压，0.1MPa≤p＜1.6 MPa</option>
-													<option value="（2）中压，1.6 MPa≤p＜10.0 MPa">（2）中压，1.6 MPa≤p＜10.0 MPa</option>
-													<option value="（3）高压，10.0 MPa≤p＜100.0 MPa">（3）高压，10.0 MPa≤p＜100.0 MPa</option>
-													<option value="（4）超高压，p≥100.0 MPa">（4）超高压，p≥100.0 MPa</option>
-												</select>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">用途分类</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="反应压力容器">反应压力容器</option>
-													<option value="换热压力容器">换热压力容器</option>
-													<option value="分离压力容器">分离压力容器</option>
-													<option value="储存压力容器">储存压力容器</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">介质名称/气体类别(气瓶)</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">设计/公称压力(气瓶)</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设计温度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">℃</span>
-											</div>
-										</div>
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">容积m³/人均舱容m³(氧舱)</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设计使用年限</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">年</span>
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="text-center py-5 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存
-											</button>
-											</div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">出场编号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">生产日期</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备基本信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">种类</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="固定式压力容器">固定式压力容器</option>
+                  <option value="移动式压力容器">移动式压力容器</option>
+                  <option value="气瓶">气瓶</option>
+                  <option value="氧舱">氧舱</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">具体类别</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="第三类压力容器（包括超高压容器）">第三类压力容器（包括超高压容器）</option>
+                  <option value="第二类压力容器">第二类压力容器</option>
+                  <option value="第一类压力容器">第一类压力容器</option>
+                  <option value="铁路罐车">铁路罐车</option>
+                  <option value="汽车罐车">汽车罐车</option>
+                  <option value="长管拖车">长管拖车</option>
+                  <option value="罐式集装箱">罐式集装箱</option>
+                  <option value="管束式集装箱">管束式集装箱</option>
+                  <option value="无缝气瓶">无缝气瓶</option>
+                  <option value="焊接气瓶">焊接气瓶</option>
+                  <option value="特种气瓶（内装填料气瓶、纤维缠绕气瓶、低温绝热气瓶）">特种气瓶（内装填料气瓶、纤维缠绕气瓶、低温绝热气瓶）</option>
+                  <option value="医用空气加压氧舱（工作压力不大于0.3MPa表压）">医用空气加压氧舱（工作压力不大于0.3MPa表压）</option>
+                  <option value="医用氧气加压氧舱（工作压力不大于0.2 MPa表压）">医用氧气加压氧舱（工作压力不大于0.2 MPa表压）</option>
+                  <option value="高气压舱">高气压舱</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">压力等级</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="（1）低压，0.1MPa≤p＜1.6 MPa">（1）低压，0.1MPa≤p＜1.6 MPa</option>
+                  <option value="（2）中压，1.6 MPa≤p＜10.0 MPa">（2）中压，1.6 MPa≤p＜10.0 MPa</option>
+                  <option value="（3）高压，10.0 MPa≤p＜100.0 MPa">（3）高压，10.0 MPa≤p＜100.0 MPa</option>
+                  <option value="（4）超高压，p≥100.0 MPa">（4）超高压，p≥100.0 MPa</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">用途分类</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="反应压力容器">反应压力容器</option>
+                  <option value="换热压力容器">换热压力容器</option>
+                  <option value="分离压力容器">分离压力容器</option>
+                  <option value="储存压力容器">储存压力容器</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">介质名称/气体类别(气瓶)</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设计/公称压力(气瓶)</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设计温度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">℃</span> </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">容积m³/人均舱容m³(氧舱)</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设计使用年限</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">年</span> </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-5 back_f">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item"> 保存 </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-860">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">设备信息</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">设备信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备生产信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备生产信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">出场编号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">生产日期</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备基本信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">管道长度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">M</span>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">公称直径</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">MM</span>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">公称壁厚</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">MM</span>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">设计压力</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">MPa</span>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设计温度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">℃</span>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">介质</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="text-center py-5 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存
-											</button>
-											</div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">出场编号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">生产日期</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备基本信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">管道长度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">M</span>
+			  </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">公称直径</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">MM</span>
+			  </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">公称壁厚</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">MM</span>
+			  </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设计压力</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">MPa</span>
+			  </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设计温度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">℃</span>
+			  </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">介质</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-5 back_f">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter3" aria-hidden="true" aria-labelledby="examplePositionCenter3" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-860">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">设备信息</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">设备信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备生产信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备生产信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">出场编号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">生产日期</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备基本信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">类别</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="曳引与强制驱动电梯">曳引与强制驱动电梯</option>
-													<option value="液压驱动电梯">液压驱动电梯</option>
-													<option value="自动扶梯与自动人行道">自动扶梯与自动人行道</option>
-													<option value="其它类型电梯">其它类型电梯</option>
-												</select>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">品种</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="曳引驱动乘客电梯">曳引驱动乘客电梯</option>
-													<option value="曳引驱动载货电梯">曳引驱动载货电梯</option>
-													<option value="强制驱动载货电梯">强制驱动载货电梯</option>
-													<option value="液压乘客电梯">液压乘客电梯</option>
-													<option value="液压载货电梯">液压载货电梯</option>
-													<option value="自动扶梯">自动扶梯</option>
-													<option value="自动人行道">自动人行道</option>
-													<option value="防爆电梯">防爆电梯</option>
-													<option value="消防员电梯">消防员电梯</option>
-													<option value="杂物电梯">杂物电梯</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="text-center py-5 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存
-											</button>
-											</div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">出场编号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">生产日期</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备基本信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">类别</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="曳引与强制驱动电梯">曳引与强制驱动电梯</option>
+                  <option value="液压驱动电梯">液压驱动电梯</option>
+                  <option value="自动扶梯与自动人行道">自动扶梯与自动人行道</option>
+                  <option value="其它类型电梯">其它类型电梯</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">品种</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="曳引驱动乘客电梯">曳引驱动乘客电梯</option>
+                  <option value="曳引驱动载货电梯">曳引驱动载货电梯</option>
+                  <option value="强制驱动载货电梯">强制驱动载货电梯</option>
+                  <option value="液压乘客电梯">液压乘客电梯</option>
+                  <option value="液压载货电梯">液压载货电梯</option>
+                  <option value="自动扶梯">自动扶梯</option>
+                  <option value="自动人行道">自动人行道</option>
+                  <option value="防爆电梯">防爆电梯</option>
+                  <option value="消防员电梯">消防员电梯</option>
+                  <option value="杂物电梯">杂物电梯</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-5 back_f">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter4" aria-hidden="true" aria-labelledby="examplePositionCenter4" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-860">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">设备信息</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">设备信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备生产信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备生产信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">出场编号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">生产日期</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备基本信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">类别</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="桥式起重机">桥式起重机</option>
-													<option value="门式起重机">门式起重机</option>
-													<option value="塔式起重机">塔式起重机</option>
-													<option value="流动式起重机">流动式起重机</option>
-													<option value="门座式起重机">门座式起重机</option>
-													<option value="升降机">升降机</option>
-													<option value="缆索式起重机">缆索式起重机</option>
-													<option value="桅杆式起重机">桅杆式起重机</option>
-													<option value="机械式停车设备">机械式停车设备</option>
-												</select>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">列举</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="其他桥式起重机">其他桥式起重机</option>
-													<option value="防爆桥式起重机">防爆桥式起重机</option>
-													<option value="绝缘桥式起重机">绝缘桥式起重机</option>
-													<option value="冶金桥式起重机">冶金桥式起重机</option>
-													<option value="电动单梁起重机">电动单梁起重机</option>
-													<option value="电动葫芦桥式起重机">电动葫芦桥式起重机</option>
-													<option value="其他门式起重机">其他门式起重机</option>
-													<option value="防爆门式起重机">防爆门式起重机</option>
-													<option value="轨道式集装箱门式起重机">轨道式集装箱门式起重机</option>
-													<option value="轮胎式集装箱门式起重机">轮胎式集装箱门式起重机</option>
-													<option value="岸边集装箱起重机">岸边集装箱起重机</option>
-													<option value="造船门式起重机">造船门式起重机</option>
-													<option value="装卸桥">装卸桥</option>
-													<option value="架桥机">架桥机</option>
-													<option value="普通塔式起重机">普通塔式起重机</option>
-													<option value="电站塔式起重机">电站塔式起重机</option>
-													<option value="轮胎起重机">轮胎起重机</option>
-													<option value="履带起重机">履带起重机</option>
-													<option value="集装箱正面吊运起重机">集装箱正面吊运起重机</option>
-													<option value="铁路起重机">铁路起重机</option>
-													<option value="门座起重机">门座起重机</option>
-													<option value="固定式起重机">固定式起重机</option>
-													<option value="施工升降机">施工升降机</option>
-													<option value="简易升降机">简易升降机</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">工作区域</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">额定起重量</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">t</span>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">工作速度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">起升高度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">m</span>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">跨度</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">防爆等级</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用年限</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder=""><span class="font-size-12 pl-10 pt-5">年</span>
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="text-center py-5 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存
-											</button>
-											</div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">出场编号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">生产日期</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备基本信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">类别</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="桥式起重机">桥式起重机</option>
+                  <option value="门式起重机">门式起重机</option>
+                  <option value="塔式起重机">塔式起重机</option>
+                  <option value="流动式起重机">流动式起重机</option>
+                  <option value="门座式起重机">门座式起重机</option>
+                  <option value="升降机">升降机</option>
+                  <option value="缆索式起重机">缆索式起重机</option>
+                  <option value="桅杆式起重机">桅杆式起重机</option>
+                  <option value="机械式停车设备">机械式停车设备</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">列举</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="其他桥式起重机">其他桥式起重机</option>
+                  <option value="防爆桥式起重机">防爆桥式起重机</option>
+                  <option value="绝缘桥式起重机">绝缘桥式起重机</option>
+                  <option value="冶金桥式起重机">冶金桥式起重机</option>
+                  <option value="电动单梁起重机">电动单梁起重机</option>
+                  <option value="电动葫芦桥式起重机">电动葫芦桥式起重机</option>
+                  <option value="其他门式起重机">其他门式起重机</option>
+                  <option value="防爆门式起重机">防爆门式起重机</option>
+                  <option value="轨道式集装箱门式起重机">轨道式集装箱门式起重机</option>
+                  <option value="轮胎式集装箱门式起重机">轮胎式集装箱门式起重机</option>
+                  <option value="岸边集装箱起重机">岸边集装箱起重机</option>
+                  <option value="造船门式起重机">造船门式起重机</option>
+                  <option value="装卸桥">装卸桥</option>
+                  <option value="架桥机">架桥机</option>
+                  <option value="普通塔式起重机">普通塔式起重机</option>
+                  <option value="电站塔式起重机">电站塔式起重机</option>
+                  <option value="轮胎起重机">轮胎起重机</option>
+                  <option value="履带起重机">履带起重机</option>
+                  <option value="集装箱正面吊运起重机">集装箱正面吊运起重机</option>
+                  <option value="铁路起重机">铁路起重机</option>
+                  <option value="门座起重机">门座起重机</option>
+                  <option value="固定式起重机">固定式起重机</option>
+                  <option value="施工升降机">施工升降机</option>
+                  <option value="简易升降机">简易升降机</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">工作区域</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">额定起重量</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">t</span>
+			  </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">工作速度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">起升高度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">m</span>
+			  </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">跨度</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">防爆等级</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用年限</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+                <span class="font-size-12 pl-10 pt-5">年</span>
+			  </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-5 back_f">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter5" aria-hidden="true" aria-labelledby="examplePositionCenter5" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-860">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">设备信息</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">设备信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备生产信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备生产信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">制造/销售单位联系人</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">出场编号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">生产日期</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="panel_li">
-									<div class="row pb-10">
-                						<label class="col-md-2 col-form-label"><h2 class="font-size-16 mt-0">设备基本信息</h2></label>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">类别</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="叉车">叉车</option>
-													<option value="非公路用旅游观光车辆">非公路用旅游观光车辆</option>
-												</select>
-											</div>
-										</div>
-										<div class="w-p50">
-											<label class="text-right col-form-label w-p46 pr-5">驱动方式</label>
-											<div class="btn-group w-p46">
-												<select class="form-control list-inline-item w-150">
-													<option value="请选择">请选择</option>
-													<option value="燃油">燃油</option>
-													<option value="用电">用电</option>
-												</select>
-											</div>
-										</div>
-            						</div>
-									<div class="row pb-10">
-										<div class="w-p50">
-										<label class="text-right col-form-label w-p46 pr-5">车牌号</label>
-											<div class="btn-group w-p46">
-												<input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-											</div>
-										</div>
-            						</div>
-									</div>
-									<div class="text-center py-5 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存
-											</button>
-											</div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">出场编号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
             </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">产品合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">使用合格证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">设备注册证号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">生产日期</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="panel_li">
+          <div class="row pb-10">
+            <label class="col-md-2 col-form-label">
+            <h2 class="font-size-16 mt-0">设备基本信息</h2>
+            </label>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">类别</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="叉车">叉车</option>
+                  <option value="非公路用旅游观光车辆">非公路用旅游观光车辆</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">驱动方式</label>
+              <div class="btn-group w-p46">
+                <select class="form-control list-inline-item w-150">
+                  <option value="请选择">请选择</option>
+                  <option value="燃油">燃油</option>
+                  <option value="用电">用电</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row pb-10">
+            <div class="w-p50">
+              <label class="text-right col-form-label w-p46 pr-5">车牌号</label>
+              <div class="btn-group w-p46">
+                <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center py-5 back_f">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter6" aria-hidden="true" aria-labelledby="examplePositionCenter6" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">操作规章</h4>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">操作规章</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="text-center xian_b py-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
             </div>
-            <div class="bootstrap-select">
-				<div id="sticky">
-						<div id="carbonads-container">
-											<div class="text-center xian_b py-20 back_f">
-											<button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">
-												保存草稿
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-											</div>
-											</div>
-											</div>
-											<div class="modal-body h-450">
-												<h3 class="font-size-16 font-weight-600 my-0">设备简介</h3>
-												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
-												<h3 class="font-size-16 font-weight-600 my-0 mt-10">主要危险因素描述</h3>
-												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
-												<h3 class="font-size-16 font-weight-600 my-0 mt-10">安全防护措施</h3>
-												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
-												<h3 class="font-size-16 font-weight-600 my-0 mt-10">个人防护用品</h3>
-												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
-												<div class="panel-body p-0">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mt-20 mb-20" id="dataTableExample">
-													<thead>
-														<tr>
-															<th width="120">作业程序</th>
-															<th width="250">步骤</th>
-															<th>安全要点及禁忌事项</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>作业准备</td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>作业中</td>
-															<td></td>
-															<td></td>
-														</tr>
-														<tr>
-															<td>作业结束</td>
-															<td></td>
-															<td></td>
-														</tr>
-													</tbody>
-												</table>
-												</div>
-												<h3 class="font-size-16 font-weight-600 my-0 mt-10">应急处理措施</h3>
-												<textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
-											</div>
-											</div>
+          </div>
         </div>
-    </div>
-</div>
-<div class="modal fade modal_bg" id="examplePositionCenter7" aria-hidden="true" aria-labelledby="examplePositionCenter7" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">隐患排查上报</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-wechat px-20 list-inline-item mr-20">
-												导出
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-											</div>
-											<div class="mt-20">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-													<thead>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<th>排查日期</th>
-															<th>排查项目数量</th>
-															<th>发现隐患数量</th>
-															<th>整改隐患数量</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>2020-3-17 15:46:27</td>
-															<td>12</td>
-															<td>1</td>
-															<td>3</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+        <div class="modal-body h-450">
+          <h3 class="font-size-16 font-weight-600 my-0">设备简介</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">主要危险因素描述</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">安全防护措施</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">个人防护用品</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <div class="panel-body p-0">
+		  	<div class="pt-15 back_f">
+			  <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+			  <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+			</div>
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mt-20 mb-20" id="dataTableExample">
+              <thead>
+                <tr>
+				  <th width="70"><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></th>
+                  <th>作业类型</th>
+                  <th>作业准备</th>
+                  <th>作业中</th>
+				  <th>作业结束</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+				  <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                </tr>
+                <tr>
+				  <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">应急处理措施</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter8" aria-hidden="true" aria-labelledby="examplePositionCenter8" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">添加运行故障和事故记录</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-											</div>
-											<div class="mt-20">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-													<thead>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<th>发生事件</th>
-															<th>运行故障和事故情况</th>
-															<th>处理情况</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>xxxxxxxxxxxx</td>
-															<td>xxxxxxxxxxxxx</td>
-															<td>xxxxxxxxxxxxxx</td>
-														</tr>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>xxxxxxxxxxxx</td>
-															<td>xxxxxxxxxxxxx</td>
-															<td>xxxxxxxxxxxxxx</td>
-														</tr>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>xxxxxxxxxxxx</td>
-															<td>xxxxxxxxxxxxx</td>
-															<td>xxxxxxxxxxxxxx</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">添加运行故障和事故记录</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div>
+            <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+            <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+            <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+          </div>
+          <div class="mt-20">
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+              <thead>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <th>发生事件</th>
+                  <th>运行故障和事故情况</th>
+                  <th>处理情况</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td>xxxxxxxxxxxx</td>
+                  <td>xxxxxxxxxxxxx</td>
+                  <td>xxxxxxxxxxxxxx</td>
+                </tr>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td>xxxxxxxxxxxx</td>
+                  <td>xxxxxxxxxxxxx</td>
+                  <td>xxxxxxxxxxxxxx</td>
+                </tr>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td>xxxxxxxxxxxx</td>
+                  <td>xxxxxxxxxxxxx</td>
+                  <td>xxxxxxxxxxxxxx</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter9" aria-hidden="true" aria-labelledby="examplePositionCenter9" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center max-width-960">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">安全附件管理</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-				<div class="alert p-0" role="alert">
-							<div class="mt-5 list-inline-item">附件名称</div>
-                                <input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
-								<div class="mt-5 list-inline-item">检验状态</div>
-								    <select class="form-control list-inline-item mr-15 w-100">
-								        <option>请选择</option>
-										<option>正常</option>
-										<option>过期</option>
-								    </select>
-									<div class="mt-5 list-inline-item">设备状态</div>
-									    <select class="form-control list-inline-item mr-15 w-100">
-									        <option>请选择</option>
-										    <option>调试</option>
-										    <option>使用</option>
-											<option>检修</option>
-											<option>转让停用</option>
-											<option>报废</option>
-									    </select>
-											<button type="button" class="btn btn-warning list-inline-item mt--5">
-											    搜索
-											</button>
-		                </div>
-											<div>
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-wechat px-20 list-inline-item">
-												导出
-											</button>
-											<button type="button" class="btn btn-success px-20 list-inline-item mr-20">
-												导入
-											</button>
-											<button type="button" class="btn social-github px-20 list-inline-item mr-20">
-												下载模板
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-											</div>
-											<div class="mt-20">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-													<thead>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<th>附件名称</th>
-															<th>规格型号</th>
-															<th>安装位置</th>
-															<th>检验日期</th>
-															<th>下次检验日期</th>
-															<th>检验状态</th>
-															<th>设备设施状态</th>
-															<th>检验记录</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>xxxxxxxx</td>
-															<td>xxxxxxxxx</td>
-															<td>xxxxxxxxx</td>
-															<td>2020-04-10</td>
-															<td>2021-04-10</td>
-															<td>xxxx</td>
-															<td>xxxx</td>
-															<td><span class="cursor" data-target="#examplePositionCenter10" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
-														</tr>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>xxxxxxxx</td>
-															<td>xxxxxxxxx</td>
-															<td>xxxxxxxxx</td>
-															<td>2020-04-10</td>
-															<td>2021-04-10</td>
-															<td>xxxx</td>
-															<td>xxxx</td>
-															<td><span class="cursor" data-target="#examplePositionCenter10" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-														</tr>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>xxxxxxxx</td>
-															<td>xxxxxxxxx</td>
-															<td>xxxxxxxxx</td>
-															<td>2020-04-10</td>
-															<td>2021-04-10</td>
-															<td>xxxx</td>
-															<td>xxxx</td>
-															<td><span class="cursor" data-target="#examplePositionCenter10" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">安全附件管理</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div class="alert p-0" role="alert">
+            <div class="mt-5 list-inline-item">附件名称</div>
+            <input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+            <div class="mt-5 list-inline-item">检验状态</div>
+            <select class="form-control list-inline-item mr-15 w-100">
+              <option>请选择</option>
+              <option>正常</option>
+              <option>过期</option>
+            </select>
+            <div class="mt-5 list-inline-item">设备状态</div>
+            <select class="form-control list-inline-item mr-15 w-100">
+              <option>请选择</option>
+              <option>调试</option>
+              <option>使用</option>
+              <option>检修</option>
+              <option>转让停用</option>
+              <option>报废</option>
+            </select>
+            <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+            <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+            <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
+            <button type="button" class="btn btn-success px-20 list-inline-item mr-20">导入</button>
+            <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
+            <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+          </div>
+          <div class="panel-body mt-20 p-0">
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+              <thead>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <th>附件名称</th>
+                  <th>规格型号</th>
+                  <th>安装位置</th>
+                  <th width="100">状态日期</th>
+                  <th width="100">下次检验日期</th>
+                  <th width="110">设备设施状态</th>
+                  <th width="80">检验状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td>
+				  	<select class="form-control list-inline-item w-100">
+                      <option value="请选择">请选择</option>
+                      <option value="调试">调试</option>
+                      <option value="使用">使用</option>
+                      <option value="检修">检修</option>
+                      <option value="转让停用">转让停用</option>
+                      <option value="报废">报废</option>
+                    </select>
+				  </td>
+                  <td><span class="color-08">正常</span></td>
+                </tr>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td>
+				  	<select class="form-control list-inline-item w-100">
+                      <option value="请选择">请选择</option>
+                      <option value="调试">调试</option>
+                      <option value="使用">使用</option>
+                      <option value="检修">检修</option>
+                      <option value="转让停用">转让停用</option>
+                      <option value="报废">报废</option>
+                    </select>
+				  </td>
+                  <td><span class="color_ff0">过期</span></td>
+                </tr>
+                <tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td>
+				  	<select class="form-control list-inline-item w-100">
+                      <option value="请选择">请选择</option>
+                      <option value="调试">调试</option>
+                      <option value="使用">使用</option>
+                      <option value="检修">检修</option>
+                      <option value="转让停用">转让停用</option>
+                      <option value="报废">报废</option>
+                    </select>
+				  </td>
+                  <td><span>转让停用</span></td>
+                </tr>
+				<tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td>
+				  	<select class="form-control list-inline-item w-100">
+                      <option value="请选择">请选择</option>
+                      <option value="调试">调试</option>
+                      <option value="使用">使用</option>
+                      <option value="检修">检修</option>
+                      <option value="转让停用">转让停用</option>
+                      <option value="报废">报废</option>
+                    </select>
+				  </td>
+                  <td><span>报废</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<div class="modal fade modal_bg" id="examplePositionCenter10" aria-hidden="true" aria-labelledby="examplePositionCenter10" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">添加检验记录</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-											</div>
-											<div class="mt-20">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-													<thead>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<th>检验日期</th>
-															<th>检验报告编号</th>
-															<th>检验结果</th>
-															<th>下次检验日期</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>2020-01-02</td>
-															<td>1xxxxxxxxxx</td>
-															<td></td>
-															<td>2020-02-02</td>
-														</tr>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>2020-01-02</td>
-															<td>1xxxxxxxxxx</td>
-															<td></td>
-															<td>2020-02-02</td>
-														</tr>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>2020-01-02</td>
-															<td>1xxxxxxxxxx</td>
-															<td></td>
-															<td>2020-02-02</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 <!-- 插件 -->
 <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
@@ -1614,9 +1493,7 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
-
-    <script src="../../../../public/themes/base/js/app.js"></script>
-
+<script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
 </body>

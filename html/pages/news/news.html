@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>消息 - 电控安全云</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+    <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+	<link rel="stylesheet" href="../../../../public/vendor/clockpicker/clockpicker.css">
+    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../../../../public/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../../../../public/vendor/timepicker/jquery-timepicker.css">
+    
+    
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+    
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel">
+						<div class="panel-heading pt-25 pl-25 pr-25">
+		                    <h3 class="panel-title p-0 xian_b pb-20">您有<span class="color_ff0">2</span>个新消息</h3>
+		                </div>
+						<div class="alert pb-0 pt-20" role="alert">
+        <div class="mt-5 list-inline-item">名称</div>
+        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+        <div class="mt-5 list-inline-item">时间范围</div>
+        <div class="inline-block mt-0 mb--11 mr-10 sw-413" data-plugin="datepair">
+          <div class="float-left">
+            <div class="input-daterange">
+              <div class="input-group">
+                <div class="input-group-prepend float-left"> <span class="input-group-text"> <i class="icon wb-calendar" aria-hidden="true"></i> </span> </div>
+                <input type="text" class="form-control datepair-date datepair-start inline-block w-150" data-plugin="datepicker" data-language="zh-CN"
+                                           placeholder="开始日期">
+              </div>
+            </div>
+          </div>
+          <div class="float-left px-10 pt-5">至</div>
+          <div class="float-left">
+            <div class="input-daterange">
+              <div class="input-group">
+                <div class="input-group-prepend float-left"> <span class="input-group-text"> <i class="icon wb-calendar" aria-hidden="true"></i> </span> </div>
+                <input type="text" class="form-control datepair-date datepair-end inline-block w-150" name="end"
+                                           data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 list-inline-item">发布机构</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+          <option>请选择</option>
+          <option>京东方</option>
+        </select>
+		<div class="mt-5 list-inline-item">类型</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+          <option>请选择</option>
+          <option>通知</option>
+		  <option>基础信息</option>
+		  <option>风险管理</option>
+		  <option>预警信息</option>
+        </select>
+        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+      </div>
+	<div class="px-25 pt-20">
+        <button type="button" class="btn social-wechat px-20 list-inline-item mr-10">导出</button>
+		<button type="button" class="btn btn-success px-20 list-inline-item mr-20">导入</button>
+        <a href="/html/pages/news/publish_news.html" target="_blank" class="btn social-facebook px-20 list-inline-item mr-20">发布消息</a>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+		<div class="panel-body">
+        <div class="mb-10">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+            <thead>
+              <tr>
+                <th width="70" class="text-center">序号</th>
+                <th>状态</th>
+                <th>名称</th>
+                <th>类型</th>
+                <th>发布时间</th>
+                <th>发布者</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">1</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank">新消息</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>电控集团</td>
+              </tr>
+			  <tr>
+                <td class="text-center">2</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>电控集团</td>
+              </tr>
+			  <tr>
+                <td class="text-center">3</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank">新消息</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>基础信息</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>电控集团</td>
+              </tr>
+			  <tr>
+                <td class="text-center">4</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>风险管理</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>电控集团</td>
+              </tr>
+			  <tr>
+                <td class="text-center">5</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>预警信息</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>电控集团</td>
+              </tr>
+			  <tr>
+                <td class="text-center">6</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>电控集团</td>
+              </tr>
+			  <tr>
+                <td class="text-center">7</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>系统</td>
+              </tr>
+			  <tr>
+                <td class="text-center">8</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>系统</td>
+              </tr>
+			  <tr>
+                <td class="text-center">9</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>系统</td>
+              </tr>
+			  <tr>
+                <td class="text-center">10</td>
+                <td><a href="/html/pages/news/view_message.html" target="_blank" class="color_666">已读</a></td>
+                <td>xxxxxxxxxxxx</td>
+                <td>通知</td>
+                <td>2019-12-28 16:28:16</td>
+                <td>系统</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		            </div>
+		        </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="../../../../public/vendor/timepicker/jquery.timepicker.min.js"></script>
+<script src="../../../../public/vendor/moment/moment.min.js"></script>
+<script src="../../../../public/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="../../../../public/vendor/datepair/jquery.datepair.min.js"></script>
+
+    <script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/forms/advanced/date-time.js"></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>培训计划 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/clockpicker/clockpicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/timepicker/jquery-timepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="panel-heading pt-25 pl-25 pr-25 mb-10">
+        <h3 class="panel-title p-0 xian_b pb-20">您有<span class="h_f">3</span>个培训计划未完成，<span class="h_f">1</span>个培训项目已过期</h3>
+      </div>
+      <div class="alert pb-0 wb-100" role="alert">
+        <div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">培训开始时间</div>
+			<div class="inline-block mt-0 mb--11 mr-10 sw-413" data-plugin="datepair">
+			  <div class="float-left">
+				<div class="input-daterange">
+				  <div class="input-group">
+					<div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+					<input type="text" class="form-control datepair-date datepair-start inline-block w-150" data-plugin="datepicker" data-language="zh-CN" placeholder="开始日期">
+				  </div>
+				</div>
+			  </div>
+			  <div class="float-left px-10 pt-5">至</div>
+			  <div class="float-left">
+				<div class="input-daterange">
+				  <div class="input-group">
+					<div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+					<input type="text" class="form-control datepair-date datepair-end inline-block w-150" name="end" data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">编号</div>
+			<input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">级别</div>
+			<select class="form-control list-inline-item mr-15 w-100">
+			  <option>请选择</option>
+			</select>
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">组织部门</div>
+			<select class="form-control list-inline-item w-100 mr-15">
+			  <option>化工部</option>
+			</select>
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">编制部门</div>
+			<select class="form-control list-inline-item mr-15 w-100">
+			  <option>化工部</option>
+			</select>
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">预警状态</div>
+			<select class="form-control list-inline-item mr-15 w-100">
+			  <option>请选择</option>
+			</select>
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">培训课程号</div>
+			<input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">培训属性</div>
+			<select class="form-control list-inline-item mr-15 w-100">
+			  <option>请选择</option>
+			</select>
+		</div>
+		<div class="float-left height-34 mb-20">
+        	<button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
+      </div>
+      <div class="px-25 pt-0">
+        <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+        <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
+        <button type="button" class="btn btn-success px-20 list-inline-item mr-20">导入</button>
+        <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
+        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="mb-10">
+		<div class="mt-0" data-plugin="mCustomScrollbar" data-axis='x'>
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-5" id="dataTableExample">
+            <thead>
+              <tr>
+                <th><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></th>
+                <th>编号</th>
+                <th>培训专题</th>
+                <th>计划时间</th>
+                <th>计划编制单位</th>
+                <th>培训内容</th>
+                <th>实施部门</th>
+                <th>培训对象</th>
+                <th>参加人数</th>
+                <th>培训类型</th>
+                <th>培训类别</th>
+                <th>培训形式</th>
+                <th>计划学时</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>化工部</option>
+                    <option>生产部</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>再教育培训</option>
+                    <option>专项培训</option>
+                    <option>四新教育</option>
+                    <option>转岗培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>内部培训</option>
+                    <option>外部培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>集中讲授</option>
+                    <option>专题讲座</option>
+                    <option>实操教学</option>
+                    <option>班前教育</option>
+                    <option>网络培训</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="8"></td>
+                <td><span class="color_ff0">未完成</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>化工部</option>
+                    <option>生产部</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>再教育培训</option>
+                    <option>专项培训</option>
+                    <option>四新教育</option>
+                    <option>转岗培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>内部培训</option>
+                    <option>外部培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>集中讲授</option>
+                    <option>专题讲座</option>
+                    <option>实操教学</option>
+                    <option>班前教育</option>
+                    <option>网络培训</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="8"></td>
+                <td><span class="color_228">已完成</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>化工部</option>
+                    <option>生产部</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>再教育培训</option>
+                    <option>专项培训</option>
+                    <option>四新教育</option>
+                    <option>转岗培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>内部培训</option>
+                    <option>外部培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>集中讲授</option>
+                    <option>专题讲座</option>
+                    <option>实操教学</option>
+                    <option>班前教育</option>
+                    <option>网络培训</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="8"></td>
+                <td><span class="color_228">已完成</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>化工部</option>
+                    <option>生产部</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>再教育培训</option>
+                    <option>专项培训</option>
+                    <option>四新教育</option>
+                    <option>转岗培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>内部培训</option>
+                    <option>外部培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>集中讲授</option>
+                    <option>专题讲座</option>
+                    <option>实操教学</option>
+                    <option>班前教育</option>
+                    <option>网络培训</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="8"></td>
+                <td><span class="color_228">已完成</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>化工部</option>
+                    <option>生产部</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>再教育培训</option>
+                    <option>专项培训</option>
+                    <option>四新教育</option>
+                    <option>转岗培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>内部培训</option>
+                    <option>外部培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>集中讲授</option>
+                    <option>专题讲座</option>
+                    <option>实操教学</option>
+                    <option>班前教育</option>
+                    <option>网络培训</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="8"></td>
+                <td><span class="color_228">已完成</span></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>化工部</option>
+                    <option>生产部</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>再教育培训</option>
+                    <option>专项培训</option>
+                    <option>四新教育</option>
+                    <option>转岗培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>内部培训</option>
+                    <option>外部培训</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>集中讲授</option>
+                    <option>专题讲座</option>
+                    <option>实操教学</option>
+                    <option>班前教育</option>
+                    <option>网络培训</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="8"></td>
+                <td><span class="color_228">已完成</span></td>
+              </tr>
+            </tbody>
+          </table>
+		  </div>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="../../../../public/vendor/timepicker/jquery.timepicker.min.js"></script>
+<script src="../../../../public/vendor/moment/moment.min.js"></script>
+<script src="../../../../public/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="../../../../public/vendor/datepair/jquery.datepair.min.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+<script src="../../../../public/js/examples/forms/advanced/date-time.js"></script>
+</body>
+</html>

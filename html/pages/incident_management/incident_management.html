@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>事故管理 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/clockpicker/clockpicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/timepicker/jquery-timepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="alert pb-0 pt-25" role="alert">
+        <div class="mt-5 list-inline-item">名称</div>
+        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+        <div class="mt-5 list-inline-item">时间范围</div>
+        <div class="inline-block mt-0 mb--11 mr-10 sw-413" data-plugin="datepair">
+          <div class="float-left">
+            <div class="input-daterange">
+              <div class="input-group">
+                <div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+                <input type="text" class="form-control datepair-date datepair-start inline-block w-150" data-plugin="datepicker" data-language="zh-CN" placeholder="开始日期">
+              </div>
+            </div>
+          </div>
+          <div class="float-left px-10 pt-5">至</div>
+          <div class="float-left">
+            <div class="input-daterange">
+              <div class="input-group">
+                <div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+                <input type="text" class="form-control datepair-date datepair-end inline-block w-150" name="end" data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 list-inline-item">事故级别</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+          <option>请选择</option>
+          <option>一般</option>
+          <option>较大</option>
+          <option>重大</option>
+          <option>特别重大</option>
+        </select>
+        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+      </div>
+      <div class="px-25 pt-25">
+        <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+        <button type="button" class="btn social-wechat px-20 list-inline-item mr-20">导出</button>
+        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="mb-10">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+            <thead>
+              <tr>
+                <th><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></th>
+                <th>事故名称</th>
+                <th>事故时间</th>
+                <th>公司</th>
+                <th>事故地点</th>
+                <th width="170">事故类别</th>
+                <th width="120">事故级别</th>
+                <th>轻伤人数</th>
+                <th>死亡人数</th>
+                <th>重伤人数</th>
+                <th>经济损失（万元）</th>
+                <th>事故报告</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2019-12-28"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><select class="form-control list-inline-item w-150">
+                    <option>请选择</option>
+                    <option>相关方事故</option>
+                    <option>企业事故</option>
+                  </select>
+                </td>
+                <td><select class="form-control list-inline-item w-100">
+                    <option>请选择</option>
+                    <option>一般</option>
+                    <option>较大</option>
+                    <option>重大</option>
+                    <option>特别重大</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="11"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="23"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-780">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">事故报告</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div class="example p-0 xian_0 height-400" data-plugin="mCustomScrollbar">
+          <div class="modal-body py-0">
+            <h3 class="font-size-16 font-weight-600 my-0">事故经过</h3>
+            <div class="h_f mt-10">要求：详细描述事故过程，包括时间、地点、任务、起因、经过</div>
+            <textarea class="form-control wb-100 h-250 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+            <div class="">
+              <h3 class="font-size-16 font-weight-600 my-0 mt-10">事故照片（3-9张）</h3>
+              <div class="mt-15">
+                <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+              </div>
+              <div class="hazardous_center mt-20">
+                <div class="implementation_tc">
+                  <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                    <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                  </div>
+                  <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                    <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                  </div>
+                  <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                    <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 class="font-size-16 font-weight-600 my-0">事故处置情况</h3>
+            <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">事故原因分析</h3>
+            <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">事故损失情况</h3>
+            <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+            <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">事故责任人处理情况</h3>
+            <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+            <h3 class="font-size-16 font-weight-600 my-0 mt-10">事故责任人及相关人员培训情况</h3>
+            <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="text-center my-20">
+          <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+          <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="../../../../public/vendor/timepicker/jquery.timepicker.min.js"></script>
+<script src="../../../../public/vendor/moment/moment.min.js"></script>
+<script src="../../../../public/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="../../../../public/vendor/datepair/jquery.datepair.min.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/forms/advanced/date-time.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+</body>
+</html>

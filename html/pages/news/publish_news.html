@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>发布消息 - 电控安全云</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备 viewport -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="author" content="admui.com">
+    <!-- 360浏览器默认使用Webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止搜索引擎抓取 -->
+    <meta name="robots" content="nofollow">
+    <!-- 禁止百度SiteAPP转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Safari浏览器添加到主屏幕（IOS） -->
+    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Admui">
+    <!-- Win8标题栏及ICON图标 -->
+    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#62a8ea">
+    
+    <!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+    
+    <!-- 字体图标 CSS -->
+    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+    
+    <!-- 插件 CSS -->
+    <link rel="stylesheet" href="../../../../public/vendor/summernote/summernote-bs4.css">
+	
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+    
+	<!-- 自定义 CSS -->
+	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+    
+    <!-- 插件 -->
+    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+		<div class="page-content" id="DTConent">
+		            <div class="panel">
+						<div class="panel-heading pt-25 pl-25 pr-25">
+		                    <h3 class="panel-title p-0 xian_b pb-20">发布消息</h3>
+		                </div>
+						<div class="panel-body">
+							<div class="wb-100 mt-20">
+								<div class="mt-5 list-inline-item">名称</div>
+								<input type="text" class="form-control col-lg-2 list-inline-item mr-15 max-width-400" id="inputPlaceholder" placeholder="">
+							</div>
+							<div class="wb-100 mt-20">
+								<div class="mt-5 list-inline-item">类型</div>
+								<select class="form-control col-lg-1 list-inline-item mr-15">
+									<option>请选择</option>
+									<option>通知</option>
+									<option>基础信息</option>
+									<option>风险管理</option>
+									<option>预警信息</option>
+								</select>
+							</div>
+							<div class="wb-100 mt-20 publish_sum">
+								<div id="summernote" data-plugin="summernote" data-lang="zh-CN">
+								</div>
+							</div>
+							<button type="button" class="btn btn-outline btn-primary mt-15 mb-40" id="save" onClick="save()">发布</button>
+        				</div>
+		            </div>
+		        </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/summernote/summernote-bs4.min.js"></script>
+<script src="../../../../public/vendor/summernote/summernote-zh-CN.js"></script>
+
+<script src="../../../../public/themes/global/js/plugins/action-btn.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/editor-summernote.js"></script>
+</body>
+</html>

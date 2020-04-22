@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>隐患治理 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/jstree/jstree.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/animation.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="panel-heading pt-25 pl-25 pr-25 mb-10">
+        <h3 class="panel-title p-0 xian_b pb-20">您有<span class="h_f">3</span>个隐患项目未整改，<span class="h_f">5</span>个隐患项目需要您验收</h3>
+      </div>
+      <div class="alert" role="alert">
+        <div class="mt-5 list-inline-item">名称</div>
+        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+        <div class="mt-5 list-inline-item">公司</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>京东方</option>
+          <option>京东方1</option>
+          <option>京东方2</option>
+          <option>京东方3</option>
+          <option>京东方4</option>
+        </select>
+        <div class="mt-5 list-inline-item">责任部门</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>生产部</option>
+        </select>
+        <div class="mt-5 list-inline-item">整改部门</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>生产部</option>
+        </select>
+        <div class="mt-5 list-inline-item">状态</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+          <option>已整改</option>
+          <option>未整改</option>
+        </select>
+        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+      </div>
+      <div class="px-25 mt-10">
+        <button type="button" class="btn social-wechat px-20 list-inline-item mr-20">导出</button>
+      </div>
+      <div class="px-25 mt-20"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">我整改的（3）</a><a href="###" class="btn btn-inverse mr-15">我验收的（5）</a><a href="###" class="btn btn-inverse mr-15">挂账中（5）</a><a href="###" class="btn btn-inverse mr-15">隐患公示</a>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+          <thead>
+            <tr>
+              <th>隐患ID</th>
+              <th>隐患名称</th>
+              <th>隐患来源</th>
+              <th>隐患等级</th>
+              <th>整改期限</th>
+              <th>责任公司</th>
+              <th>责任部门</th>
+              <th>整改部门</th>
+              <th>状态</th>
+              <th width="140">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>整改中</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">分派</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>验收中</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ffa" data-target="#examplePositionCenter2" data-toggle="modal">验收</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>审核失败</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>整改完成</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ff0">公示</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>挂账</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter3" data-toggle="modal">整改</button>
+                <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-011">取消挂账</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>未整改</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter3" data-toggle="modal">整改</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>审核失败</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">分派</button></td>
+            </tr>
+            <tr>
+              <td>2222</td>
+              <td><span class="l_q">xxxx问题</span></td>
+              <td>上级检查</td>
+              <td>一般等级</td>
+              <td>2019-11-31</td>
+              <td>京东方</td>
+              <td>市场部</td>
+              <td>生产部</td>
+              <td>公示中</td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ff0">撤销公示</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color-se4 pr-50">整改中</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security" aria-controls="security" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security1" aria-controls="security1" role="tab">整改情况</a></li>
+            </ul>
+            <div class="float-right smt--34 mr-20">
+              <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">挂账</button>
+              <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">取消挂账</button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security1" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述直接导致隐患产生的原因。" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述间接导致隐患产生的原因，包括包括危险源辨识与控制、宣贯培训、作业环境、人员意识等方面" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述导致隐患产生的管理原因，主要包括制度、流程、劳动组织等方面" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述在导致隐患产生方面，各级管理者的履职方面的原因。" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="请描述其他原因。" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3">按照原因分析，一一逐条对应整改措施。
+1.
+2.</textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="pt-15 back_f">
+                        <button type="button" class="btn btn-primary px-20 list-inline-item mr-15">添加</button>
+                        <button type="button" class="btn btn-danger px-20 list-inline-item">删除</button>
+                      </div>
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th width="60"><span class="checkbox-custom checkbox-primary">
+                                <input class="selectable-all" type="checkbox">
+                                <label></label>
+                                </span></th>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="checkbox-custom checkbox-primary">
+                                <input class="selectable-all" type="checkbox">
+                                <label></label>
+                                </span></td>
+                              <td><span class="l-height-97"><textarea class="form-control wb-100 float-left" style="resize:none; height:97px;" id="textareaDefault" placeholder="" rows="3"></textarea></span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="checkbox-custom checkbox-primary">
+                                <input class="selectable-all" type="checkbox">
+                                <label></label>
+                                </span></td>
+                              <td><span class="l-height-97"><textarea class="form-control wb-100 height-97 float-left" style="resize:none; height:97px;" id="textareaDefault" placeholder="" rows="3"></textarea></span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                                </div></td>
+                              <td><div class="security_add_img"><a href="###">添加照片</a></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div id="carbonads-container">
+            <div class="text-center xian_b pb-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_ffa pr-50">验收中</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security2" aria-controls="security2" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security3" aria-controls="exampleTabsFour" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security4" aria-controls="security4" role="tab">验收情况</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security4" role="tabpanel">
+                <div class="p-20">
+                  <h3 class="font-size-16 font-weight-600 my-0">验收情况<span class="color_ff0">*</span></h3>
+                  <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3">针对整改措施，一一逐条对应验收证明材料，逐条进行验收，逐条确定验收时间，时间应精确至日。
+XX材料/
+XX/
+X年X月X日</textarea>
+                </div>
+              </div>
+              <div class="tab-pane" id="security3" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述直接导致隐患产生的原因。" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述间接导致隐患产生的原因，包括包括危险源辨识与控制、宣贯培训、作业环境、人员意识等方面" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述导致隐患产生的管理原因，主要包括制度、流程、劳动组织等方面" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="此处详细描述在导致隐患产生方面，各级管理者的履职方面的原因。" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="请描述其他原因。" rows="3"></textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3">按照原因分析，一一逐条对应整改措施。
+1.
+2.</textarea>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="pt-15 back_f">
+                        <button type="button" class="btn btn-primary px-20 list-inline-item mr-15">添加</button>
+                        <button type="button" class="btn btn-danger px-20 list-inline-item">删除</button>
+                      </div>
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th width="60"><span class="checkbox-custom checkbox-primary">
+                                <input class="selectable-all" type="checkbox">
+                                <label></label>
+                                </span></th>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="checkbox-custom checkbox-primary">
+                                <input class="selectable-all" type="checkbox">
+                                <label></label>
+                                </span></td>
+                              <td><span class="l-height-97"><textarea class="form-control wb-100 float-left" style="resize:none; height:97px;" id="textareaDefault" placeholder="" rows="3"></textarea></span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="checkbox-custom checkbox-primary">
+                                <input class="selectable-all" type="checkbox">
+                                <label></label>
+                                </span></td>
+                              <td><span class="l-height-97"><textarea class="form-control wb-100 float-left" style="resize:none; height:97px;" id="textareaDefault" placeholder="" rows="3"></textarea></span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                                </div></td>
+                              <td><div class="security_add_img"><a href="###">添加照片</a></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security2" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div id="carbonads-container">
+            <div class="text-center xian_b pb-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">请选择分派的部门</h4>
+      </div>
+      <div class="p-20 pb-0">
+        <div class="example mb-0 mt-0" data-plugin="mCustomScrollbar">
+          <div id="checkbox"></div>
+        </div>
+        <div class="text-center xian_1_e xian_t_0 pt-15 pb-5">
+          <button type="button" class="btn social-facebook px-20 list-inline-item mb-10">提交</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/jstree/jstree.min.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+<!-- Page JS -->
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+<script src="../../../../public/js/examples/components/advanced/department.js"></script>
+<script src="../../../../public/js/examples/components/advanced/jstree.js"></script>
+</body>
+</html>

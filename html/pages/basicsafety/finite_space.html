@@ -1,668 +1,621 @@
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>有限空间管理 - 电控安全云</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备 viewport -->
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <meta name="author" content="admui.com">
-    <!-- 360浏览器默认使用Webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止搜索引擎抓取 -->
-    <meta name="robots" content="nofollow">
-    <!-- 禁止百度SiteAPP转码 -->
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
-    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Safari浏览器添加到主屏幕（IOS） -->
-    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Admui">
-    <!-- Win8标题栏及ICON图标 -->
-    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
-    
-    <!--[if lte IE 9]>
+<meta charset="UTF-8">
+<title>有限空间管理 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
     <![endif]-->
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
-    
-    <!-- 字体图标 CSS -->
-    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
-	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
-    
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-	
-	<!-- 自定义 CSS -->
-	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-    
-    <!-- 插件 CSS -->
-    
-    <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
-    <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
-    <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
-    <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
-    
-    <!-- Page CSS -->
-    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
-    
-    
-    <!-- 插件 -->
-    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
-		<div class="page-content" id="DTConent">
-		            <div class="panel">
-						<div class="px-25 pt-25">
-							<button type="button" class="btn btn-primary px-20 list-inline-item">
-							    添加
-							</button>
-							<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-							    删除
-							</button>
-							<button type="button" class="btn social-facebook px-20 list-inline-item mr-20">
-							    提交
-							</button>
-							<div class="btn-group float-right">
-												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
-											</div>
-						</div>
-		                <div class="panel-body">
-							<div class="mb-10">
-		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-		                        <thead>
-		                            <tr>
-		                                <th><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-		                                <th>序号</th>
-		                                <th>分布场所</th>
-		                                <th>有限空间名称</th>
-		                                <th>主要危害因素</th>
-		                                <th>可能发生的事故</th>
-										<th>防护要求</th>
-										<th>作业形式</th>
-										<th>作业监护人员证书</th>
-										<th>进入前应采取的措施</th>
-										<th>应急救援物资</th>
-										<th>现场责任人</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>1</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>2</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>3</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>4</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>5</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>6</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>7</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>8</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>9</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-									<tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-										<td>10</td>
-		                                <td>xxxxx</td>
-		                                <td>xxxxxxx</td>
-		                                <td><div class="w-300">
-											<select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
-												<option value="入口数">入口数</option>
-												<option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
-												<option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
-												<option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
-												<option value="一氧化碳">一氧化碳</option>
-												<option value="硫化氢">硫化氢</option>
-												<option value="其他毒害">其他毒害</option>
-												<option value="机械伤害">机械伤害</option>
-												<option value="电气伤害">电气伤害</option>
-												<option value="结构（截留）">结构（截留）</option>
-												<option value="围困（固体/液体）">围困（固体/液体）</option>
-												<option value="温度极限（热/冷）">温度极限（热/冷）</option>
-												<option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
-												<option value="出入受限">出入受限</option>
-												<option value="其他风险">其他风险</option>
-											</select>
-											</div></td>
-		                                <td>xxxxxxxxxx</td>
-										<td>xxxxxx</td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="自行作业">自行作业</option>
-												<option value="外包作业">外包作业</option>
-												<option value="无作业">无作业</option>
-											</select></td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-										<td><select class="form-control list-inline-item w-100 sh-19">
-												<option value="请选择">请选择</option>
-												<option value="气体检测">气体检测</option>
-												<option value="通风">通风</option>
-												<option value="清除障碍">清除障碍</option>
-												<option value="挂牌上锁">挂牌上锁</option>
-												<option value="温度检测等">温度检测等</option>
-											</select></td>
-										<td>xxxxxxxx</td>
-										<td>李xx</td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-							</div>
-							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-							<div class="float-right mt-5">
-							    <nav>
-							        <ul class="pagination">
-							            <li class="page-item disabled">
-							                <a class="page-link" href="javascript:;" aria-label="上一页">
-							                    <span aria-hidden="true">上一页</span>
-							                </a>
-							            </li>
-							            <li class="page-item active">
-							                <a class="page-link" href="javascript:;">1
-							                    <span class="sr-only">当前</span>
-							                </a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">2</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">3</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">4</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">5</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;" aria-label="下一页">
-							                    <span aria-hidden="true">下一页</span>
-							                </a>
-							            </li>
-							        </ul>
-							    </nav>
-							</div>
-		                </div>
-		            </div>
-		        </div>
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="px-25 pt-25">
+        <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="mb-10">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+            <thead>
+              <tr>
+                <th><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></th>
+                <th>序号</th>
+                <th>分布场所</th>
+                <th>有限空间名称</th>
+                <th width="300">主要危害因素</th>
+                <th>可能发生的事故</th>
+                <th>防护要求</th>
+                <th width="120">作业形式</th>
+                <th>作业监护人员证书</th>
+                <th>进入前应采取的措施</th>
+                <th>应急救援物资</th>
+                <th>现场责任人</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>1</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>2</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>3</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>4</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>5</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>6</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>7</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>8</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>9</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+              <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td>10</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
+                      <option value="入口数">入口数</option>
+                      <option value="氧气（缺氧/富氧）">氧气（缺氧/富氧）</option>
+                      <option value="爆炸物（气体/蒸汽）">爆炸物（气体/蒸汽）</option>
+                      <option value="爆炸物（粉尘）">爆炸物（粉尘）</option>
+                      <option value="一氧化碳">一氧化碳</option>
+                      <option value="硫化氢">硫化氢</option>
+                      <option value="其他毒害">其他毒害</option>
+                      <option value="机械伤害">机械伤害</option>
+                      <option value="电气伤害">电气伤害</option>
+                      <option value="结构（截留）">结构（截留）</option>
+                      <option value="围困（固体/液体）">围困（固体/液体）</option>
+                      <option value="温度极限（热/冷）">温度极限（热/冷）</option>
+                      <option value="跌落危险（人员/设备/材料）">跌落危险（人员/设备/材料）</option>
+                      <option value="出入受限">出入受限</option>
+                      <option value="其他风险">其他风险</option>
+                    </select>
+                  </div></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="自行作业">自行作业</option>
+                    <option value="外包作业">外包作业</option>
+                    <option value="无作业">无作业</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option value="请选择">请选择</option>
+                    <option value="气体检测">气体检测</option>
+                    <option value="通风">通风</option>
+                    <option value="清除障碍">清除障碍</option>
+                    <option value="挂牌上锁">挂牌上锁</option>
+                    <option value="温度检测等">温度检测等</option>
+                  </select></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">作业监护人员证书</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-												<button type="button" class="btn btn-dark">
-													<i class="icon wb-upload" aria-hidden="true"></i> 上传
-												</button>
-											</div>
-											<div class="h_f pt-10">请上传作业监护人员证书</div>
-											<div class="mt-5">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-													<thead>
-														<tr>
-															<th>附件名称</th>
-															<th>附件大小(k)</th>
-															<th>上传时间</th>
-															<th>操作</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>xxxxxxxxxxxxxxx.jpg</td>
-															<td>375.11</td>
-															<td>2020-01-02 11:35:38</td>
-															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
-															查看
-														</button>
-														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
-															实施
-														</button>
-														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
-															删除
-														</button></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">作业监护人员证书</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div>
+            <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+          </div>
+          <div class="h_f pt-10">请上传作业监护人员证书</div>
+          <div class="mt-5">
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+              <thead>
+                <tr>
+                  <th>附件名称</th>
+                  <th>附件大小(k)</th>
+                  <th>上传时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>xxxxxxxxxxxxxxx.jpg</td>
+                  <td>375.11</td>
+                  <td>2020-01-02 11:35:38</td>
+                  <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                    <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                    <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- 插件 -->
 <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
@@ -673,9 +626,7 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
-
-    <script src="../../../../public/themes/base/js/app.js"></script>
-
+<script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
 </body>

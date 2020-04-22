@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>风险源标注 - 电控安全云</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备 viewport -->
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <meta name="author" content="admui.com">
-    <!-- 360浏览器默认使用Webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止搜索引擎抓取 -->
-    <meta name="robots" content="nofollow">
-    <!-- 禁止百度SiteAPP转码 -->
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
-    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Safari浏览器添加到主屏幕（IOS） -->
-    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Admui">
-    <!-- Win8标题栏及ICON图标 -->
-    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
-    <!--[if lte IE 9]>
+<meta charset="UTF-8">
+<title>风险源标注 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
     <![endif]-->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
-    <!-- 字体图标 CSS -->
-    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
-    <link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-    <!-- 自定义 CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-    <!-- 插件 CSS -->
-    <link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
-    <!-- Page CSS -->
-    <link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
-    <!-- 插件 -->
-    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
 </head>
 <body data-theme="base">
 <div class="panel">
-    <div class="p-25">
-        <!--<div class="text-right height-57">-->
-        <!--<div class="drag-step2-btn float-right">-->
-        <!--<span style="color:#f10f10;font-size:14px; margin-bottom:-10px;">-->
-        <!--<p style="display: inline-block;margin-right:8px; margin-top:-6px; float:left;">图上已保存的风险源有5条，标注风险源后请及时保存！<br>-->
-        <!--单个风险源复位时，请注意保存,未保存的风险源将全部复位！</p>-->
-        <!--</span>-->
-        <!--<button type="button" onclick="reset()" class="btn btn-danger px-20 list-inline-item mr-20">-->
-        <!--全部复位-->
-        <!--</button>-->
-        <!--<button type="button" class="btn btn-primary px-20 list-inline-item">-->
-        <!--保存-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--</div>-->
-        <div class="rr-drag-main">
-            <div id="showAndSelect" style="position: fixed; top:5%;display: none">风险源</div>
-            <div class="example rr-drag-left" id="drag-left" data-plugin="mCustomScrollbar"
-                 style="width:50px; padding:10px 5px; margin:0; position:fixed;display: none" autoescape="true">
-                <div id="showImg">
-                    <ul class="rr-drag-toolbar p-0 m-0" id="geneRisk">
-
-                    </ul>
-                </div>
-            </div>
-            <div id="canvasShow" class="rr-drag-canvas" style="margin-left: 0%;">
-                <div id="AgentDiv" style="background: transparent; width: 1401px; height: 700px;"><img
-                        src="../../../public/images/timg.jpg" id="img"
-                        style="border: 1px solid #e4eaec; width: 1401px; height: 700px;"></div>
-                <div id="propMain" class="rr-drag-prop" style="left: 316px; right: 29px; top: 322.5px;display: none">
-                    <span class="drag-prop-triangle drag-prop-triangle-left"></span>
-                    <div class="drag-prop-tool" id="mainTool" style="width: auto; right: auto; left: 0px; top: 0px;">
-                        <a id="btnView" class="prop-tool-btnIcon drag-prop-iconView" title="查看"></a>
-                        <a id="btnDel" class="prop-tool-btnIcon  del" onclick="reset()" title="复位" style="display: block; visibility: hidden;float: right;"><i class="back-icon fa fa-mail-reply"></i></a>
-                    </div>
-                    <div class="mini-form drag-prop-form" id="propForm" style="margin-top: 0px; display: none"
-                         autoescape="true">
-                        <div id="closeBtn" class="float-right mt--15 mb-10 cole"><img src="../../../public/images/x.png"
-                                                                                      alt=""/></div>
-                        <form class="drag-form-baseinf mini-form" id="baseForm">
-                            <table class="form-baseinf-options">
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-                <!--<div class="drag-mark rr-drag-icon drag-riskLevel3" style="left: 259.467px; top: 322.933px; width: 37px; height: 37px; background-image: url(&quot;/comp/assets/img/drag/dragIcon/Lifting.png&quot;); position: absolute; margin: 0px;"></div>-->
-            </div>
+  <div class="p-25">
+    <!--<div class="text-right height-57">-->
+    <!--<div class="drag-step2-btn float-right">-->
+    <!--<span style="color:#f10f10;font-size:14px; margin-bottom:-10px;">-->
+    <!--<p style="display: inline-block;margin-right:8px; margin-top:-6px; float:left;">图上已保存的风险源有5条，标注风险源后请及时保存！<br>-->
+    <!--单个风险源复位时，请注意保存,未保存的风险源将全部复位！</p>-->
+    <!--</span>-->
+    <!--<button type="button" onclick="reset()" class="btn btn-danger px-20 list-inline-item mr-20">-->
+    <!--全部复位-->
+    <!--</button>-->
+    <!--<button type="button" class="btn btn-primary px-20 list-inline-item">-->
+    <!--保存-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="rr-drag-main">
+      <div id="showAndSelect" style="position: fixed; top:5%;display: none">风险源</div>
+      <div class="example rr-drag-left" id="drag-left" data-plugin="mCustomScrollbar" style="width:50px; padding:10px 5px; margin:0; position:fixed;display: none" autoescape="true">
+        <div id="showImg">
+          <ul class="rr-drag-toolbar p-0 m-0" id="geneRisk">
+          </ul>
         </div>
+      </div>
+      <div id="canvasShow" class="rr-drag-canvas" style="margin-left: 0%;">
+        <div id="AgentDiv" style="background: transparent; width: 1401px; height: 700px;"><img src="../../../public/images/timg.jpg" id="img" style="border: 1px solid #e4eaec; width: 1401px; height: 700px;"></div>
+        <div id="propMain" class="rr-drag-prop" style="left: 316px; right: 29px; top: 322.5px;display: none">
+			<span class="drag-prop-triangle drag-prop-triangle-left"></span>
+        	<div class="drag-prop-tool" id="mainTool" style="width: auto; right: auto; left: 0px; top: 0px;">
+				<a id="btnView" class="prop-tool-btnIcon drag-prop-iconView" title="查看"></a>
+				<a id="btnDel" class="prop-tool-btnIcon  del" onClick="reset()" title="复位" style="display: block; visibility: hidden;float: right;"><i class="back-icon fa fa-mail-reply"></i></a>
+			</div>
+          <div class="mini-form drag-prop-form" id="propForm" style="margin-top: 0px; display: none" autoescape="true">
+            <div id="closeBtn" class="float-right mt--15 mb-10 cole"><img src="../../../public/images/x.png" alt=""/></div>
+            <form class="drag-form-baseinf mini-form" id="baseForm">
+              <table class="form-baseinf-options">
+                <tbody>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+        <!--<div class="drag-mark rr-drag-icon drag-riskLevel3" style="left: 259.467px; top: 322.933px; width: 37px; height: 37px; background-image: url(&quot;/comp/assets/img/drag/dragIcon/Lifting.png&quot;); position: absolute; margin: 0px;"></div>-->
+      </div>
     </div>
+  </div>
 </div>
 <!-- 插件 -->
 <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>

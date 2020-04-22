@@ -1,464 +1,372 @@
-
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>安全管理机构和人员 - 电控安全云</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备 viewport -->
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <meta name="author" content="admui.com">
-    <!-- 360浏览器默认使用Webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止搜索引擎抓取 -->
-    <meta name="robots" content="nofollow">
-    <!-- 禁止百度SiteAPP转码 -->
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
-    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Safari浏览器添加到主屏幕（IOS） -->
-    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Admui">
-    <!-- Win8标题栏及ICON图标 -->
-    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
-    
-    <!--[if lte IE 9]>
+<meta charset="UTF-8">
+<title>安全管理机构和人员 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
     <![endif]-->
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
-    
-    <!-- 字体图标 CSS -->
-    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
-	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
-    
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-	
-	<!-- 自定义 CSS -->
-	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-    
-    <!-- 插件 CSS -->
-    
-    
-    <!-- Page CSS -->
-    
-    
-    <!-- 插件 -->
-    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/datatables-bootstrap/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="../../../../public/vendor/datatables-responsive/dataTables.responsive.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/tables/datatable.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+var obj = $('#sticky');
+var offset = obj.offset();
+var topOffset = offset.top;
+var leftOffset = offset.left;
+var marginTop = obj.css("marginTop");
+var top = obj.css("top");
+
+$(window).scroll(function() {
+var scrollTop = $(window).scrollTop();
+
+	if (scrollTop >= topOffset){
+
+		obj.css({
+			marginTop: 0,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 40px)',
+			position: 'fixed',
+		});
+	}
+
+	if (scrollTop < topOffset){
+
+		obj.css({
+			marginTop: marginTop,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 0px)',
+			position: 'relative',
+		});
+	}
+});
+});
+</script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
-		<div class="page-content" id="DTConent">
-		            <div class="panel pt-20">
-							<div class="px-25 py-5 back_f">
-											<button type="button" class="btn px-20 list-inline-item back_ll color-fff">
-												全部导出
-											</button>
-											<button type="button" class="btn px-20 list-inline-item mr-20 back_h color-fff">
-												组织机构图
-											</button>
-											<div class="btn-group float-right">
-												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
-											</div>
-										</div>
-						<div class="panel-body">
-		                    <div class="place">
-								<div class="pb-30">
-									<h2 class="font-size-16 font-weight-600">安全主管领导和主管部门负责人</h2>
-									<div class="xian px-20 pt-20">
-										<div class="back_f">
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-										</div>
-										<div class="pt-20 pb-5 clearfix">
-		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-		                        <thead>
-		                            <tr>
-		                                <th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-		                                <th>姓名</th>
-		                                <th>手机号</th>
-		                                <th>所在部门</th>
-		                                <th>职务</th>
-		                                <th width="150">证书</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>张安全</td>
-		                                <td>13811112222</td>
-		                                <td>安全科</td>
-		                                <td>科长</td>
-		                                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-							<div class="float-right mt-5">
-							    <nav>
-							        <ul class="pagination">
-							            <li class="page-item disabled">
-							                <a class="page-link" href="javascript:;" aria-label="上一页">
-							                    <span aria-hidden="true">上一页</span>
-							                </a>
-							            </li>
-							            <li class="page-item active">
-							                <a class="page-link" href="javascript:;">1
-							                    <span class="sr-only">当前</span>
-							                </a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">2</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">3</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">4</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">5</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;" aria-label="下一页">
-							                    <span aria-hidden="true">下一页</span>
-							                </a>
-							            </li>
-							        </ul>
-							    </nav>
-							</div>
-		                </div>
-									</div>
-								</div>
-								<div class="pb-30">
-									<h2 class="font-size-16 font-weight-600">专职安全员信息</h2>
-									<div class="xian px-20 pt-20">
-									<div class="alert p-0" role="alert">
-		                    <div class="mt-5 list-inline-item">姓名</div>
-								<input type="text" class="form-control col-lg-2 w-100 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
-							<div class="mt-5 list-inline-item">手机号</div>
-                                <input type="text" class="form-control col-lg-2 w-150 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
-								<div class="mt-5 list-inline-item">选择部门</div>
-								    <select class="form-control col-lg-1 list-inline-item mr-15">
-								        <option>安全部</option>
-								        <option>安全部1</option>
-								        <option>安全部2</option>
-								        <option>安全部3</option>
-								        <option>安全部4</option>
-								    </select>
-											<button type="button" class="btn btn-warning list-inline-item mt--5">
-											    查询
-											</button>
-		                </div>
-										<div class="back_f">
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-										</div>
-										<div class="pt-20 pb-5 clearfix">
-		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-		                        <thead>
-		                            <tr>
-		                                <th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-		                                <th>姓名</th>
-		                                <th>手机号</th>
-		                                <th>所在部门</th>
-		                                <th>职务</th>
-										<th width="150">证书</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>张安全</td>
-		                                <td>13811112222</td>
-		                                <td>安全科</td>
-		                                <td>科长</td>
-										<td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-							<div class="float-right mt-5">
-							    <nav>
-							        <ul class="pagination">
-							            <li class="page-item disabled">
-							                <a class="page-link" href="javascript:;" aria-label="上一页">
-							                    <span aria-hidden="true">上一页</span>
-							                </a>
-							            </li>
-							            <li class="page-item active">
-							                <a class="page-link" href="javascript:;">1
-							                    <span class="sr-only">当前</span>
-							                </a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">2</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">3</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">4</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">5</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;" aria-label="下一页">
-							                    <span aria-hidden="true">下一页</span>
-							                </a>
-							            </li>
-							        </ul>
-							    </nav>
-							</div>
-		                </div>
-									</div>
-								</div>
-								<div class="pb-0">
-									<h2 class="font-size-16 font-weight-600">兼职安全员信息</h2>
-									<div class="xian px-20 pt-20">
-									<div class="alert p-0" role="alert">
-		                    <div class="mt-5 list-inline-item">姓名</div>
-								<input type="text" class="form-control col-lg-2 w-100 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
-							<div class="mt-5 list-inline-item">手机号</div>
-                                <input type="text" class="form-control col-lg-2 w-150 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
-								<div class="mt-5 list-inline-item">选择部门</div>
-								    <select class="form-control col-lg-1 list-inline-item mr-15">
-								        <option>安全部</option>
-								        <option>安全部1</option>
-								        <option>安全部2</option>
-								        <option>安全部3</option>
-								        <option>安全部4</option>
-								    </select>
-											<button type="button" class="btn btn-warning list-inline-item mt--5">
-											    查询
-											</button>
-		                </div>
-										<div class="back_f">
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-										</div>
-										<div class="pt-20 pb-5 clearfix">
-		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-		                        <thead>
-		                            <tr>
-		                                <th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-		                                <th>姓名</th>
-		                                <th>手机号</th>
-		                                <th>所在部门</th>
-		                                <th>职务</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr>
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>张安全</td>
-		                                <td>13811112222</td>
-		                                <td>安全科</td>
-		                                <td>科长</td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-							<div class="float-right mt-5">
-							    <nav>
-							        <ul class="pagination">
-							            <li class="page-item disabled">
-							                <a class="page-link" href="javascript:;" aria-label="上一页">
-							                    <span aria-hidden="true">上一页</span>
-							                </a>
-							            </li>
-							            <li class="page-item active">
-							                <a class="page-link" href="javascript:;">1
-							                    <span class="sr-only">当前</span>
-							                </a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">2</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">3</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">4</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">5</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;" aria-label="下一页">
-							                    <span aria-hidden="true">下一页</span>
-							                </a>
-							            </li>
-							        </ul>
-							    </nav>
-							</div>
-		                </div>
-									</div>
-								</div>
-							</div>
-		                </div>
-		            </div>
-		        </div>
+  <div class="page-content" id="DTConent">
+    <div class="panel pt-20">
+	  <div id="sticky">
+        <div id="carbonads-container">
+          <div class="px-25 py-5 back_f">
+        	<button type="button" class="btn px-20 list-inline-item back_ll color-fff mr-20">全部导出</button>
+        	<button type="button" class="btn px-20 list-inline-item mr-20 back_h color-fff mr-20">组织机构图</button>
+            <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            <div class="btn-group float-right">
+              <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+              <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="place">
+          <div class="pb-30">
+            <h2 class="font-size-16 font-weight-600">主管安全负责人</h2>
+            <div class="xian px-20 pt-20">
+              <div class="pt-0 pb-5 clearfix">
+                <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+                  <thead>
+                    <tr>
+                      <th width="60"><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></th>
+                      <th>姓名</th>
+                      <th>手机号</th>
+                      <th>所在部门</th>
+                      <th>职务</th>
+                      <th width="150">证书</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="张安全"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13811112222"></td>
+                      <td><select class="form-control list-inline-item max-width-b-100">
+                          <option>安全部</option>
+                          <option>安全部1</option>
+                          <option>安全部2</option>
+                          <option>安全部3</option>
+                          <option>安全部4</option>
+                        </select>
+                      </td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="科长"></td>
+                      <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="pb-30">
+            <h2 class="font-size-16 font-weight-600">专职安全员信息</h2>
+            <div class="xian px-20 pt-20">
+              <div class="alert p-0" role="alert">
+                <div class="mt-5 list-inline-item">姓名</div>
+                <input type="text" class="form-control col-lg-2 w-100 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+                <div class="mt-5 list-inline-item">手机号</div>
+                <input type="text" class="form-control col-lg-2 w-150 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+                <div class="mt-5 list-inline-item">选择部门</div>
+                <select class="form-control list-inline-item max-width-120">
+                  <option>安全部</option>
+                  <option>安全部1</option>
+                  <option>安全部2</option>
+                  <option>安全部3</option>
+                  <option>安全部4</option>
+                </select>
+                <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+              </div>
+              <div class="back_f">
+                <button type="button" class="btn btn-primary px-20 list-inline-item" id="DTAddRow">添加</button>
+                <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+              </div>
+              <div class="pt-20 pb-5 clearfix">
+                <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExamplee">
+                  <thead>
+                    <tr>
+                      <th width="60"><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></th>
+                      <th>姓名</th>
+                      <th>手机号</th>
+                      <th>所在部门</th>
+                      <th>职务</th>
+                      <th width="150">证书</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="张安全"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13811112222"></td>
+                      <td>
+					  	<select class="form-control list-inline-item max-width-b-100">
+                          <option>安全部</option>
+                          <option>安全部1</option>
+                          <option>安全部2</option>
+                          <option>安全部3</option>
+                          <option>安全部4</option>
+                        </select>
+					  </td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="科长"></td>
+                      <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-10" alt="" />已上传</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="pb-0">
+            <h2 class="font-size-16 font-weight-600">兼职安全员信息</h2>
+            <div class="xian px-20 pt-20">
+              <div class="alert p-0" role="alert">
+                <div class="mt-5 list-inline-item">姓名</div>
+                <input type="text" class="form-control col-lg-2 w-100 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+                <div class="mt-5 list-inline-item">手机号</div>
+                <input type="text" class="form-control col-lg-2 w-150 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+                <div class="mt-5 list-inline-item">选择部门</div>
+                <select class="form-control list-inline-item max-width-120">
+                  <option>安全部</option>
+                  <option>安全部1</option>
+                  <option>安全部2</option>
+                  <option>安全部3</option>
+                  <option>安全部4</option>
+                </select>
+                <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+              </div>
+              <div class="back_f">
+                <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+                <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+              </div>
+              <div class="pt-20 pb-5 clearfix">
+                <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+                  <thead>
+                    <tr>
+                      <th width="60"><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></th>
+                      <th>姓名</th>
+                      <th>手机号</th>
+                      <th>所在部门</th>
+                      <th>职务</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="checkbox-custom checkbox-primary">
+                        <input class="selectable-all" type="checkbox">
+                        <label></label>
+                        </span></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="张安全"></td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13811112222"></td>
+                      <td>
+					  	<select class="form-control list-inline-item max-width-b-100">
+                          <option>安全部</option>
+                          <option>安全部1</option>
+                          <option>安全部2</option>
+                          <option>安全部3</option>
+                          <option>安全部4</option>
+                        </select>
+					  </td>
+                      <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="科长"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+                <div class="float-right mt-5">
+                  <nav>
+                    <ul class="pagination">
+                      <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+                      <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+                      <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                      <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                      <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+                      <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+                      <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
 <div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">请上传证书</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-												<button type="button" class="btn btn-dark">
-													<i class="icon wb-upload" aria-hidden="true"></i> 上传
-												</button>
-											</div>
-											<div class="h_f pt-10">PDF扫描件</div>
-											<div class="mt-5">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-													<thead>
-														<tr>
-															<th>附件名称</th>
-															<th>附件大小(k)</th>
-															<th>上传时间</th>
-															<th>操作</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>xxxxxxxxxxxxxxx.jpg</td>
-															<td>375.11</td>
-															<td>2020-01-02 11:35:38</td>
-															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
-															查看
-														</button>
-														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
-															实施
-														</button>
-														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
-															删除
-														</button></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">请上传证书</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div>
+            <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+          </div>
+          <div class="h_f pt-10">PDF扫描件</div>
+          <div class="mt-5">
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+              <thead>
+                <tr>
+                  <th>附件名称</th>
+                  <th>附件大小(k)</th>
+                  <th>上传时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>xxxxxxxxxxxxxxx.jpg</td>
+                  <td>375.11</td>
+                  <td>2020-01-02 11:35:38</td>
+                  <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                    <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                    <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
 <div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">请上传证书</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-												<button type="button" class="btn btn-dark">
-													<i class="icon wb-upload" aria-hidden="true"></i> 上传
-												</button>
-											</div>
-											<div class="h_f pt-10">PDF扫描件</div>
-											<div class="mt-5">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-													<thead>
-														<tr>
-															<th>附件名称</th>
-															<th>附件大小(k)</th>
-															<th>上传时间</th>
-															<th>操作</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>xxxxxxxxxxxxxxx.jpg</td>
-															<td>375.11</td>
-															<td>2020-01-02 11:35:38</td>
-															<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">
-															查看
-														</button>
-														<button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">
-															实施
-														</button>
-														<button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">
-															删除
-														</button></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">请上传证书</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div>
+            <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+          </div>
+          <div class="h_f pt-10">PDF扫描件</div>
+          <div class="mt-5">
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+              <thead>
+                <tr>
+                  <th>附件名称</th>
+                  <th>附件大小(k)</th>
+                  <th>上传时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>xxxxxxxxxxxxxxx.jpg</td>
+                  <td>375.11</td>
+                  <td>2020-01-02 11:35:38</td>
+                  <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                    <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                    <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
-
 <!-- 插件 -->
 <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
 <script src="../../../../public/vendor/select2/select2.full.min.js"></script>
@@ -468,10 +376,35 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
-
-    <script src="../../../../public/themes/base/js/app.js"></script>
-
+<script src="../../../../public/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../../public/vendor/datatables-bootstrap/dataTables.bootstrap4.js"></script>
+<script src="../../../../public/vendor/datatables-responsive/dataTables.responsive.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script>
+(function (window, document, $) {
+    "use strict";
+
+    var t = $('#dataTableExamplee').DataTable($.concatCpt('dataTable')), counter = 1;
+
+    $(document).on('click', '#DTAddRow', function () {
+        t.row.add([
+            counter + "<span class='checkbox-custom checkbox-primary'><input class='selectable-all' type='checkbox'><label></label></span>",
+            counter + '1',
+            counter + '.3',
+            counter + '.4',
+            counter + '.5',
+            counter + '.5'
+        ]).draw(false);
+
+        counter++;
+    });
+
+    // 自动添加第一行的数据
+    $('#DTAddRow').click();
+
+})(window, document, jQuery);
+</script>
 </body>
 </html>

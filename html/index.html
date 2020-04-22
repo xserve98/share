@@ -132,6 +132,11 @@
             <li class="navbar-menu nav-tabs-horizontal nav-tabs-animate is-load" id="admui-navMenu">
               <ul class="nav navbar-toolbar nav-tabs" role="tablist">
                 <li class="nav-item">
+                  <a href="http://www.baidu.com" target="_blank" class="nav-link active" >
+                    <span>预警平台</span>
+					</a>
+				</li>
+				<li class="nav-item">
                   <a
                     class="nav-link active"
                     data-toggle="tab"
@@ -409,7 +414,12 @@
                         
 						
 						
-						
+						<li class="site-menu-item has-sub">
+							<a href="/html/examples/home.html" target="_blank">
+								<i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+								<span class="site-menu-title">首页</span>
+							</a>
+						</li>
 						<li class="site-menu-item has-sub">
                             <a href="javascript:;">
                                 <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
@@ -451,6 +461,11 @@
 											</a>
 										</li>
 										<li class="site-menu-item">
+											<a href="/html/pages/basicsafety/fire_alarm_daily_report.html" target="_blank">
+												<span class="site-menu-title">消防报警每日上报</span>
+											</a>
+										</li>
+										<li class="site-menu-item">
 											<a href="/html/pages/basicsafety/electrical_fire.html" target="_blank">
 												<span class="site-menu-title">电气防火检测报告</span>
 											</a>
@@ -485,10 +500,18 @@
 										<span class="site-menu-title">特种作业人员管理</span>
 									</a>
 								</li>
-								<li class="site-menu-item">
+								<li class="site-menu-item has-sub">
 									<a href="/html/pages/basicsafety/occupational_health.html" target="_blank">
 										<span class="site-menu-title">职业卫生管理</span>
+                                        <span class="site-menu-arrow"></span>
 									</a>
+									<ul class="site-menu-sub">
+                                        <li class="site-menu-item">
+											<a href="/html/pages/basicsafety/health_personnel_management.html" target="_blank">
+												<span class="site-menu-title">职业卫生人员管理</span>
+											</a>
+										</li>
+                                    </ul>
 								</li>
 								<li class="site-menu-item">
 									<a href="/html/pages/basicsafety/safety_input.html" target="_blank">
@@ -500,18 +523,17 @@
 										<span class="site-menu-title">危险化学品管理</span>
 									</a>
 								</li>
-								<li class="site-menu-item has-sub">
+								<li class="site-menu-item">
                                     <a href="/html/pages/basicsafety/interested_parties.html" target="_blank">
                                         <span class="site-menu-title">相关方管理</span>
-                                        <span class="site-menu-arrow"></span>
                                     </a>
-                                    <ul class="site-menu-sub">
+                                    <!--<ul class="site-menu-sub">
                                         <li class="site-menu-item">
 											<a href="/html/pages/basicsafety/dangerous_operation.html" target="_blank">
 												<span class="site-menu-title">相关方危险作业管理</span>
 											</a>
 										</li>
-                                    </ul>
+                                    </ul>-->
                                 </li>
 								<li class="site-menu-item">
 									<a href="/html/pages/basicsafety/finite_space.html" target="_blank">
@@ -547,22 +569,9 @@
                                     </ul>
                                 </li>
 								<li class="site-menu-item has-sub">
-                                    <a href="javascript:;">
-                                        <span class="site-menu-title">劳动保障用品</span>
-                                        <span class="site-menu-arrow"></span>
+                                    <a href="/html/pages/basicsafety/equipped_with_standard.html" target="_blank">
+                                        <span class="site-menu-title">劳动防护用品配备</span>
                                     </a>
-                                    <ul class="site-menu-sub">
-                                        <li class="site-menu-item">
-											<a href="/html/pages/basicsafety/procurement_supplies.html" target="_blank">
-												<span class="site-menu-title">劳动保障用品采购</span>
-											</a>
-										</li>
-										<li class="site-menu-item">
-											<a href="/html/pages/basicsafety/equipped_with_standard.html" target="_blank">
-												<span class="site-menu-title">劳动保障用品配备标准</span>
-											</a>
-										</li>
-                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -579,8 +588,8 @@
                                     </a>
                                 </li>
                                 <li class="site-menu-item">
-                                    <a href="/html/examples/components/layouts/panel-transition.html" target="_blank">
-                                        <span class="site-menu-title">风险地图</span>
+                                    <a href="/html/pages/risk/plan_list.html" target="_blank">
+                                        <span class="site-menu-title">风险源标注</span>
                                     </a>
                                 </li>
 								<li class="site-menu-item">
@@ -614,70 +623,112 @@
                                             </a>
                                         </li>
                                         <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/layout-grid.html" target="_blank">
-                                                <span class="site-menu-title">布局栅格</span>
+                                            <a href="/html/pages/hiddendanger/task_implementation.html" target="_blank">
+                                                <span class="site-menu-title">排查任务实施</span>
+                                            </a>
+                                        </li>
+										<li class="site-menu-item">
+                                            <a href="/html/pages/hiddendanger/external_inspection.html" target="_blank">
+                                                <span class="site-menu-title">外部检查记录</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="site-menu-item has-sub">
-                                    <a href="javascript:;">
-                                        <span class="site-menu-title">标题栏</span>
-                                        <span class="site-menu-arrow"></span>
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/hiddendanger/security_management.html" target="_blank">
+                                        <span class="site-menu-title">隐患治理</span>
                                     </a>
-                                    <ul class="site-menu-sub">
-                                        <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/headers.html" target="_blank">
-                                                <span class="site-menu-title">普通</span>
-                                            </a>
-                                        </li>
-                                        <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/bordered-header.html"
-                                               target="_blank">
-                                                <span class="site-menu-title">带边框</span>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
-                                <li class="site-menu-item has-sub">
-                                    <a href="javascript:;">
-                                        <span class="site-menu-title">侧边栏</span>
-                                        <span class="site-menu-arrow"></span>
-                                    </a>
-                                    <ul class="site-menu-sub">
-                                        <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/aside/left-static.html"
-                                               target="_blank">
-                                                <span class="site-menu-title">左侧普通</span>
-                                            </a>
-                                        </li>
-                                        <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/aside/left-fixed.html"
-                                               target="_blank">
-                                                <span class="site-menu-title">左侧浮动</span>
-                                            </a>
-                                        </li>
-                                        <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/aside/right-static.html"
-                                               target="_blank">
-                                                <span class="site-menu-title">右侧普通</span>
-                                            </a>
-                                        </li>
-                                        <li class="site-menu-item">
-                                            <a href="/html/examples/components/layouts/aside/right-fixed.html"
-                                               target="_blank">
-                                                <span class="site-menu-title">右侧浮动</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                
-                                
                             </ul>
                         </li>
-						
-						
-						
+						<li class="site-menu-item has-sub">
+                            <a href="/html/pages/contingency_management/contingency_management.html" target="_blank">
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+                                <span class="site-menu-title">应急管理</span>
+                                <span class="site-menu-arrow"></span>
+                            </a>
+                            <ul class="site-menu-sub">
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/contingency_management/emergency_drill_plan_management.html" target="_blank">
+                                        <span class="site-menu-title">应急演练计划管理</span>
+                                    </a>
+                                </li>
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/contingency_management/implementation_of_emergency_drill.html" target="_blank">
+                                        <span class="site-menu-title">应急演练实施</span>
+                                    </a>
+                                </li>
+								<li class="site-menu-item">
+                                    <a href="/html/pages/contingency_management/emergency_rescue_materials.html" target="_blank">
+                                        <span class="site-menu-title">应急救援物资</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="site-menu-item has-sub">
+                            <a href="javascript:;">
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+                                <span class="site-menu-title">培训管理</span>
+                                <span class="site-menu-arrow"></span>
+                            </a>
+                            <ul class="site-menu-sub">
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/training_management/training_plan.html" target="_blank">
+                                        <span class="site-menu-title">培训计划</span>
+                                    </a>
+                                </li>
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/training_management/training_implementation.html" target="_blank">
+                                        <span class="site-menu-title">培训实施</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="site-menu-item has-sub">
+                            <a href="javascript:;">
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+                                <span class="site-menu-title">危险作业管理</span>
+                                <span class="site-menu-arrow"></span>
+                            </a>
+                            <ul class="site-menu-sub">
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/hazardous_operation_management/hazardous_work_application.html" target="_blank">
+                                        <span class="site-menu-title">危险作业申请</span>
+                                    </a>
+                                </li>
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/hazardous_operation_management/approval_of_hazardous_operation.html" target="_blank">
+                                        <span class="site-menu-title">危险作业审批</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="site-menu-item has-sub">
+                            <a href="/html/pages/incident_management/incident_management.html" target="_blank">
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+                                <span class="site-menu-title">事故管理</span>
+                            </a>
+                        </li>
+						<li class="site-menu-item has-sub">
+                            <a href="javascript:;">
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+                                <span class="site-menu-title">系统设置</span>
+                                <span class="site-menu-arrow"></span>
+                            </a>
+                            <ul class="site-menu-sub">
+                                <li class="site-menu-item">
+                                    <a href="/html/pages/system_setup/information_initialization.html" target="_blank">
+                                        <span class="site-menu-title">安全基础信息初始化</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="site-menu-item has-sub">
+                            <a href="/html/pages/news/news.html" target="_blank">
+                                <i class="site-menu-icon fa-laptop" aria-hidden="true"></i>
+                                <span class="site-menu-title">消息</span>
+                            </a>
+                        </li>
 						
 						
 						
@@ -1775,8 +1826,7 @@
       <div class="contabs-scroll float-left">
         <ul class="nav con-tabs">
           <li>
-            <a href="/html/examples/home.html" target="frame-0" title="首页"><span>首页</span></a>
-          </li>
+            <a href="/html/examples/home.html" target="frame-0" title="首页"><span>首页</span></a>          </li>
         </ul>
       </div>
       <div class="btn-group float-right">

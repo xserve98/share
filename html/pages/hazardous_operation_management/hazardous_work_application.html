@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>危险作业申请 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/jstree/jstree.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/animation.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="alert pt-25" role="alert">
+        <div class="mt-5 list-inline-item">作业类型</div>
+        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+        <div class="mt-5 list-inline-item">申请部门</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+          <option>化工部</option>
+        </select>
+        <div class="mt-5 list-inline-item">审批状态</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+        </select>
+        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+      </div>
+      <div class="px-25 mt-10">
+        <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+        <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+      </div>
+      <div class="px-25 mt-20"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">进行中的（4）</a><a href="###" class="btn btn-inverse mr-15">已完成的（10）</a>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+          <thead>
+            <tr>
+              <th width="60"><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></th>
+              <th>作业编号</th>
+              <th>作业内容</th>
+              <th>作业类型</th>
+              <th>申请单位</th>
+              <th>负责人</th>
+              <th>开始时间</th>
+              <th>预计结束时间</th>
+              <th>审批状态</th>
+              <th>申请表</th>
+              <th>作业反馈</th>
+              <th width="140">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color-333 cursor-pointer">未提交</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_ffa cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">申请中</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">申请通过</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_ff0 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">申请失败</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+            <tr>
+              <td><span class="checkbox-custom checkbox-primary">
+                <input class="selectable-all" type="checkbox">
+                <label></label>
+                </span></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
+              <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
+              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter1" data-toggle="modal">修改</button>
+                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter3" data-toggle="modal">提交审批</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-660">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">审批流程</h4>
+      </div>
+      <div class="">
+        <div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+          <div class="process">
+            <div class="process_li">
+              <div class="process_left">2020-3-14 20:39:20</div>
+              <div class="process_center">
+                <div></div>
+              </div>
+              <div class="process_right">
+                <p>提交申请</p>
+                <p>xxxxxxxxxxxxx公司</p>
+              </div>
+            </div>
+            <div class="process_li agree">
+              <div class="process_left">2020-3-14 20:39:20</div>
+              <div class="process_center">
+                <div></div>
+              </div>
+              <div class="process_right">
+                <p class="on">同意</p>
+                <p>审批人：李xx</p>
+                <p>xxxxxxxxxxxxx公司</p>
+                <p>请上级领导审批</p>
+                <p>处理意见：作业人员作业时注意安全。</p>
+              </div>
+            </div>
+            <div class="process_li disagree">
+              <div class="process_left">2020-3-14 20:39:20</div>
+              <div class="process_center">
+                <div></div>
+              </div>
+              <div class="process_right">
+                <p class="on">不同意</p>
+                <p>审批人：李xx</p>
+                <p>xxxxxxxxxxxxx公司</p>
+                <p>请上级领导审批</p>
+                <p>处理意见：请提交xxx公司进行审批</p>
+              </div>
+            </div>
+            <div class="process_li approval">
+              <div class="process_left">2020-3-14 20:39:20</div>
+              <div class="process_center">
+                <div></div>
+              </div>
+              <div class="process_right">
+                <p class="on">审批中</p>
+                <p>审批人：</p>
+                <p>xxxxxxxxxxxxx公司</p>
+                <p>请上级领导审批</p>
+                <p>处理意见：</p>
+              </div>
+            </div>
+            <div class="x_n"></div>
+          </div>
+        </div>
+        <div class="text-center pb-20">
+          <button type="button" class="btn back-138d px-20 list-inline-item">返回</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-780">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">新增危险作业申请</h4>
+      </div>
+      <div class="example p-0 xian_0 height-400" data-plugin="mCustomScrollbar">
+        <div class="py-0 panel-body px-20">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center" id="dataTableExample">
+            <thead>
+              <tr>
+                <th width="369">作业编号</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>作业类别</td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option>请选择</option>
+                    <option>动火作业</option>
+                    <option>受限空间作业</option>
+                    <option>高处安全作业证</option>
+                    <option>吊装安全作业证</option>
+                    <option>盲板抽堵安全作业证</option>
+                    <option>断路安全作业证</option>
+                    <option>破土安全作业证</option>
+                    <option>设备检修安全作业证</option>
+                    <option>临时用电安全作业证</option>
+                    <option>其他</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>作业内容</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>申请单位</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+			  <tr>
+                <td>作业实施单位类别</td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option>请选择</option>
+                    <option>自行作业</option>
+                    <option>相关方作业</option>
+                  </select></td>
+              </tr>
+              <tr>
+                <td>作业责任人</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>作业监护人</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>安全教育人</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>作业人</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>有无特种作业（特种设备操作）人员</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked4" name="inputRadios4" checked="">
+                      <label for="inputRadiosUnchecked4">有</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked4" name="inputRadios4">
+                      <label for="inputRadiosChecked4">无</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td>人员信息</td>
+                <td><select class="form-control list-inline-item max-width-b-100">
+                    <option>请选择</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>开始时间</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>预计结束时间</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>是否制定作业方案</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked5" name="inputRadios5" checked="">
+                      <label for="inputRadiosUnchecked5">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked5" name="inputRadios5">
+                      <label for="inputRadiosChecked5">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td>是否设置旁站人员</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked6" name="inputRadios6" checked="">
+                      <label for="inputRadiosUnchecked6">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked6" name="inputRadios6">
+                      <label for="inputRadiosChecked6">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td>旁站人员姓名</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>旁站人员部门</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+              <tr>
+                <td>作业地点</td>
+                <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">作业现场照片</h3>
+            <div class="mt-15">
+              <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+            </div>
+            <div class="hazardous_center mt-20">
+              <div class="implementation_tc">
+                <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                  <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                </div>
+                <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                  <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                </div>
+                <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                  <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center" id="dataTableExample">
+            <tbody>
+              <tr>
+                <td width="369">是否对作业的人员进行安全教育</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked7" name="inputRadios7" checked="">
+                      <label for="inputRadiosUnchecked7">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked7" name="inputRadios7">
+                      <label for="inputRadiosChecked7">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td>作业现场消防通道、行车通道是否保持畅通</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked8" name="inputRadios8" checked="">
+                      <label for="inputRadiosUnchecked8">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked8" name="inputRadios8">
+                      <label for="inputRadiosChecked8">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td>影响作业安全的杂物是否清理干净</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked9" name="inputRadios9" checked="">
+                      <label for="inputRadiosUnchecked9">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked9" name="inputRadios9">
+                      <label for="inputRadiosChecked9">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><div class="pre-wrap">作业现场的梯子、栏杆、平台、箅子板、盖板等设施是否完整、牢固</div></td>
+                <td><div class="btn-group bootstrap-select mt-8">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked10" name="inputRadios10" checked="">
+                      <label for="inputRadiosUnchecked10">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked10" name="inputRadios10">
+                      <label for="inputRadiosChecked10">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><div class="pre-wrap">作业现场可能危及安全的坑、井、沟、孔洞等是否采取有效防护措施，并设警示标志</div></td>
+                <td><div class="btn-group bootstrap-select mt-8">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked11" name="inputRadios11" checked="">
+                      <label for="inputRadiosUnchecked11">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked11" name="inputRadios11">
+                      <label for="inputRadiosChecked11">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><div class="pre-wrap">作业使用的个体防护器具、消防器材、通信设备、照明设备等是否完好</div></td>
+                <td><div class="btn-group bootstrap-select mt-8">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked12" name="inputRadios12" checked="">
+                      <label for="inputRadiosUnchecked12">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked12" name="inputRadios12">
+                      <label for="inputRadiosChecked12">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><div class="pre-wrap">超过安全电压的手持式、移动式电动工器具是否逐个配置漏电保护器和电源开关</div></td>
+                <td><div class="btn-group bootstrap-select mt-8">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked13" name="inputRadios13" checked="">
+                      <label for="inputRadiosUnchecked13">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked13" name="inputRadios13">
+                      <label for="inputRadiosChecked13">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <td>进入作业现场的人员是否正确佩戴劳动防护用品</td>
+                <td><div class="btn-group bootstrap-select">
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosUnchecked14" name="inputRadios14" checked="">
+                      <label for="inputRadiosUnchecked14">是</label>
+                    </div>
+                    <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                      <input type="radio" id="inputRadiosChecked14" name="inputRadios14">
+                      <label for="inputRadiosChecked14">否</label>
+                    </div>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="hot_work">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">动火作业</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">动火方式</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>动火级别
+                      <div class="inline-block pl-10 line-height-19 explain_box"><img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+                        <div class="explain">
+                          <h4>说明</h4>
+                          <div class="">
+                            <p>一级动火作业：在易燃易爆场所进行的除特殊动火作业以外的动火作业。厂区管廊上的动火作业按一级动火作业管理。</p>
+                            <p>二级动火作业：除特殊动火作业和一级动火作业以外的动火作业。凡生产装置或系统全部停车，装置经清洗、置换、分析合格并采取安全隔离措施后，可根据其火灾、爆炸危险性大小，经所在单位安全管理部门批准，动火作业可按二级动火作业管理。</p>
+                            <p class="mb-0">特殊动火作业：在生产运行状态下的易燃易爆生产装置、输送管道、储罐、容器等部位上及其他特殊危险场所进行的动火作业，带压不置换动火作业按特殊动火作业管理。</p>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td><select class="form-control list-inline-item max-width-b-100">
+                        <option>请选择</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348"><div class="pre-wrap">动火点周围的下水井、地漏地沟、电缆沟等已清除易燃物，并已采取覆盖、铺沙、水封等手段进行隔离</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked15" name="inputRadios15" checked="">
+                          <label for="inputRadiosUnchecked15">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked15" name="inputRadios15">
+                          <label for="inputRadiosChecked15">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>动火点周围易燃物是否消除</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked16" name="inputRadios16" checked="">
+                          <label for="inputRadiosUnchecked16">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked16" name="inputRadios16">
+                          <label for="inputRadiosChecked16">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>高处作业是否采取防火花飞溅措施</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked17" name="inputRadios17" checked="">
+                          <label for="inputRadiosUnchecked17">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked17" name="inputRadios17">
+                          <label for="inputRadiosChecked17">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">电焊回路线是否已接在焊件上，把线未穿过下水井或与其他设备搭接</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked18" name="inputRadios18" checked="">
+                          <label for="inputRadiosUnchecked18">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked18" name="inputRadios18">
+                          <label for="inputRadiosChecked18">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>乙炔气瓶、氧气瓶与火源间的距离大于10m</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked19" name="inputRadios19" checked="">
+                          <label for="inputRadiosUnchecked19">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked19" name="inputRadios19">
+                          <label for="inputRadiosChecked19">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的消防器材</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="confined_space">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">受限空间作业</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">受限空间名称</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>受限空间内原有介质名称</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>主要危险因素</td>
+                    <td><select class="form-control list-inline-item max-width-b-100">
+                        <option>请选择</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15">气体分析
+                <div class="inline-block pl-10 line-height-19 explain_box"><img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+                  <div class="explain">
+                    <h4>说明</h4>
+                    <div class="">
+                      <p>符合以下条件可进行作业：<br />
+                        1.氧含量为18%~21%，在富氧环境下不应大于23.5%；</p>
+                      <p>2.有毒气体（物质）浓度应符合GBZ2.1的规定；</p>
+                      <p class="mb-0">3.可燃气体爆炸下限大于或等于4%时，浓度应不大于0.2%（体积分数），爆炸下限小于4%时，浓度应不大于0.2%（体积分数）。</p>
+                    </div>
+                  </div>
+                </div>
+              </h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">氧含量</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>有毒有害介质浓度</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>可燃气体浓度</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">出入口周边显著位置是否设置安全标志和警示标识</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked20" name="inputRadios20" checked="">
+                          <label for="inputRadiosUnchecked20">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked20" name="inputRadios20">
+                          <label for="inputRadiosChecked20">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>受限空间进出口通道，不得有阻碍人员进出的障碍物</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked21" name="inputRadios21" checked="">
+                          <label for="inputRadiosUnchecked21">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked21" name="inputRadios21">
+                          <label for="inputRadiosChecked21">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">相关设备进行处理，带搅拌的设备是否切断电源，挂“禁止合闸”标志牌，设专人监护</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked22" name="inputRadios22" checked="">
+                          <label for="inputRadiosUnchecked22">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked22" name="inputRadios22">
+                          <label for="inputRadiosChecked22">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">作业人和监护人是否清楚定时监测，至少每2小时监测一次，作业中断时间超过60分钟时，应重新进行分析</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked23" name="inputRadios23" checked="">
+                          <label for="inputRadiosUnchecked23">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked23" name="inputRadios23">
+                          <label for="inputRadiosChecked23">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="high_safety">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">高处安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">作业高度</td>
+                    <td><select class="form-control list-inline-item max-width-b-100">
+                        <option>请选择</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>风力</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15">危险辨识
+                <div class="inline-block pl-10 line-height-19 explain_box"><img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+                  <div class="explain">
+                    <h4>说明</h4>
+                    <div class="">
+                      <p class="mb-0">直接引起坠落的客观危险因素。如存在一种或一种以上危险因素建议停止作业或制定作业方案</p>
+                    </div>
+                  </div>
+                </div>
+              </h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">阵风风力五级（风速8.0m/s）以上；</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked24" name="inputRadios24" checked="">
+                          <label for="inputRadiosUnchecked24">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked24" name="inputRadios24">
+                          <label for="inputRadiosChecked24">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>GB/T 4200规定的Ⅱ级或Ⅱ级以上的高温作业；</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked25" name="inputRadios25" checked="">
+                          <label for="inputRadiosUnchecked25">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked25" name="inputRadios25">
+                          <label for="inputRadiosChecked25">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>平均气温等于或低于5℃的作业环境；</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked26" name="inputRadios26" checked="">
+                          <label for="inputRadiosUnchecked26">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked26" name="inputRadios26">
+                          <label for="inputRadiosChecked26">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>接触冷水温度等于或低于12℃的作业；</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked27" name="inputRadios27" checked="">
+                          <label for="inputRadiosUnchecked27">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked27" name="inputRadios27">
+                          <label for="inputRadiosChecked27">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业场地有冰、雪、霜、水、油等易滑物；</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked28" name="inputRadios28" checked="">
+                          <label for="inputRadiosUnchecked28">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked28" name="inputRadios28">
+                          <label for="inputRadiosChecked28">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业场所光线不足或能见度差；</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked29" name="inputRadios29" checked="">
+                          <label for="inputRadiosUnchecked29">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked29" name="inputRadios29">
+                          <label for="inputRadiosChecked29">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业活动范围与危险电压带电体距离小于6米</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked30" name="inputRadios30" checked="">
+                          <label for="inputRadiosUnchecked30">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked30" name="inputRadios30">
+                          <label for="inputRadiosChecked30">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>摆动，立足处不是平面或只有很小的平面</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked31" name="inputRadios31" checked="">
+                          <label for="inputRadiosUnchecked31">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked31" name="inputRadios31">
+                          <label for="inputRadiosChecked31">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>GB 3869规定的Ⅲ级或Ⅲ级以上的体力劳动强度</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked32" name="inputRadios32" checked="">
+                          <label for="inputRadiosUnchecked32">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked32" name="inputRadios32">
+                          <label for="inputRadiosChecked32">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>存在有毒气体或空气中含氧量低于19.5%的作业环境</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked33" name="inputRadios33" checked="">
+                          <label for="inputRadiosUnchecked33">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked33" name="inputRadios33">
+                          <label for="inputRadiosChecked33">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">作业人员身体条件符合要求</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked34" name="inputRadios34" checked="">
+                          <label for="inputRadiosUnchecked34">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked34" name="inputRadios34">
+                          <label for="inputRadiosChecked34">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业人员着装符合工作要求</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked35" name="inputRadios35" checked="">
+                          <label for="inputRadiosUnchecked35">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked35" name="inputRadios35">
+                          <label for="inputRadiosChecked35">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业人员佩带安全带</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked36" name="inputRadios36" checked="">
+                          <label for="inputRadiosUnchecked36">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked36" name="inputRadios36">
+                          <label for="inputRadiosChecked36">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业人员携带有工具袋</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked37" name="inputRadios37" checked="">
+                          <label for="inputRadiosUnchecked37">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked37" name="inputRadios37">
+                          <label for="inputRadiosChecked37">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>30米以上进行高处作业配备通讯、联络工具</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked38" name="inputRadios38" checked="">
+                          <label for="inputRadiosUnchecked38">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked38" name="inputRadios38">
+                          <label for="inputRadiosChecked38">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>现场搭设的脚手架、防护围栏符合安全规程</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked39" name="inputRadios39" checked="">
+                          <label for="inputRadiosUnchecked39">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked39" name="inputRadios39">
+                          <label for="inputRadiosChecked39">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>垂直分层作业中间有隔离设施</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked40" name="inputRadios40" checked="">
+                          <label for="inputRadiosUnchecked40">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked40" name="inputRadios40">
+                          <label for="inputRadiosChecked40">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>梯子或绳梯符合安全规程规定</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked41" name="inputRadios41" checked="">
+                          <label for="inputRadiosUnchecked41">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked41" name="inputRadios41">
+                          <label for="inputRadiosChecked41">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>在石棉瓦等不承重物上作业应搭设并站在固定板上</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked42" name="inputRadios42" checked="">
+                          <label for="inputRadiosUnchecked42">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked42" name="inputRadios42">
+                          <label for="inputRadiosChecked42">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>存在浓雾、恶略天气停止作业</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked43" name="inputRadios43" checked="">
+                          <label for="inputRadiosUnchecked43">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked43" name="inputRadios43">
+                          <label for="inputRadiosChecked43">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>高处作业有充足照明，安装临时灯、防爆灯</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked44" name="inputRadios44" checked="">
+                          <label for="inputRadiosUnchecked44">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked44" name="inputRadios44">
+                          <label for="inputRadiosChecked44">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="hoisting_safety">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">吊装安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">作业高度
+                      <div class="inline-block pl-10 line-height-19 explain_box"><img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+                        <div class="explain">
+                          <h4>说明</h4>
+                          <div class="">
+                            <p>吊装作业按照吊装重物质量m 不同分为：</p>
+                            <p>一级吊装作业：m &gt;100t；</p>
+                            <p>二级吊装作业：40t≤m ≤100t；</p>
+                            <p class="mb-0">三级吊装作业：10t&lt;m &lt;40t。</p>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td><select class="form-control list-inline-item max-width-b-100">
+                        <option>请选择</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>危害分析</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348"><div class="pre-wrap">吊装作业前，对起重设备、钢丝绳、链条、吊钩等各种工具进行检查</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked45" name="inputRadios45" checked="">
+                          <label for="inputRadiosUnchecked45">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked45" name="inputRadios45">
+                          <label for="inputRadiosChecked45">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>吊装作业前，设立吊装作业警示牌</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked46" name="inputRadios46" checked="">
+                          <label for="inputRadiosUnchecked46">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked46" name="inputRadios46">
+                          <label for="inputRadiosChecked46">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td width="348"><div class="pre-wrap">相关设备进行处理，转动设备应切断电源，悬挂“禁止合闸”标志牌，设专人监护</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked47" name="inputRadios47" checked="">
+                          <label for="inputRadiosUnchecked47">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked47" name="inputRadios47">
+                          <label for="inputRadiosChecked47">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>吊装作业前，佩戴好安全帽、工作服等</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked48" name="inputRadios48" checked="">
+                          <label for="inputRadiosUnchecked48">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked48" name="inputRadios48">
+                          <label for="inputRadiosChecked48">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>一二级吊装作业，是否编制吊装方案，并经过审批</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked49" name="inputRadios49" checked="">
+                          <label for="inputRadiosUnchecked49">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked49" name="inputRadios49">
+                          <label for="inputRadiosChecked49">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td width="348"><div class="pre-wrap">形状复杂、刚度小、长径比大、精密贵重，以及在作业条件特殊的情况下，应编制吊装作业方案，并经审批</div></td>
+                    <td><div class="btn-group bootstrap-select mt-18">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked50" name="inputRadios50" checked="">
+                          <label for="inputRadiosUnchecked50">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked50" name="inputRadios50">
+                          <label for="inputRadiosChecked50">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>大雪、暴雨、大雾及六级以上风时，应停止露天作业</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked51" name="inputRadios51" checked="">
+                          <label for="inputRadiosUnchecked51">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked51" name="inputRadios51">
+                          <label for="inputRadiosChecked51">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="blind_plate_blockage">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">盲板抽堵安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">设备管线名称</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>介质</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>温度</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>压力</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-15 mb-15">盲板</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">材质</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>规格</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>编号</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>装配时间</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>装配负责人</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>拆卸时间</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>拆卸负责人</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="">
+                <h3 class="font-size-16 font-weight-600 my-0 mt-20">盲板位置图</h3>
+                <div class="mt-15">
+                  <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                </div>
+                <div class="hazardous_center mt-20">
+                  <div class="implementation_tc">
+                    <div class="implementation_img"><img src="../../../public/images/yl_03.jpg" alt="" />
+                      <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="font-size-14 font-weight-600 my-0">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">作业人员身体条件符合要求</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked52" name="inputRadios52" checked="">
+                          <label for="inputRadiosUnchecked52">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked52" name="inputRadios52">
+                          <label for="inputRadiosChecked52">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">需进行登高作业的必须符合登高作业安全规定，并按要求办理高处作业许可证</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked53" name="inputRadios53" checked="">
+                          <label for="inputRadiosUnchecked53">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked53" name="inputRadios53">
+                          <label for="inputRadiosChecked53">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业人员熟知作业现场有害因素情况</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked54" name="inputRadios54" checked="">
+                          <label for="inputRadiosUnchecked54">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked54" name="inputRadios54">
+                          <label for="inputRadiosChecked54">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">堵盲板后必须悬挂明显标志，数量较多时必须编号，并详细记录，抽盲板时按照谁安装谁拆除的原则进行</div></td>
+                    <td><div class="btn-group bootstrap-select mt-18">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked55" name="inputRadios55" checked="">
+                          <label for="inputRadiosUnchecked55">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked55" name="inputRadios55">
+                          <label for="inputRadiosChecked55">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">根据现场有害因素情况，作业人员佩带A：过滤式呼吸器；B空气式呼吸器</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked56" name="inputRadios56" checked="">
+                          <label for="inputRadiosUnchecked56">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked56" name="inputRadios56">
+                          <label for="inputRadiosChecked56">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>夜间作业要有充足照明，安装临时灯、防爆灯</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked57" name="inputRadios57" checked="">
+                          <label for="inputRadiosUnchecked57">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked57" name="inputRadios57">
+                          <label for="inputRadiosChecked57">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td width="348"><div class="pre-wrap">作业完成后，单位负责人必须按照记录进行检查，确保作业无误</div></td>
+                    <td><div class="btn-group bootstrap-select mt-18">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked58" name="inputRadios58" checked="">
+                          <label for="inputRadiosUnchecked58">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked58" name="inputRadios58">
+                          <label for="inputRadiosChecked58">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="open_circuit">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">断路安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348"><div class="">
+                        <h3 class="font-size-16 font-weight-600 my-0 mt-5">断路地段草图</h3>
+                        <div class="mt-10">
+                          <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                        </div>
+                        <div class="hazardous_center mt-10">
+                          <div class="implementation_tc">
+                            <div class="implementation_img mb-5"><img src="../../../public/images/yl_03.jpg" alt="" />
+                              <div class="implementation_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td><div class="">
+                        <h3 class="font-size-16 font-weight-600 my-0 mt-5">交通组织方案</h3>
+                        <div class="mt-10">
+                          <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
+                        </div>
+                        <div class="mt-10">
+                          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                            <thead>
+                              <tr>
+                                <th>附件名称</th>
+                                <th>操作</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>xxxxxxxxxxxxxxx.jpg</td>
+                                <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
+                                  <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
+                                  <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-20">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">制定交通组织方案（附后），并已通知相关部门或单位</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked59" name="inputRadios59" checked="">
+                          <label for="inputRadiosUnchecked59">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked59" name="inputRadios59">
+                          <label for="inputRadiosChecked59">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">是否在确定的断路区域用警戒绳进行隔离，并悬挂“禁止机动车辆通行”的标志牌</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked60" name="inputRadios60" checked="">
+                          <label for="inputRadiosUnchecked60">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked60" name="inputRadios60">
+                          <label for="inputRadiosChecked60">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">是否派人到所有封闭路口担任警戒任务，禁止行人、机动车辆通行</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked61" name="inputRadios61" checked="">
+                          <label for="inputRadiosUnchecked61">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked61" name="inputRadios61">
+                          <label for="inputRadiosChecked61">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">作业过程中安全部门、作业单位是否派人到作业现场进行监督、检查</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked62" name="inputRadios62" checked="">
+                          <label for="inputRadiosUnchecked62">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked62" name="inputRadios62">
+                          <label for="inputRadiosChecked62">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">根据现场有害因素情况，作业人员和断路现场其他人员佩带A：过滤式呼吸器；B空气式呼吸器</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked63" name="inputRadios63" checked="">
+                          <label for="inputRadiosUnchecked63">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked63" name="inputRadios63">
+                          <label for="inputRadiosChecked63">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">夜间或雨、雪、雾天作业是否有充足照明，安装临时灯、防爆灯</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked64" name="inputRadios64" checked="">
+                          <label for="inputRadiosUnchecked64">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked64" name="inputRadios64">
+                          <label for="inputRadiosChecked64">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="breaking_ground">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">破土安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">作业地点及内容</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>施工单位</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>建设单位</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>破土范围、内容、方式（包括深度、面积，并附简图）</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-20">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">电力电缆已确认，保护措施已落实</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked65" name="inputRadios65" checked="">
+                          <label for="inputRadiosUnchecked65">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked65" name="inputRadios65">
+                          <label for="inputRadiosChecked65">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">地下通讯电（光）缆、局域网络电（光）缆已确认保护措施已落实</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked66" name="inputRadios66" checked="">
+                          <label for="inputRadiosUnchecked66">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked66" name="inputRadios66">
+                          <label for="inputRadiosChecked66">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>地下供排水管线、工艺管线已确认，保护措施已落实</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked67" name="inputRadios67" checked="">
+                          <label for="inputRadiosUnchecked67">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked67" name="inputRadios67">
+                          <label for="inputRadiosChecked67">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>已按施工方案图划线施工</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked68" name="inputRadios68" checked="">
+                          <label for="inputRadiosUnchecked68">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked68" name="inputRadios68">
+                          <label for="inputRadiosChecked68">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">作业现场围栏、警戒线、警告牌、夜间警示灯已按要求设置</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked69" name="inputRadios69" checked="">
+                          <label for="inputRadiosUnchecked69">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked69" name="inputRadios69">
+                          <label for="inputRadiosChecked69">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>已进行放坡处理和固壁支撑</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked70" name="inputRadios70" checked="">
+                          <label for="inputRadiosUnchecked70">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked70" name="inputRadios70">
+                          <label for="inputRadiosChecked70">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">道路施工作业已报：交通、消防、调度、安全监督管理部门</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked71" name="inputRadios71" checked="">
+                          <label for="inputRadiosUnchecked71">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked71" name="inputRadios71">
+                          <label for="inputRadiosChecked71">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">人员进出口和撤离保护措施已落实：A、梯子；B、修坡道</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked72" name="inputRadios72" checked="">
+                          <label for="inputRadiosUnchecked72">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked72" name="inputRadios72">
+                          <label for="inputRadiosChecked72">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>备有可燃气体检测仪、有毒介质检测仪</td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked73" name="inputRadios73" checked="">
+                          <label for="inputRadiosUnchecked73">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked73" name="inputRadios73">
+                          <label for="inputRadiosChecked73">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业现场夜间有充足照明：A、普通灯；B、防爆灯</td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked74" name="inputRadios74" checked="">
+                          <label for="inputRadiosUnchecked74">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked74" name="inputRadios74">
+                          <label for="inputRadiosChecked74">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>作业人员必须佩带防护器具</td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked75" name="inputRadios75" checked="">
+                          <label for="inputRadiosUnchecked75">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked75" name="inputRadios75">
+                          <label for="inputRadiosChecked75">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="equipment_overhaul">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">设备检修安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">检修设备名称及内容</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>检修地点</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-20">主要安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">确保检修区域内无有毒、有害、易燃气体</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked76" name="inputRadios76" checked="">
+                          <label for="inputRadiosUnchecked76">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked76" name="inputRadios76">
+                          <label for="inputRadiosChecked76">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>机器内部无高压、高温、腐蚀介质，管路加盲板</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked77" name="inputRadios77" checked="">
+                          <label for="inputRadiosUnchecked77">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked77" name="inputRadios77">
+                          <label for="inputRadiosChecked77">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>维修转动设备办理断电手续</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked78" name="inputRadios78" checked="">
+                          <label for="inputRadiosUnchecked78">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked78" name="inputRadios78">
+                          <label for="inputRadiosChecked78">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>有高处作业时，需办理《登高安全作业许可证》</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked79" name="inputRadios79" checked="">
+                          <label for="inputRadiosUnchecked79">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked79" name="inputRadios79">
+                          <label for="inputRadiosChecked79">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>有动火作业时，需办理动火手续</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked80" name="inputRadios80" checked="">
+                          <label for="inputRadiosUnchecked80">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked80" name="inputRadios80">
+                          <label for="inputRadiosChecked80">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>有吊装作业时，按规定办理《吊装安全作业许可证》</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked81" name="inputRadios81" checked="">
+                          <label for="inputRadiosUnchecked81">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked81" name="inputRadios81">
+                          <label for="inputRadiosChecked81">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-20">检修安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">按规定穿戴防护用品</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked82" name="inputRadios82" checked="">
+                          <label for="inputRadiosUnchecked82">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked82" name="inputRadios82">
+                          <label for="inputRadiosChecked82">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>有临时用电检修时，办理《临时用电申请单》</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked83" name="inputRadios83" checked="">
+                          <label for="inputRadiosUnchecked83">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked83" name="inputRadios83">
+                          <label for="inputRadiosChecked83">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>润滑油品放出时用器皿承接，泄漏外部应立即清理</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked84" name="inputRadios84" checked="">
+                          <label for="inputRadiosUnchecked84">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked84" name="inputRadios84">
+                          <label for="inputRadiosChecked84">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>在检修过程中轻拆轻卸，严禁铁器敲击设备</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked85" name="inputRadios85" checked="">
+                          <label for="inputRadiosUnchecked85">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked85" name="inputRadios85">
+                          <label for="inputRadiosChecked85">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="temporary_electricity_consumption">
+            <h3 class="font-size-16 font-weight-600 my-0 mt-20">临时用电安全作业证</h3>
+            <div class="xian_1_e p-20 mt-15">
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">电源接入点</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>用电设备及功率</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>停电人</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>送电人</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 class="font-size-14 font-weight-600 my-0 mt-20">基础安全措施</h3>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">安装临时线的人员持有电工作业操作证</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked86" name="inputRadios86" checked="">
+                          <label for="inputRadiosUnchecked86">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked86" name="inputRadios86">
+                          <label for="inputRadiosChecked86">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">防爆场所使用的临时电源、电气元件和线路达到相应的防爆等级要求</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked87" name="inputRadios87" checked="">
+                          <label for="inputRadiosUnchecked87">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked87" name="inputRadios87">
+                          <label for="inputRadiosChecked87">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>临时用电的单相合混用线路采用五线制</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked88" name="inputRadios88" checked="">
+                          <label for="inputRadiosUnchecked88">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked88" name="inputRadios88">
+                          <label for="inputRadiosChecked88">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">临时用电线路架空高度在装置区内不低于2.5米，道路不低于5米</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked89" name="inputRadios89" checked="">
+                          <label for="inputRadiosUnchecked89">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked89" name="inputRadios89">
+                          <label for="inputRadiosChecked89">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">临时用电线路架空进线不得采用裸线，不得在树上或脚手架上架设</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked90" name="inputRadios90" checked="">
+                          <label for="inputRadiosUnchecked90">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked90" name="inputRadios90">
+                          <label for="inputRadiosChecked90">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">暗管埋设及地下电缆线路设有走向及安全标志，埋度不得小于0.7米</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked91" name="inputRadios91" checked="">
+                          <label for="inputRadiosUnchecked91">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked91" name="inputRadios91">
+                          <label for="inputRadiosChecked91">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>现场临时用配电盘、箱要有防雨设施</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked92" name="inputRadios92" checked="">
+                          <label for="inputRadiosUnchecked92">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked92" name="inputRadios92">
+                          <label for="inputRadiosChecked92">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">行灯电压不得超过36V，在特殊潮湿场所或金属设备内，不得超过12V</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked93" name="inputRadios93" checked="">
+                          <label for="inputRadiosUnchecked93">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked93" name="inputRadios93">
+                          <label for="inputRadiosChecked93">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pre-wrap">临时用电设施安有漏电保护器，移动工具、手持工具用一机一闸一保护</div></td>
+                    <td><div class="btn-group bootstrap-select mt-8">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked94" name="inputRadios94" checked="">
+                          <label for="inputRadiosUnchecked94">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked94" name="inputRadios94">
+                          <label for="inputRadiosChecked94">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>用电设备、线路容量、负荷要求</td>
+                    <td><div class="btn-group bootstrap-select">
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosUnchecked95" name="inputRadios95" checked="">
+                          <label for="inputRadiosUnchecked95">是</label>
+                        </div>
+                        <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                          <input type="radio" id="inputRadiosChecked95" name="inputRadios95">
+                          <label for="inputRadiosChecked95">否</label>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-20" id="dataTableExample">
+                <tbody>
+                  <tr>
+                    <td width="348">其他安全措施</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                  <tr>
+                    <td>现场配备的应急物资和装备</td>
+                    <td><input type="text" class="form-control list-inline-item wb-100" id="inputPlaceholder" placeholder=""></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center pb-20">
+        <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+        <button type="button" class="btn back-138d px-20 list-inline-item">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-780">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">作业反馈</h4>
+      </div>
+      <div class="panel-body p-20">
+        <div class="mt-5 list-inline-item">作业结束时间</div>
+        <input type="text" class="form-control col-lg-2 list-inline-item max-width-240" id="inputPlaceholder" placeholder="">
+        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
+          <tbody>
+            <tr>
+              <td width="369"><div class="pre-wrap">作业时拆移的盖板、箅子板、扶手、栏杆、防护罩等安全设施的安全使用功能是否恢复</div></td>
+              <td><div class="btn-group bootstrap-select mt-8">
+                  <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                    <input type="radio" id="inputRadiosUnchecked96" name="inputRadios96" checked="">
+                    <label for="inputRadiosUnchecked96">是</label>
+                  </div>
+                  <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                    <input type="radio" id="inputRadiosChecked96" name="inputRadios96">
+                    <label for="inputRadiosChecked96">否</label>
+                  </div>
+                </div></td>
+            </tr>
+            <tr>
+              <td><div class="pre-wrap">作业用的工器具、脚手架、临时电源、临时照明设备等是否撤离现场</div></td>
+              <td><div class="btn-group bootstrap-select mt-8">
+                  <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                    <input type="radio" id="inputRadiosUnchecked97" name="inputRadios97" checked="">
+                    <label for="inputRadiosUnchecked97">是</label>
+                  </div>
+                  <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                    <input type="radio" id="inputRadiosChecked97" name="inputRadios97">
+                    <label for="inputRadiosChecked97">否</label>
+                  </div>
+                </div></td>
+            </tr>
+            <tr>
+              <td>废料、杂物、垃圾、油污、火种等是否清理干净</td>
+              <td><div class="btn-group bootstrap-select">
+                  <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                    <input type="radio" id="inputRadiosUnchecked98" name="inputRadios98" checked="">
+                    <label for="inputRadiosUnchecked98">是</label>
+                  </div>
+                  <div class="radio-custom radio-primary m-0 w-100 line-height-19 inline-block">
+                    <input type="radio" id="inputRadiosChecked98" name="inputRadios98">
+                    <label for="inputRadiosChecked98">否</label>
+                  </div>
+                </div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center pb-20">
+        <button type="button" class="btn back-138d px-20 list-inline-item">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter3" aria-hidden="true" aria-labelledby="examplePositionCenter3" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-780">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">审批机构</h4>
+      </div>
+      <div class="panel-body p-20">
+        <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">添加审批机构</button>
+        <div class="add_mechanism">
+          <div class="add_mechanism_center">
+            <div class="mechanism_li">
+              <div class="add_txt" data-target="#examplePositionCenter4" data-toggle="modal">xxxxx公司</div>
+              <span class="add_close"><img src="../../../public/images/sp_03.png" alt="" /></span></div>
+            <div class="add_img"><img src="../../../public/images/sp_07.png" alt="" /></div>
+            <div class="mechanism_li">
+              <div class="add_txt" data-target="#examplePositionCenter4" data-toggle="modal">xxxxx公司</div>
+              <span class="add_close"><img src="../../../public/images/sp_03.png" alt="" /></span></div>
+            <div class="add_img"><img src="../../../public/images/sp_07.png" alt="" /></div>
+            <div class="mechanism_li">
+              <div class="add_txt" data-target="#examplePositionCenter4" data-toggle="modal">请选择机构</div>
+              <span class="add_close"><img src="../../../public/images/sp_03.png" alt="" /></span></div>
+            <div class="add_img"><img src="../../../public/images/sp_07.png" alt="" /></div>
+            <div class="mechanism_li">
+              <div class="add_txt" data-target="#examplePositionCenter4" data-toggle="modal">请选择机构</div>
+              <span class="add_close"><img src="../../../public/images/sp_03.png" alt="" /></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center pb-20">
+        <button type="button" class="btn back-138d px-20 list-inline-item">提交审批</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter4" aria-hidden="true" aria-labelledby="examplePositionCenter4" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">请选择审批机构</h4>
+      </div>
+      <div class="p-20 pb-0">
+        <div class="text-center xian_1_e xian_b_0 pt-15 pb-5">
+          <button type="button" class="btn social-facebook px-20 list-inline-item mb-10">提交</button>
+        </div>
+        <div class="example mb-0 mt-0" data-plugin="mCustomScrollbar">
+          <div id="checkbox"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jstree/jstree.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+<!-- Page JS -->
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/jstree.js"></script>
+</body>
+</html>

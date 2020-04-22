@@ -1,137 +1,114 @@
-
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>上传平面图 - 电控安全云</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备 viewport -->
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <meta name="author" content="admui.com">
-    <!-- 360浏览器默认使用Webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止搜索引擎抓取 -->
-    <meta name="robots" content="nofollow">
-    <!-- 禁止百度SiteAPP转码 -->
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
-    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Safari浏览器添加到主屏幕（IOS） -->
-    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Admui">
-    <!-- Win8标题栏及ICON图标 -->
-    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
-    
-    <!--[if lte IE 9]>
+<meta charset="UTF-8">
+<title>上传平面图 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
     <![endif]-->
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
-    
-    <!-- 字体图标 CSS -->
-    <link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
-	<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
-    
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-	
-	<!-- 自定义 CSS -->
-	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-    
-    <!-- 插件 CSS -->
-    
-    <link rel="stylesheet" href="../../../public/vendor/blueimp-file-upload/jquery.fileupload.css">
-    <link rel="stylesheet" href="../../../public/vendor/dropify/dropify.css">
-    
-    <!-- Page CSS -->
-    
-    
-    <!-- 插件 -->
-    <script src="../../../public/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../../public/vendor/lodash/lodash.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../public/vendor/blueimp-file-upload/jquery.fileupload.css">
+<link rel="stylesheet" href="../../../public/vendor/dropify/dropify.css">
+<!-- Page CSS -->
+<!-- 插件 -->
+<script src="../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../public/vendor/lodash/lodash.min.js"></script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
-		<div class="page-content">
-
-        <div class="panel">
-            <div class="panel-body container-fluid height-704">
-                <div class="example-wrap sw-478 mx-auto mt-100">
-                            <h4 class="example-title text-center font-size-14">请上传高清平面图小于2M,PNG,JPG格式</h4>
-							<h5 class="color_ff0 text-center font-size-14">Word、PDF、CAD等文件请先转换为PNG或者JPG格式</h5>
-                            <div class="example">
-                                <input type="file" class="form-control" id="input-file-max-fs" data-plugin="dropify"
-                                       data-max-file-size="2M">
-                            </div>
-							<div class=""><input type="text" class="wb-100 text-center xian_2_e" id="inputPlaceholder" placeholder="请输入平面图描述" data-target="#examplePositionCenter" data-toggle="modal"></div>
-							<div class="mt-20">
-								<button type="button" class="btn color-fff height-40 font-size-16 back_l px-20 wb-100 list-inline-item" data-target="#examplePositionCenter1" data-toggle="modal">
-									上传平面图
-								</button>
-								<!--修改平面图也会跳到这个界面，当修改完成，点击上传平面图后跳回modify_plan_view.html修改平面图界面-->
-							</div>
-                        </div>
-                
-            </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-body container-fluid height-704">
+        <div class="example-wrap sw-478 mx-auto mt-100">
+          <h4 class="example-title text-center font-size-14">请上传高清平面图小于2M,PNG,JPG格式</h4>
+          <h5 class="color_ff0 text-center font-size-14">Word、PDF、CAD等文件请先转换为PNG或者JPG格式</h5>
+          <div class="example">
+            <input type="file" class="form-control" id="input-file-max-fs" data-plugin="dropify" data-max-file-size="2M">
+          </div>
+          <div class="">
+            <input type="text" class="wb-100 text-center xian_2_e" id="inputPlaceholder" placeholder="请输入平面图描述" data-target="#examplePositionCenter" data-toggle="modal">
+          </div>
+          <div class="mt-20">
+            <button type="button" class="btn color-fff height-40 font-size-16 back_l px-20 wb-100 list-inline-item" data-target="#examplePositionCenter1" data-toggle="modal">上传平面图</button>
+            <!--修改平面图也会跳到这个界面，当修改完成，点击上传平面图后跳回modify_plan_view.html修改平面图界面-->
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center width-430">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">提示</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div class="pt-20 text-center mb-30 color-333 font-size-16">请填写平面图描述</div>
-											<div class="text-center">
-												<button type="button" class="btn btn-primary px-20 list-inline-item">
-													确定
-												</button>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center width-430">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">提示</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div class="pt-20 text-center mb-30 color-333 font-size-16">请填写平面图描述</div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary px-20 list-inline-item">确定</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center width-430">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">提示</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div class="pt-20 text-center mb-30 color-333 font-size-16">上传成功！</div>
-											<div class="text-center">
-												<button type="button" class="btn btn-primary px-20 list-inline-item">
-													确定
-												</button>
-											</div>
-											</div>
-            </div>
+  <div class="modal-dialog modal-center width-430">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">提示</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-select">
+          <div class="pt-20 text-center mb-30 color-333 font-size-16">上传成功！</div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary px-20 list-inline-item">确定</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- 插件 -->
-    <script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
 <script src="../../../public/vendor/jquery-ui/jquery-ui.min.js" ></script>
 <script src="../../../public/vendor/blueimp-tmpl/tmpl.min.js"></script>
 <script src="../../../public/vendor/blueimp-canvas-to-blob/canvas-to-blob.min.js"></script>
@@ -144,10 +121,8 @@
 <script src="../../../public/vendor/blueimp-file-upload/jquery.fileupload-validate.js"></script>
 <script src="../../../public/vendor/blueimp-file-upload/jquery.fileupload-ui.js"></script>
 <script src="../../../public/vendor/dropify/dropify.min.js"></script>
-
 <script src="../../../public/themes/global/js/plugins/action-btn.js"></script>
-    <script src="../../../public/themes/base/js/app.js"></script>
-
+<script src="../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../public/js/examples/forms/dropify.js"></script>
 </body>

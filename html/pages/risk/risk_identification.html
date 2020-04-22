@@ -1,350 +1,293 @@
-
 <!DOCTYPE html>
 <html class="no-js css-menubar" lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>风险辨识与评价 - 电控安全云</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备 viewport -->
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-    <meta name="author" content="admui.com">
-    <!-- 360浏览器默认使用Webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止搜索引擎抓取 -->
-    <meta name="robots" content="nofollow">
-    <!-- 禁止百度SiteAPP转码 -->
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- Chrome浏览器添加桌面快捷方式（安卓） -->
-    <link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Safari浏览器添加到主屏幕（IOS） -->
-    <link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Admui">
-    <!-- Win8标题栏及ICON图标 -->
-    <link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
-    <meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
-    <meta name="msapplication-TileColor" content="#62a8ea">
-
-    <!--[if lte IE 9]>
+<meta charset="UTF-8">
+<title>风险辨识与评价 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
     <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
     <![endif]-->
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
-
-    <!-- 字体图标 CSS -->
-    <link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
-    <link rel="stylesheet" href="../../../../public/fonts/font-awesome/font-awesome.css">
-    <link rel="stylesheet" href="../../../../public/fonts/glyphicons/glyphicons.css">
-	
-
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-
-	<!-- 自定义 CSS -->
-	<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-
-    <!-- 插件 CSS -->
-	
-	<link rel="stylesheet" href="../../../../public/vendor/bootstrap-colorpicker/bootstrap-colorpicker.css">
-    <link rel="stylesheet" href="../../../../public/vendor/fontawesome-iconpicker/fontawesome-iconpicker.css">
-    <link rel="stylesheet" href="../../../../public/vendor/highlight/github-gist.css">
-
-    <!-- Page CSS -->
-    <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
-
-    <!-- 插件 -->
-    <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
-	<script type="text/javascript" src="../../../../public/js/jQSelect.js"></script>
-	<script src="../../../../public/risk/public.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/web-icons/web-icons.css">
+<link rel="stylesheet" href="../../../../public/fonts/font-awesome/font-awesome.css">
+<link rel="stylesheet" href="../../../../public/fonts/glyphicons/glyphicons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-colorpicker/bootstrap-colorpicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/fontawesome-iconpicker/fontawesome-iconpicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/highlight/github-gist.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="../../../../public/js/jQSelect.js"></script>
+<script src="../../../../public/risk/public.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	
-
-
 });	
 
 </script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
-		<div class="page-content" id="DTConent">
-		            <div class="panel">
-		                <div class="alert" role="alert">
-						<div class="mt-5 list-inline-item">所属机构</div>
-								<select class="form-control col-lg-1 list-inline-item mr-15">
-									        <option>请选择</option>
-											<option>京东方</option>
-									    </select>
-								<div class="mt-5 list-inline-item">所属部门</div>
-								<select class="form-control col-lg-1 list-inline-item mr-15">
-									        <option>请选择</option>
-									    </select>
-										<div class="mt-5 list-inline-item">风险源名称</div>
-										<input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
-										<div class="mt-5 list-inline-item">管控级别</div>
-									    <select class="form-control list-inline-item mr-15 sw-80">
-											<option>一级</option>
-											<option>二级</option>
-									    </select>
-										<div class="mt-5 list-inline-item">状态</div>
-									    <select class="form-control list-inline-item mr-15 sw-90">
-									        <option>待更新</option>
-											<option>正常</option>
-									    </select>
-										<div class="mt-5 list-inline-item">事故类型</div>
-									    <select class="form-control list-inline-item mr-15 sw-140">
-									        <option>火灾、爆炸</option>
-											<option>烫伤</option>
-									    </select>
-											<button type="button" class="btn btn-warning list-inline-item mt--5">
-											    搜索
-											</button>
-		                </div>
-						<div class="px-25 mt-5">
-							<button onclick="_addtr('dataTableExample1');" type="button" class="btn btn-primary px-20 list-inline-item">
-							    添加
-							</button>
-							<button onclick="_deletetr('dataTableExample1');" type="button" class="btn btn-danger px-20 list-inline-item mr-20" >
-							删除
-							</button>
-							<button type="button" class="btn px-20 back_l188 color-fff list-inline-item mr-20">
-								更新
-							</button>
-							<button type="button" class="btn social-facebook px-20 list-inline-item mr-20">
-							    提交
-							</button>
-							<button type="button" class="btn px-20 back_hda color-fff list-inline-item mr-20" data-target="#examplePositionCenter7" data-toggle="modal">
-								隐患排查上报
-							</button>
-							<div class="btn-group float-right">
-												<button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-												<button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
-											</div>
-						</div>
-		                <div class="panel-body">
-							<div class="mb-10">
-		                    <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample1">
-		                        <thead>
-		                            <tr>
-		                                <th>
-											<span  class="checkbox-custom checkbox-primary">
-                                                    <input onclick="_selectAll(this,'dataTableExample1');" class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span>
-										</th>
-		                                <th width="254">风险源名称</th>
-		                                <th>部门</th>
-		                                <th>事故类型</th>
-		                                <th>可能发生性</th>
-		                                <th>后果严重性</th>
-										<th width="330">风险值</th>
-										<th>管控等级</th>
-										<th>管控频次</th>
-										<th>选择图标</th>
-										<th>风险描述</th>
-										<th>状态</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                            <tr style="display:none;">
-		                                <td><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></td>
-		                                <td>
-										 <div id="select01" class="selectbox">
-											<div id="selectShowBorder1" class="dianji cartes">
-												<input type="text" value="" class="listTxt" />
-												<div class="listBtn"><b></b></div>
-												<input type="hidden" value="" class="listVal" />
-											</div>
-											<div class="lists">
-												<ul class="list">
-													<li id="v1">腐蚀性危险化学品</li>
-													<li id="v2">毒性危险化学品</li>
-													<li id="v3">易燃易爆化学品</li>
-													<li id="v4">腐蚀性危险化学品</li>
-													<li id="v5">毒性危险化学品</li>
-													<li id="v6">易燃易爆化学品</li>
-													<li id="v7">腐蚀性危险化学品</li>
-													<li id="v8">毒性危险化学品</li>
-												</ul>
-											</div>
-										</div>
-										</td>
-		                                <td><input type="text" class="form-control list-inline-item mr-15 w-100 dianji p-0" id="inputPlaceholder" placeholder=""></td>
-		                                <td><input type="text" class="form-control list-inline-item mr-15 w-100 dianji p-0" id="inputPlaceholder" placeholder=""></td>
-		                                <td>
-											<select class="form-control list-inline-item mr-15 sw-140 dianji ">
-												<option>请选择</option>
-												<option>1</option>
-											</select></td>
-		                                <td><select class="form-control list-inline-item mr-15 sw-140">
-									        <option>请选择</option>
-											<option>1</option>
-									    </select></td>
-										<td>12</td>
-										<td><select class="form-control list-inline-item mr-15 sw-140">
-									        <option>请选择</option>
-											<option>一级</option>
-											<option>二级</option>
-											<option>三级</option>
-									    </select></td>
-										<td>周</td>
-										<td>
-											<div class="btn-group">
-												<button data-selected="graduation-cap" type="button" class="icp icp-dd btn btn-default dropdown-toggle iconpicker-component"
-													data-plugin="iconpicker" data-toggle="dropdown">
-													选择图标
-													<i class="icon fa-fw"></i>
-												</button>
-												<div class="dropdown-menu"></div>
-											</div>
-										</td>
-										<td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tj.png" width="26" class="pr-5 mt--1" alt="" />已添加</span></td>
-										<td><span class="color-08">正常</span></td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
-							</div>
-							<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-							<div class="float-right mt-5">
-							    <nav>
-							        <ul class="pagination mb-0">
-							            <li class="page-item disabled">
-							                <a class="page-link" href="javascript:;" aria-label="上一页">
-							                    <span aria-hidden="true">上一页</span>
-							                </a>
-							            </li>
-							            <li class="page-item active">
-							                <a class="page-link" href="javascript:;">1
-							                    <span class="sr-only">当前</span>
-							                </a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">2</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">3</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">4</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;">5</a>
-							            </li>
-							            <li class="page-item">
-							                <a class="page-link" href="javascript:;" aria-label="下一页">
-							                    <span aria-hidden="true">下一页</span>
-							                </a>
-							            </li>
-							        </ul>
-							    </nav>
-							</div>
-		                </div>
-		            </div>
-		        </div>
-</div>
-<div class="modal fade modal_bg" id="examplePositionCenter7" aria-hidden="true" aria-labelledby="examplePositionCenter7" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">隐患排查上报</h4>
-            </div>
-            <div class="modal-body">
-                <div class="bootstrap-select">
-											<div>
-											<button type="button" class="btn btn-primary px-20 list-inline-item">
-												添加
-											</button>
-											<button  type="button" class="btn btn-danger px-20 list-inline-item mr-20">
-												删除
-											</button>
-											<button type="button" class="btn social-wechat px-20 list-inline-item mr-20">
-												导出
-											</button>
-											<button type="button" class="btn social-facebook px-20 list-inline-item">
-												提交
-											</button>
-											</div>
-											<div class="mt-20">
-												<table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
-													<thead>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<th>排查日期</th>
-															<th>排查项目数量</th>
-															<th>发现隐患数量</th>
-															<th>整改隐患数量</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th width="60"><span class="checkbox-custom checkbox-primary">
-                                                    <input class="selectable-all" type="checkbox">
-                                                    <label></label>
-                                                </span></th>
-															<td>2020-3-17 15:46:27</td>
-															<td>12</td>
-															<td>1</td>
-															<td>3</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											</div>
-            </div>
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+      <div class="alert" role="alert">
+        <div class="mt-5 list-inline-item">所属机构</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+          <option>京东方</option>
+        </select>
+        <div class="mt-5 list-inline-item">所属部门</div>
+        <select class="form-control col-lg-1 list-inline-item mr-15">
+          <option>请选择</option>
+        </select>
+        <div class="mt-5 list-inline-item">风险源名称</div>
+        <input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+        <div class="mt-5 list-inline-item">管控级别</div>
+        <select class="form-control list-inline-item mr-15 sw-80">
+          <option>一级</option>
+          <option>二级</option>
+        </select>
+        <div class="mt-5 list-inline-item">状态</div>
+        <select class="form-control list-inline-item mr-15 sw-90">
+          <option>待更新</option>
+          <option>正常</option>
+        </select>
+        <div class="mt-5 list-inline-item">事故类型</div>
+        <select class="form-control list-inline-item mr-15 sw-140">
+          <option>火灾、爆炸</option>
+          <option>烫伤</option>
+        </select>
+        <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+      </div>
+      <div class="px-25 mt-5">
+        <button onClick="_addtr('dataTableExample1');" type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button onClick="_deletetr('dataTableExample1');" type="button" class="btn btn-danger px-20 list-inline-item mr-20" >删除</button>
+        <button type="button" class="btn px-20 back_l188 color-fff list-inline-item mr-20">更新</button>
+        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+        <div class="btn-group float-right">
+          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
+          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
         </div>
+      </div>
+      <div class="panel-body">
+        <div class="mb-10">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample1">
+            <thead>
+              <tr>
+                <th> <span  class="checkbox-custom checkbox-primary">
+                  <input onClick="_selectAll(this,'dataTableExample1');" class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span> </th>
+                <th width="254">风险源名称</th>
+                <th>部门</th>
+                <th>事故类型</th>
+                <th>可能发生性
+					<div class="inline-block pl-5 line-height-19 explain_box">
+						<img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+						<div class="explain">
+							<h4>说明</h4>
+							<div class="">
+								<p></p>
+								<p></p>
+								<p class="mb-0"></p>
+							</div>
+						</div>
+					</div>
+				</th>
+                <th>后果严重性
+					<div class="inline-block pl-5 line-height-19 explain_box">
+						<img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+						<div class="explain">
+							<h4>说明</h4>
+							<div class="">
+								<p></p>
+								<p></p>
+								<p class="mb-0"></p>
+							</div>
+						</div>
+					</div>
+				</th>
+                <th>风险值
+					<div class="inline-block pl-5 line-height-19 explain_box">
+						<img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+						<div class="explain">
+							<h4>说明</h4>
+							<div class="">
+								<p></p>
+								<p></p>
+								<p class="mb-0"></p>
+							</div>
+						</div>
+					</div>
+				</th>
+                <th>管控等级
+					<div class="inline-block pl-5 line-height-19 explain_box">
+						<img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
+						<div class="explain">
+							<h4>说明</h4>
+							<div class="">
+								<p></p>
+								<p></p>
+								<p class="mb-0"></p>
+							</div>
+						</div>
+					</div>
+				</th>
+                <th>管控措施</th>
+                <th>选择图标</th>
+                <th>风险描述</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="display:none;">
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><div id="select01" class="selectbox">
+                    <div id="selectShowBorder1" class="dianji cartes">
+                      <input type="text" value="" class="listTxt" />
+                      <div class="listBtn"><b></b></div>
+                      <input type="hidden" value="" class="listVal" />
+                    </div>
+                    <div class="lists">
+                      <ul class="list">
+                        <li id="v1">腐蚀性危险化学品</li>
+                        <li id="v2">毒性危险化学品</li>
+                        <li id="v3">易燃易爆化学品</li>
+                        <li id="v4">腐蚀性危险化学品</li>
+                        <li id="v5">毒性危险化学品</li>
+                        <li id="v6">易燃易爆化学品</li>
+                        <li id="v7">腐蚀性危险化学品</li>
+                        <li id="v8">毒性危险化学品</li>
+                      </ul>
+                    </div>
+                  </div></td>
+                <td><select class="form-control list-inline-item mr-15 sw-140 dianji">
+                    <option>请选择</option>
+                    <option>安全部</option>
+                  </select></td>
+                <td><input type="text" class="form-control list-inline-item mr-15 w-100 dianji p-0" id="inputPlaceholder" placeholder=""></td>
+                <td><select class="form-control list-inline-item mr-15 sw-140 dianji ">
+                    <option>请选择</option>
+                    <option>1</option>
+                  </select></td>
+                <td><select class="form-control list-inline-item mr-15 sw-140 dianji">
+                    <option>请选择</option>
+                    <option>1</option>
+                  </select></td>
+                <td>12</td>
+                <td><select class="form-control list-inline-item mr-15 sw-140 dianji">
+                    <option>请选择</option>
+                    <option>一级</option>
+                    <option>二级</option>
+                    <option>三级</option>
+                  </select></td>
+                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><div class="btn-group">
+                    <button data-selected="graduation-cap" type="button" class="icp icp-dd btn btn-default dropdown-toggle iconpicker-component" data-plugin="iconpicker" data-toggle="dropdown">选择图标<i class="icon fa-fw"></i></button>
+                    <div class="dropdown-menu"></div>
+                  </div></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
+                <td><span class="color-08">正常</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination mb-0">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
      tabindex="-1">
-    <div class="modal-dialog modal-center">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title">风险描述</h4>
-            </div>
-            <div class="bootstrap-select">
-				
-											<div class="modal-body">
-												<textarea class="form-control wb-100 h-100" style="resize:none;" id="textareaDefault" placeholder="请输入风险描述" rows="3"></textarea>
-											<div class="text-center mt-15">
-												<button type="button" class="btn social-facebook px-20 list-inline-item">
-													提交
-												</button>
-											</div>
-											</div>
-											</div>
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">管控措施</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div class="modal-body">
+          <textarea class="form-control wb-100 h-100" style="resize:none;" id="textareaDefault" placeholder="请输入管控措施" rows="3"></textarea>
+          <div class="text-center mt-15">
+            <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
+<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">风险描述</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div class="modal-body">
+          <textarea class="form-control wb-100 h-100" style="resize:none;" id="textareaDefault" placeholder="请输入风险描述" rows="3"></textarea>
+          <div class="text-center mt-15">
+            <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- 插件 -->
 <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
 <script src="../../../../public/vendor/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
 <script src="../../../../public/vendor/fontawesome-iconpicker/fontawesome-iconpicker.min.js"></script>
 <script src="../../../../public/vendor/highlight/highlight.min.js"></script>
-
-
-    <script src="../../../../public/themes/base/js/app.js"></script>
-
+<script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/color-icon.js"></script>
 </body>
