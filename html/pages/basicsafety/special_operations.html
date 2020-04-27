@@ -43,8 +43,10 @@
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -53,28 +55,42 @@
 <body data-theme="base">
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
-    <div class="panel">
-      <div class="alert" role="alert">
+    <div class="panel pt-15">
+      <div class="alert pb-0 wb-100" role="alert">
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">姓名</div>
         <input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+		</div>
+		<div class="float-left height-34 mb-20">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择岗位</option>
         </select>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+		</div>
+		<div class="float-left height-34 mb-20">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择种类</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <select class="form-control list-inline-item mr-15 sw-140">
           <option>请选择作业项目</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <select class="form-control list-inline-item mr-15 sw-140">
           <option>请选择证书状态</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <select class="form-control list-inline-item mr-15 w-150">
           <option>请选择人员状态</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">搜索</button>
+		</div>
       </div>
-      <div class="px-25 mt-5">
+      <div class="px-25">
         <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
@@ -84,12 +100,12 @@
         <button type="button" class="btn px-20 back_l188 color-fff list-inline-item mr-10">特种作业证书查询</button>
         <button type="button" class="btn px-20 back_l188 color-fff list-inline-item">特种设备作业证书查询</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -109,7 +125,7 @@
                 <th>有效期至</th>
                 <th>复审日期</th>
                 <th>证书状态</th>
-                <th>人员状态</th>
+                <th width="100">人员状态</th>
               </tr>
             </thead>
             <tbody>
@@ -119,17 +135,17 @@
                   <label></label>
                   </span></td>
 			  	<td>1</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item w-60 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><select class="form-control list-inline-item w-60">
                     <option value="男">男</option>
                     <option value="女">女</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
+                <td><input type="text" class="form-control list-inline-item w-150 px-0" id="inputPlaceholder" value="430981199004068721"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item w-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><form class="form-inline" data-id="cityChina" data-url="../../../../public/data/examples/forms/cxselect/task-data.json">
                     <div class="form-group float-left lx mb-0 mr-0">
                       <select class="form-control province" style="width:150px;" data-first-title="请选择证件类型"></select>
@@ -141,12 +157,18 @@
                       <select class="form-control area" style="width:146px;" data-first-title="请选择项目"></select>
                     </div>
                   </form></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item w-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item w-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+                <td><input type="text" class="form-control list-inline-item w-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+                <td><input type="text" class="form-control list-inline-item w-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
                 <td><span class="color-08">正常</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td>
+				<select class="form-control list-inline-item w-100">
+				  <option>请选择</option>
+				  <option>在职</option>
+				  <option>离职</option>
+				</select>
+				</td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -154,17 +176,17 @@
                   <label></label>
                   </span></td>
 			  	<td>2</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><select class="form-control list-inline-item w-60">
                     <option value="男">男</option>
                     <option value="女">女</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><form class="form-inline" data-id="cityChina" data-url="../../../../public/data/examples/forms/cxselect/task-data.json">
                     <div class="form-group float-left lx mb-0 mr-0">
                       <select class="form-control province" style="width:150px;" data-first-title="请选择证件类型"></select>
@@ -176,12 +198,18 @@
                       <select class="form-control area" style="width:146px;" data-first-title="请选择项目"></select>
                     </div>
                   </form></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
                 <td><span class="h_f">复审超期</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td>
+				<select class="form-control list-inline-item max-width-b-100">
+				  <option>请选择</option>
+				  <option>在职</option>
+				  <option>离职</option>
+				</select>
+				</td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -189,17 +217,17 @@
                   <label></label>
                   </span></td>
 			  	<td>3</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><select class="form-control list-inline-item w-60">
                     <option value="男">男</option>
                     <option value="女">女</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><form class="form-inline" data-id="cityChina" data-url="../../../../public/data/examples/forms/cxselect/task-data.json">
                     <div class="form-group float-left lx mb-0 mr-0">
                       <select class="form-control province" style="width:150px;" data-first-title="请选择证件类型"></select>
@@ -211,12 +239,18 @@
                       <select class="form-control area" style="width:146px;" data-first-title="请选择项目"></select>
                     </div>
                   </form></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
                 <td><span class="color-d3">已过期</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td>
+				<select class="form-control list-inline-item max-width-b-100">
+				  <option>请选择</option>
+				  <option>在职</option>
+				  <option>离职</option>
+				</select>
+				</td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -224,17 +258,17 @@
                   <label></label>
                   </span></td>
 			  	<td>4</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><select class="form-control list-inline-item w-60">
                     <option value="男">男</option>
                     <option value="女">女</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><form class="form-inline" data-id="cityChina" data-url="../../../../public/data/examples/forms/cxselect/task-data.json">
                     <div class="form-group float-left lx mb-0 mr-0">
                       <select class="form-control province" style="width:150px;" data-first-title="请选择证件类型"></select>
@@ -246,12 +280,18 @@
                       <select class="form-control area" style="width:146px;" data-first-title="请选择项目"></select>
                     </div>
                   </form></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
                 <td><span class="color-08">正常</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td>
+				<select class="form-control list-inline-item max-width-b-100">
+				  <option>请选择</option>
+				  <option>在职</option>
+				  <option>离职</option>
+				</select>
+				</td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -259,17 +299,17 @@
                   <label></label>
                   </span></td>
 			  	<td>5</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><select class="form-control list-inline-item w-60">
                     <option value="男">男</option>
                     <option value="女">女</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><form class="form-inline" data-id="cityChina" data-url="../../../../public/data/examples/forms/cxselect/task-data.json">
                     <div class="form-group float-left lx mb-0 mr-0">
                       <select class="form-control province" style="width:150px;" data-first-title="请选择证件类型"></select>
@@ -281,12 +321,18 @@
                       <select class="form-control area" style="width:146px;" data-first-title="请选择项目"></select>
                     </div>
                   </form></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
                 <td><span class="color-08">正常</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td>
+				<select class="form-control list-inline-item max-width-b-100">
+				  <option>请选择</option>
+				  <option>在职</option>
+				  <option>离职</option>
+				</select>
+				</td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -294,17 +340,17 @@
                   <label></label>
                   </span></td>
 			  	<td>6</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><select class="form-control list-inline-item w-60">
                     <option value="男">男</option>
                     <option value="女">女</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="430981199004068721"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><form class="form-inline" data-id="cityChina" data-url="../../../../public/data/examples/forms/cxselect/task-data.json">
                     <div class="form-group float-left lx mb-0 mr-0">
                       <select class="form-control province" style="width:150px;" data-first-title="请选择证件类型"></select>
@@ -316,12 +362,18 @@
                       <select class="form-control area" style="width:146px;" data-first-title="请选择项目"></select>
                     </div>
                   </form></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2022-02-02"></td>
                 <td><span class="color-08">正常</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td>
+				<select class="form-control list-inline-item max-width-b-100">
+				  <option>请选择</option>
+				  <option>在职</option>
+				  <option>离职</option>
+				</select>
+				</td>
               </tr>
             </tbody>
           </table>
@@ -353,8 +405,10 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
 </body>
 </html>

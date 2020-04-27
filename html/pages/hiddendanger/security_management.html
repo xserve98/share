@@ -57,56 +57,84 @@
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
     <div class="panel">
-      <div class="panel-heading pt-25 pl-25 pr-25 mb-10">
-        <h3 class="panel-title p-0 xian_b pb-20">您有<span class="h_f">3</span>个隐患项目未整改，<span class="h_f">5</span>个隐患项目需要您验收</h3>
-      </div>
-      <div class="alert" role="alert">
+      <div class="alert pb-0 wb-100 pt-25" role="alert">
+	  <div class="float-left height-34 mb-20 mr-15">
         <div class="mt-5 list-inline-item">名称</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
-        <div class="mt-5 list-inline-item">公司</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>京东方</option>
-          <option>京东方1</option>
-          <option>京东方2</option>
-          <option>京东方3</option>
-          <option>京东方4</option>
+        <input type="text" class="form-control list-inline-item w-150" id="inputPlaceholder" placeholder="">
+	  </div>
+	  <div class="float-left height-34 mb-20 mr-15">
+        <div class="mt-5 list-inline-item">隐患来源</div>
+        <select class="form-control list-inline-item w-100">
+          <option>请选择</option>
         </select>
-        <div class="mt-5 list-inline-item">责任部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>生产部</option>
+	  </div>
+	  <div class="float-left height-34 mb-20 mr-15">
+        <div class="mt-5 list-inline-item">来源名称</div>
+        <input type="text" class="form-control list-inline-item w-150" id="inputPlaceholder" placeholder="">
+	  </div>
+        <div class="float-left height-34 mb-20 mr-15">
+		<div class="mt-5 float-left pr-10">公司名称</div>
+		<div class="float-left gs">
+        <select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+            <option></option>
+            <optgroup label="">
+                <option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+            </optgroup>
         </select>
-        <div class="mt-5 list-inline-item">整改部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>生产部</option>
-        </select>
+		</div>
+		</div>
+		<div class="float-left height-34 mb-20 mr-15">
         <div class="mt-5 list-inline-item">状态</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+        <select class="form-control list-inline-item w-100">
           <option>已整改</option>
           <option>未整改</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+		</div>
+		<div class="float-left height-34 mb-20 mr-15">
+        <button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
       </div>
-      <div class="px-25 mt-10">
+      <div class="px-25">
         <button type="button" class="btn social-wechat px-20 list-inline-item mr-20">导出</button>
       </div>
-      <div class="px-25 mt-20"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">我整改的（3）</a><a href="###" class="btn btn-inverse mr-15">我验收的（5）</a><a href="###" class="btn btn-inverse mr-15">挂账中（5）</a><a href="###" class="btn btn-inverse mr-15">隐患公示</a>
+      <div class="px-25 mt-20"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">我整改的（3）</a><a href="###" class="btn btn-inverse mr-15">我验收的（5）</a><a href="###" class="btn btn-inverse mr-15">我挂账的（5）</a><a href="###" class="btn btn-inverse mr-15">我公示的（3）</a>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
       <div class="panel-body">
+		<div class="" data-plugin="mCustomScrollbar" data-axis='x'>
         <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
           <thead>
             <tr>
               <th>隐患ID</th>
               <th>隐患名称</th>
               <th>隐患来源</th>
+              <th>来源名称</th>
               <th>隐患等级</th>
               <th>整改期限</th>
               <th>责任公司</th>
-              <th>责任部门</th>
-              <th>整改部门</th>
+              <th>隐患提交单位</th>
+              <th>整改单位</th>
+              <th>验收单位</th>
               <th>状态</th>
               <th width="140">操作</th>
             </tr>
@@ -114,105 +142,91 @@
           <tbody>
             <tr>
               <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
+              <td>xxxx问题</td>
+              <td>外部检查</td>
+              <td>检查名称</td>
               <td>一般等级</td>
               <td>2019-11-31</td>
               <td>京东方</td>
               <td>市场部</td>
               <td>生产部</td>
-              <td>整改中</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button>
-                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">分派</button></td>
+              <td>安全科</td>
+              <td><span class="color_ff0">整改中</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success mr-3" data-target="#examplePositionCenter3" data-toggle="modal">查看</button><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button></td>
             </tr>
             <tr>
               <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
+              <td>xxxx问题</td>
+              <td>排查任务</td>
+              <td>排查任务名称</td>
               <td>一般等级</td>
               <td>2019-11-31</td>
               <td>京东方</td>
               <td>市场部</td>
               <td>生产部</td>
-              <td>验收中</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ffa" data-target="#examplePositionCenter2" data-toggle="modal">验收</button></td>
+              <td>安全科</td>
+              <td><span class="color_ffa">验收中</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success mr-3" data-target="#examplePositionCenter4" data-toggle="modal">查看</button><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ffa" data-target="#examplePositionCenter2" data-toggle="modal">验收</button></td>
             </tr>
             <tr>
               <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
+              <td>xxxx问题</td>
+              <td>排查任务</td>
+              <td>排查任务名称</td>
               <td>一般等级</td>
               <td>2019-11-31</td>
               <td>京东方</td>
               <td>市场部</td>
               <td>生产部</td>
-              <td>审核失败</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button></td>
+              <td>安全科</td>
+              <td><span class="color_ff0">验收失败</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success mr-3" data-target="#examplePositionCenter5" data-toggle="modal">查看</button><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter6" data-toggle="modal">整改</button></td>
             </tr>
             <tr>
               <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
+              <td>xxxx问题</td>
+              <td>排查任务</td>
+              <td>检查名称</td>
               <td>一般等级</td>
               <td>2019-11-31</td>
               <td>京东方</td>
               <td>市场部</td>
               <td>生产部</td>
-              <td>整改完成</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ff0">公示</button></td>
+              <td>安全科</td>
+              <td><span class="color_228">整改完成</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success mr-3" data-target="#examplePositionCenter7" data-toggle="modal">查看</button><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ff0" data-target="#examplePositionCenter8" data-toggle="modal">公示</button></td>
             </tr>
             <tr>
               <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
+              <td>xxxx问题</td>
+              <td>排查任务</td>
+              <td>排查任务名称</td>
               <td>一般等级</td>
               <td>2019-11-31</td>
               <td>京东方</td>
               <td>市场部</td>
               <td>生产部</td>
-              <td>挂账</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter3" data-toggle="modal">整改</button>
-                <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-011">取消挂账</button></td>
+              <td>安全科</td>
+              <td><span class="color_011">挂账</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success mr-3" data-target="#examplePositionCenter9" data-toggle="modal">查看</button><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-011">取消挂账</button></td>
             </tr>
             <tr>
               <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
+              <td>xxxx问题</td>
+              <td>排查任务</td>
+              <td>检查名称</td>
               <td>一般等级</td>
               <td>2019-11-31</td>
               <td>京东方</td>
               <td>市场部</td>
               <td>生产部</td>
-              <td>未整改</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter3" data-toggle="modal">整改</button></td>
-            </tr>
-            <tr>
-              <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
-              <td>一般等级</td>
-              <td>2019-11-31</td>
-              <td>京东方</td>
-              <td>市场部</td>
-              <td>生产部</td>
-              <td>审核失败</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning" data-target="#examplePositionCenter" data-toggle="modal">整改</button>
-                <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">分派</button></td>
-            </tr>
-            <tr>
-              <td>2222</td>
-              <td><span class="l_q">xxxx问题</span></td>
-              <td>上级检查</td>
-              <td>一般等级</td>
-              <td>2019-11-31</td>
-              <td>京东方</td>
-              <td>市场部</td>
-              <td>生产部</td>
-              <td>公示中</td>
-              <td><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ff0">撤销公示</button></td>
+              <td>安全科</td>
+              <td><span class="color_228">公示中</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success mr-3" data-target="#examplePositionCenter10" data-toggle="modal">查看</button><button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline border-1-ff0">撤销公示</button></td>
             </tr>
           </tbody>
         </table>
+		</div>
         <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
         <div class="float-right mt-5">
           <nav>
@@ -233,7 +247,7 @@
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center">
+  <div class="modal-dialog modal-center max-width-960">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
@@ -250,6 +264,7 @@
             <ul class="nav font-size-16 security_tab" role="tablist">
               <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security" aria-controls="security" role="tab">隐患描述</a></li>
               <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security1" aria-controls="security1" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security2" aria-controls="security2" role="tab">流程图</a></li>
             </ul>
             <div class="float-right smt--34 mr-20">
               <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">挂账</button>
@@ -323,26 +338,55 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="tab-pane" id="security" role="tabpanel">
-                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
-              </div>
-            </div>
-          </div>
-        </div>
-		<div id="carbonads-container">
+				<div id="carbonads-container">
             <div class="text-center xian_b pb-20 back_f">
               <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
               <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
             </div>
           </div>
+              </div>
+              <div class="tab-pane" id="security" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security2" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位:xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改中</p>
+							<p>xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center">
+  <div class="modal-dialog modal-center max-width-960">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
@@ -357,21 +401,496 @@
         <div class="example-wrap mb-0 pb-0">
           <div class="nav-tabs-horizontal" data-approve="nav-tabs">
             <ul class="nav font-size-16 security_tab" role="tablist">
-              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security2" aria-controls="security2" role="tab">隐患描述</a></li>
-              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security3" aria-controls="exampleTabsFour" role="tab">整改情况</a></li>
-              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security4" aria-controls="security4" role="tab">验收情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security3" aria-controls="security3" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security4" aria-controls="security4" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security5" aria-controls="security5" role="tab">验收情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security6" aria-controls="security6" role="tab">流程图</a></li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane active" id="security4" role="tabpanel">
-                <div class="p-20">
-                  <h3 class="font-size-16 font-weight-600 my-0">验收情况<span class="color_ff0">*</span></h3>
-                  <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3">针对整改措施，一一逐条对应验收证明材料，逐条进行验收，逐条确定验收时间，时间应精确至日。
+              <div class="tab-pane active" id="security5" role="tabpanel">
+			  	<div class="example-wrap p-20">
+                            <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+                                <ul class="nav nav-tabs-reverse external" role="tablist">
+                                    <li class="nav-item mr-40">
+                                        <a class="nav-link active" data-toggle="tab" href="#exampleTabsReverseOne"
+                                           aria-controls="exampleTabsReverseOne" role="tab">
+                                            通过
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#exampleTabsReverseTwo"
+                                           aria-controls="exampleTabsReverseTwo" role="tab">
+                                            不通过
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content pt-20">
+                                    <div class="tab-pane active" id="exampleTabsReverseOne" role="tabpanel">
+                                        <div class="">
+										  <h3 class="font-size-16 font-weight-600 my-0">验收情况<span class="color_ff0">*</span></h3>
+										  <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3">针对整改措施，一一逐条对应验收证明材料，逐条进行验收，逐条确定验收时间，时间应精确至日。
 XX材料/
 XX/
 X年X月X日</textarea>
+										</div>
+                                    </div>
+                                    <div class="tab-pane" id="exampleTabsReverseTwo" role="tabpanel">
+                                        <div class="">
+										  <h3 class="font-size-16 font-weight-600 my-0">验收情况<span class="color_ff0">*</span></h3>
+										  <textarea class="form-control wb-100 h-150 mt-10" style="resize:none;" id="textareaDefault" placeholder="请填写不通过原因" rows="3"></textarea>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div id="carbonads-container">
+							<div class="text-center xian_b pb-20 back_f">
+							  <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+							  <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+							</div>
+						</div>
+              </div>
+              <div class="tab-pane" id="security4" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="tab-pane" id="security3" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security6" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li approval">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收中</p>
+							<p>验收单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter3" aria-hidden="true" aria-labelledby="examplePositionCenter3" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_ff0 pr-50">整改中</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security7" aria-controls="security7" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security8" aria-controls="security8" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security7" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security8" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改中</p>
+							<p>整改公司：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter4" aria-hidden="true" aria-labelledby="examplePositionCenter4" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_ffa pr-50">验收中</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security9" aria-controls="security9" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security10" aria-controls="security10" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security11" aria-controls="security11" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security10" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security9" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security11" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li approval">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收中</p>
+							<p>验收单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter5" aria-hidden="true" aria-labelledby="examplePositionCenter5" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_ff0 pr-50">验收失败</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security12" aria-controls="security12" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security13" aria-controls="security13" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security14" aria-controls="security14" role="tab">验收情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security15" aria-controls="security15" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security14" role="tabpanel">
+			  	<div class="p-20">
+					<h3 class="font-size-16 font-weight-600 my-0">不通过</h3>
+					<div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+				</div>
+              </div>
+              <div class="tab-pane" id="security13" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security12" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security15" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收失败</p>
+							<p>验收单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter6" aria-hidden="true" aria-labelledby="examplePositionCenter6" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color-se4 pr-50">验收失败</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security16" aria-controls="security" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security17" aria-controls="security1" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security18" aria-controls="security2" role="tab">流程图</a></li>
+            </ul>
+            <div class="float-right smt--34 mr-20">
+              <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">挂账</button>
+              <button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">取消挂账</button>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security17" role="tabpanel">
                 <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
                   <div class="px-20">
                     <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
@@ -426,7 +945,7 @@ X年X月X日</textarea>
                                 <input class="selectable-all" type="checkbox">
                                 <label></label>
                                 </span></td>
-                              <td><span class="l-height-97"><textarea class="form-control wb-100 float-left" style="resize:none; height:97px;" id="textareaDefault" placeholder="" rows="3"></textarea></span></td>
+                              <td><span class="l-height-97"><textarea class="form-control wb-100 height-97 float-left" style="resize:none; height:97px;" id="textareaDefault" placeholder="" rows="3"></textarea></span></td>
                               <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
                                   <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span><span class="float-right spr-8">删除</span></div>
                                 </div></td>
@@ -438,37 +957,631 @@ X年X月X日</textarea>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="tab-pane" id="security2" role="tabpanel">
-                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
-              </div>
-            </div>
-          </div>
-        </div>
-		<div id="carbonads-container">
+				<div id="carbonads-container">
             <div class="text-center xian_b pb-20 back_f">
               <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
               <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
             </div>
           </div>
+              </div>
+              <div class="tab-pane" id="security16" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security18" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收失败</p>
+							<p>验收单位：xxx公司</p>
+							<p>不通过原因：资料不填写不完整，请仔细填写</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改中</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
+<div class="modal fade modal_bg" id="examplePositionCenter7" aria-hidden="true" aria-labelledby="examplePositionCenter7" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center">
+  <div class="modal-dialog modal-center max-width-960">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title">请选择分派的部门</h4>
+        <h4 class="modal-title">XXX隐患</h4>
       </div>
-      <div class="p-20 pb-0">
-        <div class="example mb-0 mt-0" data-plugin="mCustomScrollbar">
-          <div id="checkbox"></div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_228 pr-50">整改完成</span>整改限期：2020年4月4日</div>
+          </div>
         </div>
-        <div class="text-center xian_1_e xian_t_0 pt-15 pb-5">
-          <button type="button" class="btn social-facebook px-20 list-inline-item mb-10">提交</button>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security19" aria-controls="security" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security20" aria-controls="security" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security21" aria-controls="security" role="tab">验收情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security22" aria-controls="security" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security21" role="tabpanel">
+			  	<div class="p-20">
+					<h3 class="font-size-16 font-weight-600 my-0">通过</h3>
+					<div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+				</div>
+              </div>
+              <div class="tab-pane" id="security20" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security19" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security22" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收失败</p>
+							<p>验收单位：xxx公司</p>
+							<p>不通过原因：资料不填写不完整，请仔细填写</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收通过</p>
+							<p>验收单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter8" aria-hidden="true" aria-labelledby="examplePositionCenter8" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_228 pr-50">整改完成</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security23" aria-controls="security" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security24" aria-controls="security" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security25" aria-controls="security" role="tab">验收情况</a></li>
+			  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security26" aria-controls="security" role="tab">公示</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security27" aria-controls="security" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+			  <div class="tab-pane active" id="security26" role="tabpanel">
+			  	<div class="p-20 pb-50">
+					<div class="mt-5 list-inline-item">公示</div>
+        			<input type="text" class="form-control list-inline-item mr-5 w-100" id="inputPlaceholder" placeholder="">
+					<div class="mt-5 list-inline-item">天</div>
+					<button type="button" class="btn btn-primary px-20 list-inline-item">公示</button>
+				</div>
+              </div>
+              <div class="tab-pane" id="security25" role="tabpanel">
+			  	<div class="p-20">
+					<h3 class="font-size-16 font-weight-600 my-0">通过</h3>
+					<div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+				</div>
+              </div>
+              <div class="tab-pane" id="security24" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security23" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security27" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收失败</p>
+							<p>验收单位：xxx公司</p>
+							<p>不通过原因：资料不填写不完整，请仔细填写</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收通过</p>
+							<p>验收单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade modal_bg" id="examplePositionCenter9" aria-hidden="true" aria-labelledby="examplePositionCenter9" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_011 pr-50">挂账中</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security28" aria-controls="security7" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security29" aria-controls="security8" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="security28" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane" id="security29" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改中</p>
+							<p>整改公司：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li accounts">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">挂账中</p>
+							<p>整改公司：xxx公司</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade modal_bg" id="examplePositionCenter10" aria-hidden="true" aria-labelledby="examplePositionCenter10" role="dialog"
+     tabindex="-1">
+  <div class="modal-dialog modal-center max-width-960">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">XXX隐患</h4>
+      </div>
+      <div class="bootstrap-select">
+        <div id="sticky">
+          <div id="carbonads-container">
+            <div class="xian_b p-10 px-20 font-size-16 back_f">状态：<span class="color_228 pr-50">整改完成</span>整改限期：2020年4月4日</div>
+          </div>
+        </div>
+        <div class="example-wrap mb-0 pb-0">
+          <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+            <ul class="nav font-size-16 security_tab" role="tablist">
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security30" aria-controls="security" role="tab">隐患描述</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security31" aria-controls="security" role="tab">整改情况</a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security32" aria-controls="security" role="tab">验收情况</a></li>
+			  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#security33" aria-controls="security" role="tab">公示</a></li>
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#security34" aria-controls="security" role="tab">流程图</a></li>
+            </ul>
+            <div class="tab-content">
+			  <div class="tab-pane" id="security33" role="tabpanel">
+			  	<div class="p-20 pb-50">
+					<div class="mt-5 list-inline-item">公示时间：100天，公示剩余时间</div>
+					<div class="mt-5 list-inline-item color_ff0 font-size-16">22</div>
+					<div class="mt-5 list-inline-item">天</div>
+				</div>
+              </div>
+              <div class="tab-pane" id="security32" role="tabpanel">
+			  	<div class="p-20">
+					<h3 class="font-size-16 font-weight-600 my-0">通过</h3>
+					<div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+				</div>
+              </div>
+              <div class="tab-pane" id="security31" role="tabpanel">
+                <div class="example h-300 p-0 xian_0" data-plugin="mCustomScrollbar">
+                  <div class="px-20">
+                    <h3 class="font-size-16 font-weight-600 my-0">直接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">间接原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">管理原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">履职原因<span class="color_ff0">*</span></h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">其他原因</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改措施</h3>
+                    <div class="mt-10 mb-30">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <h3 class="font-size-16 font-weight-600 my-0 mt-10">整改照片</h3>
+                    <div class="">
+                      <div class="mt-20">
+                        <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th width="160">整改前照片</th>
+                              <th width="160">整改后照片</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <td><span class="l-height-97">xxxxxxxxxxxxxxxxxx</span></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                              <td><div class="security_img"><img src="../../../public/images/zg_03.jpg" alt="" />
+                                  <div class="security_img_cz"><span class="float-left img_icon_ck">查看</span></div>
+                                </div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="security30" role="tabpanel">
+                <div class="p-20">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</div>
+              </div>
+			  <div class="tab-pane active" id="security34" role="tabpane2">
+                <div class="p-0">
+					<div class="example p-0 xian_0" data-plugin="mCustomScrollbar">
+					  <div class="process px-20">
+						<div class="process_li">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p>发现隐患</p>
+							<p>提交单位：xxxxxxxxxxxxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li disagree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收失败</p>
+							<p>验收单位：xxx公司</p>
+							<p>不通过原因：资料不填写不完整，请仔细填写</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">整改完成</p>
+							<p>整改单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">验收通过</p>
+							<p>验收单位：xxx公司</p>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">公示中</p>
+							<p>公示单位：xxx公司</p>
+							<div>公示时间：100天，公示剩余时间<span class="mt-5 list-inline-item color_ff0 font-size-16">22</span>天</div>
+						  </div>
+						</div>
+						<div class="process_li agree">
+						  <div class="process_left width_448">2020-3-14 20:39:20</div>
+						  <div class="process_center">
+							<div></div>
+						  </div>
+						  <div class="process_right width_448">
+							<p class="on">公示结束</p>
+						  </div>
+						</div>
+						<div class="xx_n"></div>
+					  </div>
+					</div>
+				</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

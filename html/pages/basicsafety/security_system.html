@@ -33,16 +33,56 @@
 <!-- 字体图标 CSS -->
 <link rel="stylesheet" href="../../../public/fonts/themify/themify.css">
 <link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- 插件 CSS -->
+
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../public/css/examples/forms/validation.css">
 <!-- Site CSS -->
 <link rel="stylesheet" href="../../../public/themes/base/css/site.css" id="admui-siteStyle">
 <!-- 自定义 CSS -->
 <link rel="stylesheet" href="../../../public/themes/base/css/style.css">
-<!-- 插件 CSS -->
-<!-- Page CSS -->
 <!-- 插件 -->
 <script src="../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+var obj = $('#sticky');
+var offset = obj.offset();
+var topOffset = offset.top;
+var leftOffset = offset.left;
+var marginTop = obj.css("marginTop");
+var top = obj.css("top");
+
+$(window).scroll(function() {
+var scrollTop = $(window).scrollTop();
+
+	if (scrollTop >= topOffset){
+
+		obj.css({
+			marginTop: 0,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 40px)',
+			position: 'fixed',
+		});
+	}
+
+	if (scrollTop < topOffset){
+
+		obj.css({
+			marginTop: marginTop,
+			top: 0,
+			zIndex: 2,
+			width: 'calc(100% - 0px)',
+			position: 'relative',
+		});
+	}
+});
+});
+
+</script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
@@ -63,6 +103,7 @@
               <h2 class="font-size-16 text-right font-weight-600">安全生产标准化</h2>
               </label>
             </div>
+			<form class="form-horizontal" id="exampleConstraintsForm" autocomplete="off">
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>等级</label>
               <div class="w-150">
@@ -79,51 +120,40 @@
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>达标分数</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+				  <input type="text" class="form-control w-150" name="requiredInput">
               </div>
             </div>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>资质单位</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="requiredInput">
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>评审单位</label>
               <div class="w-250">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="requiredInput">
               </div>
             </div>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>评审组织单位</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="requiredInput">
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>公示发牌单位</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="requiredInput">
               </div>
             </div>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审日期</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="requiredInput">
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审状态:</label>
               <div class="w-150">
                 <div class="btn-group bootstrap-select"> <span class="color-d3 pt-5">已过期</span> </div>
               </div>
             </div>
+			</form>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>证书（牌匾）</label>
               <div>
@@ -163,6 +193,7 @@
               <h2 class="font-size-16 text-right font-weight-600">安全文化建设</h2>
               </label>
             </div>
+			<form class="form-horizontal" id="exampleStandardForm" autocomplete="off">
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>是否达标</label>
               <div class="w-150">
@@ -174,37 +205,30 @@
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>审报达标日期</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="standard_name" />
               </div>
             </div>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>评审通过日期</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="standard_name" />
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>公示发牌日期</label>
               <div class="w-250">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="standard_name" />
               </div>
             </div>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审日期</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+                  <input type="text" class="form-control w-150" name="standard_name" />
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审状态:</label>
               <div class="w-150">
                 <div class="btn-group bootstrap-select"> <span class="color-d3 pt-5">已过期</span> </div>
               </div>
             </div>
+			</form>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>证书（牌匾）</label>
               <div>
@@ -244,6 +268,7 @@
               <h2 class="font-size-16 text-right font-weight-600">职业健康管理体系认证</h2>
               </label>
             </div>
+			<form class="form-horizontal" id="exampleSummaryForm" autocomplete="off">
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>是否达标</label>
               <div class="w-150">
@@ -257,15 +282,14 @@
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审日期</label>
               <div class="w-150">
-                <div class="btn-group bootstrap-select">
-                  <input type="text" class="form-control w-150" id="inputPlaceholder" placeholder="">
-                </div>
+				  <input type="text" class="form-control w-150" name="summary_name" />
               </div>
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>复审状态:</label>
               <div class="w-150">
                 <div class="btn-group bootstrap-select"> <span class="color-d3 pt-5">已过期</span> </div>
               </div>
             </div>
+			</form>
             <div class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>证书（牌匾）</label>
               <div>
@@ -313,8 +337,12 @@
 <script src="../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../public/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../../public/vendor/jquery-validation/additional-methods.min.js"></script>
+<script src="../../../public/vendor/jquery-validation/localization/messages_zh.js"></script>
 <script src="../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../public/js/examples/forms/validation.js"></script>
 </body>
 </html>

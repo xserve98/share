@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>隐患排查台账 - 电控安全云</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="admui.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止搜索引擎抓取 -->
+<meta name="robots" content="nofollow">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="../../../../public/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="../../../../public/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Admui">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="../../../../public/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="../../../../public/images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url='http://www.admui.com/ie'"/>
+    <![endif]-->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../../../public/themes/global/css/bootstrap.css">
+<!-- 字体图标 CSS -->
+<link rel="stylesheet" href="../../../../public/fonts/themify/themify.css">
+<link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/clockpicker/clockpicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/timepicker/jquery-timepicker.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<!-- 插件 -->
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+</head>
+<body data-theme="base">
+<div class="page animation-fade page-display">
+  <div class="page-content" id="DTConent">
+    <div class="panel">
+	  <div class="alert pb-0 wb-100 pt-25" role="alert">
+        <div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">开始时间</div>
+			<div class="inline-block mt-0 mb--11 mr-10 sw-413" data-plugin="datepair">
+			  <div class="float-left">
+				<div class="input-daterange">
+				  <div class="input-group">
+					<div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+					<input type="text" class="form-control datepair-date datepair-start inline-block w-150" data-plugin="datepicker" data-language="zh-CN" placeholder="开始日期">
+				  </div>
+				</div>
+			  </div>
+			  <div class="float-left px-10 pt-5">至</div>
+			  <div class="float-left">
+				<div class="input-daterange">
+				  <div class="input-group">
+					<div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+					<input type="text" class="form-control datepair-date datepair-end inline-block w-150" name="end" data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <div class="mt-5 list-inline-item">隐患类型</div>
+        <select class="form-control list-inline-item mr-15 w-100">
+          <option>全部</option>
+          <option>消防隐患</option>
+		  <option>一般设备</option>
+		  <option>特种设备</option>
+		  <option>危险化学品</option>
+		  <option>其他</option>
+        </select>
+		</div>
+		<div class="float-left height-34 mb-20 mr-15">
+		<div class="mt-5 float-left pr-10">公司名称</div>
+		<div class="float-left gs">
+        <select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+            <option></option>
+            <optgroup label="">
+                <option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+            </optgroup>
+        </select>
+		</div>
+		</div>
+		<div class="float-left height-34 mb-20">
+		<div class="mt-5 list-inline-item">汇总方式</div>
+        <select class="form-control list-inline-item mr-15 w-100">
+          <option>请选择</option>
+          <option>按公司</option>
+          <option>按部门</option>
+        </select>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
+      </div>
+      <div class="px-25">
+        <button type="button" class="btn social-wechat px-20 list-inline-item mr-20">导出明细</button>
+        <div class="btn-group float-right">
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="mb-10">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+            <thead>
+              <tr>
+                <th>公司名称</th>
+                <th>排查项目数量</th>
+                <th>发现隐患数量</th>
+                <th>整改隐患数量</th>
+                <th>未整改隐患数量</th>
+                <th>挂账隐患数量</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>XX</td>
+				<td>22</td>
+				<td>45</td>
+                <td>31</td>
+                <td>313</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+        <div class="float-right mt-5">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
+              <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
+              <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 插件 -->
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/clockpicker/bootstrap-clockpicker.min.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="../../../../public/vendor/timepicker/jquery.timepicker.min.js"></script>
+<script src="../../../../public/vendor/moment/moment.min.js"></script>
+<script src="../../../../public/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="../../../../public/vendor/datepair/jquery.datepair.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
+<!-- Page JS -->
+<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/forms/advanced/date-time.js"></script>
+</body>
+</html>

@@ -44,8 +44,10 @@
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
 <link rel="stylesheet" href="../../../../public/vendor/daterangepicker/daterangepicker.css">
 <link rel="stylesheet" href="../../../../public/vendor/timepicker/jquery-timepicker.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
 <!-- 自定义 CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 -->
@@ -60,44 +62,56 @@
       <div class="panel-heading pt-25 pl-25 pr-25 mb-10">
         <h3 class="panel-title p-0 xian_b pb-20">您有<span class="h_f">3</span>个应急演习未完成，<span class="h_f">1</span>个应急演习已过期</h3>
       </div>
-      <div class="alert pb-0" role="alert">
-        <div class="mt-5 list-inline-item">演习开始时间</div>
-        <div class="inline-block mt-0 mb--11 mr-10 sw-413" data-plugin="datepair">
-          <div class="float-left">
-            <div class="input-daterange">
-              <div class="input-group">
-                <div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
-                <input type="text" class="form-control datepair-date datepair-start inline-block w-150" data-plugin="datepicker" data-language="zh-CN" placeholder="开始日期">
-              </div>
-            </div>
-          </div>
-          <div class="float-left px-10 pt-5">至</div>
-          <div class="float-left">
-            <div class="input-daterange">
-              <div class="input-group">
-                <div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
-                <input type="text" class="form-control datepair-date datepair-end inline-block w-150" name="end" data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="alert pb-0 wb-100" role="alert">
+        <div class="float-left height-34 mb-20">
+			<div class="mt-5 list-inline-item">开始时间</div>
+			<div class="inline-block mt-0 mb--11 mr-10 sw-413" data-plugin="datepair">
+			  <div class="float-left">
+				<div class="input-daterange">
+				  <div class="input-group">
+					<div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+					<input type="text" class="form-control datepair-date datepair-start inline-block w-150" data-plugin="datepicker" data-language="zh-CN" placeholder="开始日期">
+				  </div>
+				</div>
+			  </div>
+			  <div class="float-left px-10 pt-5">至</div>
+			  <div class="float-left">
+				<div class="input-daterange">
+				  <div class="input-group">
+					<div class="input-group-prepend float-left"><span class="input-group-text"><i class="icon wb-calendar" aria-hidden="true"></i></span></div>
+					<input type="text" class="form-control datepair-date datepair-end inline-block w-150" name="end" data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">计划编号</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+        <input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">级别</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">组织部门</div>
-        <select class="form-control col-lg-1 list-inline-item w-100 mr-15">
+        <select class="form-control list-inline-item w-100 mr-15">
           <option>生产部</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">演练部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>化工部</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
       </div>
-      <div class="px-25 pt-25">
+      <div class="px-25">
         <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
@@ -106,12 +120,12 @@
         <button type="button" class="btn back-2f9 px-20 list-inline-item mr-20">实施</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -139,11 +153,11 @@
                   <label></label>
                   </span></td>
                 <td>xxxxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-150">
                     <option>请选择</option>
                     <option>综合应急预案</option>
@@ -158,8 +172,8 @@
                     <option>实战演练</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
               </tr>
               <tr>
@@ -168,11 +182,11 @@
                   <label></label>
                   </span></td>
                 <td>xxxxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-150">
                     <option>请选择</option>
                     <option>综合应急预案</option>
@@ -187,8 +201,8 @@
                     <option>实战演练</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
               </tr>
               <tr>
@@ -197,11 +211,11 @@
                   <label></label>
                   </span></td>
                 <td>xxxxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-150">
                     <option>请选择</option>
                     <option>综合应急预案</option>
@@ -216,8 +230,8 @@
                     <option>实战演练</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
               </tr>
               <tr>
@@ -226,11 +240,11 @@
                   <label></label>
                   </span></td>
                 <td>xxxxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-150">
                     <option>请选择</option>
                     <option>综合应急预案</option>
@@ -245,8 +259,8 @@
                     <option>实战演练</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
               </tr>
               <tr>
@@ -255,11 +269,11 @@
                   <label></label>
                   </span></td>
                 <td>xxxxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-150">
                     <option>请选择</option>
                     <option>综合应急预案</option>
@@ -274,8 +288,8 @@
                     <option>实战演练</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
               </tr>
               <tr>
@@ -284,11 +298,11 @@
                   <label></label>
                   </span></td>
                 <td>xxxxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-02"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-150">
                     <option>请选择</option>
                     <option>综合应急预案</option>
@@ -303,8 +317,8 @@
                     <option>实战演练</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
               </tr>
             </tbody>
@@ -383,9 +397,11 @@
 <script src="../../../../public/vendor/moment/moment.min.js"></script>
 <script src="../../../../public/vendor/daterangepicker/daterangepicker.js"></script>
 <script src="../../../../public/vendor/datepair/jquery.datepair.min.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
 <script src="../../../../public/js/examples/forms/advanced/date-time.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
 </body>
 </html>

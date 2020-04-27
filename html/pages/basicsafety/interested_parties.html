@@ -42,8 +42,10 @@
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -58,12 +60,12 @@
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -92,7 +94,7 @@
                   <label></label>
                   </span></td>
                 <td>1</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -108,12 +110,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -127,7 +129,7 @@
                   <label></label>
                   </span></td>
                 <td>2</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -143,12 +145,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -162,7 +164,7 @@
                   <label></label>
                   </span></td>
                 <td>3</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -178,12 +180,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -197,7 +199,7 @@
                   <label></label>
                   </span></td>
                 <td>4</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -213,12 +215,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -232,7 +234,7 @@
                   <label></label>
                   </span></td>
                 <td>5</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -248,12 +250,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -267,7 +269,7 @@
                   <label></label>
                   </span></td>
                 <td>6</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -283,12 +285,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -302,7 +304,7 @@
                   <label></label>
                   </span></td>
                 <td>7</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -318,12 +320,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -337,7 +339,7 @@
                   <label></label>
                   </span></td>
                 <td>8</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -353,12 +355,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -372,7 +374,7 @@
                   <label></label>
                   </span></td>
                 <td>9</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -388,12 +390,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -407,7 +409,7 @@
                   <label></label>
                   </span></td>
                 <td>10</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="京东方"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="安全部">安全部</option>
@@ -423,12 +425,12 @@
                     <option value="交通运输">交通运输</option>
                     <option value="参观学习">参观学习</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="112"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="58"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="13436368477"></td>
                 <td><select class="form-control list-inline-item max-width-b-100">
                     <option value="请选择">请选择</option>
                     <option value="是">是</option>
@@ -564,8 +566,10 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
 </body>
 </html>

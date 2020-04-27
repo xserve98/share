@@ -1,0 +1,44 @@
+@charset "UTF-8";
+*{ padding:0; margin:0;}
+html,body{ margin:0; padding:0; width:100%; height:100%; position:absolute; overflow:hidden; background:url(../../../images/yj_bg.jpg) center center no-repeat; background-size:cover;}
+
+
+.alert_platform_top{ width:100%; height:58px; position:absolute; z-index:2; top:0; line-height:54px; background:url(../../../images/yj_txt.png) center top no-repeat; float:left; text-align:center; color:#fff; font-size:26px; text-shadow:0 0 0.2em #0022d9,-0 -0 0.2em #0022d9;}
+.alert_platform{ width:100%; height:100%; padding:40px; padding-top:130px; padding-bottom:0; position:relative;}
+.alert_platform_center{ width:100%; position:absolute; height:calc(100% - 130px); color:#fff;}
+.alert_platform_center a{ color:#fff;}
+.alert_platform_center h3{ color:#fff; padding-left:20px; margin-bottom:0;}
+.alert_platform_center_left{ width:25%; float:left; padding-right:20px; height:calc(100% - 40px);}
+.alert_risk{ width:100%; position:relative; height:calc(50% - 20px); background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px;}
+.dashboard{ width:100%; height:100%; padding:0 20px;}
+.alert_help{ width:100%; position:relative; height:50%; overflow:hidden; margin-top:20px; background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px;}
+
+.alert_platform_center_center{ width:47%; float:left; padding-right:20px; height:calc(100% - 40px);}
+.risk_trends{ width:100%; position:relative; height:calc(50% - 20px); background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px;}
+.trends{ width:100%; height:100%; padding:0 20px;}
+.risk_indicators{ width:100%; position:relative; height:50%; margin-top:20px; background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px;}
+.indicators{ width:100%; height:100%; padding:0 20px;}
+.indicators table{ color:#fff;}
+.indicators .table th, .table td{ padding:0; font-size:16px; height:43px; text-align:center; width:25%; line-height:43px;}
+.indicators .table-striped tbody tr:nth-of-type(odd){ background:none;}
+.indicators .table-hover tbody tr:hover{ background:none;}
+.indicators tr th{ text-align:center; font-size:18px; color:#fff; background:#0d1f64;}
+.indicators .table-bordered thead:first-child th{ border-top:1px solid #263764;}
+.indicators .table thead th{ border-bottom:1px solid #263764;}
+.indicators .table-bordered th, .indicators .table-bordered td{ border:1px solid #263764;}
+.alert_platform_center_right{ width:calc(25% - 20px); float:left; height:calc(100% - 40px);}
+.standardization{ width:100%; height:100%; position:absolute;}
+.construction{ width:100%; height:100%; position:absolute;}
+.health{ width:100%; height:200px; position:absolute;}
+.r_standardization{ width:100%; position:relative; padding:20px; height:calc(35.33% - 20px); background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px;}
+.r_standardization .example-wrap{ position:absolute; width:100%; height:100%;}
+.r_standardization .alert_stan{ position:absolute; width:100%; height:100%;}
+.r_standardization .tab-content{ position:absolute; width:100%; height:100%;}
+.r_standardization .tab-pane{ position:absolute; width:100%; height:100%;}
+.alert_stan .nav-link{ font-size:18px; padding:0; color:#9fb0ee; padding-right:20px;}
+.alert_stan .active{ font-size:18px; color:#fff; padding-top:0;}
+.alert_stan .nav-link:focus, .alert_stan .nav-link:hover{ background:none;}
+.alert_factor{ width:100%; position:relative; height:calc(35.33% - 20px); background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px; margin-top:20px;}
+.alert_accident{ width:100%; position:relative; height:calc(32% - 20px); background-color:rgba(18,40,117,0.5); border:1px solid #2c4e83; border-radius:20px; margin-top:20px;}
+.accident{ width:100%; height:73%; padding:0 20px; overflow:hidden;}
+.factor{ width:100%; height:80%; padding:0 20px;}

@@ -40,8 +40,10 @@
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
 <!-- 自定义 CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 -->
@@ -52,22 +54,29 @@
 <body data-theme="base">
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
-    <div class="panel">
-      <div class="alert" role="alert">
+    <div class="panel pt-15">
+      <div class="alert pb-0 wb-100" role="alert">
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">设备类型</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">设备编号</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+        <input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">检验状态</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择</option>
           <option>正常</option>
           <option>过期</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">设备状态</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择</option>
           <option>调试</option>
           <option>使用</option>
@@ -75,9 +84,12 @@
           <option>转让停用</option>
           <option>报废</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">搜索</button>
+		</div>
       </div>
-      <div class="px-25 mt-5">
+      <div class="px-25">
         <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
@@ -85,12 +97,12 @@
         <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="ov-s mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -119,7 +131,7 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="锅炉">锅炉</option>
@@ -130,9 +142,9 @@
                     <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
                 <td>
 					<select class="form-control list-inline-item w-100">
 					  <option>请选择</option>
@@ -147,9 +159,9 @@
                     <option value="转让停用">转让停用</option>
                     <option value="报废">报废</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item width-210 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item width-210 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor color_ff0" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/txh.png" width="26" class="pr-5 mt--1" alt="" />待更新</span></td>
@@ -159,7 +171,7 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="锅炉">锅炉</option>
@@ -170,9 +182,9 @@
                     <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
                 <td>
 					<select class="form-control list-inline-item w-100">
 					  <option>请选择</option>
@@ -187,9 +199,9 @@
                     <option value="转让停用">转让停用</option>
                     <option value="报废">报废</option>
                   </select></td>
-				<td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color_ff0" id="inputPlaceholder" value="过期（过期日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color_ff0" id="inputPlaceholder" value="过期（过期日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+				<td><input type="text" class="form-control list-inline-item max-width-b-100 px-0 color_ff0" id="inputPlaceholder" value="过期（过期日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0 color_ff0" id="inputPlaceholder" value="过期（过期日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -199,7 +211,7 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="锅炉">锅炉</option>
@@ -210,9 +222,9 @@
                     <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
                 <td>
 					<select class="form-control list-inline-item w-100">
 					  <option>请选择</option>
@@ -227,9 +239,9 @@
                     <option value="转让停用">转让停用</option>
                     <option value="报废">报废</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -239,7 +251,7 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="锅炉">锅炉</option>
@@ -250,9 +262,9 @@
                     <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter3" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
                 <td>
 					<select class="form-control list-inline-item w-100">
 					  <option>请选择</option>
@@ -267,9 +279,9 @@
                     <option value="转让停用">转让停用</option>
                     <option value="报废">报废</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次检验日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0 color-08" id="inputPlaceholder" value="正常（下次维保日期:2020-3-22）"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -279,7 +291,7 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="锅炉">锅炉</option>
@@ -290,9 +302,9 @@
                     <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter4" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
                 <td>
 					<select class="form-control list-inline-item w-100">
 					  <option>请选择</option>
@@ -307,9 +319,9 @@
                     <option value="转让停用">转让停用</option>
                     <option value="报废">报废</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="转让停用"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="转让停用"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="转让停用"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="转让停用"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -319,7 +331,7 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxx"></td>
                 <td><select class="form-control list-inline-item w-100">
                     <option value="请选择">请选择</option>
                     <option value="锅炉">锅炉</option>
@@ -330,9 +342,9 @@
                     <option value="场(厂)内专用机动车辆">场(厂)内专用机动车辆</option>
                   </select>
                 </td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12312312312"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter5" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
                 <td>
 					<select class="form-control list-inline-item w-100">
 					  <option>请选择</option>
@@ -347,9 +359,9 @@
                     <option value="转让停用">转让停用</option>
                     <option value="报废">报废</option>
                   </select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="报废"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="报废"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="报废"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="报废"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter8" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
                 <td><span class="cursor" data-target="#examplePositionCenter9" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -1195,22 +1207,14 @@
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter6" aria-hidden="true" aria-labelledby="examplePositionCenter6" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center max-width-960">
+  <div class="modal-dialog modal-center max-width-b_90">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
         <h4 class="modal-title">操作规章</h4>
       </div>
-      <div class="bootstrap-select">
-        <div id="sticky">
-          <div id="carbonads-container">
-            <div class="text-center xian_b py-20 back_f">
-              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
-              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
-            </div>
-          </div>
-        </div>
-        <div class="modal-body h-450">
+      <div class="h-450 py-20" data-plugin="mCustomScrollbar">
+      	<div class="bootstrap-select px-20">
           <h3 class="font-size-16 font-weight-600 my-0">设备简介</h3>
           <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
           <h3 class="font-size-16 font-weight-600 my-0 mt-10">主要危险因素描述</h3>
@@ -1219,7 +1223,7 @@
           <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
           <h3 class="font-size-16 font-weight-600 my-0 mt-10">个人防护用品</h3>
           <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
-          <div class="panel-body p-0">
+          <div class="panel-body p-0 state_no">
 		  	<div class="pt-15 back_f">
 			  <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
 			  <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
@@ -1265,12 +1269,20 @@
           <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
         </div>
       </div>
+	  <div id="sticky">
+          <div id="carbonads-container">
+            <div class="text-center pb-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter8" aria-hidden="true" aria-labelledby="examplePositionCenter8" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center max-width-960">
+  <div class="modal-dialog modal-center max-width-b_90">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
@@ -1283,7 +1295,7 @@
             <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
             <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
           </div>
-          <div class="mt-20">
+          <div class="mt-20 state_no">
             <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
               <thead>
                 <tr>
@@ -1302,27 +1314,27 @@
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td>xxxxxxxxxxxx</td>
-                  <td>xxxxxxxxxxxxx</td>
-                  <td>xxxxxxxxxxxxxx</td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
                 </tr>
                 <tr>
                   <th width="60"><span class="checkbox-custom checkbox-primary">
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td>xxxxxxxxxxxx</td>
-                  <td>xxxxxxxxxxxxx</td>
-                  <td>xxxxxxxxxxxxxx</td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
                 </tr>
                 <tr>
                   <th width="60"><span class="checkbox-custom checkbox-primary">
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td>xxxxxxxxxxxx</td>
-                  <td>xxxxxxxxxxxxx</td>
-                  <td>xxxxxxxxxxxxxx</td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxxxxx"></td>
                 </tr>
               </tbody>
             </table>
@@ -1334,7 +1346,7 @@
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter9" aria-hidden="true" aria-labelledby="examplePositionCenter9" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center max-width-960">
+  <div class="modal-dialog modal-center max-width-b_90">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
@@ -1344,7 +1356,7 @@
         <div class="bootstrap-select">
           <div class="alert p-0" role="alert">
             <div class="mt-5 list-inline-item">附件名称</div>
-            <input type="text" class="form-control col-lg-2 list-inline-item mr-15" id="inputPlaceholder" placeholder="">
+            <input type="text" class="form-control list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
             <div class="mt-5 list-inline-item">检验状态</div>
             <select class="form-control list-inline-item mr-15 w-100">
               <option>请选择</option>
@@ -1370,7 +1382,7 @@
             <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
             <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
           </div>
-          <div class="panel-body mt-20 p-0">
+          <div class="panel-body mt-20 p-0 state_no">
             <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
               <thead>
                 <tr>
@@ -1393,11 +1405,11 @@
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
                   <td>
 				  	<select class="form-control list-inline-item w-100">
                       <option value="请选择">请选择</option>
@@ -1415,11 +1427,11 @@
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
                   <td>
 				  	<select class="form-control list-inline-item w-100">
                       <option value="请选择">请选择</option>
@@ -1437,11 +1449,11 @@
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
                   <td>
 				  	<select class="form-control list-inline-item w-100">
                       <option value="请选择">请选择</option>
@@ -1459,11 +1471,11 @@
                     <input class="selectable-all" type="checkbox">
                     <label></label>
                     </span></th>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
-                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
+                  <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-22"></td>
                   <td>
 				  	<select class="form-control list-inline-item w-100">
                       <option value="请选择">请选择</option>
@@ -1493,8 +1505,10 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
 </body>
 </html>

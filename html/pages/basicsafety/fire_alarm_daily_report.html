@@ -36,8 +36,6 @@
 <link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
 <!-- Site CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-<!-- 自定义 CSS -->
-<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 CSS -->
 <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
@@ -45,6 +43,8 @@
 <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -59,11 +59,11 @@
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body state_no">
         <div class="place">
           <div class="pb-5 clearfix">
             <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
@@ -89,10 +89,31 @@
                         </span></td>
                   <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                   <td>
-				  	<select class="form-control list-inline-item w-200">
-						<option value="请选择">请选择</option>
-						<option value="京东方">京东方</option>
+				  	<div class="float-left gs smt-4">
+					<select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+						<option></option>
+						<optgroup label="">
+							<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+							<option value="京东方科技有限公司">京东方科技有限公司</option>
+							<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+							<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+							<option value="京东方科技有限公司">京东方科技有限公司</option>
+							<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+							<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+							<option value="京东方科技有限公司">京东方科技有限公司</option>
+							<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+							<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+							<option value="京东方科技有限公司">京东方科技有限公司</option>
+							<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+							<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+							<option value="京东方科技有限公司">京东方科技有限公司</option>
+							<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+							<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+							<option value="京东方科技有限公司">京东方科技有限公司</option>
+							<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+						</optgroup>
 					</select>
+					</div>
 				  </td>
                   <td>
 				  	<select class="form-control list-inline-item w-150">

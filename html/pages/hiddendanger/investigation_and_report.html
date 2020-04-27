@@ -53,42 +53,15 @@
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
     <div class="panel">
-	  <div class="alert pb-0 pt-25" role="alert">
-        <div class="mt-5 list-inline-item">日期</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
-          <option>请选择</option>
-          <option>1月</option>
-		  <option>2月</option>
-        </select>
-        <div class="mt-5 list-inline-item">公司</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
-          <option>请选择</option>
-          <option>京东方</option>
-        </select>
-		<div class="mt-5 list-inline-item">部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
-          <option>请选择</option>
-          <option>安全部</option>
-        </select>
-		<div class="mt-5 list-inline-item">来源</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
-          <option>请选择</option>
-          <option>设备设施</option>
-          <option>危险作业</option>
-        </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5"> 查询 </button>
-      </div>
-      <div class="px-25 pt-20">
+      <div class="px-25 pt-25">
 		<button type="button" class="btn btn-primary px-20 list-inline-item mr-10">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
-        <button type="button" class="btn social-wechat px-20 list-inline-item mr-20">导出</button>
-        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body state_no">
         <div class="mb-10">
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
@@ -97,14 +70,16 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></th>
-                <th>公司</th>
-                <th>部门</th>
-                <th>来源</th>
                 <th>排查日期</th>
+                <th>排查部门</th>
+                <th>隐患来源</th>
                 <th>排查项目数量</th>
                 <th>发现隐患数量</th>
                 <th>整改隐患数量</th>
                 <th>未整改隐患数量</th>
+                <th>挂账隐患数量</th>
+				<th>状态</th>
+				<th>操作</th>
               </tr>
             </thead>
             <tbody>
@@ -113,192 +88,208 @@
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_666">草稿</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
                   </span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-				  <option>请选择</option>
-				  <option>京东方</option>
-				</select></td>
+                <td>2020-4-23</td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
 				  <option>安全部</option>
 				</select></td>
 				<td><select class="form-control list-inline-item max-width-b-100">
 				  <option>请选择</option>
-				  <option>设备设施</option>
-				  <option>危险作业</option>
+				  <option>消防隐患</option>
+				  <option>一般设备</option>
+				  <option>特种设备</option>
+				  <option>危险化学品</option>
+				  <option>其他</option>
 				</select></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-3-17"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="12"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="1"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="3"></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="24"></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="0"></td>
+				<td><span class="color_228">已上报</span></td>
+				<td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
               </tr>
             </tbody>
           </table>

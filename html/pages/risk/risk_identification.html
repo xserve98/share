@@ -60,7 +60,7 @@ $(document).ready(function(){
 <body data-theme="base">
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
-    <div class="panel">
+    <div class="panel pt-10">
       <div class="alert" role="alert">
         <div class="mt-5 list-inline-item">所属机构</div>
         <select class="form-control col-lg-1 list-inline-item mr-15">
@@ -91,16 +91,16 @@ $(document).ready(function(){
         <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
       </div>
       <div class="px-25 mt-5">
-        <button onClick="_addtr('dataTableExample1');" type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+        <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button onClick="_deletetr('dataTableExample1');" type="button" class="btn btn-danger px-20 list-inline-item mr-20" >删除</button>
         <button type="button" class="btn px-20 back_l188 color-fff list-inline-item mr-20">更新</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body state_no">
         <div class="mb-10">
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample1">
             <thead>
@@ -110,6 +110,7 @@ $(document).ready(function(){
                   <label></label>
                   </span> </th>
                 <th width="254">风险源名称</th>
+                <th>风险描述</th>
                 <th>部门</th>
                 <th>事故类型</th>
                 <th>可能发生性
@@ -138,40 +139,15 @@ $(document).ready(function(){
 						</div>
 					</div>
 				</th>
-                <th>风险值
-					<div class="inline-block pl-5 line-height-19 explain_box">
-						<img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
-						<div class="explain">
-							<h4>说明</h4>
-							<div class="">
-								<p></p>
-								<p></p>
-								<p class="mb-0"></p>
-							</div>
-						</div>
-					</div>
-				</th>
-                <th>管控等级
-					<div class="inline-block pl-5 line-height-19 explain_box">
-						<img src="../../../public/images/ts_03.png" class=" smt--3" alt="" />
-						<div class="explain">
-							<h4>说明</h4>
-							<div class="">
-								<p></p>
-								<p></p>
-								<p class="mb-0"></p>
-							</div>
-						</div>
-					</div>
-				</th>
+                <th>风险值</th>
+                <th>管控等级</th>
                 <th>管控措施</th>
                 <th>选择图标</th>
-                <th>风险描述</th>
                 <th>状态</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="display:none;">
+              <tr>
                 <td><span class="checkbox-custom checkbox-primary">
                   <input class="selectable-all" type="checkbox">
                   <label></label>
@@ -195,6 +171,7 @@ $(document).ready(function(){
                       </ul>
                     </div>
                   </div></td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
                 <td><select class="form-control list-inline-item mr-15 sw-140 dianji">
                     <option>请选择</option>
                     <option>安全部</option>
@@ -220,7 +197,6 @@ $(document).ready(function(){
                     <button data-selected="graduation-cap" type="button" class="icp icp-dd btn btn-default dropdown-toggle iconpicker-component" data-plugin="iconpicker" data-toggle="dropdown">选择图标<i class="icon fa-fw"></i></button>
                     <div class="dropdown-menu"></div>
                   </div></td>
-                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />已填写</span></td>
                 <td><span class="color-08">正常</span></td>
               </tr>
             </tbody>

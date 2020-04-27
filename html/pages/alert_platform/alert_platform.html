@@ -36,45 +36,999 @@
 <!-- Site CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
 <!-- 插件 CSS -->
-<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
-<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
-<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
-<link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
-<link rel="stylesheet" href="../../../../public/vendor/clockpicker/clockpicker.css">
-<link rel="stylesheet" href="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
-<link rel="stylesheet" href="../../../../public/vendor/daterangepicker/daterangepicker.css">
-<link rel="stylesheet" href="../../../../public/vendor/timepicker/jquery-timepicker.css">
 <!-- Page CSS -->
-<link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
 <!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/alert.css">
 <link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 -->
-<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
-<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript">
+	var myChart3,myChart4,myChart6;
+	
+	function showChart123 (index,obj) {
+		$('#showChart').find('li').each(
+			function() {
+				if(index ==$(this).index()){
+					$("#divmyChart" + $(this).index() ).show();			
+					$(this).children('a').addClass("active");
+					//$(this).children('a').css("color","#fff")
+				}else{
+					$("#divmyChart" + $(this).index() ).hide();
+					$(this).children('a').removeClass("active");
+				}				
+			}
+		)
+		myChart3.resize();
+		myChart4.resize();
+		myChart6.resize();
+	}
+
+</script>
+
 </head>
 <body data-theme="base">
-<div class="page animation-fade page-display">
-  1
+<div class="alert_platform">
+  <div class="alert_platform_top">电控安全云数据平台</div>
+  <div class="alert_platform_center">
+    <div class="alert_platform_center_left">
+      <div class="alert_risk">
+        <h3 class="font-size-20">预警指数</h3>
+        <div id="dashboard" class="dashboard"></div>
+      </div>
+      <div class="alert_help">
+        <div class="">
+          <div class="panel-heading">
+            <h3 class="panel-title font-size-20">预警排名</h3>
+          </div>
+          <div class="panel-body pb-15 pt-10">
+            <div class="font-size-16 wb-100 float-left mb-8 mt--6">
+              <div class="float-left wb-16">排名</div>
+              <div class="float-left wb-35">分公司名称</div>
+              <div class="float-left wb-49">风险指数</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="bg-red-800 width-28 height-28 float-left text-center color-fff border-radius-b50 font-size-18">1</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:95%; display:inline-block;" class="bg-red-800 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">95</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="bg-yellow-800 width-28 height-28 float-left text-center color-fff border-radius-b50 font-size-18">2</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:90%; display:inline-block;" class="bg-red-800 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">90</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="bg-yellow-500 width-28 height-28 float-left text-center color-fff border-radius-b50 font-size-18">3</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:80%; display:inline-block;" class="bg-red-800 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">80</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="width-28 height-28 float-left text-center border-radius-b50 font-size-18">4</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:70%; display:inline-block;" class="bg-yellow-800 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">70</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="width-28 height-28 float-left text-center border-radius-b50 font-size-18">5</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:65%; display:inline-block;" class="bg-yellow-800 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">65</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="width-28 height-28 float-left text-center border-radius-b50 font-size-18">6</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:60%; display:inline-block;" class="bg-yellow-800 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">60</div>
+            </div>
+            <div class="font-size-16 wb-100 float-left my-9">
+              <div class="float-left wb-16"><span class="width-28 height-28 float-left text-center border-radius-b50 font-size-18">7</span></div>
+              <div class="float-left wb-35"><a href="#" title="">京一分公司</a></div>
+              <div class="float-left wb-40">
+                <div style="min-width:55%; display:inline-block;" class="bg-yellow-500 height-8 border-radius-10"></div>
+              </div>
+              <div class="wb-9 text-right">55</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert_platform_center_center">
+      <div class="risk_trends">
+        <h3 class="font-size-20">预警趋势</h3>
+        <div id="trends" class="trends"></div>
+      </div>
+      <div class="risk_indicators">
+        <h3 class="font-size-20 mb-10">风险指标</h3>
+        <div class="indicators">
+          <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
+            <thead>
+              <tr>
+                <th>指标名称</th>
+                <th>目标</th>
+                <th>实际完成</th>
+                <th>完成率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>月登陆系统人数 (个)</td>
+                <td>58</td>
+                <td>45</td>
+                <td>75%</td>
+              </tr>
+              <tr>
+                <td>隐患排查数量 (个)</td>
+                <td>58</td>
+                <td>45</td>
+                <td>75%</td>
+              </tr>
+              <tr>
+                <td>隐患整改数量 (个)</td>
+                <td>58</td>
+                <td>58</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>风险管控数量 (个)</td>
+                <td>58</td>
+                <td>45</td>
+                <td>75%</td>
+              </tr>
+              <tr>
+                <td>安全培训学时 (万人时)</td>
+                <td>58</td>
+                <td>45</td>
+                <td>75%</td>
+              </tr>
+              <tr>
+                <td>应急演练次数 (次)</td>
+                <td>58</td>
+                <td>45</td>
+                <td>75%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="alert_platform_center_right">
+      <div class="r_standardization">
+        <div class="example-wrap">
+          <div class="alert_stan">
+            <ul class="nav" id="showChart">
+              <li class="nav-item" onClick="showChart123(0,divmyChart0);"><a class="nav-link active" href="#exampleTabsOne">安全标准化</a></li>
+              <li class="nav-item" onClick="showChart123(1,divmyChart1);"><a class="nav-link" href="#exampleTabsTwo">安全文化建设</a></li>
+              <li class="nav-item" onClick="showChart123(2,divmyChart2);"><a class="nav-link" href="#exampleTabsThree">职业健康管理体系</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="divmyChart0">
+                <div id="standardization" class="standardization"> </div>
+              </div>
+              <div class="tab-pane" id="divmyChart1">
+                <div id="construction" class="construction"> </div>
+              </div>
+              <div class="tab-pane" id="divmyChart2">
+                <div id="health" class="health"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="alert_factor">
+        <h3 class="font-size-20">风险因素</h3>
+        <div id="factor" class="factor"></div>
+      </div>
+      <div class="alert_accident">
+        <h3 class="font-size-20">重大事故（一般，较大，重大，特别重大）</h3>
+        <div id="accident" class="accident"></div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- 插件 -->
 <script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
-<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
 <script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
-<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
-<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
-<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
-<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
-<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<script src="../../../../public/vendor/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
-<script src="../../../../public/vendor/timepicker/jquery.timepicker.min.js"></script>
-<script src="../../../../public/vendor/moment/moment.min.js"></script>
-<script src="../../../../public/vendor/daterangepicker/daterangepicker.js"></script>
-<script src="../../../../public/vendor/datepair/jquery.datepair.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=ObQAHaA2vmgzruRgw43QWoAhXhuzgOVD&services=&t=20170207140543"></script>
+<script src="../../../../public/vendor/echarts/echarts.min.js"></script>
+<script src="../../../../public/vendor/echarts/map/js/china.js"></script>
+<script src="../../../../public/vendor/echarts/bmap.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
-<script src="../../../../public/js/examples/forms/advanced/select.js"></script>
-<script src="../../../../public/js/examples/forms/advanced/date-time.js"></script>
+<script src="../../../../public/themes/global/js/plugins/responsive-tabs.js"></script>
+<script src="../../../../public/vendor/jquery/jquery.min.js"></script>
+<script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script src="../../../../public/js/examples/charts/echarts.js"></script>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('dashboard'));
+
+        // 指定图表的配置项和数据
+        option = {
+		title: {
+			//show:false,
+			x: "center",
+			top: 80,
+			// text:'影响力指数：3.68',
+			// subtext: '影响力指数：3.68',
+			textStyle: {
+				color: '#2cadff',
+				fontSize: 12
+			}
+		},
+		tooltip: {
+			show: true,
+			//  formatter: "{a} <br/>{b} {c}",
+			backgroundColor: '#F7F9FB',
+			borderColor: '#92DAFF',
+			borderWidth: '1px',
+			textStyle: {
+				color: 'black'
+			},
+		},
+		series: [{
+			type: 'gauge',
+			// startAngle: 180,
+			// endAngle: 0,
+			center: ["50%", "47%"], // 仪表位置
+			min: 0,
+			max: 30,
+			radius: '90%',
+			axisLine: {
+				show: true,
+				lineStyle: {
+					width: 20,
+					shadowBlur: 0,
+					color: [
+						[0.2, '#228b22'],
+						// [0.4, '#E98E2C'],
+						//[0.6, '#2ac09b'],
+						[0.8, '#ffa500'],
+						[1, '#ff0000']
+					]
+				}
+			},
+			title : {               //设置仪表盘中间显示文字样式
+							textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+								fontWeight: 'bolder',
+								fontSize: 18,
+								color:"white"
+							}
+						},
+			axisTick: {
+				show: true,
+				splitNumber: 1
+			},
+			splitNumber: 10,
+			splitLine: {
+				show: false,
+				length: 10,
+				lineStyle: {
+					//color:'black'
+				},
+			},
+			axisLabel: {
+				formatter: function(e) {
+					switch (e + "") {
+						case "10":
+							//return "";
+						case "20":
+							//return "";
+						case "30":
+							//return "";
+						default:
+							return e;
+					}
+				},
+				textStyle: {
+					fontSize: 18,
+					fontWeight: ""
+				}
+			},
+	
+			axisTick: { // 坐标轴小标记
+				length: 15, // 属性length控制线长
+				lineStyle: { // 属性lineStyle控制线条样式
+					color: '#ffffff'
+				}
+			},
+			splitLine: { // 分隔线
+				length: 28, // 属性length控制线长
+				lineStyle: { // 属性lineStyle（详见lineStyle）控制线条样式
+					color: '#ffffff'
+				}
+			},
+			data: [{
+				value: 28,
+				name: '预警指数'
+			}]
+	
+		}]
+	
+	};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart1.setOption(option);
+</script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart2 = echarts.init(document.getElementById('trends'));
+
+        // 指定图表的配置项和数据
+        option = {
+		tooltip: {
+		},
+		legend: {
+			data: ['预警趋势'],
+			textStyle: {
+				color: '#ffffff',
+				fontSize: 14,
+				fontFamily: 'PingFangSC',
+				fontWeight: 300
+			}
+				
+		},
+		grid:{
+                x:30,
+                y:25,
+                x2:5,
+                y2:94,
+                borderWidth:1
+            },
+		xAxis: {
+			type: 'category',
+			boundaryGap: false,
+			data: ['', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+			interval: 0,
+			axisTick: {
+			  inside: true,
+			  lineStyle: {
+				  color: '#10899A'
+			  }
+			},
+			axisLine: {
+			  lineStyle: {
+				  color: '#06D3CD'
+			  }  
+			},
+			axisLabel: {
+				rotate: 28,
+				color: '#ffffff',
+				fontFamily: 'PingFangSC',
+				fontSize: 14,
+				fontWeight: 300
+			}
+		},
+		yAxis: {
+			type: 'value',
+			name: '',
+			max: 101,
+			splitNumber: 10,
+			splitLine: {
+				show: false
+			},
+			axisLine: {
+			  lineStyle: {
+				  color: '#06D3CD'
+			  }  
+			},
+			axisTick: {
+			  lineStyle: {
+				  color: '#10899A'
+			  },
+			},
+			axisLabel: {
+				showMaxLabel: false,
+				color: '#ffffff',
+				fontFamily: 'PingFangSC',
+				fontSize: 14,
+				fontWeight: 300
+			}
+		},
+		series: [{
+			name: '预警趋势',
+			data: [0, 30, 40, 50, 60, 70, 66, 77, 99, 88, 44, 33, 46],
+			type: 'line',
+			smooth: 0.4,
+			symbolSize: 6,
+			lineStyle: {
+			  color: '#FF5624'  
+			},
+			itemStyle: {
+				borderWidth: 1,
+				borderColor: '#FF5624'
+			},
+			areaStyle: {
+				normal: {
+					color: new echarts.graphic.LinearGradient(
+					0, 0, 0, 1, [{
+						offset: 0,
+						color: '#FF5624'
+					  },
+					  {
+						offset: 1,
+						color: 'rgba(18,30,72,0.01)'
+					  }
+					])
+				}
+			}
+		}]
+	};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart2.setOption(option);
+</script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        myChart3 = echarts.init(document.getElementById('standardization'));
+		
+
+        // 指定图表的配置项和数据
+        var colorArray = [{
+			top: '#ff0000', //黄
+			bottom: '#ff0000'
+		}, {
+			top: '#ffa500', //绿
+			bottom: '#ffa500'
+		},
+		{
+			top: '#228b22', //蓝
+			bottom: '#228b22'
+		}
+	];
+	option = {
+		tooltip: {
+			show: true,
+			formatter: "{b}:{c}"
+		},
+		grid: {
+			left: '-20',
+			top: '2%',
+			right: '0%',
+			bottom: '24%',
+			containLabel: true
+		},
+	
+		yAxis: {
+			type: 'value',
+			show: false,
+			position: 'top',
+			axisTick: {
+				show: false
+			},
+			axisLine: {
+				show: false,
+				lineStyle: {
+					color: '#fff',
+				}
+			},
+			splitLine: {
+				show: false
+			},
+		},
+		xAxis: [{
+				type: 'category',
+				axisTick: {
+					show: false,
+					alignWithLabel: false,
+					length: 5,
+	
+				},
+				"splitLine": { //网格线
+					"show": false
+				},
+				inverse: 'true', //排序
+				axisLine: {
+					show: false,
+					lineStyle: {
+						color: '#fff',
+					}
+				},
+				data: ['三级', '二级', '一级']
+			}
+	
+		],
+		series: [{
+				name: '能耗值',
+				type: 'bar',
+				label: {
+					normal: {
+						show: true,
+						position: 'top',
+						formatter: '{c}',
+						textStyle: {
+							color: 'white' //color of value
+						}
+					}
+				},
+				itemStyle: {
+					normal: {
+						show: true,
+						color: function(params) {
+							let num = colorArray.length;
+							return {
+								type: 'linear',
+								colorStops: [{
+									offset: 0,
+									color: colorArray[params.dataIndex % num].bottom
+								}, {
+									offset: 1,
+									color: colorArray[params.dataIndex % num].top
+								}, {
+									offset: 0,
+									color: colorArray[params.dataIndex % num].bottom
+								}, {
+									offset: 1,
+									color: colorArray[params.dataIndex % num].top
+								}, {
+									offset: 0,
+									color: colorArray[params.dataIndex % num].bottom
+								}, {
+									offset: 1,
+									color: colorArray[params.dataIndex % num].top
+								}, {
+									offset: 0,
+									color: colorArray[params.dataIndex % num].bottom
+								}, {
+									offset: 1,
+									color: colorArray[params.dataIndex % num].top
+								}, {
+									offset: 0,
+									color: colorArray[params.dataIndex % num].bottom
+								}, {
+									offset: 1,
+									color: colorArray[params.dataIndex % num].top
+								}, {
+									offset: 0,
+									color: colorArray[params.dataIndex % num].bottom
+								}, {
+									offset: 1,
+									color: colorArray[params.dataIndex % num].top
+								}],
+								//globalCoord: false
+							}
+						},
+						barBorderRadius: 70,
+						borderWidth: 0,
+						borderColor: '#333',
+					}
+				},
+				barGap: '0%',
+				barCategoryGap: '50%',
+				data: [70, 132, 89]
+			}
+	
+		]
+	};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart3.setOption(option);
+</script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        myChart4 = echarts.init(document.getElementById('construction'));
+		
+
+        // 指定图表的配置项和数据
+        option = {
+		title: {
+			left: 'center',
+			top: 10,
+			textStyle: {
+				color: '#ffffff'
+			}
+		},
+	
+		tooltip: {
+			trigger: 'item',
+			formatter: "{b} : {c} ({d}%)"
+		},
+	
+		visualMap: {
+			show: false,
+			min: 500,
+			max: 600,
+			inRange: {
+				//colorLightness: [0, 1]
+			}
+		},
+		series: [{
+			name: '访问来源',
+			type: 'pie',
+			radius: '66%',
+			center: ['50%', '40%'],
+			color: ['#ff9d00', '#008b32', '#1DB7E5'], //'#FBFE27','rgb(11,228,96)','#FE5050'
+			data: [
+				{
+					value: 210,
+					name: '达标'
+				},
+				{
+					value: 174,
+					name: '未达标'
+				}
+			].sort(function(a, b) {
+				return a.value - b.value
+			}),
+			roseType: 'radius',
+	
+			label: {
+				normal: {
+					formatter: ['{c|{c}次}', '{b|{b}}'].join('\n'),
+					rich: {
+						c: {
+							color: '#fff',
+							fontSize: 16,
+							fontWeight:'bold',
+							lineHeight: 5
+						},
+						b: {
+							color: 'rgb(98,137,169)',
+							fontSize: 15,
+							height: 40
+						},
+					},
+				}
+			},
+			labelLine: {
+				normal: {
+					lineStyle: {
+						color: 'rgb(98,137,169)',
+					},
+					smooth: 0.2,
+					length: 10,
+					length2: 20,
+	
+				}
+			},
+			itemStyle: {
+				normal: {
+					shadowColor: 'rgba(0, 0, 0, 0.5)',
+					shadowBlur: 50,
+				}
+			}
+		}]
+	};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart4.setOption(option);
+    </script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart5 = echarts.init(document.getElementById('accident'));
+		
+
+        // 指定图表的配置项和数据
+		option = {
+			 
+			tooltip: {
+				trigger: "axis",
+				padding: [8, 10],
+				backgroundColor: 'rgba(0,0,0,0.5)',
+				axisPointer: {
+					type: "shadow", 
+					textStyle: {
+						color: "#fff"
+					}
+				}
+			},
+			legend: {
+				data: ['', '', ''],
+				align: 'left',
+				right: 0,
+				textStyle: {
+					color: "#fff",
+					fontSize: 14,
+					fontWeight: 200
+				},
+				itemWidth: 14,
+				itemHeight: 14, 
+			},
+			grid: {
+				left: '-20',
+				right: '0',
+				bottom: '8%',
+				top: '15%',
+				containLabel: true
+			},
+			label: {
+				show: true,
+				position: 'top',
+				color: '#fff',
+				fontSize: 14,
+				fontWeight: 700
+			},
+			xAxis: [{
+				type: 'category',
+				offset: 10,
+				data: ['1月', '2月', '3月'],
+				axisTick:{
+				   show: false
+				},
+				axisLabel: {
+					show:true,
+					textStyle:{
+						color: "#fff",
+						fontSize: 16,
+						fontWeight: 200
+					},
+				},
+				axisLine:{
+					lineStyle:{
+						 color:'#fff',
+						 width:0,//这里是为了突出显示加上的
+							 }
+						 },
+			}],
+			yAxis:[
+					{
+					  type : 'value',
+					  splitNumber: 2,
+					  scale: true,
+					  show:false,
+					  splitLine:{
+					　　　　show:false
+					　　 }
+					}
+				  ],
+			series: [{
+				name: '一般',
+				type: 'bar',
+				data: [20, 34, 18, 14, 16],
+				barWidth: 12, //柱子宽度
+				barGap: 1, //柱子之间间距
+				itemStyle: {
+					normal: {
+						color: '#fcfc23',
+						opacity: 1,
+					}
+				}
+			}, {
+				name: '较大',
+				type: 'bar',
+				data: [10, 24, 5, 24, 16],
+				barWidth: 12,
+				barGap: 1,
+				itemStyle: {
+					normal: {
+						color: '#ff9c00',
+						opacity: 1,
+					}
+				}
+			}, {
+				name: '重大',
+				type: 'bar',
+				data: [7, 24, 18, 20, 6],
+				barWidth: 12,
+				barGap: 1,
+				itemStyle: {
+					normal: {
+						color: '#ff0000',
+						opacity: 1,
+					}
+				}
+			}, {
+				name: '特别重大',
+				type: 'bar',
+				data: [7, 24, 18, 20, 6],
+				barWidth: 12,
+				barGap: 1,
+				itemStyle: {
+					normal: {
+						color: '#890000',
+						opacity: 1,
+					}
+				}
+			}]
+		};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart5.setOption(option);
+</script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        myChart6 = echarts.init(document.getElementById('health'));
+		
+
+        // 指定图表的配置项和数据
+		option = {
+			title: {
+				left: 'center',
+				top: 10,
+				textStyle: {
+					color: '#ffffff'
+				}
+			},
+		
+			tooltip: {
+				trigger: 'item',
+				formatter: "{b} : {c} ({d}%)"
+			},
+		
+			visualMap: {
+				show: false,
+				min: 500,
+				max: 600,
+				inRange: {
+					//colorLightness: [0, 1]
+				}
+			},
+			series: [{
+				name: '访问来源',
+				type: 'pie',
+				radius: '80%',
+				center: ['50%', '50%'],
+				color: ['#ff9d00', '#008b32', '#1DB7E5'], //'#FBFE27','rgb(11,228,96)','#FE5050'
+				data: [
+					{
+						value: 210,
+						name: '认证'
+					},
+					{
+						value: 174,
+						name: '未认证'
+					}
+				].sort(function(a, b) {
+					return a.value - b.value
+				}),
+				roseType: 'radius',
+		
+				label: {
+					normal: {
+						formatter: ['{c|{c}次}', '{b|{b}}'].join('\n'),
+						rich: {
+							c: {
+								color: '#fff',
+								fontSize: 16,
+								fontWeight:'bold',
+								lineHeight: 5
+							},
+							b: {
+								color: 'rgb(98,137,169)',
+								fontSize: 15,
+								height: 40
+							},
+						},
+					}
+				},
+				labelLine: {
+					normal: {
+						lineStyle: {
+							color: 'rgb(98,137,169)',
+						},
+						smooth: 0.2,
+						length: 10,
+						length2: 20,
+		
+					}
+				},
+				itemStyle: {
+					normal: {
+						shadowColor: 'rgba(0, 0, 0, 0.5)',
+						shadowBlur: 50,
+					}
+				}
+			}]
+		};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart6.setOption(option);
+</script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart7 = echarts.init(document.getElementById('factor'));
+		
+
+        // 指定图表的配置项和数据
+		option = {
+			title: {
+				left: 'center',
+				top: 10,
+				textStyle: {
+					color: '#ffffff'
+				}
+			},
+		
+			tooltip: {
+				trigger: 'item',
+				formatter: "{b} : {c} ({d}%)"
+			},
+		
+			visualMap: {
+				show: false,
+				min: 500,
+				max: 600,
+				inRange: {
+					//colorLightness: [0, 1]
+				}
+			},
+			series: [{
+				name: '访问来源',
+				type: 'pie',
+				radius: '90%',
+				center: ['50%', '55%'],
+				color: ['#ffff00', '#ffa500', '#ff0000', '#228b22'], //'#FBFE27','rgb(11,228,96)','#FE5050'
+				data: [
+					{
+						value: 210,
+						name: '较低'
+					},
+					{
+						value: 174,
+						name: '一般'
+					},
+					{
+						value: 174,
+						name: '较大'
+					},
+					{
+						value: 174,
+						name: '重大'
+					}
+				].sort(function(a, b) {
+					return a.value - b.value
+				}),
+				roseType: 'radius',
+		
+				label: {
+					normal: {
+						formatter: ['{c|{c}}', '{b|{b}}'].join('\n'),
+						rich: {
+							c: {
+								color: '#fff',
+								fontSize: 16,
+								fontWeight:'bold',
+								lineHeight: 5
+							},
+							b: {
+								color: 'rgb(98,137,169)',
+								fontSize: 15,
+								height: 40
+							},
+						},
+					}
+				},
+				labelLine: {
+					normal: {
+						lineStyle: {
+							color: 'rgb(98,137,169)',
+						},
+						smooth: 0.2,
+						length: 10,
+						length2: 20,
+		
+					}
+				},
+				itemStyle: {
+					normal: {
+						shadowColor: 'rgba(0, 0, 0, 0.5)',
+						shadowBlur: 50,
+					}
+				}
+			}]
+		};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart7.setOption(option);
+    </script>
+<script type="text/javascript">
+$(window).resize(function() {
+	myChart1.resize();
+	myChart2.resize();
+	myChart3.resize();
+	myChart4.resize();
+	myChart5.resize();
+	myChart6.resize();
+	myChart7.resize();
+});
+
+</script>
 </body>
 </html>

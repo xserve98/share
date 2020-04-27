@@ -42,8 +42,10 @@
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -52,14 +54,19 @@
 <body data-theme="base">
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
-    <div class="panel">
-      <div class="alert" role="alert">
+    <div class="panel pt-15">
+      <div class="alert pb-0 wb-100" role="alert">
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">设备名称</div>
         <input type="text" class="form-control list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">设备编号</div>
         <input type="text" class="form-control list-inline-item mr-15 w-120" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">设备状态</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择</option>
           <option>调试</option>
           <option>使用</option>
@@ -67,9 +74,12 @@
           <option>转让停用</option>
           <option>报废</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">搜索</button>
+		</div>
       </div>
-      <div class="px-25 mt-5">
+      <div class="px-25">
         <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
@@ -77,12 +87,12 @@
         <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -133,7 +143,7 @@
                   </select></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -162,7 +172,7 @@
                   </select></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -191,7 +201,7 @@
                   </select></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -220,7 +230,7 @@
                   </select></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -249,7 +259,7 @@
                   </select></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -278,7 +288,7 @@
                   </select></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />已上传</span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/sc.png" class="pr-5 mt--1" alt="" />未上传</span></td>
+                <td><span class="cursor" data-target="#examplePositionCenter6" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
               </tr>
             </tbody>
           </table>
@@ -342,44 +352,78 @@
     </div>
   </div>
 </div>
-<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter2" role="dialog"
+<div class="modal fade modal_bg" id="examplePositionCenter6" aria-hidden="true" aria-labelledby="examplePositionCenter6" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center">
+  <div class="modal-dialog modal-center max-width-b_90">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title">请上传操作规章</h4>
+        <h4 class="modal-title">操作规章</h4>
       </div>
-      <div class="modal-body">
-        <div class="bootstrap-select">
-          <div>
-            <button type="button" class="btn btn-dark"><i class="icon wb-upload" aria-hidden="true"></i>上传<input type="file" class="input-up" name="" multiple=""></button>
-          </div>
-          <div class="h_f pt-10">PDF扫描件</div>
-          <div class="mt-5">
-            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
+      <div class="h-450 py-20" data-plugin="mCustomScrollbar">
+      	<div class="bootstrap-select px-20">
+          <h3 class="font-size-16 font-weight-600 my-0">设备简介</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">主要危险因素描述</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">安全防护措施</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">个人防护用品</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
+          <div class="panel-body p-0 state_no">
+		  	<div class="pt-15 back_f">
+			  <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
+			  <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
+			</div>
+            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mt-20 mb-20" id="dataTableExample">
               <thead>
                 <tr>
-                  <th>附件名称</th>
-                  <th>附件大小(k)</th>
-                  <th>上传时间</th>
-                  <th>操作</th>
+				  <th width="70"><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></th>
+                  <th>作业类型</th>
+                  <th>作业准备</th>
+                  <th>作业中</th>
+				  <th>作业结束</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>xxxxxxxxxxxxxxx.jpg</td>
-                  <td>375.11</td>
-                  <td>2020-01-02 11:35:38</td>
-                  <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline btn-primary">下载</button>
-                    <button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success">查看</button>
-                    <button id="exampleLeaveFullscreen" type="button" class="btn btn-sm btn-outline btn-warning">删除</button></td>
+				  <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                </tr>
+                <tr>
+				  <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
+                  <td><textarea class="form-control wb-100 h-100 my-5 float-left" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea></td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <h3 class="font-size-16 font-weight-600 my-0 mt-10">应急处理措施</h3>
+          <textarea class="form-control wb-100 h-100 mt-10" style="resize:none;" id="textareaDefault" placeholder="" rows="3"></textarea>
         </div>
       </div>
+	  <div id="sticky">
+          <div id="carbonads-container">
+            <div class="text-center pb-20 back_f">
+              <button type="button" class="btn btn-primary px-20 mr-30 list-inline-item">保存草稿</button>
+              <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
@@ -392,8 +436,10 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
 </body>
 </html>

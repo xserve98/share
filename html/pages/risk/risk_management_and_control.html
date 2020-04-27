@@ -48,6 +48,7 @@
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="../../../../public/vendor/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nSxiPohfziUaCuONe4ViUP2N"></script>
 </head>
 <body data-theme="base">
 <div class="page animation-fade page-display">
@@ -55,7 +56,9 @@
     <div class="panel">
       <div class="panel-body container-fluid">
         <div class="row row-lg">
-          <div class="col-lg-7 col-md-12 height-504">1</div>
+          <div class="col-lg-7 col-md-12 height-504">
+		  	<div id="map"></div>
+		  </div>
           <div class="col-lg-5 col-md-12">
             <div class="bootstrap-select">
 			  <div class="mb-10 color-333">xxxx公司，风险指数<span class="color_ff0">88</span></div>
@@ -76,7 +79,7 @@
                   <tbody>
                     <tr>
                       <th class="text-center" width="60">1</th>
-                      <td>京东方</td>
+                      <td><a href="/html/pages/risk/risk_ranking.html" title="" target="_blank">京东方</a></td>
                       <td><span class="color_ff0">重大</span></td>
                       <td>98</td>
                     </tr>
@@ -156,5 +159,111 @@
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script type="text/javascript">
+	//x,y,等级，名称，地址
+	var data = 
+	{"data":
+		[
+			[116.506259,39.97083,10,'北京电控股份有限公司','/html/pages/risk/risk_ranking.html'], 
+			[116.52259,39.784293,26,'北京京东方科技股份有限公司','/html/pages/risk/risk_ranking.html'],
+			[116.340493,39.993476,71,'北京向前进信息科技有限公司','/html/pages/risk/risk_ranking.html'],
+			[116.107103,39.662362,100,'北京科比特科技有限公司','/html/pages/risk/risk_ranking.html'],
+			[116.493382,40.006949,85,'北京新译信息科技有限公司','/html/pages/risk/risk_ranking.html'],
+			[113.036136,28.201234,85,'长沙新环境信息有限公司','/html/pages/risk/risk_ranking.html'],
+			[113.096728,28.223369,45,'长沙天恒测控技术有限公司','/html/pages/risk/risk_ranking.html'],
+			[103.910882,30.645875,65,'四川爱华学院','/html/pages/risk/risk_ranking.html'],
+			[109.008271,34.387775,15,'西安朱宏机电市场','/html/pages/risk/risk_ranking.html'],
+			[116.950616,36.70448,35,'蓝翔建设机械公司','/html/pages/risk/risk_ranking.html'],
+			[114.363708,30.48178,25,'华中农业大学','/html/pages/risk/risk_ranking.html']
+			
+		]
+	}
+	
+	var icon1 = new BMap.Icon("../../../../public/images/markers.png", new BMap.Size(23, 25), {
+		offset: new BMap.Size(10, 25), // 指定定位位置
+		imageOffset: new BMap.Size(0, 0 - 0 * 25) // 设置图片偏移
+	});
+	var icon2 = new BMap.Icon("../../../../public/images/markers.png", new BMap.Size(23, 25), {
+		offset: new BMap.Size(10, 25), // 指定定位位置
+		imageOffset: new BMap.Size(0, 0 - 1 * 25) // 设置图片偏移
+	});
+	var icon3 = new BMap.Icon("../../../../public/images/markers.png", new BMap.Size(23, 25), {
+		offset: new BMap.Size(10, 25), // 指定定位位置
+		imageOffset: new BMap.Size(0, 0 - 2 * 25) // 设置图片偏移
+	})
+	var icon4 = new BMap.Icon("../../../../public/images/markers.png", new BMap.Size(23, 25), {
+		offset: new BMap.Size(10, 25), // 指定定位位置
+		imageOffset: new BMap.Size(0, 0 - 3 * 25) // 设置图片偏移
+	});
+	function createMarker(point,info_html,urls){
+	
+		var markerx = new BMap.Marker(point);
+		markerx.addEventListener("mouseover",function(e){
+			var tpl = '<div class="amap-ui-district-cluster-marker level_district"><span class="amap-ui-district-cluster-marker-title">' + 
+			info_html + '</span></div>';
+			var myLabel = new BMap.Label(tpl,
+	                {
+	                    position: point, //label 在此处添加点位位置信息
+	                    offset: new BMap.Size(25, 3)
+	                });
+	           myLabel.setStyle({
+	            border: "0",  //边
+	            verticalAlign: "center",
+	            cursor: "pointer"
+	        });
+			markerx.setLabel(myLabel);	
+			//this.openInfoWindow(new BMap.InfoWindow(info_html));
+		});
+		markerx.addEventListener("mouseout",function(e){
+			markerx.getLabel().setStyle({display:"none"});
+			//this.openInfoWindow(new BMap.InfoWindow(info_html));
+		});
+		markerx.addEventListener('click', function (e) {
+			console.log(urls)
+			$('body').append("<a id='test' href=\""+urls+"\" title='风险排名' target='_blank'></a>>");  //点击事件监控
+			$('#test')[0].click();
+		});
+		return markerx;
+	}
+
+    var map = new BMap.Map("map", {});                        // 创建Map实例
+    map.centerAndZoom(new BMap.Point(105.000, 38.000), 5);     // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+    if (document.createElement('canvas').getContext) {  // 判断当前浏览器是否支持绘制海量点
+        for (var i = 0; i < data.data.length; i++) {
+			if(data.data[i][2]<=25 ){//等级判断
+				var point = new BMap.Point(data.data[i][0], data.data[i][1]);
+				var markers = new BMap.Marker(point); //lng为经度,lat为纬度权
+				markers = createMarker(point,data.data[i][3],data.data[i][4]);
+				markers.setIcon(icon1);//设置标签的图标为自定义图标
+				map.addOverlay(markers);//将标签添加到地图中去		
+			}if(25<=data.data[i][2]&&data.data[i][2] <=50 ){
+				var point = new BMap.Point(data.data[i][0], data.data[i][1]);
+				var markers = new BMap.Marker(point); //lng为经度,lat为纬度权
+				markers = createMarker(point,data.data[i][3],data.data[i][4]);
+				markers.setIcon(icon2);//设置标签的图标为自定义图标
+				map.addOverlay(markers);//
+			}
+			if( 50<=data.data[i][2]&& data.data[i][2] <=75){
+				var point = new BMap.Point(data.data[i][0], data.data[i][1]);
+				var markers = new BMap.Marker(point); //lng为经度,lat为纬度权
+				markers = createMarker(point,data.data[i][3],data.data[i][4]);
+				markers.setIcon(icon3);//设置标签的图标为自定义图标
+				map.addOverlay(markers);//
+			}
+			if( 75<=data.data[i][2]&& data.data[i][2] <=100){
+				var point = new BMap.Point(data.data[i][0], data.data[i][1]);
+				var markers = new BMap.Marker(point); //lng为经度,lat为纬度权
+				markers = createMarker(point,data.data[i][3],data.data[i][4]);
+				markers.setIcon(icon4);//设置标签的图标为自定义图标
+				map.addOverlay(markers);//
+			}
+		}
+        
+       // map.addOverlay(pointCollection);  // 添加Overlay
+    } 
+	
+	
+  </script>
 </body>
 </html>

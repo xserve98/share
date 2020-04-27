@@ -35,15 +35,17 @@
 <link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
 <!-- Site CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
-<!-- 自定义 CSS -->
-<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 CSS -->
 <link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
 <link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
 <link rel="stylesheet" href="../../../../public/vendor/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<!-- 自定义 CSS -->
+<link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -60,12 +62,12 @@
         <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -96,9 +98,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -110,7 +112,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -123,9 +125,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -137,7 +139,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -150,9 +152,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -164,7 +166,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -177,9 +179,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -191,7 +193,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -204,9 +206,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -218,7 +220,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -231,9 +233,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -245,7 +247,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -258,9 +260,9 @@
                 <td>xxxxxxxxxx</td>
                 <td>xxxxxxxx</td>
                 <td>xxxx</td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
-                <td><div class="w-300">
-                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="4">
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><div class="dx max-width-300">
+                    <select class="gl_xm" multiple data-plugin="selectpicker" data-max-options="auto">
                       <option value="安全管理机构和人员">安全管理机构和人员</option>
                       <option value="消防信息管理">消防信息管理</option>
                       <option value="一般设备管理">一般设备管理</option>
@@ -272,7 +274,7 @@
                       <option value="相关方管理">相关方管理</option>
                     </select>
                   </div></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               </tr>
             </tbody>
           </table>
@@ -358,8 +360,10 @@
 <script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
 <script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
 <script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
 <script src="../../../../public/js/examples/forms/advanced/select.js"></script>
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
 </body>
 </html>

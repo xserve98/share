@@ -57,24 +57,32 @@
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
     <div class="panel">
-      <div class="alert pt-25" role="alert">
+      <div class="alert pb-0 wb-100 pt-25" role="alert">
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">作业类型</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+        <input type="text" class="form-control list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">申请部门</div>
         <select class="form-control col-lg-1 list-inline-item mr-15">
           <option>请选择</option>
           <option>化工部</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">审批状态</div>
         <select class="form-control col-lg-1 list-inline-item mr-15">
           <option>请选择</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
       </div>
       <div class="px-25 mt-10"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">进行中的（4）</a><a href="###" class="btn btn-inverse mr-15">已完成的（10）</a>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
       <div class="panel-body">
@@ -1420,7 +1428,7 @@
         </div>
         <textarea class="form-control wb-100 h-100 mt-15" style="resize:none;" id="textareaDefault" placeholder="填写处理意见" rows="3"></textarea>
         <div class="mt-15 list-inline-item">审批人</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item max-width-150" id="inputPlaceholder" placeholder="请填写您的姓名">
+        <input type="text" class="form-control list-inline-item max-width-150" id="inputPlaceholder" placeholder="请填写您的姓名">
       </div>
       <div class="text-center pb-20">
         <button type="button" class="btn back-138d px-20 list-inline-item">提交审批</button>

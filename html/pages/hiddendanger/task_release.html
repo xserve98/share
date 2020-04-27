@@ -48,7 +48,6 @@
 <!-- Page CSS -->
 <link rel="stylesheet" href="../../../../public/css/examples/forms/advanced.css">
 <link rel="stylesheet" href="../../../../public/css/examples/components/advanced/animation.css">
-<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -58,37 +57,63 @@
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
     <div class="panel">
-      <div class="alert" role="alert">
-        <div class="mt-15 list-inline-item">任务名称</div>
-        <input type="text" class="form-control list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>截止日期小于</option>
+        <div class="alert pb-0 wb-100 pt-25" role="alert">
+		<div class="float-left height-34 mb-20">
+        <div class="mt-5 list-inline-item">任务名称</div>
+        <input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20 mr-15">
+		<div class="mt-5 float-left pr-10">公司名称</div>
+		<div class="float-left gs">
+        <select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+            <option></option>
+            <optgroup label="">
+                <option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+            </optgroup>
         </select>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>涉及公司包含</option>
+		</div>
+		</div>
+		<div class="float-left height-34 mb-20">
+		<div class="mt-5 list-inline-item">来源</div>
+        <select class="form-control list-inline-item mr-15 w-100">
+          <option>请选择</option>
+          <option>我发布的</option>
+		  <option>分解任务</option>
         </select>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>请选择完成状态</option>
-        </select>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>请选择发布状态</option>
-        </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">搜索</button>
+		</div>
       </div>
-      <div class="px-25 mt-5">
-        <button type="button" class="btn btn-primary px-20 list-inline-item">新建清单</button>
+      <div class="px-25 mt-0">
+        <button type="button" class="btn btn-primary px-20 list-inline-item">新建任务</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
-        <button type="button" class="btn social-wechat px-20 list-inline-item">导出</button>
-        <button type="button" class="btn btn-success px-20 list-inline-item mr-20">导入</button>
-        <button type="button" class="btn social-github px-20 list-inline-item mr-20">下载模板</button>
-        <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+      </div>
+	  <div class="px-25 mt-25"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">草稿</a><a href="###" class="btn btn-inverse mr-15">进行中（3）</a><a href="###" class="btn btn-inverse mr-15">已完成任务</a><a href="###" class="btn btn-inverse">归档</a>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
-        <div class="mb-10">
+      <div class="panel-body state_no">
+        <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
           <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
             <thead>
               <tr>
@@ -98,14 +123,18 @@
                   </span></th>
                 <th>任务名称</th>
                 <th>检查项目</th>
+                <th>发布公司</th>
                 <th>发布日期</th>
+                <th>实施单位</th>
                 <th>截止日期</th>
-                <th>涉及公司</th>
-                <th>已完成公司数量</th>
-                <th>未完成公司数量</th>
+                <th>已完成单位数量</th>
+                <th>未完成单位数量</th>
                 <th>发现问题数量</th>
-                <th>完成状态</th>
-                <th>发布状态</th>
+                <th>整改完成问题数量</th>
+                <th>挂账问题数</th>
+                <th>来源</th>
+                <th>任务状态</th>
+                <th>操作</th>
               </tr>
             </thead>
             <tbody>
@@ -116,19 +145,18 @@
                   </span></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal">88<img src="../../../public/images/tj.png" width="26" class="pl-5 mt--1" alt="" /></span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-01"></td>
+                <td>xxxxxxxxxxxxx</td>
+                <td>2020-01-02</td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal">44<img src="../../../public/images/tj.png" width="26" class="pl-5 mt--1" alt="" /></span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal">23<img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></span></td>
-                <td>21</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-01"></td>
+                <td><span>23<a href="/html/pages/hiddendanger/task_implementation.html" target="_blank" title="排查任务实施"><img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></a></span></td>
+                <td><span>21<a href="/html/pages/hiddendanger/task_implementation.html" target="_blank" title="排查任务实施"><img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></a></span></td>
                 <td>4</td>
-                <td><span class="color_ff0">未完成</span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-                    <option value="请选择">请选择</option>
-                    <option value="发布">发布</option>
-                    <option value="取消">取消</option>
-                    <option value="草稿">草稿</option>
-                  </select></td>
+                <td>2</td>
+                <td>1</td>
+				<td>我发布的</td>
+                <td><span class="color_666">草稿</span></td>
+                <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">发布</button></td>
               </tr>
               <tr>
                 <td><span class="checkbox-custom checkbox-primary">
@@ -137,19 +165,38 @@
                   </span></td>
                 <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
                 <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal">88<img src="../../../public/images/tj.png" width="26" class="pl-5 mt--1" alt="" /></span></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-02"></td>
-                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-01"></td>
+                <td>xxxxxxxxxxxxx</td>
+                <td>2020-01-02</td>
                 <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal">44<img src="../../../public/images/tj.png" width="26" class="pl-5 mt--1" alt="" /></span></td>
-                <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal">23<img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></span></td>
-                <td>21</td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-01"></td>
+                <td><span>23<a href="/html/pages/hiddendanger/task_implementation.html" target="_blank" title="排查任务实施"><img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></a></span></td>
+                <td><span>21<a href="/html/pages/hiddendanger/task_implementation.html" target="_blank" title="排查任务实施"><img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></a></span></td>
                 <td>4</td>
+                <td>2</td>
+                <td>1</td>
+				<td>我发布的</td>
+                <td><span class="color_ff9">进行中</span></td>
+                <td></td>
+              </tr>
+			  <tr>
+                <td><span class="checkbox-custom checkbox-primary">
+                  <input class="selectable-all" type="checkbox">
+                  <label></label>
+                  </span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxx"></td>
+                <td><span class="cursor" data-target="#examplePositionCenter" data-toggle="modal">88<img src="../../../public/images/tj.png" width="26" class="pl-5 mt--1" alt="" /></span></td>
+                <td>xxxxxxxxxxxxx</td>
+                <td>2020-01-02</td>
+                <td><span class="cursor" data-target="#examplePositionCenter1" data-toggle="modal">44<img src="../../../public/images/tj.png" width="26" class="pl-5 mt--1" alt="" /></span></td>
+                <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-02-01"></td>
+                <td><span>23<a href="/html/pages/hiddendanger/task_implementation.html" target="_blank" title="排查任务实施"><img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></a></span></td>
+                <td><span>21<a href="/html/pages/hiddendanger/task_implementation.html" target="_blank" title="排查任务实施"><img src="../../../public/images/ck.png" width="26" class="pl-5 smt--4" alt="" /></a></span></td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+				<td>分解任务</td>
                 <td><span class="color_228">已完成</span></td>
-                <td><select class="form-control list-inline-item max-width-b-100">
-                    <option value="请选择">请选择</option>
-                    <option value="发布">发布</option>
-                    <option value="取消">取消</option>
-                    <option value="草稿">草稿</option>
-                  </select></td>
+                <td><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-418">归档</button></td>
               </tr>
             </tbody>
           </table>
@@ -174,20 +221,20 @@
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center max-width-960">
+  <div class="modal-dialog modal-center max-width-b_90">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
         <h4 class="modal-title">添加排查项目</h4>
       </div>
-      <div class="modal-body">
-        <div class="bootstrap-select">
-          <div>
+        <div class="bootstrap-select pb-20">
+          <div class="p-20">
             <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
             <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
             <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
           </div>
-          <div class="panel-body mt-20 p-0">
+		  <div class="height-300" data-plugin="mCustomScrollbar" data-axis='y'>
+          <div class="panel-body px-20 py-0 state_no">
             <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
               <thead>
                 <tr>
@@ -248,10 +295,37 @@
                   <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                   <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                 </tr>
+				<tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                </tr>
+				<tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                </tr>
+				<tr>
+                  <th width="60"><span class="checkbox-custom checkbox-primary">
+                    <input class="selectable-all" type="checkbox">
+                    <label></label>
+                    </span></th>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                  <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                </tr>
               </tbody>
             </table>
-			<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-			<div class="float-right mt-5">
+			</div>
+          </div>
+		  <div class="px-20 mt-20">
+		  <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
+			<div class="float-right">
 			  <nav>
 				<ul class="pagination mb-0">
 				  <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
@@ -264,9 +338,8 @@
 				</ul>
 			  </nav>
 			</div>
-          </div>
+		  </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -276,157 +349,50 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title">请上传检修计划</h4>
+        <h4 class="modal-title">将任务发布到下级公司或下级部门</h4>
       </div>
-      <div class="p-20 pb-0">
-        <div class="text-center xian_1_e xian_b_0 pt-15 pb-5">
-          <div class="inline-block font-size-18 mr-10">已选<span class="color-se3">4</span>个</div>
-          <button type="button" class="btn social-facebook px-20 list-inline-item mb-10">提交</button>
-        </div>
-        <div class="example mb-0 mt-0" data-plugin="mCustomScrollbar">
-          <div id="checkbox"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade modal_bg" id="examplePositionCenter2" aria-hidden="true" aria-labelledby="examplePositionCenter" role="dialog"
-     tabindex="-1">
-  <div class="modal-dialog modal-center max-width-960">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title">公司完成情况</h4>
-      </div>
-      <div class="modal-body p-0">
-        <div class="bootstrap-select">
-          <div class="alert p-20 mb-0" role="alert">
-			<div class="mt-5 list-inline-item">公司</div>
-			<select class="form-control list-inline-item max-width-150 mr-15">
-			  <option>请选择</option>
-			  <option>京东方</option>
-			</select>
-			<div class="mt-5 list-inline-item">任务</div>
-			<select class="form-control list-inline-item max-width-150 mr-15">
-			  <option>请选择</option>
-			</select>
-			<div class="mt-5 list-inline-item">完成状态</div>
-			<select class="form-control list-inline-item max-width-100">
-			  <option>已完成</option>
-			  <option>未完成</option>
-			</select>
-			<button type="button" class="btn btn-warning list-inline-item mt--5">搜索</button>
-		  </div>
-          <div class="panel-body px-20 py-0 pb-20">
-		  <div class="p-0 mb-20" data-plugin="mCustomScrollbar" data-axis='x'>
-            <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-              <thead>
-                <tr>
-                  <th>任务名称</th>
-                  <th>截止日期</th>
-				  <th>公司名称</th>
-				  <th>完成状态</th>
-				  <th>完成日期</th>
-				  <th>总项目数</th>
-				  <th>已排查项目数量</th>
-				  <th>未排查项目数</th>
-				  <th>不涉及项目数</th>
-				  <th>发现问题梳理</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-                </tr>
-				<tr>
-                  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-                </tr>
-				<tr>
-                  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-                </tr>
-				<tr>
-                  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-                </tr>
-				<tr>
-                  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-                </tr>
-				<tr>
-                  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-				  <td>xxxxxxxxx</td>
-                  <td>xxxxxxxxx</td>
-                </tr>
-              </tbody>
-            </table>
-			</div>
-			<div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
-			<div class="float-right mt-0">
-			  <nav>
-				<ul class="pagination mb-0">
-				  <li class="page-item disabled"><a class="page-link" href="javascript:;" aria-label="上一页"><span aria-hidden="true">上一页</span></a></li>
-				  <li class="page-item active"><a class="page-link" href="javascript:;">1<span class="sr-only">当前</span></a></li>
-				  <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
-				  <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
-				  <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
-				  <li class="page-item"><a class="page-link" href="javascript:;">5</a></li>
-				  <li class="page-item"><a class="page-link" href="javascript:;" aria-label="下一页"><span aria-hidden="true">下一页</span></a></li>
-				</ul>
-			  </nav>
-			</div>
-          </div>
-        </div>
-      </div>
+	  <div class="example-wrap mt-20 mb-0">
+                            <div class="nav-tabs-horizontal" data-approve="nav-tabs">
+                                <ul class="nav nav-tabs pl-20" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#exampleTabsOne"
+                                           aria-controls="exampleTabsOne" role="tab">
+                                            下级公司
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#exampleTabsTwo" aria-controls="exampleTabsTwo"
+                                           role="tab">
+                                            下级部门
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="exampleTabsOne" role="tabpanel">
+                                        <div class="p-20 pb-0">
+										<div class="text-center xian_1_e xian_b_0 pt-15 pb-5">
+										  <div class="inline-block font-size-18 mr-10">已选<span class="color-se3">4</span>个</div>
+										  <button type="button" class="btn social-facebook px-20 list-inline-item mb-10">提交</button>
+										</div>
+										<div class="example mb-0 mt-0" data-plugin="mCustomScrollbar">
+										  <div id="checkbox"></div>
+										</div>
+									  </div>
+                                    </div>
+                                    <div class="tab-pane" id="exampleTabsTwo" role="tabpanel">
+                                        <div class="p-20 pb-0">
+										<div class="text-center xian_1_e xian_b_0 pt-15 pb-5">
+										  <div class="inline-block font-size-18 mr-10">已选<span class="color-se3">4</span>个</div>
+										  <button type="button" class="btn social-facebook px-20 list-inline-item mb-10">提交</button>
+										</div>
+										<div class="example mb-0 mt-0" data-plugin="mCustomScrollbar">
+										  <div id="checkbox1"></div>
+										</div>
+									  </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
     </div>
   </div>
 </div>

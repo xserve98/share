@@ -156,6 +156,39 @@
       },
       plugins: ['checkbox']
     });
+	
+	 // 插件 - 复选框
+    $('#checkbox1').jstree({
+      core: {
+        data: [
+          {
+            text: '京东方',
+            state: {
+              opened: true,
+              selected: false
+            },
+            children: [
+              {
+                text: '安全部'
+              },
+              {
+                text: '生产部'
+              },
+              {
+                text: '维修部'
+              },
+              {
+                text: '监管部'
+              },
+              {
+                text: '人事部'
+              }
+            ]
+          }
+        ]
+      },
+      plugins: ['checkbox']
+    });
 
     // 插件 - 右键菜单
     $('#contextmenu').jstree({

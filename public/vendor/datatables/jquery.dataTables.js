@@ -959,6 +959,7 @@
 			oSettings.oApi   = _that.internal;
 			oSettings.oInit  = oInit;
 			
+
 			allSettings.push( oSettings );
 			
 			// Need to add the instance after the instance after the settings object has been added
@@ -1087,6 +1088,10 @@
 				/* Display start point, taking into account the save saving */
 				oSettings.iInitDisplayStart = oInit.iDisplayStart;
 				oSettings._iDisplayStart = oInit.iDisplayStart;
+			}
+			if ( oSettings.isNewUp || (options && options.isNewUp))
+			{
+				oSettings.isNewUp = oInit.isNewUp || (options && options.isNewUp) || false;
 			}
 			
 			if ( oInit.iDeferLoading !== null )
@@ -3444,7 +3449,8 @@
 				_fnCallbackFire( oSettings, 'aoRowCallback', null,
 					[nRow, aoData._aData, iRowCount, j] );
 	
-				anRows.push( nRow );
+				// anRows.push( nRow );unshift
+				oSettings.isNewUp ? anRows.unshift( nRow ) : anRows.push( nRow );
 				iRowCount++;
 			}
 		}
@@ -5548,6 +5554,7 @@
 	
 			// Clean up the table body
 			tmpTable.find('tbody tr').remove();
+
 			var tr = $('<tr/>').appendTo( tmpTable.find('tbody') );
 	
 			// Clone the table header and footer - we can't use the header / footer

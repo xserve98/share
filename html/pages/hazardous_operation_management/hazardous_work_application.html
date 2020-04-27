@@ -57,32 +57,41 @@
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
     <div class="panel">
-      <div class="alert pt-25" role="alert">
+      <div class="alert pb-0 wb-100 pt-25" role="alert">
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">作业类型</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+        <input type="text" class="form-control list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">申请部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+        <select class="form-control list-inline-item mr-15 w-150">
           <option>请选择</option>
           <option>化工部</option>
         </select>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">审批状态</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>请选择</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
       </div>
-      <div class="px-25 mt-10">
+      <div class="px-25">
         <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
       </div>
       <div class="px-25 mt-20"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">进行中的（4）</a><a href="###" class="btn btn-inverse mr-15">已完成的（10）</a>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body state_no">
+		<div class="" data-plugin="mCustomScrollbar" data-axis='x'>
         <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
           <thead>
             <tr>
@@ -109,13 +118,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color-333 cursor-pointer">未提交</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -127,13 +136,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_ffa cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">申请中</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -145,13 +154,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">申请通过</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -163,13 +172,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -181,13 +190,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_ff0 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">申请失败</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -199,13 +208,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -217,13 +226,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -235,13 +244,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -253,13 +262,13 @@
                 <input class="selectable-all" type="checkbox">
                 <label></label>
                 </span></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="李xx"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2020-01-01"></td>
+              <td><input type="text" class="form-control list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="2026-02-06"></td>
               <td><span class="color_228 cursor-pointer" data-target="#examplePositionCenter" data-toggle="modal">已完成</span></td>
               <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-success" data-target="#examplePositionCenter1" data-toggle="modal">查看</button></td>
               <td><span class="cursor" data-target="#examplePositionCenter2" data-toggle="modal"><img src="../../../public/images/tx.png" width="26" class="pr-5 mt--1" alt="" />未填写</span></td>
@@ -268,6 +277,7 @@
             </tr>
           </tbody>
         </table>
+		</div>
         <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
         <div class="float-right mt-5">
           <nav>
@@ -2182,7 +2192,7 @@
       </div>
       <div class="panel-body p-20">
         <div class="mt-5 list-inline-item">作业结束时间</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item max-width-240" id="inputPlaceholder" placeholder="">
+        <input type="text" class="form-control list-inline-item max-width-240" id="inputPlaceholder" placeholder="">
         <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap text-center mb-0 mt-15" id="dataTableExample">
           <tbody>
             <tr>

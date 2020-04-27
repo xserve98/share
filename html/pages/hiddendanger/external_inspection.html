@@ -35,10 +35,15 @@
 <link rel="stylesheet" href="../../../public/fonts/web-icons/web-icons.css">
 <!-- Site CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/site.css" id="admui-siteStyle">
+<!-- 插件 CSS -->
+<link rel="stylesheet" href="../../../../public/css/examples/components/advanced/scrollbar.css">
+<link rel="stylesheet" href="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../../../../public/vendor/select2/select2.css">
+<link rel="stylesheet" href="../../../../public/vendor/bootstrap-select/bootstrap-select.css">
+<link rel="stylesheet" href="../../../../public/vendor/multi-select/multi-select.css">
+<!-- Page CSS -->
 <!-- 自定义 CSS -->
 <link rel="stylesheet" href="../../../../public/themes/base/css/style.css">
-<!-- 插件 CSS -->
-<!-- Page CSS -->
 <!-- 插件 -->
 <script src="../../../../public/vendor/jquery/jquery.min.js"></script>
 <script src="../../../../public/vendor/bootstrap/bootstrap.bundle.min.js"></script>
@@ -48,46 +53,64 @@
 <div class="page animation-fade page-display">
   <div class="page-content" id="DTConent">
     <div class="panel">
-      <div class="panel-heading pt-25 pl-25 pr-25 mb-10">
-        <h3 class="panel-title p-0 xian_b pb-20">您有<span class="h_f">3</span>个隐患项目未整改，<span class="h_f">5</span>个隐患项目需要您验收</h3>
-      </div>
-      <div class="alert" role="alert">
+      <div class="alert pb-0 wb-100 pt-25" role="alert">
+	  	<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">名称</div>
-        <input type="text" class="form-control col-lg-2 list-inline-item mr-15 w-150" id="inputPlaceholder" placeholder="">
-        <div class="mt-5 list-inline-item">公司</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>京东方</option>
-          <option>京东方1</option>
-          <option>京东方2</option>
-          <option>京东方3</option>
-          <option>京东方4</option>
+        <input type="text" class="form-control list-inline-item mr-15 w-100" id="inputPlaceholder" placeholder="">
+		</div>
+        <div class="float-left height-34 mb-20 mr-15">
+		<div class="mt-5 float-left pr-10">公司名称</div>
+		<div class="float-left gs">
+        <select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+            <option></option>
+            <optgroup label="">
+                <option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+				<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+                <option value="京东方科技有限公司">京东方科技有限公司</option>
+                <option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+            </optgroup>
         </select>
-        <div class="mt-5 list-inline-item">责任部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>生产部</option>
-        </select>
-        <div class="mt-5 list-inline-item">整改部门</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15">
-          <option>生产部</option>
-        </select>
+		</div>
+		</div>
+		<div class="float-left height-34 mb-20">
         <div class="mt-5 list-inline-item">状态</div>
-        <select class="form-control col-lg-1 list-inline-item mr-15 w-100">
+        <select class="form-control list-inline-item mr-15 w-100">
           <option>已整改</option>
           <option>未整改</option>
         </select>
-        <button type="button" class="btn btn-warning list-inline-item mt--5">查询</button>
+		</div>
+		<div class="float-left height-34 mb-20">
+        <button type="button" class="btn btn-warning list-inline-item">查询</button>
+		</div>
       </div>
-      <div class="px-25 mt-10">
+      <div class="px-25 mt-0">
         <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
         <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
         <button type="button" class="btn social-wechat px-20 list-inline-item mr-20">导出</button>
         <button type="button" class="btn social-facebook px-20 list-inline-item mr-20">提交</button>
+      </div>
+	  <div class="px-25 mt-25"><a href="###" class="btn btn-dark mr-15">全部</a><a href="###" class="btn btn-inverse mr-15">进行中的（3）</a><a href="###" class="btn btn-inverse mr-15">已完成任务</a><a href="###" class="btn btn-inverse">归档</a>
         <div class="btn-group float-right">
-          <button type="button" class="btn btn-outline btn-default">相关法律法规</button>
-          <button type="button" class="btn btn-outline btn-default">相关安全管理制度</button>
+          <a href="/html/pages/basicsafety/laws_and_regulations.html" target="_blank" class="btn btn-outline btn-default">相关法律法规</a>
+          <a href="/html/pages/basicsafety/management_system.html" target="_blank" class="btn btn-outline btn-default">相关安全管理制度</a>
         </div>
       </div>
-      <div class="panel-body">
+      <div class="panel-body state_no">
+	  <div class="" data-plugin="mCustomScrollbar" data-axis='x'>
         <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap" id="dataTableExample">
           <thead>
             <tr>
@@ -96,14 +119,17 @@
                 <label></label>
                 </span></th>
               <th>序号</th>
-              <th>项目名称</th>
-              <th>检查日期</th>
-              <th>隐患来源</th>
+              <th>检查名称</th>
               <th>检查单位</th>
+              <th>检查日期</th>
               <th>检查人员</th>
-              <th>被检查单位</th>
-              <th>发现的问题</th>
-              <th>整改期限</th>
+              <th>受检公司</th>
+              <th>隐患数量</th>
+              <th>已整改数量</th>
+              <th>未整改数量</th>
+              <th>挂账数量</th>
+              <th width="100">状态</th>
+              <th width="100">操作</th>
             </tr>
           </thead>
           <tbody>
@@ -117,10 +143,13 @@
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">填写隐患</button></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td>xxxxxxxxx</td>
+              <td>11</td>
+              <td>11</td>
+              <td>11</td>
+			  <td>1</td>
+			  <td><span class="color_666">草稿</span></td>
+              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-info mr-10" data-target="#examplePositionCenter1" data-toggle="modal">填写隐患</button><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-3b5">提交</button></td>
             </tr>
             <tr>
               <td><span class="checkbox-custom checkbox-primary">
@@ -132,10 +161,13 @@
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">填写隐患</button></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td>xxxxxxxxx</td>
+              <td>11</td>
+              <td>11</td>
+              <td>11</td>
+			  <td>1</td>
+			  <td><span class="color_ff9">整改中</span></td>
+              <td><a href="/html/pages/hiddendanger/security_management.html" title="" target="_blank" class="btn btn-sm btn-outline btn-info mr-10">查看隐患</a></td>
             </tr>
             <tr>
               <td><span class="checkbox-custom checkbox-primary">
@@ -147,10 +179,13 @@
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">填写隐患</button></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td>xxxxxxxxx</td>
+              <td>11</td>
+              <td>11</td>
+              <td>11</td>
+			  <td>1</td>
+			  <td><span class="color_228">已完成</span></td>
+              <td><a href="/html/pages/hiddendanger/security_management.html" title="" target="_blank" class="btn btn-sm btn-outline btn-info mr-10">查看隐患</a><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-418">归档</button></td>
             </tr>
             <tr>
               <td><span class="checkbox-custom checkbox-primary">
@@ -162,13 +197,17 @@
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
               <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-              <td><button id="exampleEnterFullscreen" type="button" class="btn btn-sm btn-outline btn-info" data-target="#examplePositionCenter1" data-toggle="modal">填写隐患</button></td>
-              <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+              <td>xxxxxxxxx</td>
+              <td>11</td>
+              <td>11</td>
+              <td>11</td>
+			  <td>1</td>
+			  <td><span class="color_228">已完成</span></td>
+              <td><a href="/html/pages/hiddendanger/security_management.html" title="" target="_blank" class="btn btn-sm btn-outline btn-info mr-10">查看隐患</a><button id="exampleTogglFullscreene" type="button" class="btn btn-sm btn-outline border-1-418">归档</button></td>
             </tr>
           </tbody>
         </table>
+		</div>
         <div class="float-left font-size-14 mt-5">共<span class="l_q">168</span>条，共<span class="l_q">16</span>页</div>
         <div class="float-right mt-5">
           <nav>
@@ -189,28 +228,20 @@
 </div>
 <div class="modal fade modal_bg" id="examplePositionCenter1" aria-hidden="true" aria-labelledby="examplePositionCenter1" role="dialog"
      tabindex="-1">
-  <div class="modal-dialog modal-center max-width-780">
+  <div class="modal-dialog modal-center max-width-b_90">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="关闭"><span aria-hidden="true">×</span></button>
         <h4 class="modal-title">发现隐患</h4>
       </div>
       <div class="modal-body">
-        <div class="nav-tabs-horizontal" data-approve="nav-tabs">
-          <ul class="nav external" role="tablist">
-            <li>隐患来源：</li>
-            <li class="nav-item mr-50"><a class="nav-link active" data-toggle="tab" href="#exampleTabsOne" aria-controls="exampleTabsOne" role="tab">排查任务</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#exampleTabsTwo" aria-controls="exampleTabsTwo" role="tab">外部检查</a></li>
-          </ul>
-          <div class="tab-content pt-20">
-            <div class="tab-pane active" id="exampleTabsOne" role="tabpanel">
-              <div class="bootstrap-select">
                 <div>
                   <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
                   <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
                   <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
                 </div>
-                <div class="panel-body mt-20 p-0">
+				<div class="" data-plugin="mCustomScrollbar" data-axis='x'>
+                <div class="panel-body mt-20 p-0 state_no">
                   <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
                     <thead>
                       <tr>
@@ -218,12 +249,13 @@
                           <input class="selectable-all" type="checkbox">
                           <label></label>
                           </span> </th>
-                        <th>风险清单名称</th>
-                        <th>排查项目名称</th>
+                        <th>隐患来源</th>
+                        <th>来源名称</th>
                         <th>隐患位置</th>
                         <th>隐患描述</th>
                         <th>隐患级别</th>
-                        <th>责任单位</th>
+                        <th>整改单位</th>
+                        <th>验收单位</th>
                         <th>整改期限</th>
                       </tr>
                     </thead>
@@ -233,127 +265,93 @@
                           <input class="selectable-all" type="checkbox">
                           <label></label>
                           </span></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                        <td>xxxxxxxxxxxxx</td>
+                        <td>xxxxxxxxxxxxx</td>
+                        <td><input type="text" class="form-control list-inline-item w-200 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                        <td><input type="text" class="form-control list-inline-item w-300 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
+                        <td><select class="form-control list-inline-item w-150">
+						  <option>一般隐患</option>
+						  <option>重大隐患</option>
+						</select></td>
+                        <td>
+							<div class="gs smt-4">
+								<select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+									<option></option>
+									<optgroup label="">
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+									</optgroup>
+								</select>
+							</div>
+						</td>
+                        <td>
+							<div class="gs smt-4">
+								<select class="form-control list-inline-item" data-plugin="select2" data-placeholder="请选择公司" data-allow-clear="true">
+									<option></option>
+									<optgroup label="">
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+										<option value="北京电控股份有限公司">北京电控股份有限公司</option>
+										<option value="京东方科技有限公司">京东方科技有限公司</option>
+										<option value="北京向前进信息科技有限公司">北京向前进信息科技有限公司</option>
+									</optgroup>
+								</select>
+							</div>
+						</td>
+                        <td><input type="text" class="form-control list-inline-item w-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
                       </tr>
-                      <tr>
-                        <td><span class="checkbox-custom checkbox-primary">
-                          <input class="selectable-all" type="checkbox">
-                          <label></label>
-                          </span></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                      </tr>
-                      <tr>
-                        <td><span class="checkbox-custom checkbox-primary">
-                          <input class="selectable-all" type="checkbox">
-                          <label></label>
-                          </span></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                      </tr>
+                      
                     </tbody>
                   </table>
                 </div>
-              </div>
-            </div>
-            <div class="tab-pane" id="exampleTabsTwo" role="tabpanel">
-              <div class="bootstrap-select">
-                <div>
-                  <button type="button" class="btn btn-primary px-20 list-inline-item">添加</button>
-                  <button type="button" class="btn btn-danger px-20 list-inline-item mr-20">删除</button>
-                  <button type="button" class="btn social-facebook px-20 list-inline-item">提交</button>
-                </div>
-                <div class="panel-body mt-20 p-0">
-                  <table class="table table-bordered table-hover dataTable table-striped w-full text-nowrap mb-0" id="dataTableExample">
-                    <thead>
-                      <tr>
-                        <th width="60"><span class="checkbox-custom checkbox-primary">
-                          <input class="selectable-all" type="checkbox">
-                          <label></label>
-                          </span></th>
-                        <th>外部单位名称</th>
-                        <th>风险清单名称</th>
-                        <th>排查项目名称</th>
-                        <th>隐患位置</th>
-                        <th>隐患描述</th>
-                        <th>隐患级别</th>
-                        <th>责任单位</th>
-                        <th>整改期限</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><span class="checkbox-custom checkbox-primary">
-                          <input class="selectable-all" type="checkbox">
-                          <label></label>
-                          </span></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                      </tr>
-                      <tr>
-                        <td><span class="checkbox-custom checkbox-primary">
-                          <input class="selectable-all" type="checkbox">
-                          <label></label>
-                          </span></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                      </tr>
-                      <tr>
-                        <td><span class="checkbox-custom checkbox-primary">
-                          <input class="selectable-all" type="checkbox">
-                          <label></label>
-                          </span></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                        <td><input type="text" class="form-control col-lg-2 list-inline-item max-width-b-100 px-0" id="inputPlaceholder" value="xxxxxxxxxxxxx"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+			</div>
       </div>
     </div>
   </div>
 </div>
 <!-- 插件 -->
-<script src="../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
-<script src="../../../public/themes/base/js/app.js"></script>
+<script src="../../../../public/vendor/matchheight/jquery.matchHeight.min.js"></script>
+<script src="../../../../public/vendor/select2/select2.full.min.js"></script>
+<script src="../../../../public/vendor/select2/i18n/zh-CN.js"></script>
+<script src="../../../../public/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../../../public/vendor/multi-select/jquery.multi-select.js"></script>
+<script src="../../../../public/vendor/typeahead-js/bloodhound.min.js"></script>
+<script src="../../../../public/vendor/typeahead-js/typeahead.jquery.min.js"></script>
+<script src="../../../../public/vendor/jquery-cxselect/jquery.cxselect.js"></script>
+<script src="../../../../public/vendor/jstree/jstree.min.js"></script>
+<script src="../../../../public/vendor/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../../../public/themes/base/js/app.js"></script>
 <!-- Page JS -->
+<script src="../../../../public/js/examples/components/advanced/scrollbar.js"></script>
+<script src="../../../../public/js/examples/components/advanced/jstree.js"></script>
 </body>
 </html>
