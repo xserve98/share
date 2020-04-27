@@ -80,6 +80,14 @@ var scrollTop = $(window).scrollTop();
 });
 });
 
+function showzywh(i,id){
+	if(i==1){
+		$("#"+id).show();
+	}else{
+		$("#"+id).hide();
+	}
+}
+
 </script>
 </head>
 <body data-theme="base">
@@ -111,7 +119,7 @@ var scrollTop = $(window).scrollTop();
               <div class="w-150">
                 <div class="btn-group bootstrap-select">
                   <div class="radio-custom radio-primary mt-5 w-200">
-                    <input type="radio" id="inputRadiosUnchecked1" name="inputRadios1">
+                    <input  type="radio" id="inputRadiosUnchecked1" name="inputRadios1">
                     <label for="inputRadiosUnchecked1">是</label>
                   </div>
                   <div class="radio-custom radio-primary mt-5">
@@ -121,7 +129,7 @@ var scrollTop = $(window).scrollTop();
                 </div>
               </div>
             </div>
-            <div class="row pb-10">
+            <div id ="zywhys"class="row pb-10">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>有无职业危害因素超标</label>
               <div class="w-150">
                 <div class="btn-group bootstrap-select">
@@ -136,7 +144,7 @@ var scrollTop = $(window).scrollTop();
                 </div>
               </div>
             </div>
-            <div class="row pb-10">
+            <div id="jcrybg" class="row pb-10">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>是否对接触人员进行告知</label>
               <div class="w-150">
                 <div class="btn-group bootstrap-select">
@@ -151,22 +159,22 @@ var scrollTop = $(window).scrollTop();
                 </div>
               </div>
             </div>
-            <div class="row pb-10">
+            <div id="zywhsb" class="row pb-10">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>职业危害是否申报</label>
               <div class="w-150">
                 <div class="btn-group bootstrap-select">
                   <div class="radio-custom radio-primary mt-5 w-200">
-                    <input type="radio" id="inputRadiosUnchecked4" name="inputRadios4">
+                    <input onclick="showzywh(1,'zywhsbhz')" type="radio" id="inputRadiosUnchecked4" name="inputRadios4">
                     <label for="inputRadiosUnchecked4">是</label>
                   </div>
                   <div class="radio-custom radio-primary mt-5">
-                    <input type="radio" id="inputRadiosChecked4" name="inputRadios4" checked="">
+                    <input onclick="showzywh(0,'zywhsbhz')" type="radio" id="inputRadiosChecked4" name="inputRadios4" checked="">
                     <label for="inputRadiosChecked4">否</label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row pb-15">
+            <div style="display:none" id="zywhsbhz" class="row pb-15">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>职业危害申报回执</label>
               <div>
                 <div class="bootstrap-select">
@@ -203,21 +211,21 @@ var scrollTop = $(window).scrollTop();
               <div class="">
                 <div class="btn-group bootstrap-select">
                   <div class="radio-custom radio-primary mt-5 w-200">
-                    <input type="radio" id="inputRadiosChecked5" name="inputRadios5" checked="">
+                    <input onclick="showzywh(1,'zyglpx')"  type="radio" id="inputRadiosChecked5" name="inputRadios5" checked="">
                     <label for="inputRadiosChecked5">配备专职人员</label>
                   </div>
                   <div class="radio-custom radio-primary mt-5 w-200">
-                    <input type="radio" id="inputRadiosUnchecked5" name="inputRadios5">
+                    <input onclick="showzywh(1,'zyglpx')" type="radio" id="inputRadiosUnchecked5" name="inputRadios5">
                     <label for="inputRadiosUnchecked5">配备兼职人员</label>
                   </div>
                   <div class="radio-custom radio-primary mt-5">
-                    <input type="radio" id="inputRadiosNo5" name="inputRadios5">
+                    <input onclick="showzywh(0,'zyglpx')" type="radio" id="inputRadiosNo5" name="inputRadios5">
                     <label for="inputRadiosNo5">无人员配备</label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row pb-20">
+            <div id="zyglpx" class="row pb-20">
               <label class="col-md-2 col-form-label text-right"><span class="h_f">*</span>专职职业卫生管理人员培训证书</label>
               <div>
                 <div class="bootstrap-select">
